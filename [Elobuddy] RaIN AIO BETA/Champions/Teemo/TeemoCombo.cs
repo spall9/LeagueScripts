@@ -26,10 +26,22 @@ namespace RaINAIO
 
             if (TeemoSpellsManager.W.IsReady())
             {
-                var enemy = EntityManager.Heroes.Enemies.FirstOrDefault(x => !x.IsDead);
-
                 {
                     TeemoSpellsManager.W.Cast();
+                }
+            }
+
+            if (TeemoSpellsManager.E.IsReady())
+            {
+                {
+                    TeemoSpellsManager.E.Cast();
+                }
+            }
+
+            if (TeemoSpellsManager.R.IsReady())
+            {
+                {
+                    TeemoSpellsManager.R.Cast(Rtarget);
                 }
             }
         }

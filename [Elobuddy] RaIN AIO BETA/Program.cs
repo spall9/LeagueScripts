@@ -29,6 +29,7 @@ namespace RaINAIO
                 ViktorSpellsManager.InitializeSpells();
                 ViktorMenus.CreateMenu();
                 ViktorDrawingsManager.InitializeDrawings();
+                ViktorCombo.Combo();
             }
         }
     }

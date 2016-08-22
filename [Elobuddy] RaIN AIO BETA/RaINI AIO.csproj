@@ -58,6 +58,7 @@
     <Compile Include="Champions\Teemo\TeemoMenus.cs" />
     <Compile Include="Champions\Teemo\TeemoSpellsManager.cs" />
     <Compile Include="Champions\Teemo\TeemoCombo.cs" />
+    <Compile Include="Champions\Viktor\ViktorCombo.cs" />
     <Compile Include="Champions\Viktor\ViktorDamageIndicator.cs" />
     <Compile Include="Champions\Viktor\ViktorDrawingsManager.cs" />
     <Compile Include="Champions\Viktor\ViktorMenus.cs" />
