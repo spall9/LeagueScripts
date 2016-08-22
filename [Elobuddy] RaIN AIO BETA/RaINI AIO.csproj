@@ -53,18 +53,6 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Champions\Draven\DravenDamageIndicator.cs" />
-    <Compile Include="Champions\Draven\DravenDrawingsManager.cs" />
-    <Compile Include="Champions\Draven\DravenMenus.cs" />
-    <Compile Include="Champions\Draven\DravenSpellsManager.cs" />
-    <Compile Include="Champions\Rengar\RengarDamageIndicator.cs" />
-    <Compile Include="Champions\Rengar\RengarDrawingsManager.cs" />
-    <Compile Include="Champions\Rengar\RengarMenus.cs" />
-    <Compile Include="Champions\Rengar\RengarSpellsManager.cs" />
-    <Compile Include="Champions\Shaco\ShacoDamageIndicator.cs" />
-    <Compile Include="Champions\Shaco\ShacoDrawingsManager.cs" />
-    <Compile Include="Champions\Shaco\ShacoMenus.cs" />
-    <Compile Include="Champions\Shaco\ShacoSpellsManager.cs" />
     <Compile Include="Champions\Teemo\TeemoDamageIndicator.cs" />
     <Compile Include="Champions\Teemo\TeemoDrawingsManager.cs" />
     <Compile Include="Champions\Teemo\TeemoMenus.cs" />
