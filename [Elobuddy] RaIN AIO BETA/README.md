@@ -1,4 +1,4 @@
-# Elobuddy-Scripts
+# RaIN AIO !BETA!
 
 -Work in Progress
 
