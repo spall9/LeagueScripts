@@ -8,12 +8,6 @@ Champions
 
 (6.16) Teemo
 
-(6.10) Draven
-
-(6.10) Rengar
-
-(6.10) Shaco
-
 <---------
 Features
 --------->
