@@ -21,7 +21,7 @@ Features
 -Skin Changer
 
 <---------
-Working on...:
+Working on
 --------->
 
 -~~Make it Compact~~
