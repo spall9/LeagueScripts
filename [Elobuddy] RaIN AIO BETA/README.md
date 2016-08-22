@@ -21,12 +21,12 @@ Features
 -Skin Changer
 
 <---------
-To-Do:
+Working on...:
 --------->
 
 -~~Make it Compact~~
 
--Push Updates
+-Combo Mode
 
--Add New Features
+-Fix SKin Changer
 
