@@ -28,5 +28,5 @@ Working on
 
 -Combo Mode
 
--Fix SKin Changer
+-Fix Skin Changer
 
