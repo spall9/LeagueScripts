@@ -63,7 +63,7 @@ namespace RaINAIO
                     if (Q.IsReady())
                     {
                         //Information of Q damage
-                        dmg += new float[] { 0, 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
+                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
                     }
                     break;
                 case SpellSlot.W:
@@ -84,7 +84,7 @@ namespace RaINAIO
                     if (R.IsReady())
                     {
                         //Information of R damage
-                        dmg += new float[] { 0, 200, 325, 450 }[sLevel]+ 0.5f * AP;
+                        dmg += new float[] { 200, 325, 450 }[sLevel]+ 0.5f * AP;
                     }
                     break;
             }
