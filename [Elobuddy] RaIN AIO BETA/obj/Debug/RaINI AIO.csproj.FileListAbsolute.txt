@@ -4,3 +4,4 @@ C:\Users\RaINi\Desktop\RaIN AIO\bin\Debug\Mario`s Template.exe.config
 C:\Users\RaINi\Desktop\RaIN AIO Test\bin\Debug\Mario`s Template.exe.config
 C:\Users\RaINi\Desktop\RaIN AIO Test - Kopie\bin\Debug\Mario`s Template.exe.config
 C:\Users\RaINi\Desktop\RaIN AIO BETA\bin\Debug\Mario`s Template.exe.config
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Debug\Mario`s Template.exe.config

@@ -11,9 +11,7 @@ using Line = EloBuddy.SDK.Rendering.Line;
 
 namespace RaINAIO
 {
-    /// <summary>
     /// It draws the damage on the enemies HealthBar
-    /// </summary>
     internal class TeemoDamageIndicator
     {
         //Offsets

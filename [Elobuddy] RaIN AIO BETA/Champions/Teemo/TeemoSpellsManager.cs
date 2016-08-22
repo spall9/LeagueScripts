@@ -27,15 +27,13 @@ namespace RaINAIO
 
         public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
 
-        /// <summary>
         /// It sets the values to the spells
-        /// </summary>
         public static void InitializeSpells()
         {
             Q = new Spell.Targeted(SpellSlot.Q, 680);
-            W = new Spell.Active(SpellSlot.W, 20);
-            E = new Spell.Active(SpellSlot.E, 680);
-            R = SpellSlot.R.GetSkillShotData(SkillShotType.Circular);
+            W = new Spell.Active(SpellSlot.W);
+            E = new Spell.Active(SpellSlot.E);
+            R = new Spell.Skillshot(SpellSlot.R, 0, SkillShotType.Circular, 0, 1000, 135);
 
             SpellList.Add(Q);
             SpellList.Add(W);
@@ -47,12 +45,7 @@ namespace RaINAIO
 
         #region Damages
 
-        /// <summary>
         /// It will return the damage but you need to set them before getting the damage
-        /// </summary>
-        /// <param name="target"></param>
-        /// <param name="slot"></param>
-        /// <returns></returns>
         public static float GetDamage(this Obj_AI_Base target, SpellSlot slot)
         {
             const DamageType damageType = DamageType.Magical;
@@ -70,7 +63,7 @@ namespace RaINAIO
                     if (Q.IsReady())
                     {
                         //Information of Q damage
-                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.80f * AP;
+                        dmg += new float[] { 0, 80, 125, 170, 215, 260 }[sLevel] + 0.80f * AP;
                     }
                     break;
                 case SpellSlot.W:
@@ -84,14 +77,14 @@ namespace RaINAIO
                     if (E.IsReady())
                     {
                         //Information of E damage
-                        dmg += new float[] { 10, 20, 30, 40, 50 }[sLevel] + 0.30f * AP;
+                        dmg += new float[] { 10, 20, 30, 40, 50 }[sLevel] + 0.3f * AP;
                     }
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
                     {
                         //Information of R damage
-                        dmg += new float[] { 0, 0, 0 }[sLevel]+ 0.0f * AP;
+                        dmg += new float[] { 0, 200, 325, 450 }[sLevel]+ 0.5f * AP;
                     }
                     break;
             }
@@ -100,11 +93,7 @@ namespace RaINAIO
 
         #endregion Damages
 
-        /// <summary>
         /// This event is triggered when a unit levels up
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
         private static void Obj_AI_Base_OnLevelUp(Obj_AI_Base sender, Obj_AI_BaseLevelUpEventArgs args)
         {
             if (MiscMenu.GetCheckBoxValue("activateAutoLVL") && sender.IsMe)
@@ -115,9 +104,7 @@ namespace RaINAIO
             }
         }
 
-        /// <summary>
         /// It will level up the spell using the values of the comboboxes on the menu as a priority
-        /// </summary>
         private static void LevelUPSpells()
         {
             if (Player.Instance.Spellbook.CanSpellBeUpgraded(SpellSlot.R))
@@ -161,11 +148,7 @@ namespace RaINAIO
             }
         }
 
-        /// <summary>
         /// It will transform the value of the combobox into a SpellSlot
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
         private static SpellSlot GetSlotFromComboBox(this int value)
         {
             switch (value)
