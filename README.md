@@ -2,6 +2,6 @@
 ___
 # Elobuddy
 
-#RaIN AIO BETA
+-RaIN AIO BETA
 ___
 
