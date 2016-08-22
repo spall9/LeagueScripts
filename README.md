@@ -3,6 +3,6 @@
 ___
 **Changelog**
 
--Updated Teemo [6.16] (22.08.2016)
+-Updated Teemo 6.16 (22.08.2016)
 ___
 
