@@ -24,3 +24,15 @@ C:\Users\RaINi\Desktop\RaIN AIO\obj\Release\RaINI AIO.csprojResolveAssemblyRefer
 C:\Users\RaINi\Desktop\RaIN AIO\obj\Release\Mario`s Template.exe
 C:\Users\RaINi\Desktop\RaIN AIO\obj\Release\Mario`s Template.pdb
 C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\Mario`s Lib.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Template.exe.config
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Template.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Template.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.SDK.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.Direct3D9.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Newtonsoft.Json.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\RaINI AIO.csprojResolveAssemblyReference.cache
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\Mario`s Template.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\Mario`s Template.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Lib.dll
