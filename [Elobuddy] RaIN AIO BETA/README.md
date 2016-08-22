@@ -2,19 +2,17 @@
 
 -Work in Progress
 
--RaIN AIO v1 Beta [6.10]
-
 <---------
 Champions
 --------->
 
--Teemo
+-Teemo    (6.16)
 
--Draven
+-Draven   (6.10)
 
--Rengar
+-Rengar   (6.10)
 
--Shaco
+-Shaco    (6.10)
 
 <---------
 Features
