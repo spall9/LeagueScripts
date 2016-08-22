@@ -20,7 +20,7 @@ Features
 
 -Damage Indicator
 
--Spell Indicator
+-Spell Range Indicator
 
 -Skin Changer
 
