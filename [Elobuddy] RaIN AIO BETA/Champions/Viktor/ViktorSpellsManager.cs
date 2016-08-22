@@ -5,7 +5,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 using Mario_s_Lib;
-using static RaINAIO.TeemoMenus;
+using static RaINAIO.ViktorMenus;
 
 namespace RaINAIO
 {

@@ -13,7 +13,7 @@ namespace RaINAIO
         {
             Drawing.OnDraw += Drawing_OnDraw;
             Drawing.OnEndScene += Drawing_OnEndScene;
-            TeemoDamageIndicator.Init();
+            ViktorDamageIndicator.Init();
         }
 
         /// Normal drawings
