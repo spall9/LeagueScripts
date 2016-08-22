@@ -1,5 +1,5 @@
 # League of Legend Scripts
--[Elobuddy] RaIN AIO BETA
+-[Elobuddy] RaIN AIO
 ___
 **Changelog**
 
