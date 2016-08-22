@@ -28,7 +28,7 @@ Features
 To-Do:
 --------->
 
--Make it Compact [✔] (https://github.com/LeagueRaINi/Elobuddy-Scripts/tree/master/RaIN%20AIO%20BETA)
+-Make it Compact [✔] (https://github.com/LeagueRaINi/LeagueScripts/edit/master/%5BElobuddy%5D%20RaIN%20AIO%20BETA/)
 
 -Push Updates
 
