@@ -2,13 +2,14 @@
 ___
 -Work in Progress
 
+-Current Version 6.16
 <---------
 Champions
 --------->
 
-(6.16) Teemo
+Teemo
 
-(6.16) Viktor
+Viktor
 
 <---------
 Features
