@@ -15,6 +15,7 @@ namespace RaINAIO
         public const string MiscMenuID = "miscmenuid";
         public static Menu FirstMenu;
         public static Menu DrawingsMenu;
+        public static Menu ComboMenu;
         public static Menu MiscMenu;
 
         //These colorslider are from Mario`s Lib
@@ -28,6 +29,7 @@ namespace RaINAIO
         {
             FirstMenu = MainMenu.AddMenu("RaIN AIO " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "hue");
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
+            ComboMenu = FirstMenu.AddSubMenu("• Combo");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
 
             MiscMenu.AddGroupLabel("Skin Changer");
@@ -48,6 +50,8 @@ namespace RaINAIO
             MiscMenu.CreateComboBox("2nd Spell to focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
             MiscMenu.CreateComboBox("3rd Spell to focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
             MiscMenu.CreateSlider("Delay slider", "delaySlider", 200, 150, 500);
+
+            ComboMenu.AddGroupLabel("Combo Settings");
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell`s range only if they are ready.", "readyDraw");
