@@ -6,13 +6,13 @@
 Champions
 --------->
 
--Teemo    (6.16)
+(6.16) Teemo
 
--Draven   (6.10)
+(6.10) Draven
 
--Rengar   (6.10)
+(6.10) Rengar
 
--Shaco    (6.10)
+(6.10) Shaco
 
 <---------
 Features
