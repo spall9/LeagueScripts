@@ -8,6 +8,8 @@ Champions
 
 (6.16) Teemo
 
+(6.16) Viktor
+
 <---------
 Features
 --------->
