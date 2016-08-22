@@ -27,31 +27,28 @@ namespace RaINAIO
 
         public static void CreateMenu()
         {
-            FirstMenu = MainMenu.AddMenu("RaIN AIO " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "hue");
-            MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
+            FirstMenu = MainMenu.AddMenu("RaIN AIO " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
             ComboMenu = FirstMenu.AddSubMenu("• Combo");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
+            MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
             var skinList = Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
             if (skinList != null)
             {
-                MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
+                MiscMenu.CreateComboBox("Choose Skin", "skinComboBox", skinList.Skins);
                 MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
                     delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args) { Player.Instance.SetSkinId(sender.CurrentValue); };
                 Player.Instance.SetSkinId(MiscMenu.Get<ComboBox>("skinComboBox").CurrentValue);
             }
 
-            MiscMenu.AddGroupLabel("Auto Level UP");
-            MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL", false);
-            MiscMenu.AddLabel("The auto leveler will always focus R than the rest of the spells");
-            MiscMenu.CreateComboBox("1st Spell to focus", "firstFocus", new List<string> {"Q", "W", "E"});
-            MiscMenu.CreateComboBox("2nd Spell to focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
-            MiscMenu.CreateComboBox("3rd Spell to focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
-            MiscMenu.CreateSlider("Delay slider", "delaySlider", 200, 150, 500);
-
             ComboMenu.AddGroupLabel("Combo Settings");
+            ComboMenu.CreateCheckBox("Use Combo mode", "usecombo", true);
+            ComboMenu.AddLabel("Use ability in Combo");
+            ComboMenu.CreateCheckBox("Use Q", "usecomboQ", true);
+            ComboMenu.CreateCheckBox("Use W", "usecomboW", true);
+            ComboMenu.CreateCheckBox("Use R", "usecomboR", true);
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell`s range only if they are ready.", "readyDraw");
@@ -69,6 +66,14 @@ namespace RaINAIO
             EColorSlide = new ColorSlide(DrawingsMenu, "eColor", Color.Orange, "E Color:");
             RColorSlide = new ColorSlide(DrawingsMenu, "rColor", Color.DeepPink, "R Color:");
             DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen, "DamageIndicator Color:");
+
+            MiscMenu.AddGroupLabel("Auto Level UP");
+            MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL", false);
+            MiscMenu.AddLabel("The auto leveler will always focus R than the rest of the spells");
+            MiscMenu.CreateComboBox("1st Spell to focus", "firstFocus", new List<string> { "Q", "W", "E" });
+            MiscMenu.CreateComboBox("2nd Spell to focus", "secondFocus", new List<string> { "Q", "W", "E" }, 1);
+            MiscMenu.CreateComboBox("3rd Spell to focus", "thirdFocus", new List<string> { "Q", "W", "E" }, 2);
+            MiscMenu.CreateSlider("Delay slider", "delaySlider", 200, 150, 500);
         }
     }
 }

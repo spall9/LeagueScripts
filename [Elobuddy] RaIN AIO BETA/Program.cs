@@ -23,8 +23,9 @@ namespace RaINAIO
                 TeemoDrawingsManager.InitializeDrawings();
                 TeemoCombo.Combo();
             }
+
             //Viktor
-            if (Player.Instance.Hero == Champion.Teemo)
+            if (Player.Instance.Hero == Champion.Viktor)
             {
                 ViktorSpellsManager.InitializeSpells();
                 ViktorMenus.CreateMenu();

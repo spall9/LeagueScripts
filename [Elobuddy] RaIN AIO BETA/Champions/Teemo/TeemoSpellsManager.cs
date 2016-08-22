@@ -53,7 +53,7 @@ namespace RaINAIO
             var AP = Player.Instance.FlatMagicDamageMod;
             var sLevel = Player.GetSpell(slot).Level - 1;
 
-            //You can get the damage information easily on wikia
+            //You can get the damage information easily on http://de.leagueoflegends.wikia.com/wiki/League_of_Legends_Wiki
 
             var dmg = 0f;
 
@@ -62,28 +62,28 @@ namespace RaINAIO
                 case SpellSlot.Q:
                     if (Q.IsReady())
                     {
-                        //Information of Q damage
+                        //Information Q Damage
                         dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
                     }
                     break;
                 case SpellSlot.W:
                     if (W.IsReady())
                     {
-                        //Information of W damage
+                        //Information W Damage
                         dmg += new float[] { 0, 0, 0, 0, 0 }[sLevel] + 0.0f * AP;
                     }
                     break;
                 case SpellSlot.E:
                     if (E.IsReady())
                     {
-                        //Information of E damage
+                        //Information E Damage
                         dmg += new float[] { 10, 20, 30, 40, 50 }[sLevel] + 0.3f * AP;
                     }
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
                     {
-                        //Information of R damage
+                        //Information R Damage
                         dmg += new float[] { 200, 325, 450 }[sLevel]+ 0.5f * AP;
                     }
                     break;
