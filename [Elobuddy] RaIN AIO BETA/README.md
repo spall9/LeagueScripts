@@ -30,3 +30,5 @@ Working on
 
 -Fix Skin Changer
 
+-Fix Damage Indicator
+
