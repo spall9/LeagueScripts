@@ -57,6 +57,10 @@
     <Compile Include="Champions\Teemo\TeemoDrawingsManager.cs" />
     <Compile Include="Champions\Teemo\TeemoMenus.cs" />
     <Compile Include="Champions\Teemo\TeemoSpellsManager.cs" />
+    <Compile Include="Champions\Viktor\ViktorDamageIndicator.cs" />
+    <Compile Include="Champions\Viktor\ViktorDrawingsManager.cs" />
+    <Compile Include="Champions\Viktor\ViktorMenus.cs" />
+    <Compile Include="Champions\Viktor\ViktorSpellsManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
