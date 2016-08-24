@@ -2,13 +2,15 @@
 ___
 -Work in Progress
 
+-Current Version 6.16
+
 <---------
 Champions
 --------->
 
-(6.16) Teemo
+Teemo
 
-(6.16) Viktor
+Viktor
 
 <---------
 Features
@@ -21,12 +23,15 @@ Features
 -Skin Changer
 
 <---------
-To-Do:
+Working on
 --------->
 
 -~~Make it Compact~~
+-Port to another Lib
 
--Push Updates
+-Combo Mode
 
--Add New Features
+-Fix Skin Changer
+
+-Fix Damage Indicator
 
