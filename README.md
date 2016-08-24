@@ -9,6 +9,8 @@ ___
 
 -[RaIN AIO] Working on Combo Mode (22.08.2016)
 
+-[RaIN AIO] Removed Viktor Temporarily (24.08.2016)
+
 -[RaIN AIO] Added First Teemo Combo (24.08.2016)
 ___
 
