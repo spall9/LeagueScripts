@@ -23,8 +23,9 @@ namespace RaINAIO
                 TeemoDrawingsManager.InitializeDrawings();
                 TeemoCombo.ComboSpells();
                 TeemoCombo.Combo();
+                Chat.Print("!BETA VERSION!");
                 Chat.Print("RaIN AIO Teemo Loaded!");
-                Chat.Print("Remember that this isnt Finished!");
+                Chat.Print("Credits to MarioGK for his Addon Template");
             }
         }
     }
