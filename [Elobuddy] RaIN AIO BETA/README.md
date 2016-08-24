@@ -10,8 +10,6 @@ Champions
 
 Teemo
 
-Viktor
-
 <---------
 Features
 --------->
