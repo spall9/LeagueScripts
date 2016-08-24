@@ -16,6 +16,8 @@ Features
 
 -Damage Indicator
 
+-Combo Mode
+
 -Spell Range Indicator
 
 -Skin Changer
