@@ -22,7 +22,7 @@ namespace RaINAIO
                 TeemoMenus.CreateMenu();
                 TeemoDrawingsManager.InitializeDrawings();
                 TeemoSpellManager.ComboSpells();
-                Chat.Print("!BETA VERSION!");
+                Chat.Print("!DEV VERSION!");
                 Chat.Print("RaIN AIO Teemo Loaded!");
                 Chat.Print("Credits to MarioGK for his Addon Template");
             }
