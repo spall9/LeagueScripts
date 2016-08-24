@@ -14,5 +14,7 @@ ___
 -[RaIN AIO] Working on Code Cleanup (24.08.2016)
 
 -[RaIN AIO] Added First Teemo Combo (24.08.2016)
+
+-[RaIN AIO] Waiting for Elobuddy Update to Test the Combo (24.08.2016)
 ___
 
