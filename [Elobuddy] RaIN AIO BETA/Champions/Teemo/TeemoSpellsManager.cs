@@ -4,34 +4,15 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 using Mario_s_Lib;
 using static RaINAIO.TeemoMenus;
+using static RaINAIO.TeemoCombo;
 
 namespace RaINAIO
 {
     public static class TeemoSpellsManager
     {
-        /*
-        Targeted spells are like Katarina`s Q
-        Active spells are like Katarina`s W
-        Skillshots are like Ezreal`s Q
-        Circular Skillshots are like Lux`s E and Tristana`s W
-        Cone Skillshots are like Annie`s W and ChoGath`s W
-        */
-
-        //Remenber of putting the correct type of the spell here
-        public static Spell.Targeted Q;
-        public static Spell.Active W;
-        public static Spell.Active E;
-        public static Spell.Skillshot R;
-
-        public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
-
         /// It sets the values to the spells
         public static void InitializeSpells()
         {
-            Q = new Spell.Targeted(SpellSlot.Q, 680);
-            W = new Spell.Active(SpellSlot.W);
-            E = new Spell.Active(SpellSlot.E);
-            R = new Spell.Skillshot(SpellSlot.R, 0, SkillShotType.Circular, 0, 1000, 135);
 
             SpellList.Add(Q);
             SpellList.Add(W);

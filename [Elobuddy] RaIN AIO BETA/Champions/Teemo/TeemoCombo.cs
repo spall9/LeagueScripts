@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
@@ -8,8 +9,21 @@ namespace RaINAIO
 {
     internal class TeemoCombo
     {
-        //Declares Q as Skillshot
-        private static Spell.Targeted Q;
+        /*
+        Targeted spells are like Katarina`s Q
+        Active spells are like Katarina`s W
+        Skillshots are like Ezreal`s Q
+        Circular Skillshots are like Lux`s E and Tristana`s W
+        Cone Skillshots are like Annie`s W and ChoGath`s W
+        */
+
+        //Declares Spells
+        public static Spell.Targeted Q;
+        public static Spell.Active W;
+        public static Spell.Active E;
+        public static Spell.Skillshot R;
+
+        public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
 
         public static void ComboSpells()
         {
