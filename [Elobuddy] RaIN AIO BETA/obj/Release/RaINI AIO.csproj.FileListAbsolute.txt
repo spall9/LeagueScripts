@@ -1,38 +1,11 @@
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\obj\Release\RaINI AIO.csprojResolveAssemblyReference.cache
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\obj\Release\Mario`s Template.exe
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\obj\Release\Mario`s Template.pdb
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\Mario`s Template.exe.config
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\Mario`s Template.exe
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\Mario`s Template.pdb
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\EloBuddy.dll
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\EloBuddy.SDK.dll
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\Mario`s Lib.dll
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\SharpDX.Direct3D9.dll
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\SharpDX.dll
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\Newtonsoft.Json.dll
-C:\Users\RaINi\Desktop\Script Erstellen\Test Script\Mario`s Template\Mario`s Template\bin\Release\EloBuddy.Sandbox.dll
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\Mario`s Template.exe.config
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\Mario`s Template.exe
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\Mario`s Template.pdb
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\EloBuddy.dll
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\EloBuddy.SDK.dll
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\SharpDX.Direct3D9.dll
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\SharpDX.dll
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\Newtonsoft.Json.dll
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\EloBuddy.Sandbox.dll
-C:\Users\RaINi\Desktop\RaIN AIO\obj\Release\RaINI AIO.csprojResolveAssemblyReference.cache
-C:\Users\RaINi\Desktop\RaIN AIO\obj\Release\Mario`s Template.exe
-C:\Users\RaINi\Desktop\RaIN AIO\obj\Release\Mario`s Template.pdb
-C:\Users\RaINi\Desktop\RaIN AIO\bin\Release\Mario`s Lib.dll
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Template.exe.config
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Template.exe
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Template.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\RaINAIO.exe.config
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\RaINAIO.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\RaINAIO.pdb
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.SDK.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Lib.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.Direct3D9.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Newtonsoft.Json.dll
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\RaINI AIO.csprojResolveAssemblyReference.cache
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\Mario`s Template.exe
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\Mario`s Template.pdb
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Lib.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\RaINAIO.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\RaINAIO.pdb
