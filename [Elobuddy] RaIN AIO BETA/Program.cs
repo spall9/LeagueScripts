@@ -21,16 +21,8 @@ namespace RaINAIO
                 TeemoSpellsManager.InitializeSpells();
                 TeemoMenus.CreateMenu();
                 TeemoDrawingsManager.InitializeDrawings();
+                TeemoCombo.ComboSpells();
                 TeemoCombo.Combo();
-            }
-
-            //Viktor
-            if (Player.Instance.Hero == Champion.Viktor)
-            {
-                ViktorSpellsManager.InitializeSpells();
-                ViktorMenus.CreateMenu();
-                ViktorDrawingsManager.InitializeDrawings();
-                ViktorCombo.Combo();
             }
         }
     }
