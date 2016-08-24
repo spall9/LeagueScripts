@@ -1,14 +1,33 @@
-﻿using EloBuddy;
+﻿using System;
+using System.Collections.Generic;
+using EloBuddy;
 using EloBuddy.SDK;
+using EloBuddy.SDK.Menu.Values;
 using Mario_s_Lib;
 using static RaINAIO.TeemoMenus;
-using static RaINAIO.TeemoCombo;
 
 namespace RaINAIO
 {
-    public static class TeemoSpellsManager
+    public static class TeemoSpellManager
     {
-        /// It sets the values to the spells
+
+        #region Spell Declare Function
+
+        /*
+        Targeted spells are like Katarina`s Q
+        Active spells are like Katarina`s W
+        Skillshots are like Ezreal`s Q
+        Circular Skillshots are like Lux`s E and Tristana`s W
+        Cone Skillshots are like Annie`s W and ChoGath`s W
+        */
+
+        public static Spell.Targeted Q;
+        public static Spell.Active W;
+        public static Spell.Active E;
+        public static Spell.Skillshot R;
+
+        public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
+
         public static void InitializeSpells()
         {
 
@@ -20,7 +39,9 @@ namespace RaINAIO
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
 
-        #region Damages
+        #endregion Spell Declare Function
+
+        #region Spell Damages and Stuff Function
 
         /// It will return the damage but you need to set them before getting the damage
         public static float GetDamage(this Obj_AI_Base target, SpellSlot slot)
@@ -61,14 +82,16 @@ namespace RaINAIO
                     if (R.IsReady())
                     {
                         //Information R Damage
-                        dmg += new float[] { 200, 325, 450 }[sLevel]+ 0.5f * AP;
+                        dmg += new float[] { 200, 325, 450 }[sLevel] + 0.5f * AP;
                     }
                     break;
             }
             return Player.Instance.CalculateDamageOnUnit(target, damageType, dmg - 10);
         }
 
-        #endregion Damages
+        #endregion Spell Damages and Stuff Function
+
+        #region Unit Level Up Function
 
         /// This event is triggered when a unit levels up
         private static void Obj_AI_Base_OnLevelUp(Obj_AI_Base sender, Obj_AI_BaseLevelUpEventArgs args)
@@ -125,6 +148,10 @@ namespace RaINAIO
             }
         }
 
+        #endregion Unit Level Up Function
+
+        #region Combobox Value into Spellslot Function
+
         /// It will transform the value of the combobox into a SpellSlot
         private static SpellSlot GetSlotFromComboBox(this int value)
         {
@@ -140,5 +167,50 @@ namespace RaINAIO
             Chat.Print("Failed getting slot");
             return SpellSlot.Unknown;
         }
+
+        #endregion Combobox Value into Spellslot Function
+
+        #region Combo Function
+
+        public static void ComboSpells()
+        {
+            //Declare Q Spell Values
+            Q = new Spell.Targeted(spellSlot: SpellSlot.Q, spellRange: 580);
+
+            //Triggers with every Core Tick
+            Game.OnTick += Game_OnTick;
+        }
+
+        private static void Game_OnTick(EventArgs args)
+        {
+            //Returns true if Combo Mode is Active in the Orbwalker 
+            if (Orbwalker.ActiveModesFlags.Equals(Orbwalker.ActiveModes.Combo))
+                Combo();
+        }
+
+        public static void Combo()
+        {
+            //Returns TargetSelector Target from the Range set
+            var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
+
+            //Return true of Target doesnt exist or null
+            if (qtarget == null)
+            {
+                return;
+            }
+
+            //Returns true if the Checkbox Q is enabled
+            if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+            {
+                //Returns true if Target si valid in Q Range
+                if (qtarget.IsValidTarget(Q.Range) && Q.IsReady())
+                {
+                    //Cast already applies Prediction so its not needed to use Qpred.CastPostion
+                    Q.Cast(qtarget);
+                }
+            }
+        }
     }
 }
+
+#endregion Combo Function

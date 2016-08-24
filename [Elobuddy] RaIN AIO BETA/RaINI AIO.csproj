@@ -56,8 +56,7 @@
     <Compile Include="Champions\Teemo\TeemoDamageIndicator.cs" />
     <Compile Include="Champions\Teemo\TeemoDrawingsManager.cs" />
     <Compile Include="Champions\Teemo\TeemoMenus.cs" />
-    <Compile Include="Champions\Teemo\TeemoSpellsManager.cs" />
-    <Compile Include="Champions\Teemo\TeemoCombo.cs" />
+    <Compile Include="Champions\Teemo\TeemoSpellManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
