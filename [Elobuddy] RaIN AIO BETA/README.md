@@ -27,7 +27,8 @@ Working on
 --------->
 
 -~~Make it Compact~~
--Port to another Lib
+
+-Port to another Lib (maybe)
 
 -Combo Mode
 
