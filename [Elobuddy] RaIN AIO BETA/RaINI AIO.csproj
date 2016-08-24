@@ -40,7 +40,7 @@
       <HintPath>C:\Users\RaIN\AppData\Roaming\EloBuddy\Addons\Libraries\EloBuddy.SDK.dll</HintPath>
     </Reference>
     <Reference Include="Mario`s Lib">
-      <HintPath>bin\Release\Mario`s Lib.dll</HintPath>
+      <HintPath>resources\Mario`s Lib.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX">
       <HintPath>C:\Users\RaIN\AppData\Roaming\EloBuddy\Addons\Libraries\SharpDX.dll</HintPath>
