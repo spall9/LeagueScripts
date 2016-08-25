@@ -14,15 +14,11 @@ Teemo
 Features
 --------->
 
--Damage Indicator - Buggy atm
-
--Combo Mode - Testing
-
--Flee Mode - Testing
+-Damage Indicator - Buggy atm (lib broken?)
 
 -Spell Range Indicator
 
--Skin Changer - Buggy atm
+-Skin Changer - Buggy atm (lib broken?)
 
 <---------
 Working on
@@ -30,9 +26,11 @@ Working on
 
 -~~Make it Compact~~
 
--Port to another Lib (maybe)
-
 -Combo Mode
+
+-Flee Mode
+
+-LaneClear mode
 
 -Fix Skin Changer
 
