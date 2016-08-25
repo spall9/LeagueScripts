@@ -54,6 +54,9 @@
     <Reference Include="EloBuddy.SDK">
       <HintPath>C:\Users\RaIN\AppData\Roaming\EloBuddy\Addons\Libraries\EloBuddy.SDK.dll</HintPath>
     </Reference>
+    <Reference Include="JokerLib">
+      <HintPath>resources\JokerLib.dll</HintPath>
+    </Reference>
     <Reference Include="Mario`s Lib">
       <HintPath>resources\Mario`s Lib.dll</HintPath>
     </Reference>
@@ -69,8 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Champions\Teemo\Base\TeemoAutoLevel.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoMenu.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoDamageIndicator.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoMenu.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoDrawings.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoSpells.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoCombo.cs" />
