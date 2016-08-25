@@ -58,9 +58,9 @@ namespace RaINAIO
             LaneClearMenu.Add("Q", new CheckBox("Use Q"));
             LaneClearMenu.Add("R", new CheckBox("Use R"));
 
-            LaneClearMenu.AddGroupLabel("Flee Settings");
-            LaneClearMenu.AddLabel("Use Ability/Item");
-            LaneClearMenu.Add("W", new CheckBox("Use W"));
+            FleeMenu.AddGroupLabel("Flee Settings");
+            FleeMenu.AddLabel("Use Ability/Item");
+            FleeMenu.Add("W", new CheckBox("Use W"));
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell Range only if Spell is Ready.", "readyDraw");
