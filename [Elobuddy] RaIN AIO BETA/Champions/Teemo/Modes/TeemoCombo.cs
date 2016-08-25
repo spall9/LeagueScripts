@@ -41,7 +41,7 @@ namespace T2IN1
             {
                 return;
             }
-
+            
             //Returns true if the Checkbox R is enabled
             if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
             {

@@ -20,7 +20,7 @@ namespace T2IN1
             E = new Spell.Active(SpellSlot.E, spellRange: 680);
 
             //Declare R Spell Values
-            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 400, skillShotType: SkillShotType.Circular);
+            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 400, skillShotType: SkillShotType.Circular, castDelay: 500, spellSpeed: 1000, spellWidth: 120);
         }
     }
 }

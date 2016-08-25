@@ -33,10 +33,10 @@ namespace T2IN1
         {
             FirstMenu = MainMenu.AddMenu("RaIN AIO " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
             ComboMenu = FirstMenu.AddSubMenu("• Combo - Testing");
-            LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear - Not Implemented");
-            LasthitMenu = FirstMenu.AddSubMenu("• Last Hit Settings");
-            KSMenu = FirstMenu.AddSubMenu("• Kill Steal Settings");
-            FleeMenu = FirstMenu.AddSubMenu("• Flee - Testing");
+            LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
+            LasthitMenu = FirstMenu.AddSubMenu("• Last Hit");
+            KSMenu = FirstMenu.AddSubMenu("• Kill Steal");
+            FleeMenu = FirstMenu.AddSubMenu("• Flee");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
@@ -60,6 +60,22 @@ namespace T2IN1
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.AddLabel("Use Ability/Item");
             FleeMenu.Add("W", new CheckBox("- Use W"));
+
+            KSMenu.AddGroupLabel("Kill Steal Settings");
+            KSMenu.AddLabel("Use Ability/Item");
+            KSMenu.Add("Q", new CheckBox("- Use W"));
+
+            MiscMenu.AddGroupLabel("Skin Changer");
+
+            var skinList = Mario_s_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
+            if (skinList != null)
+            {
+                MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
+                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange += delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
+                {
+                    Player.Instance.SetSkinId(sender.CurrentValue);
+                };
+            }
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell Range only if Spell is Ready.", "readyDraw");
