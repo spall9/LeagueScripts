@@ -68,11 +68,16 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Champions\Teemo\TeemoDamageIndicator.cs" />
-    <Compile Include="Champions\Teemo\TeemoDrawingsManager.cs" />
-    <Compile Include="Champions\Teemo\TeemoMenus.cs" />
-    <Compile Include="Champions\Teemo\TeemoSpellManager.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoAutoLevel.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoMenu.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoDamager.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoDrawings.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoSpellsManager.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoCombo.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoFlee.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoLane.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoKS.cs" />
+    <Compile Include="Loader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

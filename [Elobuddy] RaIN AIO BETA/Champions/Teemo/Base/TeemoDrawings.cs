@@ -2,8 +2,9 @@
 using EloBuddy;
 using EloBuddy.SDK.Rendering;
 using Mario_s_Lib;
-using static RaINAIO.TeemoSpellManager;
-using static RaINAIO.TeemoMenus;
+
+using static RaINAIO.TeemoMenu;
+using static RaINAIO.TeemoSpellsManager;
 
 namespace RaINAIO
 {

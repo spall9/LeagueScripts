@@ -5,9 +5,11 @@ using EloBuddy.SDK;
 using Mario_s_Lib;
 using SharpDX;
 using SharpDX.Direct3D9;
-using static RaINAIO.TeemoMenus;
+
 using Color = System.Drawing.Color;
 using Line = EloBuddy.SDK.Rendering.Line;
+
+using static RaINAIO.TeemoMenu;
 
 namespace RaINAIO
 {
