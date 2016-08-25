@@ -26,11 +26,11 @@ Working on
 
 -~~Make it Compact~~
 
--Combo Mode
+-Combo Mode + Logic
 
 -Flee Mode
 
--LaneClear mode
+-LaneClear Mode + Logic
 
 -Fix Skin Changer
 
