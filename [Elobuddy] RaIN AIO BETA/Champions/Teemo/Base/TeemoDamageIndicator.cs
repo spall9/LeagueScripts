@@ -9,9 +9,9 @@ using SharpDX.Direct3D9;
 using Color = System.Drawing.Color;
 using Line = EloBuddy.SDK.Rendering.Line;
 
-using static RaINAIO.TeemoMenu;
+using static T2IN1.TeemoMenu;
 
-namespace RaINAIO
+namespace T2IN1
 {
     /// It draws the damage on the enemies HealthBar
     internal class TeemoDamageIndicator

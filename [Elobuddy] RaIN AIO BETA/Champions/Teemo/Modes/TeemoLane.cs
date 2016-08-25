@@ -3,9 +3,9 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 
-using static RaINAIO.TeemoSpells;
+using static T2IN1.TeemoSpells;
 
-namespace RaINAIO
+namespace T2IN1
 {
     internal static class TeemoLane
     {

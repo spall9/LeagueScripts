@@ -2,9 +2,9 @@
 using EloBuddy;
 using EloBuddy.SDK;
 
-using static RaINAIO.TeemoAutoLevel;
+using static T2IN1.TeemoAutoLevel;
 
-namespace RaINAIO
+namespace T2IN1
 {
     public static class TeemoSpells
     {

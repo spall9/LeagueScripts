@@ -3,10 +3,10 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 
-using static RaINAIO.TeemoMenu;
-using static RaINAIO.TeemoSpells;
+using static T2IN1.TeemoMenu;
+using static T2IN1.TeemoSpells;
 
-namespace RaINAIO
+namespace T2IN1
 {
     internal class TeemoFlee
     {

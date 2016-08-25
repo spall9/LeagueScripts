@@ -2,7 +2,7 @@
 using EloBuddy;
 using EloBuddy.SDK.Events;
 
-namespace RaINAIO
+namespace T2IN1
 {
     internal class Loader
     {
