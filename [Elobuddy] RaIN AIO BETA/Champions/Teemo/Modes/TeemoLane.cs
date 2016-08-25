@@ -3,7 +3,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 
-using static RaINAIO.TeemoSpellsManager;
+using static RaINAIO.TeemoSpells;
 
 namespace RaINAIO
 {

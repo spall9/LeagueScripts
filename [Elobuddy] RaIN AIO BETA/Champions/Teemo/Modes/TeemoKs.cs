@@ -4,7 +4,7 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 
 using static RaINAIO.TeemoMenu;
-using static RaINAIO.TeemoSpellsManager;
+using static RaINAIO.TeemoSpells;
 
 namespace RaINAIO
 {

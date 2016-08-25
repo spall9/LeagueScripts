@@ -6,7 +6,7 @@ using static RaINAIO.TeemoAutoLevel;
 
 namespace RaINAIO
 {
-    public static class TeemoSpellsManager
+    public static class TeemoSpells
     {
         /*
         Targeted spells are like Katarina`s Q

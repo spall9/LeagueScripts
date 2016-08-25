@@ -4,7 +4,7 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 
 using static RaINAIO.TeemoMenu;
-using static RaINAIO.TeemoSpellsManager;
+using static RaINAIO.TeemoSpells;
 
 namespace RaINAIO
 {
@@ -40,7 +40,7 @@ namespace RaINAIO
             //Returns true if the Checkbox Q is enabled
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
             {
-                //Returns true if Target si valid in Q Range
+                //Returns true if Target is valid in Q Range
                 if (qtarget.IsValidTarget(Q.Range) && Q.IsReady())
                 {
                     //Cast already applies Prediction so its not needed to use Qpred.CastPostion

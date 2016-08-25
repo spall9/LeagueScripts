@@ -19,8 +19,8 @@ namespace RaINAIO
             if (Player.Instance.Hero == Champion.Teemo)
             {
                 TeemoMenu.CreateMenu();
-                TeemoDrawingsManager.InitializeDrawings();
-                TeemoSpellsManager.InitializeSpells();
+                TeemoDrawings.InitializeDrawings();
+                TeemoSpells.InitializeSpells();
                 TeemoCombo.ComboSpells();
 
                 Chat.Print("!DEV VERSION!");

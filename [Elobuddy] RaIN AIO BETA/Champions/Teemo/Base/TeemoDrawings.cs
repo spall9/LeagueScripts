@@ -4,11 +4,11 @@ using EloBuddy.SDK.Rendering;
 using Mario_s_Lib;
 
 using static RaINAIO.TeemoMenu;
-using static RaINAIO.TeemoSpellsManager;
+using static RaINAIO.TeemoSpells;
 
 namespace RaINAIO
 {
-    internal class TeemoDrawingsManager
+    internal class TeemoDrawings
     {
         public static void InitializeDrawings()
         {

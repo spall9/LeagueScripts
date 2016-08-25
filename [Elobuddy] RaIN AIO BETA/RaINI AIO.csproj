@@ -70,9 +70,9 @@
   <ItemGroup>
     <Compile Include="Champions\Teemo\Base\TeemoAutoLevel.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoMenu.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoDamager.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoDamageIndicator.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoDrawings.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoSpellsManager.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoSpells.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoCombo.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoFlee.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoLane.cs" />
