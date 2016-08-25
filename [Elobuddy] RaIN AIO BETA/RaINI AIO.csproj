@@ -76,6 +76,7 @@
     <Compile Include="Champions\Teemo\Base\TeemoMenu.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoDrawings.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoSpells.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoSummonerSpells.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoCombo.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoFlee.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoLane.cs" />

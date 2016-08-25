@@ -2,9 +2,9 @@
 using EloBuddy.SDK;
 using Mario_s_Lib;
 
-using static RaINAIO.TeemoMenu;
+using static T2IN1.TeemoMenu;
 
-namespace RaINAIO
+namespace T2IN1
 {
     public static class TeemoAutoLevel
     {

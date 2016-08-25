@@ -7,7 +7,7 @@ using EloBuddy.SDK.Menu.Values;
 using Mario_s_Lib;
 using Mario_s_Lib.DataBases;
 
-namespace RaINAIO
+namespace T2IN1
 {
     internal class TeemoMenu
     {
@@ -35,17 +35,6 @@ namespace RaINAIO
             FleeMenu = FirstMenu.AddSubMenu("• Flee - Testing");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
-
-            MiscMenu.AddGroupLabel("Skin Changer");
-
-            var skinList = Skins.SkinsDB.FirstOrDefault(list => list.Champ == Champion.Teemo);
-            if (skinList != null)
-            {
-                MiscMenu.CreateComboBox("Choose Skin", "skinComboBox", skinList.Skins);
-                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
-                    delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args) { Player.Instance.SetSkinId(sender.CurrentValue); };
-                Player.Instance.SetSkinId(MiscMenu.Get<ComboBox>("skinComboBox").CurrentValue);
-            }
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.AddLabel("Use Ability");
