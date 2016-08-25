@@ -47,8 +47,8 @@ namespace RaINAIO
             ComboMenu.CreateCheckBox("Use Combo mode", "usecombo", true);
             ComboMenu.AddLabel("Use ability in Combo");
             ComboMenu.Add("Q", new CheckBox("Use Q"));
-            ComboMenu.Add("W", new CheckBox("Use W"));
-            ComboMenu.Add("R", new CheckBox("Use R"));
+            ComboMenu.Add("W", new CheckBox("Use W - Not Implemented"));
+            ComboMenu.Add("R", new CheckBox("Use R - Not Implemented"));
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell`s range only if they are ready.", "readyDraw");

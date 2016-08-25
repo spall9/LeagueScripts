@@ -18,13 +18,13 @@ namespace RaINAIO
             //Teemo
             if (Player.Instance.Hero == Champion.Teemo)
             {
+                Chat.Print("!DEV VERSION!");
+                Chat.Print("RaIN AIO Teemo Loaded!");
+                Chat.Print("Credits to MarioGK for his Addon Template");
                 TeemoSpellManager.InitializeSpells();
                 TeemoMenus.CreateMenu();
                 TeemoDrawingsManager.InitializeDrawings();
                 TeemoSpellManager.ComboSpells();
-                Chat.Print("!DEV VERSION!");
-                Chat.Print("RaIN AIO Teemo Loaded!");
-                Chat.Print("Credits to MarioGK for his Addon Template");
             }
         }
     }
