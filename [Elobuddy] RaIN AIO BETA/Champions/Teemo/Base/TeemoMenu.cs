@@ -17,6 +17,7 @@ namespace RaINAIO
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
+        public static Menu FleeMenu;
         public static Menu MiscMenu;
 
         //These colorslider are from Mario`s Lib
@@ -29,8 +30,9 @@ namespace RaINAIO
         public static void CreateMenu()
         {
             FirstMenu = MainMenu.AddMenu("RaIN AIO " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
-            ComboMenu = FirstMenu.AddSubMenu("• Combo");
+            ComboMenu = FirstMenu.AddSubMenu("• Combo - Testing");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear - Not Implemented");
+            FleeMenu = FirstMenu.AddSubMenu("• Flee - Testing");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
@@ -56,11 +58,15 @@ namespace RaINAIO
             LaneClearMenu.Add("Q", new CheckBox("Use Q"));
             LaneClearMenu.Add("R", new CheckBox("Use R"));
 
+            LaneClearMenu.AddGroupLabel("Flee Settings");
+            LaneClearMenu.AddLabel("Use Ability/Item");
+            LaneClearMenu.Add("W", new CheckBox("Use W"));
+
             DrawingsMenu.AddGroupLabel("Setting");
-            DrawingsMenu.CreateCheckBox(" - Draw Spell`s range only if they are ready.", "readyDraw");
-            DrawingsMenu.CreateCheckBox(" - Draw damage indicator.", "damageDraw");
-            DrawingsMenu.CreateCheckBox(" - Draw damage indicator percent.", "perDraw");
-            DrawingsMenu.CreateCheckBox(" - Draw damage indicator statistics.", "statDraw", false);
+            DrawingsMenu.CreateCheckBox(" - Draw Spell Range only if Spell is Ready.", "readyDraw");
+            DrawingsMenu.CreateCheckBox(" - Draw Damage Indicator.", "damageDraw");
+            DrawingsMenu.CreateCheckBox(" - Draw Damage Indicator Percent.", "perDraw");
+            DrawingsMenu.CreateCheckBox(" - Draw Damage Indicator Statistics.", "statDraw", false);
             DrawingsMenu.AddGroupLabel("Spells");
             DrawingsMenu.CreateCheckBox(" - Draw Q.", "qDraw");
             DrawingsMenu.CreateCheckBox(" - Draw W.", "wDraw");
@@ -75,11 +81,11 @@ namespace RaINAIO
 
             MiscMenu.AddGroupLabel("Auto Level UP");
             MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL", false);
-            MiscMenu.AddLabel("The auto leveler will always focus R than the rest of the spells");
-            MiscMenu.CreateComboBox("1st Spell to focus", "firstFocus", new List<string> { "Q", "W", "E" });
-            MiscMenu.CreateComboBox("2nd Spell to focus", "secondFocus", new List<string> { "Q", "W", "E" }, 1);
-            MiscMenu.CreateComboBox("3rd Spell to focus", "thirdFocus", new List<string> { "Q", "W", "E" }, 2);
-            MiscMenu.CreateSlider("Delay slider", "delaySlider", 200, 150, 500);
+            MiscMenu.AddLabel("The Auto Leveler will always Focus R than the rest of the Spells");
+            MiscMenu.CreateComboBox("1 Spell to Focus", "firstFocus", new List<string> { "Q", "W", "E" });
+            MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> { "Q", "W", "E" }, 1);
+            MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> { "Q", "W", "E" }, 2);
+            MiscMenu.CreateSlider("Delay Slider", "delaySlider", 200, 150, 500);
         }
     }
 }
