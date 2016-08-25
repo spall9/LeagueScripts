@@ -1,8 +1,8 @@
-# RaIN AIO !BETA!
+# The 2 in 1 AIO !BETA!
 ___
 -Work in Progress
 
--Current Version 6.16
+-Current Version 6.17
 
 <---------
 Champions
