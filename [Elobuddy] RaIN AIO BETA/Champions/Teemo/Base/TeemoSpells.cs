@@ -67,6 +67,7 @@ namespace T2IN1
                     {
                         //Information E Damage
                         dmg += new float[] { 24, 48, 72, 96, 120 }[sLevel] + 0.4f * AP;
+                        dmg += new float[] { 6, 12, 18, 24, 30 }[sLevel] + 0.1f * AP;
                     }
                     break;
                 case SpellSlot.R:

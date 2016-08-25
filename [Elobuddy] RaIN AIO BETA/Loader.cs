@@ -21,12 +21,11 @@ namespace T2IN1
                 TeemoMenu.CreateMenu();
                 TeemoDrawings.InitializeDrawings();
                 TeemoSpells.InitializeSpells();
-                TeemoCombo.ComboSpells();
-                TeemoFlee.FleeSpells();
+                TeemoModeManager.InitializeModes();
 
-                Chat.Print("!DEV VERSION!");
-                Chat.Print("RaIN AIO Teemo Loaded!");
+                Chat.Print("T2IN1 AIO Teemo Loaded!");
                 Chat.Print("Credits to MarioGK for his Addon Template");
+                Chat.Print("Thanks to: MarioGK, scarEl");
             }
         }
     }

@@ -17,6 +17,8 @@ namespace T2IN1
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
+        public static Menu KSMenu;
+        public static Menu LasthitMenu;
         public static Menu FleeMenu;
         public static Menu MiscMenu;
 
@@ -32,24 +34,32 @@ namespace T2IN1
             FirstMenu = MainMenu.AddMenu("RaIN AIO " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
             ComboMenu = FirstMenu.AddSubMenu("• Combo - Testing");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear - Not Implemented");
+            LasthitMenu = FirstMenu.AddSubMenu("• Last Hit Settings");
+            KSMenu = FirstMenu.AddSubMenu("• Kill Steal Settings");
             FleeMenu = FirstMenu.AddSubMenu("• Flee - Testing");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.AddLabel("Use Ability");
-            ComboMenu.Add("Q", new CheckBox("Use Q - Testing"));
-            ComboMenu.Add("W", new CheckBox("Use W - Not Implemented"));
-            ComboMenu.Add("R", new CheckBox("Use R - Not Implemented"));
+            ComboMenu.Add("Q", new CheckBox("- Use Q - Testing"));
+            ComboMenu.Add("W", new CheckBox("- Use W - Not Implemented"));
+            ComboMenu.Add("R", new CheckBox("- Use R - Not Implemented"));
 
-            LaneClearMenu.AddGroupLabel("LaneClear Settings");
+            LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.AddLabel("Use Ability");
-            LaneClearMenu.Add("Q", new CheckBox("Use Q"));
-            LaneClearMenu.Add("R", new CheckBox("Use R"));
+            LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
+            LaneClearMenu.Add("R", new CheckBox("- Use R"));
+            LaneClearMenu.CreateSlider("Mana must be lower than [{0}%] to use LaneClear spells", "manaSlider", 30);
+
+            LasthitMenu.AddGroupLabel("Last Hit Settings");
+            LasthitMenu.AddLabel("Use Ability");
+            LasthitMenu.Add("Q", new CheckBox("- Use Q"));
+            LasthitMenu.CreateSlider("Mana must be lower than [{0}%] to use LaneClear spells", "manaSlider", 30);
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.AddLabel("Use Ability/Item");
-            FleeMenu.Add("W", new CheckBox("Use W"));
+            FleeMenu.Add("W", new CheckBox("- Use W"));
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell Range only if Spell is Ready.", "readyDraw");

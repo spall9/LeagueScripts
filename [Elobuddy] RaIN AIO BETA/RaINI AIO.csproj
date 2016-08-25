@@ -54,9 +54,6 @@
     <Reference Include="EloBuddy.SDK">
       <HintPath>C:\Users\RaIN\AppData\Roaming\EloBuddy\Addons\Libraries\EloBuddy.SDK.dll</HintPath>
     </Reference>
-    <Reference Include="JokerLib">
-      <HintPath>resources\JokerLib.dll</HintPath>
-    </Reference>
     <Reference Include="Mario`s Lib">
       <HintPath>resources\Mario`s Lib.dll</HintPath>
     </Reference>
@@ -73,14 +70,18 @@
   <ItemGroup>
     <Compile Include="Champions\Teemo\Base\TeemoAutoLevel.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoDamageIndicator.cs" />
+    <Compile Include="Champions\Teemo\Base\TeemoExtensions.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoMenu.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoDrawings.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoSpells.cs" />
     <Compile Include="Champions\Teemo\Base\TeemoSummonerSpells.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoActive.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoCombo.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoFlee.cs" />
-    <Compile Include="Champions\Teemo\Modes\TeemoLane.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoLaneClear.cs" />
     <Compile Include="Champions\Teemo\Modes\TeemoKS.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoLastHit.cs" />
+    <Compile Include="Champions\Teemo\Modes\TeemoModeManager.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
