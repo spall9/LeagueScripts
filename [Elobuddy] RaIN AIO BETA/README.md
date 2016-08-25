@@ -14,13 +14,15 @@ Teemo
 Features
 --------->
 
--Damage Indicator
+-Damage Indicator - Buggy atm
 
--Combo Mode
+-Combo Mode - Testing
+
+-Flee Mode - Testing
 
 -Spell Range Indicator
 
--Skin Changer
+-Skin Changer - Buggy atm
 
 <---------
 Working on
