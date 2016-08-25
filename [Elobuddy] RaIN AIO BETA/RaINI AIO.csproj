@@ -7,8 +7,8 @@
     <ProjectGuid>{ACE38CEE-7B1F-47CE-AA83-A71FE2949919}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RaINAIO</RootNamespace>
-    <AssemblyName>RaINAIO</AssemblyName>
+    <RootNamespace>T2IN1AIO</RootNamespace>
+    <AssemblyName>T2IN1AIO</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -10,3 +10,4 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Debug\Newtonsoft.Json.d
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Debug\RaINI AIO.csprojResolveAssemblyReference.cache
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Debug\RaINAIO.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Debug\RaINAIO.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Debug\T2IN1AIO.exe.config
