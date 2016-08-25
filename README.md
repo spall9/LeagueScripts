@@ -16,5 +16,7 @@ ___
 -[RaIN AIO] Added First Teemo Combo (24.08.2016)
 
 -[RaIN AIO] Code Cleanup Finished (25.08.2016)
+
+-[RaIN AIO] Adding Flee Mode (25.08.2016)
 ___
 
