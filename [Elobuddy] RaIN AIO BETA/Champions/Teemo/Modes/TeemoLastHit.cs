@@ -10,7 +10,7 @@ namespace T2IN1
 
         public static void Execute()
         {
-            Q.TryToCast(Q.GetLastHitMinion(), LaneClearMenu);
+            Q.TryToCast(Q.GetLastHitMinion(), LasthitMenu);
         }
     }
 }

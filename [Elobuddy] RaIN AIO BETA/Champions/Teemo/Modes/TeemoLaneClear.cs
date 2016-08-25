@@ -1,6 +1,5 @@
 ﻿using System;
 using EloBuddy;
-using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 using Mario_s_Lib;
@@ -14,7 +13,8 @@ namespace T2IN1
     {
         public static void Execute()
         {
-            
+            Q.TryToCast(Q.GetJungleMinion(), LaneClearMenu);
+            R.TryToCast(R.GetBestCircularFarmPosition(), LasthitMenu);
         }
     }
 }

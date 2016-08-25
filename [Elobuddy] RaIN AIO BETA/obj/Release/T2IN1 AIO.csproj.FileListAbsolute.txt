@@ -3,9 +3,10 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\T2IN1AIO.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\T2IN1AIO.pdb
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.SDK.dll
-F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Lib.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.Direct3D9.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Newtonsoft.Json.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1 AIO.csprojResolveAssemblyReference.cache
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Lib.dll

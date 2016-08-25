@@ -54,7 +54,8 @@
     <Reference Include="EloBuddy.SDK">
       <HintPath>C:\Users\RaIN\AppData\Roaming\EloBuddy\Addons\Libraries\EloBuddy.SDK.dll</HintPath>
     </Reference>
-    <Reference Include="Mario`s Lib">
+    <Reference Include="Mario`s Lib, Version=0.0.0.9, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>resources\Mario`s Lib.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX">

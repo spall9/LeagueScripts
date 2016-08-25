@@ -42,20 +42,20 @@ namespace T2IN1
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.AddLabel("Use Ability");
-            ComboMenu.Add("Q", new CheckBox("- Use Q - Testing"));
-            ComboMenu.Add("W", new CheckBox("- Use W - Not Implemented"));
-            ComboMenu.Add("R", new CheckBox("- Use R - Not Implemented"));
+            ComboMenu.Add("Q", new CheckBox("- Use Q"));
+            ComboMenu.Add("W", new CheckBox("- Use W"));
+            ComboMenu.Add("R", new CheckBox("- Use R"));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.AddLabel("Use Ability");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("R", new CheckBox("- Use R"));
-            LaneClearMenu.CreateSlider("Mana must be lower than [{0}%] to use LaneClear spells", "manaSlider", 30);
+            LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 30);
 
             LasthitMenu.AddGroupLabel("Last Hit Settings");
             LasthitMenu.AddLabel("Use Ability");
             LasthitMenu.Add("Q", new CheckBox("- Use Q"));
-            LasthitMenu.CreateSlider("Mana must be lower than [{0}%] to use LaneClear spells", "manaSlider", 30);
+            LasthitMenu.CreateSlider("Mana must be higher than [{0}%] to use Last Hit spells", "manaSlider", 45);
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.AddLabel("Use Ability/Item");

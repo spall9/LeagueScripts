@@ -35,6 +35,11 @@ namespace T2IN1
             {
                 TeemoLaneClear.Execute();
             }
+
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee) && playerMana > LasthitMenu.GetSliderValue("manaSlider"))
+            {
+                TeemoFlee.Execute();
+            }
         }
     }
 }
