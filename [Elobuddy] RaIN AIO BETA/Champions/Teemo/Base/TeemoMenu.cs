@@ -30,7 +30,7 @@ namespace RaINAIO
         {
             FirstMenu = MainMenu.AddMenu("RaIN AIO " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
             ComboMenu = FirstMenu.AddSubMenu("• Combo");
-            LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
+            LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear - Not Implemented");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
@@ -51,10 +51,10 @@ namespace RaINAIO
             ComboMenu.Add("W", new CheckBox("Use W - Not Implemented"));
             ComboMenu.Add("R", new CheckBox("Use R - Not Implemented"));
 
-            LaneClearMenu.AddGroupLabel("LaneClear Settings - Not Implemented");
+            LaneClearMenu.AddGroupLabel("LaneClear Settings");
             LaneClearMenu.AddLabel("Use Ability");
-            LaneClearMenu.Add("Q", new CheckBox("Use Q - Not Implemented"));
-            LaneClearMenu.Add("R", new CheckBox("Use R - Not Implemented"));
+            LaneClearMenu.Add("Q", new CheckBox("Use Q"));
+            LaneClearMenu.Add("R", new CheckBox("Use R"));
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell`s range only if they are ready.", "readyDraw");
