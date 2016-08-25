@@ -22,6 +22,7 @@ namespace RaINAIO
                 TeemoDrawings.InitializeDrawings();
                 TeemoSpells.InitializeSpells();
                 TeemoCombo.ComboSpells();
+                TeemoFlee.FleeSpells();
 
                 Chat.Print("!DEV VERSION!");
                 Chat.Print("RaIN AIO Teemo Loaded!");
