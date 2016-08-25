@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaINI AIO", "RaINI AIO.csproj", "{ACE38CEE-7B1F-47CE-AA83-A71FE2949919}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2IN1 AIO", "T2IN1 AIO.csproj", "{ACE38CEE-7B1F-47CE-AA83-A71FE2949919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
