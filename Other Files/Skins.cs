@@ -150,7 +150,7 @@ namespace Mario_s_Lib.DataBases
             new Skin(Champion.Ziggs, new List<string> {"Basic Skin", "Mad Scientist Ziggs", "Major Ziggs", "Pool Party Ziggs", "Snow Day Ziggs", "Master Arcanist Ziggs"}),
             new Skin(Champion.Zilean, new List<string> {"Basic Skin", "Old Saint Zilean", "Groovy Zilean", "Shurima Desert Zilean", "Time Machine Zilean", "Blood Moon Zilean"}),
             new Skin(Champion.Zyra, new List<string> {"Basic Skin", "WildFire Zyra", "Haunted Zyra", "SKT T1 Zyra"}),
-			new Skin(Champion.Kled, new List<string> {"Basic Skin", "Sir Kled"}),
+	    new Skin(Champion.Kled, new List<string> {"Basic Skin", "Sir Kled"}),
         };
     }
 }
