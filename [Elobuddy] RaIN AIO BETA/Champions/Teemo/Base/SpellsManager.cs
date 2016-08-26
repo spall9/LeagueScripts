@@ -2,6 +2,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 using Mario_s_Lib;
+using SharpDX.Windows;
 using static T2IN1_Teemo.Menus;
 
 namespace T2IN1_Teemo
@@ -30,6 +31,25 @@ namespace T2IN1_Teemo
             R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 400, skillShotType: SkillShotType.Cone, castDelay: 500, spellSpeed: 1000, spellWidth: 120);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
+        }
+
+        // No Idea what i just did here :P
+        public static float rlevel(SpellSlot slot)
+        {
+            var rLevel = Player.GetSpell(SpellSlot.R).Level - 1;
+            var range = 1f;
+
+            switch (slot)
+            {
+                case SpellSlot.R:
+                    if (R.IsReady())
+                    {
+                        range += new float[] {400, 650, 900}[rLevel];
+                    }
+                    break;
+
+            }
+            return Player.Instance.Level;
         }
 
         #region Damages

@@ -12,7 +12,7 @@ namespace T2IN1_Teemo
     {
         public static void Execute()
         {
-            Q.TryToCast(Q.GetLastHitMinion(), LasthitMenu);
+            Q.TryToCast(Q.GetKillableHero(), LasthitMenu);
         }
     }
 }
