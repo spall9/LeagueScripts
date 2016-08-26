@@ -10,7 +10,7 @@ namespace T2IN1_Teemo
 {
     internal static class Combo
     {
-        public static void Execute()
+        public static void Execute1()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
 
@@ -26,14 +26,17 @@ namespace T2IN1_Teemo
                     Q.TryToCast(qtarget, ComboMenu);
                 }
             }
+        }
 
+        public static void Execute2()
+        {
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
 
             if (rtarget == null)
             {
                 return;
             }
-            
+
             if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
             {
                 if (rtarget.IsValidTarget(R.Range) && R.IsReady())

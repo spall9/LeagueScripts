@@ -23,10 +23,15 @@ namespace T2IN1_Teemo
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
             {
-                Combo.Execute();
+                Combo.Execute1();
             }
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.LastHit) && playerMana > LasthitMenu.GetSliderValue("manaSlider"))
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && playerMana > ComboMenu.GetSliderValue("manaSlider"))
+            {
+                Combo.Execute2();
+            }
+
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.LastHit) && playerMana > LastHitMenu.GetSliderValue("manaSlider"))
             {
                 LastHit.Execute();
             }
@@ -36,7 +41,7 @@ namespace T2IN1_Teemo
                 LaneClear.Execute();
             }
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee) && playerMana > LasthitMenu.GetSliderValue("manaSlider"))
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee) && playerMana > LastHitMenu.GetSliderValue("manaSlider"))
             {
                 Flee.Execute();
             }
