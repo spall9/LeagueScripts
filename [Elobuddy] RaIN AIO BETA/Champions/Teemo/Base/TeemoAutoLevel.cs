@@ -74,6 +74,8 @@ namespace T2IN1
                     return SpellSlot.W;
                 case 2:
                     return SpellSlot.E;
+                case 3:
+                    return SpellSlot.R;
             }
             Chat.Print("Failed getting slot");
             return SpellSlot.Unknown;

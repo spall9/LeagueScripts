@@ -43,8 +43,8 @@ namespace T2IN1
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.AddLabel("Use Ability");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
-            ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
+            ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.AddLabel("Use Ability");
@@ -60,10 +60,6 @@ namespace T2IN1
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.AddLabel("Use Ability/Item");
             FleeMenu.Add("W", new CheckBox("- Use W"));
-
-            KSMenu.AddGroupLabel("Kill Steal Settings");
-            KSMenu.AddLabel("Use Ability/Item");
-            KSMenu.Add("Q", new CheckBox("- Use W"));
 
             MiscMenu.AddGroupLabel("Skin Changer");
 

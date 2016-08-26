@@ -10,17 +10,10 @@ namespace T2IN1
     {
         public static void TeemoActive()
         {
-            //Declare Q Spell Values
-            Q = new Spell.Targeted(spellSlot: SpellSlot.Q, spellRange: 580);
-
-            //Declare R Spell Values
+            Q = new Spell.Targeted(spellSlot: SpellSlot.Q, spellRange: 680);
             W = new Spell.Active(spellSlot: SpellSlot.W);
-
-            //Declare R Spell Values
             E = new Spell.Active(SpellSlot.E, spellRange: 680);
-
-            //Declare R Spell Values
-            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 400, skillShotType: SkillShotType.Circular, castDelay: 500, spellSpeed: 1000, spellWidth: 120);
+            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 400, skillShotType: SkillShotType.Cone, castDelay: 500, spellSpeed: 1000, spellWidth: 120);
         }
     }
 }

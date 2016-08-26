@@ -3,6 +3,8 @@ using EloBuddy;
 using EloBuddy.SDK;
 
 using static T2IN1.TeemoAutoLevel;
+using static T2IN1.Extensions;
+using static T2IN1.Active;
 
 namespace T2IN1
 {
@@ -37,7 +39,7 @@ namespace T2IN1
         //It will return the damage but you need to set them before getting the damage
         public static float GetDamage(this Obj_AI_Base target, SpellSlot slot)
         {
-            const DamageType damageType = DamageType.Magical;
+            var damageType = DamageType.Magical;
             var AD = Player.Instance.FlatPhysicalDamageMod;
             var AP = Player.Instance.FlatMagicDamageMod;
             var sLevel = Player.GetSpell(slot).Level - 1;
@@ -51,30 +53,25 @@ namespace T2IN1
                 case SpellSlot.Q:
                     if (Q.IsReady())
                     {
-                        //Information Q Damage
-                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
+                        dmg += new float[] {80, 125, 170, 215, 260}[sLevel] + 0.8f*AP;
                     }
                     break;
                 case SpellSlot.W:
                     if (W.IsReady())
                     {
-                        //Information W Damage
-                        dmg += new float[] { 0, 0, 0, 0, 0 }[sLevel] + 0.0f * AP;
+                        dmg += new float[] {0, 0, 0, 0, 0}[sLevel];
                     }
                     break;
                 case SpellSlot.E:
                     if (E.IsReady())
                     {
-                        //Information E Damage
-                        dmg += new float[] { 24, 48, 72, 96, 120 }[sLevel] + 0.4f * AP;
-                        dmg += new float[] { 6, 12, 18, 24, 30 }[sLevel] + 0.1f * AP;
+                        dmg += new float[] {24, 48, 72, 96, 120}[sLevel] + 0.4f*AP;
                     }
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
                     {
-                        //Information R Damage
-                        dmg += new float[] { 200, 325, 450 }[sLevel] + 0.5f * AP;
+                        dmg += new float[] { 200, 325, 450 }[sLevel] + 0.5f*AP;
                     }
                     break;
             }

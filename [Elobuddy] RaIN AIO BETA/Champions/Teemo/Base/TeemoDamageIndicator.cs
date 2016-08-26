@@ -9,6 +9,7 @@ using SharpDX.Direct3D9;
 using Color = System.Drawing.Color;
 using Line = EloBuddy.SDK.Rendering.Line;
 
+using static  T2IN1.Extensions;
 using static T2IN1.TeemoMenu;
 
 namespace T2IN1
@@ -58,7 +59,7 @@ namespace T2IN1
                     EntityManager.Heroes.Enemies.Where(e => e.IsValid && e.IsHPBarRendered && e.TotalShieldHealth() > 10)
                 )
             {
-                var damage = enemy.GetTotalDamageEBDB();
+                var damage = enemy.GetTotalDamage();
                 if (DrawingsMenu.GetCheckBoxValue("damageDraw"))
                 {
                     //Drawing Line Over Enemies Helth bar

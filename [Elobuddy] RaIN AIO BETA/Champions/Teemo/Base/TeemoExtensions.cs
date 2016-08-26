@@ -1,9 +1,8 @@
 ﻿using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
-using T2IN1;
 
-namespace Mario_s_Template
+namespace T2IN1
 {
     public static class Extensions
     {

@@ -3,6 +3,7 @@ using EloBuddy;
 using EloBuddy.SDK.Rendering;
 using Mario_s_Lib;
 
+using static T2IN1.Extensions;
 using static T2IN1.TeemoMenu;
 using static T2IN1.TeemoSpells;
 
@@ -17,7 +18,6 @@ namespace T2IN1
             TeemoDamageIndicator.Init();
         }
 
-        /// Normal drawings
         private static void Drawing_OnDraw(EventArgs args)
         {
             var readyDraw = DrawingsMenu.GetCheckBoxValue("readyDraw");

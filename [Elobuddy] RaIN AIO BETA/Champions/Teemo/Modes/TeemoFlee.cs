@@ -12,7 +12,6 @@ namespace T2IN1
     {
         public static void Execute()
         {
-            //Returns true if the Checkbox W is enabled
             if (FleeMenu["W"].Cast<CheckBox>().CurrentValue)
             {
                 if (W.IsReady())
