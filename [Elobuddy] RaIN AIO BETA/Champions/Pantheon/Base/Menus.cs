@@ -32,7 +32,7 @@ namespace T2IN1_Pantheon
 
         public static void CreateMenu()
         {
-            FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
+            FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Pantheon");
             ActivatorMenu = FirstMenu.AddSubMenu("• Activator");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
