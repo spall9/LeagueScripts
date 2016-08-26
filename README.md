@@ -10,5 +10,7 @@ ___
 -[T2IN1 AIO] Fixed Skin Changer(26.08.2016)
 
 -[T2IN1 AIO] Added Pantheon(26.08.2016)
+
+-[T2IN1 AIO] Added Items for Activator(26.08.2016)
 ___
 
