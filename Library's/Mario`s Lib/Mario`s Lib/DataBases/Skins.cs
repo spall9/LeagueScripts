@@ -122,7 +122,7 @@ namespace Mario_s_Lib.DataBases
             new Skin(Champion.TahmKench, new List<string> {"Basic Skin", "Master Chef Tahm Kench", "Urf Kench"}),
             new Skin(Champion.Talon, new List<string> {"Basic Skin", "Renegade Talon", "Crimson Elite Talon", "Dragonblade Talon", "SSW Talon"}),
             new Skin(Champion.Taric, new List<string> {"Basic Skin", "Emerald Taric", "Armor of the Fifth Age Taric", "Bloodstone Taric"}),
-            new Skin(Champion.Teemo, new List<string> {"Basic Skin", "Happy Elf Teemo", "Recon Teemo", "Badger Teemo", "Astronaut Teemo", "Cottontail Teemo", "Super Teemo", "Panda Teemo"}),
+            new Skin(Champion.Teemo, new List<string> {"Basic Skin", "Happy Elf Teemo", "Recon Teemo", "Badger Teemo", "Astronaut Teemo", "Cottontail Teemo", "Super Teemo", "Panda Teemo", "Omega Squad Teemo"}),
             new Skin(Champion.Thresh, new List<string> {"Basic Skin", "Deep Terror Thresh", "Championship Thresh", "Blood Moon Thresh", "SSW Thresh"}),
             new Skin(Champion.Tristana, new List<string> { "Basic Skin", "Riot Girl Tristana", "Earnest Elf Tristana", "Firefighter Tristana", "Guerilla Tristana", "Buccaneer Tristana", "Rocket Girl Tristana", "Dragon Trainer Tristana",}),
             new Skin(Champion.Trundle, new List<string> {"Basic Skin", "Lil Slugger Trundle", "Junkyard Trundle", "Traditional Trundle", "Constable Trundle"}),
