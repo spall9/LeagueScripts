@@ -1,6 +1,5 @@
 # T2IN1 AIO !BETA!
 
-"build passing"
 ___
 -Work in Progress
 
