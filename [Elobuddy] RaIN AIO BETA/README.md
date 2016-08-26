@@ -4,15 +4,15 @@ ___
 
 -Current Version 6.17
 
-<---------
+**<---------
 Champions
---------->
+--------->**
 
 Teemo
 
-<---------
+**<---------
 Features
---------->
+--------->**
 
 -Damage Indicator
 
@@ -26,9 +26,9 @@ Features
 
 -Skin Changer
 
-<---------
+**<---------
 Working on
---------->
+--------->**
 
 -~~Make it Compact~~
 
