@@ -9,3 +9,4 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Newtonsoft.Json.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1 AIO.csprojResolveAssemblyReference.cache

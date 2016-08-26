@@ -25,6 +25,19 @@ namespace T2IN1
                 Chat.Print("Credits to MarioGK for his Addon Template");
                 Chat.Print("Thanks to: MarioGK, scarEl");
             }
+
+            //Pantheon
+            if (Player.Instance.Hero == Champion.Pantheon)
+            {
+                T2IN1_Pantheon.SpellsManager.InitializeSpells();
+                T2IN1_Pantheon.Menus.CreateMenu();
+                T2IN1_Pantheon.ModeManager.InitializeModes();
+                T2IN1_Pantheon.DrawingsManager.InitializeDrawings();
+
+                Chat.Print("T2IN1 AIO Pantheon Loaded!");
+                Chat.Print("Credits to MarioGK for his Addon Template");
+                Chat.Print("Thanks to: MarioGK, scarEl");
+            }
         }
     }
 }

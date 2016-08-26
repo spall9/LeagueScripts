@@ -5,13 +5,13 @@ using EloBuddy.SDK.Menu.Values;
 using EloBuddy.SDK.Rendering;
 using Mario_s_Lib;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Pantheon
 {
-    internal class Activator
+    internal class Active
     {
         public static void Execute()
         {
-            
+
         }
     }
 }

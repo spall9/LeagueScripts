@@ -69,6 +69,19 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Champions\Pantheon\Base\AutoLevel.cs" />
+    <Compile Include="Champions\Pantheon\Base\DamageIndicator.cs" />
+    <Compile Include="Champions\Pantheon\Base\DrawingsManager.cs" />
+    <Compile Include="Champions\Pantheon\Base\Extensions.cs" />
+    <Compile Include="Champions\Pantheon\Base\Menus.cs" />
+    <Compile Include="Champions\Pantheon\Base\SpellsManager.cs" />
+    <Compile Include="Champions\Pantheon\Modes\Activator.cs" />
+    <Compile Include="Champions\Pantheon\Modes\Active.cs" />
+    <Compile Include="Champions\Pantheon\Modes\Combo.cs" />
+    <Compile Include="Champions\Pantheon\Modes\Flee.cs" />
+    <Compile Include="Champions\Pantheon\Modes\LaneClear.cs" />
+    <Compile Include="Champions\Pantheon\Modes\LastHit.cs" />
+    <Compile Include="Champions\Pantheon\Modes\ModeManager.cs" />
     <Compile Include="Champions\Teemo\Base\AutoLevel.cs" />
     <Compile Include="Champions\Teemo\Base\DamageIndicator.cs" />
     <Compile Include="Champions\Teemo\Base\Extensions.cs" />
