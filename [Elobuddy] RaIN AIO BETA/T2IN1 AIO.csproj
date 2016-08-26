@@ -72,7 +72,7 @@
     <Compile Include="Champions\Teemo\Base\AutoLevel.cs" />
     <Compile Include="Champions\Teemo\Base\DamageIndicator.cs" />
     <Compile Include="Champions\Teemo\Base\Extensions.cs" />
-    <Compile Include="Champions\Teemo\Base\Menu.cs" />
+    <Compile Include="Champions\Teemo\Base\Menus.cs" />
     <Compile Include="Champions\Teemo\Base\DrawingsManager.cs" />
     <Compile Include="Champions\Teemo\Base\SpellsManager.cs" />
     <Compile Include="Champions\Teemo\Modes\Active.cs" />
