@@ -1,6 +1,4 @@
 # T2IN1 AIO !BETA!
-
-The 2 in 1 AIO!
 ___
 -Work in Progress
 
@@ -16,11 +14,17 @@ Teemo
 Features
 --------->
 
--Damage Indicator - Buggy atm (lib broken?)
+-Damage Indicator
 
--Spell Range Indicator
+-ComboMode
 
--Skin Changer - Buggy atm (lib broken?)
+-LaneClear
+
+-LastHit
+
+-Flee
+
+-Skin Changer
 
 <---------
 Working on
@@ -28,13 +32,16 @@ Working on
 
 -~~Make it Compact~~
 
--Combo Mode + Logic
+-~~Fix Skin Changer~~
 
--Flee Mode
+-Add KS?
 
--LaneClear Mode + Logic
+-Add Activator?
 
--Fix Skin Changer
+-Flee Mode (Adding Items)
+
+-Combo Mode (Fixing Shroom Spam)
+
+-LaneClear Mode (Fixing Shroom Spam)
 
 -Fix Damage Indicator
-
