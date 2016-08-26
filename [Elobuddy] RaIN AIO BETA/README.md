@@ -6,13 +6,11 @@ ___
 
 -Current Version 6.17
 
-**<---------
-Champions**
+**Champions--------->**
 
 Teemo
 
-**<---------
-Features**
+**Features--------->**
 
 -Damage Indicator
 
@@ -26,8 +24,7 @@ Features**
 
 -Skin Changer
 
-**<---------
-Working on**
+**Working on--------->**
 
 -~~Make it Compact~~
 
