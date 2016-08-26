@@ -23,7 +23,7 @@ namespace T2IN1_Pantheon
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
             {
-                Combo.Execute1();
+                Combo.Execute();
             }
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LastHit) && playerMana > LastHitMenu.GetSliderValue("manaSlider"))

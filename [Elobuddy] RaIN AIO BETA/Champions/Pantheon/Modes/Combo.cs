@@ -10,7 +10,7 @@ namespace T2IN1_Pantheon
 {
     internal static class Combo
     {
-        public static void Execute1()
+        public static void Execute()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
 

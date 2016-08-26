@@ -12,11 +12,11 @@ namespace T2IN1_Pantheon
     {
         public static void Execute()
         {
-            if (FleeMenu["W"].Cast<CheckBox>().CurrentValue)
+            if (FleeMenu["R"].Cast<CheckBox>().CurrentValue)
             {
-                if (W.IsReady())
+                if (R.IsReady())
                 {
-                    W.Cast();
+                    R.Cast();
                 }
             }
         }
