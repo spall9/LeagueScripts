@@ -50,8 +50,8 @@ ___
 **-Fix Damage Indicator**
 
 # Credits:
+___
 
 -MarioGK (Addon Template and Lib)
 
 -Joker (JokerLib)
-___
