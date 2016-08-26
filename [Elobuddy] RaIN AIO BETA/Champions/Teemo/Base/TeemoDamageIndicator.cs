@@ -11,6 +11,7 @@ using Line = EloBuddy.SDK.Rendering.Line;
 
 using static  T2IN1.Extensions;
 using static T2IN1.TeemoMenu;
+using static T2IN1.TeemoDamageIndicator;
 
 namespace T2IN1
 {

@@ -6,6 +6,7 @@ using Mario_s_Lib;
 using static T2IN1.Extensions;
 using static T2IN1.TeemoMenu;
 using static T2IN1.TeemoSpells;
+using static T2IN1.TeemoDamageIndicator;
 
 namespace T2IN1
 {
@@ -14,8 +15,8 @@ namespace T2IN1
         public static void InitializeDrawings()
         {
             Drawing.OnDraw += Drawing_OnDraw;
-            Drawing.OnEndScene += Drawing_OnEndScene;
             TeemoDamageIndicator.Init();
+            Drawing.OnEndScene += Drawing_OnEndScene;
         }
 
         private static void Drawing_OnDraw(EventArgs args)
@@ -42,8 +43,7 @@ namespace T2IN1
                 Circle.Draw(RColorSlide.GetSharpColor(), R.Range, 1f, Player.Instance);
             }
         }
-
-        /// This drawing will override some of the lol`s, like healthbars menus and atc
+        // This drawing will override some of the lol`s, like healthbars menus and atc
         private static void Drawing_OnEndScene(EventArgs args)
         {
         }
