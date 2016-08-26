@@ -43,13 +43,9 @@ ___
 
 **-Add Activator?**
 
-**-Flee Mode (Adding Items)**
-
 **-Combo Mode (Fixing Shroom Spam)**
 
 **-LaneClear Mode (Fixing Shroom Spam)**
-
-**-Fix Damage Indicator**
 
 # Credits:
 ___
