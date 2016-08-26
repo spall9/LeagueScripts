@@ -1,4 +1,6 @@
 # T2IN1 AIO !BETA!
+
+git status
 ___
 -Work in Progress
 
