@@ -52,7 +52,7 @@ namespace Mario_s_Lib.DataBases
             new Skin(Champion.Galio, new List<string> {"Basic Skin", "Enchanted Galio", "Commando Galio", "Gatekeeper Galio", "Debonair Galio", "Hextech Galio"}),
             new Skin(Champion.Gangplank, new List<string> {"Basic Skin", "Spooky Gangplank", "Minuteman Gangplank", "Special Forces Gangplank", "Sultan Gangplank", "Captain Gangplank", "Sailor Gangplank", "Toy Soldier Gangplank"}),
             new Skin(Champion.Garen, new List<string> {"Basic Skin", "Sanguine Garen", "Commando Garen", "Dreadknight Garen", "Rugged Garen", "Steel Legion Garen", "Rogue Admiral Garen"}),
-            new Skin(Champion.Gnar, new List<string> {"Basic Skin", "Dino Gnar", "Gentleman Gnar", "El LeÃ³n Gnar", "Snow Day Gnar"}),
+            new Skin(Champion.Gnar, new List<string> {"Basic Skin", "Dino Gnar", "Gentleman Gnar", "El León Gnar", "Snow Day Gnar"}),
             new Skin(Champion.Gragas, new List<string> {"Basic Skin", "Hillbilly Gragas", "Gragas, Esq", "Oktoberfest Gragas", "Superfan Gragas", "Gragas Caskbreaker", "Scuba Gragas", "Santa Gragas", "Vandal Gragas", "Fnatic Gragas"}),
             new Skin(Champion.Graves, new List<string> {"Basic Skin", "Hired Gun Graves", "Jailbreak Graves", "Mafia Graves", "Riot Graves", "Pool Party Graves", "Cutthroat Graves"}),
             new Skin(Champion.Hecarim, new List<string> {"Basic Skin", "Blood Knight Hecarim", "Reaper Hecarim", "Headless Hecarim", "Arcade Hecarim", "Elderwood Hecarim"}),
@@ -150,7 +150,7 @@ namespace Mario_s_Lib.DataBases
             new Skin(Champion.Ziggs, new List<string> {"Basic Skin", "Mad Scientist Ziggs", "Major Ziggs", "Pool Party Ziggs", "Snow Day Ziggs", "Master Arcanist Ziggs"}),
             new Skin(Champion.Zilean, new List<string> {"Basic Skin", "Old Saint Zilean", "Groovy Zilean", "Shurima Desert Zilean", "Time Machine Zilean", "Blood Moon Zilean"}),
             new Skin(Champion.Zyra, new List<string> {"Basic Skin", "WildFire Zyra", "Haunted Zyra", "SKT T1 Zyra"}),
-	    new Skin(Champion.Kled, new List<string> {"Basic Skin", "Sir Kled"}),
+	        new Skin(Champion.Kled, new List<string> {"Basic Skin", "Sir Kled"}),
         };
     }
 }

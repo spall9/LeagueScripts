@@ -1,0 +1,11 @@
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\Mario`s Lib.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\Mario`s Lib.pdb
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\EloBuddy.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\EloBuddy.Sandbox.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\EloBuddy.SDK.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\SharpDX.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\bin\Release\Newtonsoft.Json.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\obj\Release\Mario`s Lib.dll
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\obj\Release\Mario`s Lib.pdb
+C:\Users\RaIN\Desktop\Mario`s Lib\Mario`s Lib\obj\Release\Mario`s Lib.csprojResolveAssemblyReference.cache

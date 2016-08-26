@@ -31,7 +31,7 @@ namespace T2IN1_Teemo
 
         public static void CreateMenu()
         {
-            FirstMenu = MainMenu.AddMenu("T2IN1" + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
+            FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
             ComboMenu = FirstMenu.AddSubMenu("• Combo - Testing");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             LasthitMenu = FirstMenu.AddSubMenu("• LastHit");
@@ -41,13 +41,13 @@ namespace T2IN1_Teemo
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
             ComboMenu.AddGroupLabel("Combo Settings");
-            ComboMenu.AddLabel("Use Ability");
+            ComboMenu.AddLabel("Use Ability's");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
-            ComboMenu.AddLabel("Use Summoner");
+            ComboMenu.AddLabel("Use Summoner's");
             ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
             ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
-            ComboMenu.AddLabel("Use Item");
+            ComboMenu.AddLabel("Use Item's");
             ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
             ComboMenu.Add("HydraTitanic", new CheckBox("- Use HydraTitanic"));
             ComboMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
@@ -59,37 +59,37 @@ namespace T2IN1_Teemo
             ComboMenu.Add("GLP", new CheckBox("- Use GLP"));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
-            LaneClearMenu.AddLabel("Use Ability");
+            LaneClearMenu.AddLabel("Use Ability's");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("R", new CheckBox("- Use R"));
             LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 30);
 
             LasthitMenu.AddGroupLabel("Last Hit Settings");
-            LasthitMenu.AddLabel("Use Ability");
+            LasthitMenu.AddLabel("Use Ability's");
             LasthitMenu.Add("Q", new CheckBox("- Use Q"));
             LasthitMenu.CreateSlider("Mana must be higher than [{0}%] to use Last Hit spells", "manaSlider", 45);
 
             KSMenu.AddGroupLabel("KillSteal Settings");
-            KSMenu.AddLabel("Use Ability");
+            KSMenu.AddLabel("Use Ability's");
             KSMenu.Add("Q", new CheckBox("- Use Q"));
-            KSMenu.AddLabel("Use Summoner");
+            KSMenu.AddLabel("Use Summoner's");
             KSMenu.Add("Ignite", new CheckBox("- Use Ignite"));
             KSMenu.Add("Smite", new CheckBox("- Use Smite"));
 
             FleeMenu.AddGroupLabel("Flee Settings");
-            FleeMenu.AddLabel("Use Ability");
+            FleeMenu.AddLabel("Use Ability's");
             FleeMenu.Add("W", new CheckBox("- Use W"));
-            FleeMenu.AddLabel("Use Potion");
+            FleeMenu.AddLabel("Use Potion's");
             FleeMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
             FleeMenu.Add("Health", new CheckBox("- Use Health"));
             FleeMenu.Add("Refillable", new CheckBox("- Use Refillable"));
             FleeMenu.Add("Hunters", new CheckBox("- Use Hunters"));
             FleeMenu.Add("Corrupting", new CheckBox("- Use Corrupting"));
-            FleeMenu.AddLabel("Use Item");
+            FleeMenu.AddLabel("Use Item's");
             FleeMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas"));
             FleeMenu.Add("Seraph", new CheckBox("- Use Seraph"));
             FleeMenu.Add("Solari", new CheckBox("- Use Solari"));
-            FleeMenu.AddLabel("Use Cleansers");
+            FleeMenu.AddLabel("Use Cleanser's");
             FleeMenu.Add("Mikael", new CheckBox("- Use Mikael"));
             FleeMenu.Add("Qss", new CheckBox("- Use Qss"));
             FleeMenu.Add("Mercurial", new CheckBox("- Use Mercurial"));
