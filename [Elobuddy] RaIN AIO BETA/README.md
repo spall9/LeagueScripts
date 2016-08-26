@@ -48,3 +48,10 @@ ___
 **-LaneClear Mode (Fixing Shroom Spam)**
 
 **-Fix Damage Indicator**
+
+# Credits:
+
+-MarioGK (Addon Template and Lib)
+
+-Joker (JokerLib)
+___
