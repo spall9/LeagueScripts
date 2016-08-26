@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using EloBuddy;
 
 namespace Mario_s_Lib.DataBases
