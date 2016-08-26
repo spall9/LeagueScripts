@@ -79,12 +79,10 @@
     <Compile Include="Champions\Pantheon\Items\Consumable.cs" />
     <Compile Include="Champions\Pantheon\Items\Defensive.cs" />
     <Compile Include="Champions\Pantheon\Items\Offensive.cs" />
-    <Compile Include="Champions\Pantheon\Items\Wards.cs" />
     <Compile Include="Champions\Pantheon\Modes\Activator.cs" />
     <Compile Include="Champions\Pantheon\Modes\Logic.cs" />
     <Compile Include="Champions\Pantheon\Modes\Active.cs" />
     <Compile Include="Champions\Pantheon\Modes\Combo.cs" />
-    <Compile Include="Champions\Pantheon\Modes\Flee.cs" />
     <Compile Include="Champions\Pantheon\Modes\LaneClear.cs" />
     <Compile Include="Champions\Pantheon\Modes\LastHit.cs" />
     <Compile Include="Champions\Pantheon\Modes\ModeManager.cs" />
@@ -99,7 +97,6 @@
     <Compile Include="Champions\Teemo\Items\Consumable.cs" />
     <Compile Include="Champions\Teemo\Items\Defensive.cs" />
     <Compile Include="Champions\Teemo\Items\Offensive.cs" />
-    <Compile Include="Champions\Teemo\Items\Wards.cs" />
     <Compile Include="Champions\Teemo\Modes\Activator.cs" />
     <Compile Include="Champions\Teemo\Modes\Active.cs" />
     <Compile Include="Champions\Teemo\Modes\Combo.cs" />
@@ -126,6 +123,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

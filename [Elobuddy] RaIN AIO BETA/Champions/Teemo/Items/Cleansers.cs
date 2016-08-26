@@ -1,12 +1,30 @@
-﻿using EloBuddy;
+﻿using System.Collections.Generic;
+using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
 
 namespace T2IN1_Teemo
 {
     public static class Cleansers
     {
-        public static Item Mikael = new Item((int)ItemId.Mikaels_Crucible, 750);
-        public static Item Qss = new Item((int)ItemId.Quicksilver_Sash);
-        public static Item Mercurial = new Item((int)ItemId.Mercurial_Scimitar);
+        // Cleansers
+        public static Item Mikael = new Item(ItemId.Mikaels_Crucible, 750);
+        public static Item Qss = new Item(ItemId.Quicksilver_Sash);
+        public static Item Mercurial = new Item(ItemId.Mercurial_Scimitar);
+
+        public static List<Item> ItemList = new List<Item>
+        {
+            Mikael,
+            Qss,
+            Mercurial
+        };
+
+        public static void CastItems(AIHeroClient target)
+        {
+            foreach (var Cleansers in ItemList.Where(i => i.IsReady() && target.IsValidTarget(i.Range)))
+            {
+                Cleansers.Cast(target);
+            }
+        }
     }
 }

@@ -5,6 +5,7 @@ using Mario_s_Lib;
 
 using static T2IN1_Pantheon.Menus;
 using static T2IN1_Pantheon.SpellsManager;
+using static T2IN1_Pantheon.Offensive;
 
 namespace T2IN1_Pantheon
 {
@@ -58,19 +59,19 @@ namespace T2IN1_Pantheon
                 }
             }
 
-            //Remove Maybe?
-            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+            //Cast Hydra Test
+            var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
 
-            if (rtarget == null)
+            if (hydratarget == null)
             {
                 return;
             }
 
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
+            if (ComboMenu["Hydra"].Cast<CheckBox>().CurrentValue)
             {
-                if (R.IsReady())
+                if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
                 {
-                    R.TryToCast(rtarget, ComboMenu);
+                    Hydra.Cast();
                 }
             }
         }

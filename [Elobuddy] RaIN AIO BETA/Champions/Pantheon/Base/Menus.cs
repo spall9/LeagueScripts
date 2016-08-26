@@ -17,9 +17,7 @@ namespace T2IN1_Pantheon
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
-        public static Menu KSMenu;
         public static Menu LastHitMenu;
-        public static Menu FleeMenu;
         public static Menu ActivatorMenu;
         public static Menu MiscMenu;
 
@@ -37,8 +35,6 @@ namespace T2IN1_Pantheon
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             LastHitMenu = FirstMenu.AddSubMenu("• LastHit");
-            KSMenu = FirstMenu.AddSubMenu("• KillSteal");
-            FleeMenu = FirstMenu.AddSubMenu("• Flee");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
@@ -47,18 +43,18 @@ namespace T2IN1_Pantheon
             ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
+            ComboMenu.AddGroupLabel("Item Settings");
+            ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
+
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
+            LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("E", new CheckBox("- Use E"));
             LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 30);
 
             LastHitMenu.AddGroupLabel("Last Hit Settings");
-            LastHitMenu.Add("E", new CheckBox("- Use E"));
+            LastHitMenu.Add("Q", new CheckBox("- Use Q"));
             LastHitMenu.CreateSlider("Mana must be higher than [{0}%] to use Last Hit spells", "manaSlider", 45);
-
-            FleeMenu.AddGroupLabel("Flee Settings");
-            FleeMenu.AddLabel("Use Ability's");
-            FleeMenu.Add("W", new CheckBox("- Use W"));
 
             MiscMenu.AddGroupLabel("Skin Changer");
 

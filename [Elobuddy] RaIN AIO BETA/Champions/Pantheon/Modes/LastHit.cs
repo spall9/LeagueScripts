@@ -12,7 +12,7 @@ namespace T2IN1_Pantheon
     {
         public static void Execute()
         {
-            E.TryToCast(E.GetKillableHero(), LastHitMenu);
+            
         }
     }
 }

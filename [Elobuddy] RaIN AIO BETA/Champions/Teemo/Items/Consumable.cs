@@ -1,14 +1,34 @@
-﻿using EloBuddy;
+﻿using System.Collections.Generic;
+using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
 
 namespace T2IN1_Teemo
 {
-    public static class Consumable
+    public static class Consumables
     {
-        public static Item Biscuit = new Item((int)ItemId.Total_Biscuit_of_Rejuvenation);
-        public static Item Health = new Item((int)ItemId.Health_Potion);
-        public static Item Refillable = new Item((int)ItemId.Refillable_Potion);
-        public static Item Hunters = new Item((int)ItemId.Hunters_Potion);
-        public static Item Corrupting = new Item((int)ItemId.Corrupting_Potion);
+        // Cleansers
+        public static Item Biscuit = new Item(ItemId.Total_Biscuit_of_Rejuvenation);
+        public static Item Health = new Item(ItemId.Health_Potion);
+        public static Item Refillable = new Item(ItemId.Refillable_Potion);
+        public static Item Hunters = new Item(ItemId.Hunters_Potion);
+        public static Item Corrupting = new Item(ItemId.Corrupting_Potion);
+
+        public static List<Item> ItemList = new List<Item>
+        {
+            Biscuit,
+            Health,
+            Refillable,
+            Hunters,
+            Corrupting
+        };
+
+        public static void CastItems(AIHeroClient target)
+        {
+            foreach (var Consumables in ItemList.Where(i => i.IsReady() && target.IsValidTarget(i.Range)))
+            {
+                Consumables.Cast(target);
+            }
+        }
     }
 }

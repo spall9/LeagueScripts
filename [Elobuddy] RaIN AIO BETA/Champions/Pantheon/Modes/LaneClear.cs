@@ -12,9 +12,20 @@ namespace T2IN1_Pantheon
     {
         public static void Execute()
         {
+            if (LaneClearMenu["Q"].Cast<CheckBox>().CurrentValue)
+            {
+                if (Q.IsReady())
+                {
+                    Q.TryToCast(Q.GetLastHitMinion(), LastHitMenu);
+                }
+            }
+
             if (LaneClearMenu["E"].Cast<CheckBox>().CurrentValue)
             {
-                E.TryToCast(E.GetBestLinearFarmPosition(minMinionsToHit: 3), LastHitMenu);
+                if (E.IsReady())
+                {
+                    E.TryToCast(E.GetBestCircularCastPosition(), LastHitMenu);
+                }
             }
         }
     }

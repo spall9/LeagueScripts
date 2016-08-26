@@ -35,11 +35,6 @@ namespace T2IN1_Pantheon
             {
                 LaneClear.Execute();
             }
-
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee) && playerMana > LastHitMenu.GetSliderValue("manaSlider"))
-            {
-                Flee.Execute();
-            }
         }
     }
 }
