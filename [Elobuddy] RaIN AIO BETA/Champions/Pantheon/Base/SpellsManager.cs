@@ -26,10 +26,10 @@ namespace T2IN1_Pantheon
 
         public static void InitializeSpells()
         {
-            Q = new Spell.Targeted(spellSlot: SpellSlot.Q, spellRange: 600);
-            W = new Spell.Targeted(spellSlot: SpellSlot.W, spellRange: 600);
+            Q = new Spell.Targeted(SpellSlot.Q, 600);
+            W = new Spell.Targeted(SpellSlot.W, 600);
             E = new Spell.Skillshot(SpellSlot.E, 600, SkillShotType.Cone, 250, 800, (int)(35 * Math.PI / 180));
-            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 5500, skillShotType: SkillShotType.Cone, castDelay: 0, spellSpeed: 0, spellWidth: 800);
+            R = new Spell.Skillshot(SpellSlot.R, 5500, SkillShotType.Cone, 0, 0, 800);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
