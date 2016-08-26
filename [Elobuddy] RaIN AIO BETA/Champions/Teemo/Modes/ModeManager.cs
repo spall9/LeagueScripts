@@ -3,12 +3,11 @@ using EloBuddy;
 using EloBuddy.SDK;
 using Mario_s_Lib;
 
-using static T2IN1.TeemoSpells;
-using static T2IN1.TeemoMenu;
+using static T2IN1_Teemo.Menus;
 
-namespace T2IN1
+namespace T2IN1_Teemo
 {
-    internal class TeemoModeManager
+    internal class ModeManager
     {
         public static void InitializeModes()
         {
@@ -24,7 +23,7 @@ namespace T2IN1
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
             {
-                TeemoCombo.Execute();
+                Combo.Execute();
             }
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LastHit) && playerMana > LasthitMenu.GetSliderValue("manaSlider"))
@@ -34,12 +33,12 @@ namespace T2IN1
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LaneClear) && playerMana > LaneClearMenu.GetSliderValue("manaSlider"))
             {
-                TeemoLaneClear.Execute();
+                LaneClear.Execute();
             }
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee) && playerMana > LasthitMenu.GetSliderValue("manaSlider"))
             {
-                TeemoFlee.Execute();
+                Flee.Execute();
             }
         }
     }

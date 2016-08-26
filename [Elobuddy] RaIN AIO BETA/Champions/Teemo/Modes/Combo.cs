@@ -1,19 +1,15 @@
-﻿using System;
-using EloBuddy;
+﻿using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
 using EloBuddy.SDK.Menu.Values;
-using EloBuddy.SDK.Spells;
 using Mario_s_Lib;
 
-using static T2IN1.TeemoMenu;
-using static T2IN1.TeemoSpells;
+using static T2IN1_Teemo.Menus;
+using static T2IN1_Teemo.SpellsManager;
 
-namespace T2IN1
+namespace T2IN1_Teemo
 {
-    internal static class TeemoCombo
+    internal static class Combo
     {
-
         public static void Execute()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);

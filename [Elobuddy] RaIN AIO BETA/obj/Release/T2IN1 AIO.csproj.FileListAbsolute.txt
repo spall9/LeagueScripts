@@ -9,3 +9,15 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\bin\Release\Newtonsoft.Json
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.pdb
 F:\RaIN Repos\LeagueScripts\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1 AIO.csprojResolveAssemblyReference.cache
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\T2IN1AIO.exe.config
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\T2IN1AIO.exe
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\T2IN1AIO.pdb
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.dll
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\EloBuddy.SDK.dll
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\Mario`s Lib.dll
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\SharpDX.dll
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\bin\Release\Newtonsoft.Json.dll
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1 AIO.csprojResolveAssemblyReference.cache
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.exe
+C:\Users\RaIN\Desktop\[Elobuddy] RaIN AIO BETA\obj\Release\T2IN1AIO.pdb

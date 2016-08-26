@@ -69,18 +69,18 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Champions\Teemo\Base\TeemoAutoLevel.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoDamageIndicator.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoExtensions.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoMenu.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoDrawings.cs" />
-    <Compile Include="Champions\Teemo\Base\TeemoSpells.cs" />
-    <Compile Include="Champions\Teemo\Modes\TeemoActive.cs" />
-    <Compile Include="Champions\Teemo\Modes\TeemoCombo.cs" />
-    <Compile Include="Champions\Teemo\Modes\TeemoFlee.cs" />
-    <Compile Include="Champions\Teemo\Modes\TeemoLaneClear.cs" />
-    <Compile Include="Champions\Teemo\Modes\TeemoLastHit.cs" />
-    <Compile Include="Champions\Teemo\Modes\TeemoModeManager.cs" />
+    <Compile Include="Champions\Teemo\Base\AutoLevel.cs" />
+    <Compile Include="Champions\Teemo\Base\DamageIndicator.cs" />
+    <Compile Include="Champions\Teemo\Base\Extensions.cs" />
+    <Compile Include="Champions\Teemo\Base\Menu.cs" />
+    <Compile Include="Champions\Teemo\Base\DrawingsManager.cs" />
+    <Compile Include="Champions\Teemo\Base\SpellsManager.cs" />
+    <Compile Include="Champions\Teemo\Modes\Active.cs" />
+    <Compile Include="Champions\Teemo\Modes\Combo.cs" />
+    <Compile Include="Champions\Teemo\Modes\Flee.cs" />
+    <Compile Include="Champions\Teemo\Modes\LaneClear.cs" />
+    <Compile Include="Champions\Teemo\Modes\LastHit.cs" />
+    <Compile Include="Champions\Teemo\Modes\ModeManager.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

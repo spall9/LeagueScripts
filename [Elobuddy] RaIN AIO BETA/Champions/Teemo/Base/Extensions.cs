@@ -2,19 +2,21 @@
 using EloBuddy;
 using EloBuddy.SDK;
 
-namespace T2IN1
+namespace T2IN1_Teemo
 {
     public static class Extensions
     {
+        /// Get total damge using the custom values provided by you in the spellmanager
         public static float GetTotalDamage(this Obj_AI_Base target)
         {
-            var slots = new[] {SpellSlot.Q, SpellSlot.W, SpellSlot.E, SpellSlot.R};
+            var slots = new[] { SpellSlot.Q, SpellSlot.W, SpellSlot.E, SpellSlot.R };
             var dmg = Player.Spells.Where(s => slots.Contains(s.Slot)).Sum(s => target.GetDamage(s.Slot));
             dmg += Orbwalker.CanAutoAttack ? Player.Instance.GetAutoAttackDamage(target) : 0f;
 
             return dmg;
         }
 
+        /// Gets the minion that can be lasthitable by the spell using the custom damage provided by you in spellmanager
         public static Obj_AI_Minion GetLastHitMinion(this Spell.SpellBase spell)
         {
             return
@@ -25,6 +27,7 @@ namespace T2IN1
                             m.IsEnemy);
         }
 
+        /// Gets the hero that can be killable by the spell using the custom damage provided by you in spellmanager
         public static AIHeroClient GetKillableHero(this Spell.SpellBase spell)
         {
             return

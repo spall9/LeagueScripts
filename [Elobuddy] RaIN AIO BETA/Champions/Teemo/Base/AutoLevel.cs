@@ -2,11 +2,11 @@
 using EloBuddy.SDK;
 using Mario_s_Lib;
 
-using static T2IN1.TeemoMenu;
+using static T2IN1_Teemo.Menus;
 
-namespace T2IN1
+namespace T2IN1_Teemo
 {
-    public static class TeemoAutoLevel
+    public static class AutoLevel
     {
         //This event is triggered when a unit levels up
         public static void Obj_AI_Base_OnLevelUp(Obj_AI_Base sender, Obj_AI_BaseLevelUpEventArgs args)

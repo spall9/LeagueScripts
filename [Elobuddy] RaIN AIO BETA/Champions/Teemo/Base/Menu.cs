@@ -4,12 +4,12 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
-using Mario_s_Lib;
-using Mario_s_Lib.DataBases;
 
-namespace T2IN1
+using Mario_s_Lib;
+
+namespace T2IN1_Teemo
 {
-    internal class TeemoMenu
+    internal class Menus
     {
         public const string DrawingsMenuID = "drawingsmenuid";
         public const string MiscMenuID = "miscmenuid";
