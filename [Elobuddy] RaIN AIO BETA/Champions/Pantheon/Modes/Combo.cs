@@ -67,7 +67,7 @@ namespace T2IN1_Pantheon
                 return;
             }
 
-            if (ComboMenu["Hydra"].Cast<CheckBox>().CurrentValue)
+            if (ActivatorMenu["Hydra"].Cast<CheckBox>().CurrentValue)
             {
                 if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
                 {

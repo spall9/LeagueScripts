@@ -5,6 +5,7 @@ using Mario_s_Lib;
 
 using static T2IN1_Teemo.Menus;
 using static T2IN1_Teemo.SpellsManager;
+using static T2IN1_Teemo.Offensive;
 
 namespace T2IN1_Teemo
 {
@@ -24,6 +25,22 @@ namespace T2IN1_Teemo
                 if (qtarget.IsValidTarget(Q.Range) && Q.IsReady())
                 {
                     Q.TryToCast(qtarget, ComboMenu);
+                }
+            }
+
+            //Cast Hydra Test
+            var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
+
+            if (hydratarget == null)
+            {
+                return;
+            }
+
+            if (ActivatorMenu["Hydra"].Cast<CheckBox>().CurrentValue)
+            {
+                if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
+                {
+                    Hydra.Cast();
                 }
             }
         }
