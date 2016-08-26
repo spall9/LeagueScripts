@@ -49,6 +49,7 @@ namespace T2IN1_Pantheon
                 return;
             }
 
+            //Add Stop Movin Function
             if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
             {
                 if (etarget.IsValidTarget(E.Range) && E.IsReady())
@@ -57,11 +58,19 @@ namespace T2IN1_Pantheon
                 }
             }
 
+            //Remove Maybe?
+            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+
+            if (rtarget == null)
+            {
+                return;
+            }
+
             if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
             {
                 if (R.IsReady())
                 {
-                    R.TryToCast(R.GetKillableHero(), ComboMenu);
+                    R.TryToCast(rtarget, ComboMenu);
                 }
             }
         }
