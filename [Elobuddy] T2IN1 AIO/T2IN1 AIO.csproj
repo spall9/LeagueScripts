@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Champions\Pantheon\Base\Active.cs" />
     <Compile Include="Champions\Pantheon\Base\AutoLevel.cs" />
     <Compile Include="Champions\Pantheon\Base\DamageIndicator.cs" />
     <Compile Include="Champions\Pantheon\Base\DrawingsManager.cs" />

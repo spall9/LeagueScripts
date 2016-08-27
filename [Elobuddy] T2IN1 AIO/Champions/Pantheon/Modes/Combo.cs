@@ -50,6 +50,10 @@ namespace T2IN1_Pantheon
                 if (etarget.IsValidTarget(E.Range) && E.IsReady())
                 {
                     E.TryToCast(etarget, ComboMenu);
+                }
+
+                if (E.IsOnCooldown)
+                {
                     Orbwalker.DisableAttacking = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                     Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                 }
