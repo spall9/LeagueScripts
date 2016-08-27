@@ -44,6 +44,12 @@ namespace T2IN1_Teemo
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
             ComboMenu.AddGroupLabel("Item Settings");
+            ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra & Tiamat"));
+            ComboMenu.Add("TitanicHydra", new CheckBox("- Use Titanic Hydra"));
+            ComboMenu.Add("Botrk", new CheckBox("- Use Blade of the Ruined King"));
+            ComboMenu.Add("Gunblade", new CheckBox("- Use Hextech Gunblade"));
+            ComboMenu.Add("Protobelt", new CheckBox("- Use Protobelt"));
+            ComboMenu.Add("GLP", new CheckBox("- Use Hextech GLP-800"));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));

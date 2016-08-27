@@ -43,8 +43,12 @@ namespace T2IN1_Pantheon
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.Add("ECancel", new CheckBox("- Use E Cancel", false));
             ComboMenu.AddGroupLabel("Item Settings");
-            ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
-            ComboMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
+            ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra & Tiamat"));
+            ComboMenu.Add("TitanicHydra", new CheckBox("- Use Titanic Hydra"));
+            ComboMenu.Add("Botrk", new CheckBox("- Use Blade of the Ruined King"));
+            ComboMenu.Add("Gunblade", new CheckBox("- Use Hextech Gunblade"));
+            ComboMenu.Add("Protobelt", new CheckBox("- Use Protobelt"));
+            ComboMenu.Add("GLP", new CheckBox("- Use Hextech GLP-800"));
 
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
