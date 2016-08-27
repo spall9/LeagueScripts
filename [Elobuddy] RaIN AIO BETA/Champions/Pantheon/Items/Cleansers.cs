@@ -18,13 +18,5 @@ namespace T2IN1_Pantheon
             Qss,
             Mercurial
         };
-
-        public static void CastItems(AIHeroClient target)
-        {
-            foreach (var Cleansers in ItemList.Where(i => i.IsReady() && target.IsValidTarget(i.Range)))
-            {
-                Cleansers.Cast(target);
-            }
-        }
     }
 }

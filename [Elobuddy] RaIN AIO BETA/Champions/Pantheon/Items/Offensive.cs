@@ -29,13 +29,5 @@ namespace T2IN1_Pantheon
             Protobelt,
             GLP
         };
-
-        public static void CastItems(AIHeroClient target)
-        {
-            foreach (var Offensive in ItemList.Where(i => i.IsReady() && target.IsValidTarget(i.Range)))
-            {
-                Offensive.Cast(target);
-            }
-        }
     }
 }

@@ -22,13 +22,5 @@ namespace T2IN1_Teemo
             Hunters,
             Corrupting
         };
-
-        public static void CastItems(AIHeroClient target)
-        {
-            foreach (var Consumables in ItemList.Where(i => i.IsReady() && target.IsValidTarget(i.Range)))
-            {
-                Consumables.Cast(target);
-            }
-        }
     }
 }

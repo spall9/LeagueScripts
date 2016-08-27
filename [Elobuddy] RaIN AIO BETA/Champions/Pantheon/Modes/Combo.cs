@@ -40,6 +40,7 @@ namespace T2IN1_Pantheon
                 if (wtarget.IsValidTarget(W.Range) && W.IsReady())
                 {
                     W.TryToCast(wtarget, ComboMenu);
+                    HydraTitanic.Cast();
                 }
             }
 
@@ -70,7 +71,7 @@ namespace T2IN1_Pantheon
                 }
             }
 
-            //Cast Hydra
+            //Cast Hydra & Tiamat
             var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
 
             if (hydratarget == null)
@@ -83,6 +84,7 @@ namespace T2IN1_Pantheon
                 if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
                 {
                     Hydra.Cast();
+                    Tiamat.Cast();
                 }
             }
         }

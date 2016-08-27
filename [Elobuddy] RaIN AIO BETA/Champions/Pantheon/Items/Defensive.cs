@@ -20,13 +20,5 @@ namespace T2IN1_Pantheon
             Solari,
             Face
         };
-
-        public static void CastItems(AIHeroClient target)
-        {
-            foreach (var Defensive in ItemList.Where(i => i.IsReady() && target.IsValidTarget(i.Range)))
-            {
-                Defensive.Cast(target);
-            }
-        }
     }
 }
