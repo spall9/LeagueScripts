@@ -31,8 +31,8 @@ namespace T2IN1_Pantheon
         {
             Q = new Spell.Targeted(SpellSlot.Q, 600);
             W = new Spell.Targeted(SpellSlot.W, 600);
-            E = new Spell.Skillshot(SpellSlot.E, 600, SkillShotType.Cone, 250, 800, (int)(35 * Math.PI / 180));
-            R = new Spell.Skillshot(SpellSlot.R, 5500, SkillShotType.Cone, 0, 0, 800);
+            E = new Spell.Skillshot(SpellSlot.E, 600, SkillShotType.Cone, 250, 2000, 15 * 2 * (int)Math.PI / 180);
+            R = new Spell.Skillshot(SpellSlot.R, 5500, SkillShotType.Cone, 2000, 1500, 800);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }

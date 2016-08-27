@@ -56,10 +56,12 @@ namespace T2IN1_Pantheon
                 if (etarget.IsValidTarget(E.Range) && E.IsReady())
                 {
                     E.TryToCast(etarget, ComboMenu);
+                    Orbwalker.DisableAttacking = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
+                    Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                 }
             }
 
-            //Cast Hydra Test
+            //Cast Hydra
             var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
 
             if (hydratarget == null)
