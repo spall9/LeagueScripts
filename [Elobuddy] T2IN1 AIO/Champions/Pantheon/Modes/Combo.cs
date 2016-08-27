@@ -84,7 +84,6 @@ namespace T2IN1_Pantheon
                 if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
                 {
                     Hydra.Cast();
-                    Tiamat.Cast();
                 }
             }
 

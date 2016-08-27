@@ -34,6 +34,22 @@ namespace T2IN1_Pantheon
                     Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                 }
             }
+
+            if (LaneClearMenu["Hydra"].Cast<CheckBox>().CurrentValue)
+            {
+                if (Hydra.IsReady())
+                {
+                    Hydra.Cast();
+                }
+            }
+
+            if (LaneClearMenu["Tiamat"].Cast<CheckBox>().CurrentValue)
+            {
+                if (Tiamat.IsReady())
+                {
+                    Tiamat.Cast();
+                }
+            }
         }
     }
 }

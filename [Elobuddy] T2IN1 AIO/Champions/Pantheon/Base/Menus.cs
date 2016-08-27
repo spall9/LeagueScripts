@@ -53,9 +53,12 @@ namespace T2IN1_Pantheon
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("E", new CheckBox("- Use E"));
             LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 30);
+            LaneClearMenu.Add("Hydra", new CheckBox("- Use Hydra"));
+            LaneClearMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
 
             LastHitMenu.AddGroupLabel("Last Hit Settings");
             LastHitMenu.Add("Q", new CheckBox("- Use Q"));
+            LastHitMenu.Add("E", new CheckBox("- Use E"));
             LastHitMenu.CreateSlider("Mana must be higher than [{0}%] to use Last Hit spells", "manaSlider", 45);
 
             ActivatorMenu.AddGroupLabel("Activator Settings");
