@@ -43,7 +43,7 @@ namespace T2IN1_Pantheon
             ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.AddLabel("Uncheck Use E if you use E Cancel! Same goes for the other one!");
             ComboMenu.Add("E", new CheckBox("- Use E"));
-            ComboMenu.Add("ECancel", new CheckBox("- Use E Cancel"));
+            ComboMenu.Add("ECancel", new CheckBox("- Use E Cancel", false));
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
 
@@ -59,32 +59,32 @@ namespace T2IN1_Pantheon
 
             ActivatorMenu.AddGroupLabel("Activator Settings");
             ActivatorMenu.AddGroupLabel("Use Summoner's");
-            ActivatorMenu.Add("Ignite", new CheckBox("- Use Ignite"));
-            ActivatorMenu.Add("Smite", new CheckBox("- Use Smite"));
+            ActivatorMenu.Add("Ignite", new CheckBox("- Use Ignite", false));
+            ActivatorMenu.Add("Smite", new CheckBox("- Use Smite", false));
             ActivatorMenu.AddGroupLabel("Use Potion's");
-            ActivatorMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
-            ActivatorMenu.Add("Health", new CheckBox("- Use Health"));
-            ActivatorMenu.Add("Refillable", new CheckBox("- Use Refillable"));
-            ActivatorMenu.Add("Hunters", new CheckBox("- Use Hunters"));
-            ActivatorMenu.Add("Corrupting", new CheckBox("- Use Corrupting"));
+            ActivatorMenu.Add("Biscuit", new CheckBox("- Use Biscuit", false));
+            ActivatorMenu.Add("Health", new CheckBox("- Use Health", false));
+            ActivatorMenu.Add("Refillable", new CheckBox("- Use Refillable", false));
+            ActivatorMenu.Add("Hunters", new CheckBox("- Use Hunters", false));
+            ActivatorMenu.Add("Corrupting", new CheckBox("- Use Corrupting", false));
             ActivatorMenu.AddGroupLabel("Use Offensive Item's");
-            ActivatorMenu.Add("Hydra", new CheckBox("- Use Hydra"));
-            ActivatorMenu.Add("HydraTitanic", new CheckBox("- Use HydraTitanic"));
-            ActivatorMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
-            ActivatorMenu.Add("Cutlass", new CheckBox("- Use Cutlass"));
-            ActivatorMenu.Add("Botrk", new CheckBox("- Use Botrk"));
-            ActivatorMenu.Add("Youmuu", new CheckBox("- Use Youmuu"));
-            ActivatorMenu.Add("Gunblade", new CheckBox("- Use Gunblade"));
-            ActivatorMenu.Add("Protobelt", new CheckBox("- Use Protobelt"));
-            ActivatorMenu.Add("GLP", new CheckBox("- Use GLP"));
+            ActivatorMenu.Add("Hydra", new CheckBox("- Use Hydra", false));
+            ActivatorMenu.Add("HydraTitanic", new CheckBox("- Use HydraTitanic", false));
+            ActivatorMenu.Add("Tiamat", new CheckBox("- Use Tiamat", false));
+            ActivatorMenu.Add("Cutlass", new CheckBox("- Use Cutlass", false));
+            ActivatorMenu.Add("Botrk", new CheckBox("- Use Botrk", false));
+            ActivatorMenu.Add("Youmuu", new CheckBox("- Use Youmuu", false));
+            ActivatorMenu.Add("Gunblade", new CheckBox("- Use Gunblade", false));
+            ActivatorMenu.Add("Protobelt", new CheckBox("- Use Protobelt", false));
+            ActivatorMenu.Add("GLP", new CheckBox("- Use GLP", false));
             ActivatorMenu.AddGroupLabel("Use Defensive Item's");
-            ActivatorMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas"));
-            ActivatorMenu.Add("Seraph", new CheckBox("- Use Seraph"));
-            ActivatorMenu.Add("Solari", new CheckBox("- Use Solari"));
+            ActivatorMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas", false));
+            ActivatorMenu.Add("Seraph", new CheckBox("- Use Seraph", false));
+            ActivatorMenu.Add("Solari", new CheckBox("- Use Solari", false));
             ActivatorMenu.AddGroupLabel("Use Cleanser's");
-            ActivatorMenu.Add("Mikael", new CheckBox("- Use Mikael"));
-            ActivatorMenu.Add("Qss", new CheckBox("- Use Qss"));
-            ActivatorMenu.Add("Mercurial", new CheckBox("- Use Mercurial"));
+            ActivatorMenu.Add("Mikael", new CheckBox("- Use Mikael", false));
+            ActivatorMenu.Add("Qss", new CheckBox("- Use Qss", false));
+            ActivatorMenu.Add("Mercurial", new CheckBox("- Use Mercurial", false));
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
