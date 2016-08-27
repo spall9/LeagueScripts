@@ -21,13 +21,13 @@ namespace T2IN1_Lib.DataBases
         public static List<Skin> SkinsDB = new List<Skin>
         {
             new Skin(Champion.Aatrox, new List<string> {"Basic Skin", "Justicar Aatrox", "Mecha Aatrox", "Sea Hunter Aatrox"}),
-            new Skin(Champion.Ahri, new List<string> {"Basic Skin", "Dynasty Ahri", "Midnight Ahri", "Foxfire Ahri", "Popstar Ahri", "Challenger Ahri", "Academy Ahri"}),
+            new Skin(Champion.Ahri, new List<string> {"Basic Skin", "Dynasty Ahri", "Midnight Ahri", "Foxfire Ahri", "Popstar Ahri", "Challenger Ahri", "Academy Ahri", "Arcade Ahri"}),
             new Skin(Champion.Akali, new List<string> {"Basic Skin", "Stinger Akali", "Crimson Akali", "All-Star Akali", "Nurse Akali", "Blood Moon Akali", "Silverfang Akali", "Headhunter Akali"}),
-            new Skin(Champion.Alistar, new List<string> {"Basic Skin","Black Alistar", "Golden Alistar", "El Matador Alistar", "LongHorn Alistar", "Unchained Alistar", "Infernal Alistar" , "Sweeeper Alistar", "Marauder Alistar"}),
-            new Skin(Champion.Amumu, new List<string> {"Basic Skin", "Pharaoh Amumu", "Vancouver Amumu", "Emumu", "Re-Gifted Amumu" , "Almost Prom king Amumu", "Little Knight Amumu", "Sad Robot Amumu", "Surprise party amumu"}),
+            new Skin(Champion.Alistar, new List<string> {"Basic Skin","Black Alistar", "Golden Alistar", "El Matador Alistar", "LongHorn Alistar", "Unchained Alistar", "Infernal Alistar" , "Sweeeper Alistar", "Marauder Alistar", "SKT T1 Alistar"}),
+            new Skin(Champion.Amumu, new List<string> {"Basic Skin", "Pharaoh Amumu", "Vancouver Amumu", "Emumu", "Re-Gifted Amumu" , "Almost Prom king Amumu", "Little Knight Amumu", "Sad Robot Amumu", "Surprise Party Amumu"}),
             new Skin(Champion.Anivia, new List<string> {"Basic Skin","Team Spirit Anivia", "Bird Of Prey Anivia", "Noxus Hunter Anivia", "Hextech Anivia", "Blackfrost Anivia", "Prehistoric Anivia"}),
             new Skin(Champion.Annie, new List<string> {"Basic Skin", "Frostfire Annie", "Reverse Annie", "Panda Annie", "Sweetheart Annie", "Hextech Annie", "Red Riding Annie", "Annie in Wonderland", "Prom Queen Annie", "FrankenTibbers Annie", "Goth Annie"}),
-            new Skin(Champion.Ashe, new List<string> {"Basic Skin","Freljord Ashe", "Sherwood Forest Ashe", "Woad Ashe", "Queen Ashe", "Amethyst Ashe", "HeartSeeker Ashe", "Marauder Ashe"}),
+            new Skin(Champion.Ashe, new List<string> {"Basic Skin","Freljord Ashe", "Sherwood Forest Ashe", "Woad Ashe", "Queen Ashe", "Amethyst Ashe", "HeartSeeker Ashe", "Marauder Ashe", "PROJECT: Ashe"}),
             new Skin(Champion.AurelionSol, new List<string> {"Basic Skin","Ashen Lord Aurelion Sol"}),
             new Skin(Champion.Azir, new List<string> {"Basic Skin", "Galactic Azir", "Gravelord Azir", "SKT T1 Azir"}),
             new Skin(Champion.Bard, new List<string> {"Basic Skin", "Elderwood Bard", "Snow Day Bard"}),
