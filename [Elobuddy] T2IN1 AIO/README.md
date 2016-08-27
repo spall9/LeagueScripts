@@ -29,6 +29,8 @@ ___
 
 **-LastHit**
 
+**-Kill Steal**
+
 **-Flee**
 
 **-Skin Changer**
