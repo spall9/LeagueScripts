@@ -100,9 +100,11 @@ namespace T2IN1_Pantheon
                 }
             }
 
+            var youmuuTarget = TargetSelector.GetTarget(Youmuu.Range, DamageType.Mixed);
+
             if (ComboMenu["Youmuus"].Cast<CheckBox>().CurrentValue)
             {
-                if (W.Cast())
+                if (youmuuTarget.IsValidTarget(Youmuu.Range) && Youmuu.IsReady())
                 {
                     Youmuu.Cast();
                 }
