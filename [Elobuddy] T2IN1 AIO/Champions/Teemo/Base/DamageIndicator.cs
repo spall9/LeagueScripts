@@ -2,7 +2,7 @@
 using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
-using Mario_s_Lib;
+using T2IN1_Lib;
 using SharpDX;
 using SharpDX.Direct3D9;
 

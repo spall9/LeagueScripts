@@ -1,18 +1,15 @@
 ﻿using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using Mario_s_Lib;
-
 using System.Collections.Generic;
 using System.Linq;
-using EloBuddy;
-using EloBuddy.SDK;
 using SharpDX;
+
+using T2IN1_Lib;
 
 using static T2IN1_Pantheon.Menus;
 using static T2IN1_Pantheon.SpellsManager;
 using static T2IN1_Pantheon.Offensive;
-using static T2IN1_Pantheon.Logic;
 
 namespace T2IN1_Pantheon
 {

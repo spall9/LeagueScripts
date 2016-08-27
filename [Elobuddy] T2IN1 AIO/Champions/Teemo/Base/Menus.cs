@@ -5,7 +5,7 @@ using EloBuddy;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 
-using Mario_s_Lib;
+using T2IN1_Lib;
 
 namespace T2IN1_Teemo
 {
@@ -23,7 +23,6 @@ namespace T2IN1_Teemo
         public static Menu ActivatorMenu;
         public static Menu MiscMenu;
 
-        //These colorslider are from Mario`s Lib
         public static ColorSlide QColorSlide;
         public static ColorSlide WColorSlide;
         public static ColorSlide EColorSlide;
@@ -95,7 +94,7 @@ namespace T2IN1_Teemo
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
-            var skinList = Mario_s_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
+            var skinList = T2IN1_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
             if (skinList != null)
             {
                 MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);

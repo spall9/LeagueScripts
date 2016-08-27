@@ -3,8 +3,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 
-using Mario_s_Lib;
-using SharpDX.Windows;
+using T2IN1_Lib;
 
 using static T2IN1_Pantheon.Menus;
 using static T2IN1_Pantheon.AutoLevel;

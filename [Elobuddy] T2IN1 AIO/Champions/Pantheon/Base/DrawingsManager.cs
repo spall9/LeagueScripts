@@ -1,8 +1,7 @@
 ﻿using System;
 using EloBuddy;
 using EloBuddy.SDK.Rendering;
-using Mario_s_Lib;
-using SharpDX;
+using T2IN1_Lib;
 using static T2IN1_Pantheon.SpellsManager;
 using static T2IN1_Pantheon.Menus;
 

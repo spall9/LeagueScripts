@@ -5,7 +5,7 @@ using EloBuddy;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 
-using Mario_s_Lib;
+using T2IN1_Lib;
 
 namespace T2IN1_Pantheon
 {
@@ -88,7 +88,7 @@ namespace T2IN1_Pantheon
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
-            var skinList = Mario_s_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
+            var skinList = T2IN1_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
             if (skinList != null)
             {
                 MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
