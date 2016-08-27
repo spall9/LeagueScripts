@@ -19,8 +19,6 @@ ___
 # Features
 ___
 
-**-Activator**
-
 **-Damage Indicator**
 
 **-ComboMode**
@@ -28,8 +26,6 @@ ___
 **-LaneClear**
 
 **-LastHit**
-
-**-Kill Steal**
 
 **-Flee**
 
