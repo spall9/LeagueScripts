@@ -48,7 +48,7 @@ namespace T2IN1_Pantheon
             ComboMenu.Add("TitanicHydra", new CheckBox("- Use Titanic Hydra"));
             ComboMenu.Add("Botrk", new CheckBox("- Use Blade of the Ruined King"));
             ComboMenu.Add("Gunblade", new CheckBox("- Use Hextech Gunblade"));
-            ComboMenu.Add("Protobelt", new CheckBox("- Use Protobelt"));
+            ComboMenu.Add("Protobelt", new CheckBox("- Use Hextech Protobelt"));
             ComboMenu.Add("GLP", new CheckBox("- Use Hextech GLP-800"));
 
 
