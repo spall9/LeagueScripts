@@ -37,4 +37,12 @@ ___
 
 -MarioGK (Addon Template and Lib)
 
--Joker (Some things form his Lib)
+-Joker (got some things from his Lib)
+
+
+# Helpers:
+___
+
+-MarioGK
+
+-
