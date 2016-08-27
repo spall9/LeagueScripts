@@ -15,7 +15,7 @@ namespace T2IN1_Pantheon
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
 
-            if (qtarget == null)
+            if (qtarget == null || qtarget.IsInvulnerable)
             {
                 return;
             }
@@ -30,7 +30,7 @@ namespace T2IN1_Pantheon
 
             var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
 
-            if (etarget == null)
+            if (etarget == null || etarget.IsInvulnerable)
             {
                 return;
             }
@@ -57,7 +57,7 @@ namespace T2IN1_Pantheon
 
             var wtarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
 
-            if (wtarget == null)
+            if (wtarget == null || wtarget.IsInvulnerable)
             {
                 return;
             }
@@ -74,7 +74,7 @@ namespace T2IN1_Pantheon
             //Cast Hydra & Tiamat
             var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
 
-            if (hydratarget == null)
+            if (hydratarget == null || hydratarget.IsInvulnerable)
             {
                 return;
             }
@@ -88,6 +88,11 @@ namespace T2IN1_Pantheon
             }
 
             var tiamattarget = TargetSelector.GetTarget(Tiamat.Range, DamageType.True);
+
+            if (tiamattarget == null || tiamattarget.IsInvulnerable)
+            {
+                return;
+            }
 
             if (ComboMenu["Tiamat"].Cast<CheckBox>().CurrentValue)
             {

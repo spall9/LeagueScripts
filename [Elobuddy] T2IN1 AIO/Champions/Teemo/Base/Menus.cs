@@ -47,6 +47,7 @@ namespace T2IN1_Teemo
             ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
+            ComboMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
