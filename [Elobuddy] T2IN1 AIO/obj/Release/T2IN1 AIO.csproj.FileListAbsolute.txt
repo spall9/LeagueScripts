@@ -1,4 +1,3 @@
-F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\obj\Release\T2IN1 AIO.csprojResolveAssemblyReference.cache
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\bin\Release\T2IN1AIO.exe.config
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\bin\Release\T2IN1AIO.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\bin\Release\T2IN1AIO.pdb

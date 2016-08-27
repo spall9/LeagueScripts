@@ -22,8 +22,8 @@ namespace T2IN1
                 T2IN1_Teemo.DrawingsManager.InitializeDrawings();
 
                 Chat.Print("T2IN1 AIO Teemo Loaded!");
-                Chat.Print("Credits to MarioGK for his Addon Template");
-                Chat.Print("Thanks to: MarioGK, scarEl");
+                Chat.Print("Credits to MarioGK for his Addon Template & Lib");
+                Chat.Print("Thanks to: MarioGK, scarEl for the Help");
             }
 
             //Pantheon
@@ -35,8 +35,8 @@ namespace T2IN1
                 T2IN1_Pantheon.DrawingsManager.InitializeDrawings();
 
                 Chat.Print("T2IN1 AIO Pantheon Loaded!");
-                Chat.Print("Credits to MarioGK for his Addon Template");
-                Chat.Print("Thanks to: MarioGK, scarEl");
+                Chat.Print("Credits to MarioGK for his Addon Template & Lib");
+                Chat.Print("Thanks to: MarioGK, scarEl for the Help");
             }
         }
     }
