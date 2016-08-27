@@ -44,6 +44,7 @@ namespace T2IN1_Pantheon
             ComboMenu.Add("ECancel", new CheckBox("- Use E Cancel", false));
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra & Tiamat"));
+            ComboMenu.Add("Cutlass", new CheckBox("- Use Bilgewater Cutlass"));
             ComboMenu.Add("TitanicHydra", new CheckBox("- Use Titanic Hydra"));
             ComboMenu.Add("Botrk", new CheckBox("- Use Blade of the Ruined King"));
             ComboMenu.Add("Gunblade", new CheckBox("- Use Hextech Gunblade"));

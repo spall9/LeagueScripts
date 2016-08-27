@@ -174,6 +174,21 @@ namespace T2IN1_Pantheon
                     GLP.Cast(glptarget);
                 }
             }
+            //Cast Bilgewater Cutlass
+            var cutlasstarget = TargetSelector.GetTarget(Cutlass.Range, DamageType.Magical);
+
+            if (cutlasstarget == null || cutlasstarget.IsInvulnerable)
+            {
+                return;
+            }
+
+            if (ComboMenu["Cutlass"].Cast<CheckBox>().CurrentValue)
+            {
+                if (cutlasstarget.IsValidTarget(Cutlass.Range) && Cutlass.IsReady())
+                {
+                    Cutlass.Cast(cutlasstarget);
+                }
+            }
         }
     }
 }
