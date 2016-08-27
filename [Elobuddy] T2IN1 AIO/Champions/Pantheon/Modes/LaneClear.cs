@@ -30,6 +30,8 @@ namespace T2IN1_Pantheon
                 if (E.IsReady())
                 {
                     E.TryToCast(E.GetBestCircularCastPosition(), LastHitMenu);
+                    Orbwalker.DisableAttacking = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
+                    Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                 }
             }
         }
