@@ -19,6 +19,8 @@ ___
 # Features
 ___
 
+**-Activator**
+
 **-Damage Indicator**
 
 **-ComboMode**
@@ -30,7 +32,6 @@ ___
 **-Flee**
 
 **-Skin Changer**
-
 
 
 # Credits:
