@@ -51,7 +51,7 @@ namespace T2IN1_Pantheon
                 return;
             }
 
-            //Add Stop Movin Function
+            
             if (ComboMenu["ECancel"].Cast<CheckBox>().CurrentValue)
             {
                 if (etarget.IsValidTarget(E.Range) && E.IsReady())
@@ -60,7 +60,7 @@ namespace T2IN1_Pantheon
                 }
             }
 
-            //Add Stop Movin Function
+            
             if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
             {
                 if (etarget.IsValidTarget(E.Range) && E.IsReady())

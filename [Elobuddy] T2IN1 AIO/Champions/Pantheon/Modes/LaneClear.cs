@@ -21,7 +21,7 @@ namespace T2IN1_Pantheon
             {
                 if (Q.IsReady())
                 {
-                    Q.TryToCast(Q.GetLastHitMinion(), LastHitMenu);
+                    Q.TryToCast(Q.GetLastHitMinion(), LaneClearMenu);
                 }
             }
 
@@ -29,7 +29,7 @@ namespace T2IN1_Pantheon
             {
                 if (E.IsReady())
                 {
-                    E.TryToCast(E.GetBestCircularCastPosition(), LastHitMenu);
+                    E.TryToCast(E.GetBestCircularCastPosition(), LaneClearMenu);
                     Orbwalker.DisableAttacking = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                     Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                 }
