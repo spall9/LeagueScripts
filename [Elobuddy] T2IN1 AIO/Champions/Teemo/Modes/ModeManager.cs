@@ -19,8 +19,6 @@ namespace T2IN1_Teemo
             var orbMode = Orbwalker.ActiveModesFlags;
             var playerMana = Player.Instance.ManaPercent;
 
-            Active.Execute();
-
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
             {
                 Combo.Execute1();

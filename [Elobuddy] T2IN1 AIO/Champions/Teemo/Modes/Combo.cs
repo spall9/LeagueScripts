@@ -27,37 +27,6 @@ namespace T2IN1_Teemo
                     Q.TryToCast(qtarget, ComboMenu);
                 }
             }
-
-            //Cast Hydra & Tiamat
-            var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
-
-            if (hydratarget == null || hydratarget.IsInvulnerable)
-            {
-                return;
-            }
-
-            if (ComboMenu["Hydra"].Cast<CheckBox>().CurrentValue)
-            {
-                if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
-                {
-                    Hydra.Cast();
-                }
-            }
-
-            var tiamattarget = TargetSelector.GetTarget(Tiamat.Range, DamageType.True);
-
-            if (tiamattarget == null || tiamattarget.IsInvulnerable)
-            {
-                return;
-            }
-
-            if (ComboMenu["Tiamat"].Cast<CheckBox>().CurrentValue)
-            {
-                if (tiamattarget.IsValidTarget(Tiamat.Range) && Tiamat.IsReady())
-                {
-                    Tiamat.Cast();
-                }
-            }
         }
 
         public static void Execute2()
@@ -74,6 +43,7 @@ namespace T2IN1_Teemo
                 if (rtarget.IsValidTarget(R.Range) && R.IsReady())
                 {
                     R.TryToCast(rtarget, ComboMenu);
+                    
                 }
             }
         }

@@ -20,7 +20,6 @@ namespace T2IN1_Teemo
         public static Menu KSMenu;
         public static Menu LastHitMenu;
         public static Menu FleeMenu;
-        public static Menu ActivatorMenu;
         public static Menu MiscMenu;
 
         public static ColorSlide QColorSlide;
@@ -32,7 +31,6 @@ namespace T2IN1_Teemo
         public static void CreateMenu()
         {
             FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
-            ActivatorMenu = FirstMenu.AddSubMenu("• Activator");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             LastHitMenu = FirstMenu.AddSubMenu("• LastHit");
@@ -46,8 +44,6 @@ namespace T2IN1_Teemo
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
             ComboMenu.AddGroupLabel("Item Settings");
-            ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
-            ComboMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
@@ -63,35 +59,6 @@ namespace T2IN1_Teemo
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
-
-            ActivatorMenu.AddGroupLabel("Activator Settings");
-            ActivatorMenu.AddGroupLabel("Use Summoner's");
-            ActivatorMenu.Add("Ignite", new CheckBox("- Use Ignite"));
-            ActivatorMenu.Add("Smite", new CheckBox("- Use Smite"));
-            ActivatorMenu.AddGroupLabel("Use Potion's");
-            ActivatorMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
-            ActivatorMenu.Add("Health", new CheckBox("- Use Health"));
-            ActivatorMenu.Add("Refillable", new CheckBox("- Use Refillable"));
-            ActivatorMenu.Add("Hunters", new CheckBox("- Use Hunters"));
-            ActivatorMenu.Add("Corrupting", new CheckBox("- Use Corrupting"));
-            ActivatorMenu.AddGroupLabel("Use Offensive Item's");
-            ActivatorMenu.Add("Hydra", new CheckBox("- Use Hydra"));
-            ActivatorMenu.Add("HydraTitanic", new CheckBox("- Use HydraTitanic"));
-            ActivatorMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
-            ActivatorMenu.Add("Cutlass", new CheckBox("- Use Cutlass"));
-            ActivatorMenu.Add("Botrk", new CheckBox("- Use Botrk"));
-            ActivatorMenu.Add("Youmuu", new CheckBox("- Use Youmuu"));
-            ActivatorMenu.Add("Gunblade", new CheckBox("- Use Gunblade"));
-            ActivatorMenu.Add("Protobelt", new CheckBox("- Use Protobelt"));
-            ActivatorMenu.Add("GLP", new CheckBox("- Use GLP"));
-            ActivatorMenu.AddGroupLabel("Use Defensive Item's");
-            ActivatorMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas"));
-            ActivatorMenu.Add("Seraph", new CheckBox("- Use Seraph"));
-            ActivatorMenu.Add("Solari", new CheckBox("- Use Solari"));
-            ActivatorMenu.AddGroupLabel("Use Cleanser's");
-            ActivatorMenu.Add("Mikael", new CheckBox("- Use Mikael"));
-            ActivatorMenu.Add("Qss", new CheckBox("- Use Qss"));
-            ActivatorMenu.Add("Mercurial", new CheckBox("- Use Mercurial"));
 
             MiscMenu.AddGroupLabel("Skin Changer");
 

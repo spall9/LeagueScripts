@@ -78,9 +78,7 @@
     <Compile Include="Champions\Pantheon\Items\Consumable.cs" />
     <Compile Include="Champions\Pantheon\Items\Defensive.cs" />
     <Compile Include="Champions\Pantheon\Items\Offensive.cs" />
-    <Compile Include="Champions\Pantheon\Modes\Activator.cs" />
     <Compile Include="Champions\Pantheon\Modes\Logic.cs" />
-    <Compile Include="Champions\Pantheon\Modes\Active.cs" />
     <Compile Include="Champions\Pantheon\Modes\Combo.cs" />
     <Compile Include="Champions\Pantheon\Modes\LaneClear.cs" />
     <Compile Include="Champions\Pantheon\Modes\LastHit.cs" />
@@ -96,8 +94,6 @@
     <Compile Include="Champions\Teemo\Items\Consumable.cs" />
     <Compile Include="Champions\Teemo\Items\Defensive.cs" />
     <Compile Include="Champions\Teemo\Items\Offensive.cs" />
-    <Compile Include="Champions\Teemo\Modes\Activator.cs" />
-    <Compile Include="Champions\Teemo\Modes\Active.cs" />
     <Compile Include="Champions\Teemo\Modes\Combo.cs" />
     <Compile Include="Champions\Teemo\Modes\Flee.cs" />
     <Compile Include="Champions\Teemo\Modes\LaneClear.cs" />
