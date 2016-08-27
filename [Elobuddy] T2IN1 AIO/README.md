@@ -32,20 +32,6 @@ ___
 **-Skin Changer**
 
 
-# Working on
-___
-
-**-~~Make it Compact~~**
-
-**-~~Fix Skin Changer~~**
-
-**-Add KS?**
-
-**-Add Activator?**
-
-**-Combo Mode (Fixing Shroom Spam)**
-
-**-LaneClear Mode (Fixing Shroom Spam)**
 
 # Credits:
 ___
