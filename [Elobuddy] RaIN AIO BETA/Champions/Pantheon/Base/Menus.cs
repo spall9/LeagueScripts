@@ -41,8 +41,9 @@ namespace T2IN1_Pantheon
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("W", new CheckBox("- Use W"));
+            ComboMenu.AddLabel("Uncheck Use E if you use E Cancel! Same goes for the other one!");
             ComboMenu.Add("E", new CheckBox("- Use E"));
-            ComboMenu.Add("R", new CheckBox("- Use R"));
+            ComboMenu.Add("ECancel", new CheckBox("- Use E Cancel"));
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
 
