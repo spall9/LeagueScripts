@@ -156,7 +156,7 @@ namespace T2IN1_Pantheon
             {
                 if (protobelttarget.IsValidTarget(Protobelt.Range) && Protobelt.IsReady())
                 {
-                    Protobelt.Cast(protobelttarget);
+                    Protobelt.Cast(protobelttarget.Direction);
                 }
             }
             //Cast GLP
