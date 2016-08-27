@@ -87,6 +87,16 @@ namespace T2IN1_Pantheon
                     Tiamat.Cast();
                 }
             }
+
+            var tiamattarget = TargetSelector.GetTarget(Tiamat.Range, DamageType.True);
+
+            if (ComboMenu["Tiamat"].Cast<CheckBox>().CurrentValue)
+            {
+                if (tiamattarget.IsValidTarget(Tiamat.Range) && Tiamat.IsReady())
+                {
+                    Tiamat.Cast();
+                }
+            }
         }
     }
 }
