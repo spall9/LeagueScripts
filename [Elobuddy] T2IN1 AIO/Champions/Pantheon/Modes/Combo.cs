@@ -99,16 +99,6 @@ namespace T2IN1_Pantheon
                     Tiamat.Cast();
                 }
             }
-
-            var youmuuTarget = TargetSelector.GetTarget(Youmuu.Range, DamageType.Mixed);
-
-            if (ComboMenu["Youmuus"].Cast<CheckBox>().CurrentValue)
-            {
-                if (youmuuTarget.IsValidTarget(Youmuu.Range) && Youmuu.IsReady())
-                {
-                    Youmuu.Cast();
-                }
-            }
         }
     }
 }
