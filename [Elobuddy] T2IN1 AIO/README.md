@@ -52,4 +52,4 @@ ___
 
 -MarioGK (Addon Template and Lib)
 
--Joker (JokerLib)
+-Joker (Some things form his Lib)
