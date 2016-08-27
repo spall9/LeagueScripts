@@ -45,6 +45,7 @@ namespace T2IN1_Pantheon
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("Hydra", new CheckBox("- Use Hydra"));
             ComboMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
+            ComboMenu.Add("Yomuus", new CheckBox("- Use Yomuus"));
 
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");

@@ -99,6 +99,14 @@ namespace T2IN1_Pantheon
                     Tiamat.Cast();
                 }
             }
+
+            if (ComboMenu["Youmuus"].Cast<CheckBox>().CurrentValue)
+            {
+                if (wtarget.IsValidTarget() && Youmuu.IsReady())
+                {
+                    Youmuu.Cast();
+                }
+            }
         }
     }
 }
