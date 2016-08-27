@@ -28,22 +28,6 @@ namespace T2IN1_Pantheon
                 }
             }
 
-            var wtarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
-
-            if (wtarget == null)
-            {
-                return;
-            }
-
-            if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-            {
-                if (wtarget.IsValidTarget(W.Range) && W.IsReady())
-                {
-                    W.TryToCast(wtarget, ComboMenu);
-                    HydraTitanic.Cast();
-                }
-            }
-
             var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
 
             if (etarget == null)
@@ -68,6 +52,22 @@ namespace T2IN1_Pantheon
                     E.TryToCast(etarget, ComboMenu);
                     Orbwalker.DisableAttacking = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                     Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
+                }
+            }
+
+            var wtarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
+
+            if (wtarget == null)
+            {
+                return;
+            }
+
+            if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
+            {
+                if (wtarget.IsValidTarget(W.Range) && W.IsReady())
+                {
+                    W.TryToCast(wtarget, ComboMenu);
+                    HydraTitanic.Cast();
                 }
             }
 
