@@ -102,7 +102,7 @@ namespace T2IN1_Pantheon
 
             if (ComboMenu["Youmuus"].Cast<CheckBox>().CurrentValue)
             {
-                if (wtarget.IsValidTarget() && Youmuu.IsReady())
+                if (W.Cast())
                 {
                     Youmuu.Cast();
                 }
