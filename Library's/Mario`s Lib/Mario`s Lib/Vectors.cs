@@ -6,7 +6,7 @@ using SharpDX;
 
 // ReSharper disable CoVariantArrayConversion
 
-namespace Mario_s_Lib
+namespace T2IN1_Lib
 {
     public static class Vectors
     {

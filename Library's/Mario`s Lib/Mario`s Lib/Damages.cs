@@ -3,7 +3,7 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 
-namespace Mario_s_Lib
+namespace T2IN1_Lib
 {
     public static class Damages
     {

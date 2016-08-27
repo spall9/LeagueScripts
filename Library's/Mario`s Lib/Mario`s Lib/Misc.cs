@@ -1,6 +1,6 @@
 ﻿using EloBuddy;
 
-namespace Mario_s_Lib
+namespace T2IN1_Lib
 {
     public static class Misc
     {

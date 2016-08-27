@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 
-namespace Mario_s_Lib
+namespace T2IN1_Lib
 {
     public static class MenuHelper
     {

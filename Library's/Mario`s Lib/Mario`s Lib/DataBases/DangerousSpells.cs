@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using EloBuddy;
 
-namespace Mario_s_Lib.DataBases
+namespace T2IN1_Lib.DataBases
 {
     public class DangerousSpell
     {

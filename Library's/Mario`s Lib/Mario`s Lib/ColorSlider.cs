@@ -9,7 +9,7 @@ using SharpDX;
 using Color = System.Drawing.Color;
 using Rectangle = SharpDX.Rectangle;
 
-namespace Mario_s_Lib
+namespace T2IN1_Lib
 {
     public class ColorSlide
     {

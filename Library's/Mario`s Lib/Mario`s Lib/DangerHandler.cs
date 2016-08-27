@@ -4,10 +4,10 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Constants;
-using Mario_s_Lib.DataBases;
+using T2IN1_Lib.DataBases;
 using SharpDX;
 
-namespace Mario_s_Lib
+namespace T2IN1_Lib
 {
     public class TargetSpell
     {
