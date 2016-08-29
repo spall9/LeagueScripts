@@ -1,4 +1,10 @@
-﻿using System.Linq;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                            //
+// Credits to MarioGK for his Lib, Template and his Help, also thanks & Credits to Joker for Parts of his Lib //
+//                                                                                                            //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 

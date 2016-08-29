@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                            //
+// Credits to MarioGK for his Lib, Template and his Help, also thanks & Credits to Joker for Parts of his Lib //
+//                                                                                                            //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using EloBuddy;

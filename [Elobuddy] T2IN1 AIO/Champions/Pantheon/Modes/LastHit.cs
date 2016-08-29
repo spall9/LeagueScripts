@@ -4,6 +4,12 @@ using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 
 using static T2IN1_Pantheon.Menus;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                            //
+// Credits to MarioGK for his Lib, Template and his Help, also thanks & Credits to Joker for Parts of his Lib //
+//                                                                                                            //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
 using static T2IN1_Pantheon.SpellsManager;
 using static T2IN1_Pantheon.Offensive;
 

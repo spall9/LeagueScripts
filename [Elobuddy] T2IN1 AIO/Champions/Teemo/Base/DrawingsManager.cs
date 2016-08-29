@@ -1,10 +1,18 @@
-﻿using System;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                            //
+// Credits to MarioGK for his Lib, Template and his Help, also thanks & Credits to Joker for Parts of his Lib //
+//                                                                                                            //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+using System;
 using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Rendering;
+
 using T2IN1_Lib;
+
 using static T2IN1_Teemo.SpellsManager;
 using static T2IN1_Teemo.Menus;
 
