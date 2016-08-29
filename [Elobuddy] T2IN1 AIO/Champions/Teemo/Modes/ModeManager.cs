@@ -24,9 +24,14 @@ namespace T2IN1_Teemo
                 Combo.Execute1();
             }
 
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
+            {
+                Combo.ExecuteItems();
+            }
+
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && playerMana > ComboMenu.GetSliderValue("manaSlider"))
             {
-                Combo.Execute2();
+                Combo.ExecuteR();
             }
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LastHit) && playerMana > LastHitMenu.GetSliderValue("manaSlider"))

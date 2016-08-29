@@ -28,7 +28,30 @@ namespace T2IN1_Teemo
                     Q.TryToCast(qtarget, ComboMenu);
                 }
             }
+        }
 
+        public static void ExecuteR()
+        {
+            //Cast R
+            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
+
+            if (rtarget == null || rtarget.IsInvulnerable)
+            {
+                return;
+            }
+
+            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
+            {
+                if (rtarget.IsValidTarget(R.Range) && R.IsReady())
+                {
+                    R.TryToCast(rtarget, ComboMenu);
+
+                }
+            }
+        }
+
+        public static void ExecuteItems()
+        {
             //Item Target's
             var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
             var tiamattarget = TargetSelector.GetTarget(Tiamat.Range, DamageType.True);
@@ -148,26 +171,6 @@ namespace T2IN1_Teemo
                 if (cutlasstarget.IsValidTarget(Cutlass.Range) && Cutlass.IsReady())
                 {
                     Cutlass.Cast(cutlasstarget);
-                }
-            }
-        }
-
-        //Cast R
-        public static void Execute2()
-        {
-            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
-
-            if (rtarget == null || rtarget.IsInvulnerable)
-            {
-                return;
-            }
-
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
-            {
-                if (rtarget.IsValidTarget(R.Range) && R.IsReady())
-                {
-                    R.TryToCast(rtarget, ComboMenu);
-                    
                 }
             }
         }
