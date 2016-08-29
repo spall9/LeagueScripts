@@ -42,7 +42,7 @@ namespace T2IN1_Teemo
             {
                 if (rtarget.IsValidTarget(R.Range) && R.IsReady())
                 {
-                    R.TryToCast(rtarget.Position, ComboMenu);
+                    R.TryToCast(rtarget.GetTargetDirection(), ComboMenu);
 
                 }
             }
