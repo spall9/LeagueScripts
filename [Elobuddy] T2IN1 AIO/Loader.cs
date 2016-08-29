@@ -1,4 +1,10 @@
-﻿using System;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                            //
+//           Credits to MarioGK for his Lib & Template also Credits to Joker for Parts of his Lib             //
+//                                                                                                            //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+using System;
 using EloBuddy;
 using EloBuddy.SDK.Events;
 
@@ -22,8 +28,7 @@ namespace T2IN1
                 T2IN1_Teemo.DrawingsManager.InitializeDrawings();
 
                 Chat.Print("T2IN1 AIO Teemo Loaded!");
-                Chat.Print("Credits to MarioGK for his Addon Template & Lib");
-                Chat.Print("Thanks to: MarioGK, scarEl for the Help");
+                Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");
             }
 
             //Pantheon
@@ -35,8 +40,7 @@ namespace T2IN1
                 T2IN1_Pantheon.DrawingsManager.InitializeDrawings();
 
                 Chat.Print("T2IN1 AIO Pantheon Loaded!");
-                Chat.Print("Credits to MarioGK for his Addon Template & Lib");
-                Chat.Print("Thanks to: MarioGK, scarEl for the Help");
+                Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");
             }
         }
     }

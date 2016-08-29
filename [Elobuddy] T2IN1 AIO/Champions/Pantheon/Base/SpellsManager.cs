@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                            //
-// Credits to MarioGK for his Lib, Template and his Help, also thanks & Credits to Joker for Parts of his Lib //
+//           Credits to MarioGK for his Lib & Template also Credits to Joker for Parts of his Lib             //
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 

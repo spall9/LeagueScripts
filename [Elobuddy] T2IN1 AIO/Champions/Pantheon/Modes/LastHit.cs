@@ -6,7 +6,7 @@ using T2IN1_Lib;
 using static T2IN1_Pantheon.Menus;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                            //
-// Credits to MarioGK for his Lib, Template and his Help, also thanks & Credits to Joker for Parts of his Lib //
+//           Credits to MarioGK for his Lib & Template also Credits to Joker for Parts of his Lib             //
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
