@@ -27,10 +27,10 @@ namespace T2IN1_Teemo
 
         public static void InitializeSpells()
         {
-            Q = new Spell.Targeted(SpellSlot.Q, 680);
-            W = new Spell.Active(SpellSlot.W);
-            E = new Spell.Active(SpellSlot.E, 680);
-            R = new Spell.Skillshot(SpellSlot.R, 400, SkillShotType.Cone, 500, 1000, 120);
+            Q = new Spell.Targeted(spellSlot: SpellSlot.Q, spellRange: 680);
+            W = new Spell.Active(spellSlot: SpellSlot.W);
+            E = new Spell.Active(spellSlot: SpellSlot.E, spellRange: 680);
+            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 400, skillShotType: SkillShotType.Cone, castDelay: 500, spellSpeed: 1000, spellWidth: 120);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
 
