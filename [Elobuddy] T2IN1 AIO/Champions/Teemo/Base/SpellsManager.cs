@@ -1,3 +1,4 @@
+using System;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
@@ -35,17 +36,6 @@ namespace T2IN1_Teemo
 
         }
 
-        public static float GetRRange()
-        {
-
-            float range = 0f;
-            if (Player.GetSpell(SpellSlot.R).Level > 0)
-            {
-                range = (float)150 + 250 * Player.GetSpell(SpellSlot.R).Level;
-            }
-            return range;
-        }
-
         #region Damages
 
         /// It will return the damage but you need to set them before getting the damage
@@ -65,7 +55,7 @@ namespace T2IN1_Teemo
                 case SpellSlot.Q:
                     if (Q.IsReady())
                     {
-                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f*AP;
+                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
                     }
                     break;
                 case SpellSlot.W:
@@ -77,13 +67,13 @@ namespace T2IN1_Teemo
                 case SpellSlot.E:
                     if (E.IsReady())
                     {
-                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.4f*AP; 
+                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.4f * AP; 
                     }
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
                     {
-                        dmg += new float[] {250, 406, 562}[sLevel] + 0.7f*AP;
+                        dmg += new float[] {250, 406, 562}[sLevel] + 0.7f * AP;
                     }
                     break;
             }
