@@ -83,7 +83,7 @@ namespace T2IN1_Teemo
                 case SpellSlot.R:
                     if (R.IsReady())
                     {
-                        dmg += new float[] { 200, 325, 450 }[sLevel] + 0.5f*AP + new[] { 50, 81, 112 }[sLevel] + 0.2f * AP;
+                        dmg += new float[] { 200, 325, 450 }[sLevel] + 0.5f * AP + new[] { 50, 81, 112 }[sLevel] + 0.2f * AP;
                     }
                     break;
             }

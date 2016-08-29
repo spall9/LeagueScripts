@@ -119,7 +119,7 @@ namespace T2IN1_Teemo
             {
                 if (protobelttarget.IsValidTarget(Protobelt.Range) && Protobelt.IsReady())
                 {
-                    Protobelt.Cast(protobelttarget.Direction);
+                    Protobelt.Cast(protobelttarget.Position);
                 }
             }
 
