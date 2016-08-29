@@ -43,7 +43,7 @@ namespace T2IN1_Pantheon
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.Add("ECancel", new CheckBox("- Use E Cancel", false));
             ComboMenu.AddGroupLabel("Item Settings");
-            ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra & Tiamat"));
+            ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
             ComboMenu.Add("Cutlass", new CheckBox("- Use Bilgewater Cutlass"));
             ComboMenu.Add("TitanicHydra", new CheckBox("- Use Titanic Hydra"));
             ComboMenu.Add("Botrk", new CheckBox("- Use Blade of the Ruined King"));
@@ -56,8 +56,7 @@ namespace T2IN1_Pantheon
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("E", new CheckBox("- Use E"));
             LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 30);
-            LaneClearMenu.Add("Hydra", new CheckBox("- Use Hydra"));
-            LaneClearMenu.Add("Tiamat", new CheckBox("- Use Tiamat"));
+            LaneClearMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
 
             LastHitMenu.AddGroupLabel("Last Hit Settings");
             LastHitMenu.Add("Q", new CheckBox("- Use Q"));

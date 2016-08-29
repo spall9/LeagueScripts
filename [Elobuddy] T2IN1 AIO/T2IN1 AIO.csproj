@@ -79,7 +79,6 @@
     <Compile Include="Champions\Pantheon\Items\Consumable.cs" />
     <Compile Include="Champions\Pantheon\Items\Defensive.cs" />
     <Compile Include="Champions\Pantheon\Items\Offensive.cs" />
-    <Compile Include="Champions\Pantheon\Modes\Logic.cs" />
     <Compile Include="Champions\Pantheon\Modes\Combo.cs" />
     <Compile Include="Champions\Pantheon\Modes\LaneClear.cs" />
     <Compile Include="Champions\Pantheon\Modes\LastHit.cs" />

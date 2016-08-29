@@ -1,8 +1,10 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
+
 using T2IN1_Lib;
 using static T2IN1_Teemo.Menus;
+using static T2IN1_Teemo.AutoLevel;
 
 namespace T2IN1_Teemo
 {
@@ -86,58 +88,6 @@ namespace T2IN1_Teemo
             }
             return Player.Instance.CalculateDamageOnUnit(target, damageType, dmg - 10);
         }
-
         #endregion Damages
-
-        /// This event is triggered when a unit levels up
-        private static void Obj_AI_Base_OnLevelUp(Obj_AI_Base sender, Obj_AI_BaseLevelUpEventArgs args)
-        {
-            if (MiscMenu.GetCheckBoxValue("activateAutoLVL") && sender.IsMe)
-            {
-                var delay = MiscMenu.GetSliderValue("delaySlider");
-                Core.DelayAction(LevelUPSpells, delay);
-
-            }
-        }
-
-        /// It will level up the spell using the values of the comboboxes on the menu as a priority
-        private static void LevelUPSpells()
-        {
-            if (Player.Instance.Spellbook.CanSpellBeUpgraded(SpellSlot.R))
-            {
-                Player.Instance.Spellbook.LevelSpell(SpellSlot.R);
-            }
-
-            if (Player.Instance.Spellbook.CanSpellBeUpgraded(GetSlotFromComboBox(MiscMenu.GetComboBoxValue("firstFocus"))))
-            {
-                Player.Instance.Spellbook.LevelSpell(GetSlotFromComboBox(MiscMenu.GetComboBoxValue("firstFocus")));
-            }
-
-            if (Player.Instance.Spellbook.CanSpellBeUpgraded(GetSlotFromComboBox(MiscMenu.GetComboBoxValue("secondFocus"))))
-            {
-                Player.Instance.Spellbook.LevelSpell(GetSlotFromComboBox(MiscMenu.GetComboBoxValue("secondFocus")));
-            }
-
-            if (Player.Instance.Spellbook.CanSpellBeUpgraded(GetSlotFromComboBox(MiscMenu.GetComboBoxValue("thirdFocus"))))
-            {
-                Player.Instance.Spellbook.LevelSpell(GetSlotFromComboBox(MiscMenu.GetComboBoxValue("thirdFocus")));
-            }
-        }
-
-        /// It will transform the value of the combobox into a SpellSlot
-        private static SpellSlot GetSlotFromComboBox(this int value)
-        {
-            switch (value)
-            {
-                case 0:
-                    return SpellSlot.Q;
-                case 1:
-                    return SpellSlot.W;
-                case 2:
-                    return SpellSlot.E;
-            }
-            Chat.Print("Failed getting slot");
-            return SpellSlot.Unknown;
-        }
     }
 }

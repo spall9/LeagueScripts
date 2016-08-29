@@ -8,3 +8,14 @@ F:\RaIN Repos\LeagueScripts\Library's\Mario`s Lib\T2IN1 Lib\bin\Debug\SharpDX.dl
 F:\RaIN Repos\LeagueScripts\Library's\Mario`s Lib\T2IN1 Lib\bin\Debug\Newtonsoft.Json.dll
 F:\RaIN Repos\LeagueScripts\Library's\Mario`s Lib\T2IN1 Lib\obj\Debug\T2IN1 Lib.dll
 F:\RaIN Repos\LeagueScripts\Library's\Mario`s Lib\T2IN1 Lib\obj\Debug\T2IN1 Lib.pdb
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\T2IN1 Lib.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\T2IN1 Lib.pdb
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\EloBuddy.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\EloBuddy.Sandbox.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\EloBuddy.SDK.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\SharpDX.Direct3D9.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\SharpDX.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\bin\Debug\Newtonsoft.Json.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\obj\Debug\T2IN1 Lib.csprojResolveAssemblyReference.cache
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\obj\Debug\T2IN1 Lib.dll
+F:\RaIN Repos\LeagueScripts\Library\T2IN1 Lib\T2IN1 Lib\obj\Debug\T2IN1 Lib.pdb

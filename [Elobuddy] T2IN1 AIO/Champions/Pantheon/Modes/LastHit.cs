@@ -13,6 +13,7 @@ namespace T2IN1_Pantheon
     {
         public static void Execute()
         {
+            //Cast Q
             if (LastHitMenu["Q"].Cast<CheckBox>().CurrentValue)
             {
                 if (Q.IsReady())
@@ -21,13 +22,12 @@ namespace T2IN1_Pantheon
                 }
             }
 
+            //Cast E
             if (LastHitMenu["E"].Cast<CheckBox>().CurrentValue)
             {
                 if (E.IsReady())
                 {
                     E.TryToCast(E.GetLastHitMinion(), LastHitMenu);
-                    Orbwalker.DisableAttacking = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
-                    Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
                 }
             }
         }

@@ -13,8 +13,12 @@ namespace T2IN1_Pantheon
     {
         public static void Execute()
         {
+            //Spell Target's
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
+            var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
+            var wtarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
 
+            //Cast Q
             if (qtarget == null || qtarget.IsInvulnerable)
             {
                 return;
@@ -28,8 +32,7 @@ namespace T2IN1_Pantheon
                 }
             }
 
-            var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
-
+            //Cast E
             if (etarget == null || etarget.IsInvulnerable)
             {
                 return;
@@ -53,8 +56,7 @@ namespace T2IN1_Pantheon
                 }
             }
 
-            var wtarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
-
+            //Cast W
             if (wtarget == null || wtarget.IsInvulnerable)
             {
                 return;
@@ -69,9 +71,17 @@ namespace T2IN1_Pantheon
                 }
             }
 
-            //Cast Hydra
+            //Item Target's
             var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
+            var tiamattarget = TargetSelector.GetTarget(Tiamat.Range, DamageType.True);
+            var titanichydratarget = TargetSelector.GetTarget(HydraTitanic.Range, DamageType.True);
+            var botrktarget = TargetSelector.GetTarget(Botrk.Range, DamageType.Physical);
+            var gunbladetarget = TargetSelector.GetTarget(Gunblade.Range, DamageType.Magical);
+            var protobelttarget = TargetSelector.GetTarget(Protobelt.Range, DamageType.Magical);
+            var glptarget = TargetSelector.GetTarget(GLP.Range, DamageType.Magical);
+            var cutlasstarget = TargetSelector.GetTarget(Cutlass.Range, DamageType.Magical);
 
+            //Cast Hydra
             if (hydratarget == null || hydratarget.IsInvulnerable)
             {
                 return;
@@ -84,9 +94,8 @@ namespace T2IN1_Pantheon
                     Hydra.Cast();
                 }
             }
-            //Cast Tiamat
-            var tiamattarget = TargetSelector.GetTarget(Tiamat.Range, DamageType.True);
 
+            //Cast Tiamat
             if (tiamattarget == null || tiamattarget.IsInvulnerable)
             {
                 return;
@@ -99,9 +108,8 @@ namespace T2IN1_Pantheon
                     Tiamat.Cast();
                 }
             }
-            //Cast TitanicHydra
-            var titanichydratarget = TargetSelector.GetTarget(HydraTitanic.Range, DamageType.True);
 
+            //Cast TitanicHydra
             if (titanichydratarget == null || titanichydratarget.IsInvulnerable)
             {
                 return;
@@ -114,9 +122,8 @@ namespace T2IN1_Pantheon
                     HydraTitanic.Cast();
                 }
             }
-            //Cast Blade of the Ruined King
-            var botrktarget = TargetSelector.GetTarget(Botrk.Range, DamageType.Physical);
 
+            //Cast Blade of the Ruined King
             if (botrktarget == null || botrktarget.IsInvulnerable)
             {
                 return;
@@ -129,9 +136,8 @@ namespace T2IN1_Pantheon
                     Botrk.Cast(botrktarget);
                 }
             }
-            //Cast Hextech Gunblade
-            var gunbladetarget = TargetSelector.GetTarget(Gunblade.Range, DamageType.Magical);
 
+            //Cast Hextech Gunblade
             if (gunbladetarget == null || gunbladetarget.IsInvulnerable)
             {
                 return;
@@ -144,9 +150,8 @@ namespace T2IN1_Pantheon
                     Gunblade.Cast(gunbladetarget);
                 }
             }
-            //Cast Protobelt
-            var protobelttarget = TargetSelector.GetTarget(Protobelt.Range, DamageType.Magical);
 
+            //Cast Protobelt
             if (protobelttarget == null || protobelttarget.IsInvulnerable)
             {
                 return;
@@ -159,9 +164,8 @@ namespace T2IN1_Pantheon
                     Protobelt.Cast(protobelttarget.Direction);
                 }
             }
-            //Cast GLP
-            var glptarget = TargetSelector.GetTarget(GLP.Range, DamageType.Magical);
 
+            //Cast GLP
             if (glptarget == null || glptarget.IsInvulnerable)
             {
                 return;
@@ -174,9 +178,8 @@ namespace T2IN1_Pantheon
                     GLP.Cast(glptarget);
                 }
             }
-            //Cast Bilgewater Cutlass
-            var cutlasstarget = TargetSelector.GetTarget(Cutlass.Range, DamageType.Magical);
 
+            //Cast Bilgewater Cutlass
             if (cutlasstarget == null || cutlasstarget.IsInvulnerable)
             {
                 return;
