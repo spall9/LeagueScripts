@@ -71,7 +71,7 @@ namespace T2IN1_Teemo
                 case SpellSlot.W:
                     if (W.IsReady())
                     {
-                        dmg += new float[] { 0, 0, 0, 0, 0 }[sLevel];
+                        dmg += new float[] { 0, 0, 0, 0, 0 }[sLevel] + 0f*AP;
                     }
                     break;
                 case SpellSlot.E:
