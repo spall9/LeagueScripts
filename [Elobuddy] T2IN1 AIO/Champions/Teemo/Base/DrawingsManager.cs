@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
 using EloBuddy;
+using EloBuddy.SDK;
+using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Rendering;
 using T2IN1_Lib;
 using static T2IN1_Teemo.SpellsManager;
@@ -43,6 +46,12 @@ namespace T2IN1_Teemo
 
         private static void Drawing_OnEndScene(EventArgs args)
         {
-        }
+            if (Loading.IsLoadingComplete)
+            {
+                foreach (var item in EntityManager.Heroes.Allies.Where(o => o.IsHPBarRendered))
+                {
+                    var f = item.Experience.XPPercentage;
+                }
+            }
     }
 }
