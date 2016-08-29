@@ -42,6 +42,7 @@ namespace T2IN1_Teemo
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
+            LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
             ComboMenu.Add("Cutlass", new CheckBox("- Use Bilgewater Cutlass"));
@@ -54,7 +55,7 @@ namespace T2IN1_Teemo
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("R", new CheckBox("- Use R"));
-            LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 30);
+            LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 50);
             LaneClearMenu.AddGroupLabel("Item Settings");
             LaneClearMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
 
