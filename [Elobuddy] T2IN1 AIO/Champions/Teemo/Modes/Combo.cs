@@ -14,6 +14,7 @@ namespace T2IN1_Teemo
         public static void Execute1()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
+            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
 
             //Cast Q
             if (qtarget == null || qtarget.IsInvulnerable)
@@ -28,14 +29,9 @@ namespace T2IN1_Teemo
                     Q.TryToCast(qtarget, ComboMenu);
                 }
             }
-        }
 
-        public static void ExecuteR()
-        {
             //Cast R
-            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
-
-            if (rtarget == null)
+            if (rtarget == null || rtarget.IsInvulnerable)
             {
                 return;
             }
@@ -49,6 +45,7 @@ namespace T2IN1_Teemo
                 }
             }
         }
+
 
         public static void ExecuteItems()
         {

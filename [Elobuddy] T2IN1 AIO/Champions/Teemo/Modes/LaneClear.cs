@@ -18,7 +18,7 @@ namespace T2IN1_Teemo
             {
                 if (R.IsReady())
                 {
-                    R.TryToCast(R.GetBestCircularFarmPosition(), LaneClearMenu);
+                    R.TryToCast(R.GetBestCircularFarmPosition(4), LaneClearMenu);
                 }
             }
             
