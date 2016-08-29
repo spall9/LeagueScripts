@@ -8,10 +8,9 @@ namespace T2IN1_Pantheon
  {
      public static class Active
      {
-         public static void Execute()
-         {
-            Orbwalker.DisableAttacking = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
-            Orbwalker.DisableMovement = Player.Instance.Spellbook.IsChanneling || Player.Instance.Spellbook.IsChanneling;
+        public static void Execute()
+        {
+
         }
      }
  } 

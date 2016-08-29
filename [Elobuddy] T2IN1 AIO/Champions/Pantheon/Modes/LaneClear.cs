@@ -31,7 +31,18 @@ namespace T2IN1_Pantheon
             {
                 if (E.IsReady())
                 {
-                    E.TryToCast(E.GetBestCircularCastPosition(), LaneClearMenu);
+                    E.TryToCast(E.GetBestLinearFarmPosition(), LaneClearMenu);
+
+                    if (Player.Instance.Spellbook.IsChanneling)
+                    {
+                        Orbwalker.DisableAttacking = true;
+                        Orbwalker.DisableMovement = true;
+                    }
+                    else
+                    {
+                        Orbwalker.DisableAttacking = false;
+                        Orbwalker.DisableMovement = false;
+                    }
                 }
             }
 

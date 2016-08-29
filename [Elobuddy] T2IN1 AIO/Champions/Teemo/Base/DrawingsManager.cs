@@ -46,13 +46,6 @@ namespace T2IN1_Teemo
 
         private static void Drawing_OnEndScene(EventArgs args)
         {
-            if (Loading.IsLoadingComplete)
-            {
-                foreach (var item in EntityManager.Heroes.Allies.Where(o => o.IsHPBarRendered))
-                {
-                    var f = item.Experience.XPPercentage;
-                }
-            }
         }
     }
 }
