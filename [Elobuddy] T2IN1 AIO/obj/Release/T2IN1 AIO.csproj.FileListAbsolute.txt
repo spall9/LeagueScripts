@@ -10,4 +10,3 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\bin\Release\Newtonsoft.Json.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\obj\Release\T2IN1AIO.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\obj\Release\T2IN1AIO.pdb
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\bin\Release\EloBuddy.Sandbox.dll
-F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 AIO\obj\Release\T2IN1 AIO.csprojResolveAssemblyReference.cache
