@@ -29,7 +29,7 @@ namespace T2IN1_Teemo
             Q = new Spell.Targeted(spellSlot: SpellSlot.Q, spellRange: 680);
             W = new Spell.Active(spellSlot: SpellSlot.W);
             E = new Spell.Active(SpellSlot.E, spellRange: 680);
-            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: 400, skillShotType: SkillShotType.Cone, castDelay: 500, spellSpeed: 1000, spellWidth: 120);
+            R = new Spell.Skillshot(spellSlot: SpellSlot.R, spellRange: R.Range, skillShotType: SkillShotType.Cone, castDelay: 500, spellSpeed: 1000, spellWidth: 120);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
