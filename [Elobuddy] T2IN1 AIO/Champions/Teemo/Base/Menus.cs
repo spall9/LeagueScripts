@@ -42,7 +42,7 @@ namespace T2IN1_Teemo
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
-            LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
+            ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
             ComboMenu.Add("Cutlass", new CheckBox("- Use Bilgewater Cutlass"));
