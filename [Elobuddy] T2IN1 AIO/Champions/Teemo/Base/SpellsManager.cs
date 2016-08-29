@@ -65,7 +65,7 @@ namespace T2IN1_Teemo
                 case SpellSlot.Q:
                     if (Q.IsReady())
                     {
-                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
+                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f*AP;
                     }
                     break;
                 case SpellSlot.W:
@@ -77,13 +77,13 @@ namespace T2IN1_Teemo
                 case SpellSlot.E:
                     if (E.IsReady())
                     {
-                        dmg += new float[] { 24, 48, 72, 96, 120 }[sLevel] + 0.4f * AP + new[] { 6, 12, 18, 24, 30}[sLevel] + 0.1f * AP; 
+                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.4f*AP; 
                     }
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
                     {
-                        dmg += new float[] { 200, 325, 450 }[sLevel] + 0.5f * AP + new[] { 50, 81, 112 }[sLevel] + 0.2f * AP;
+                        dmg += new float[] {250, 406, 562}[sLevel] + 0.7f*AP;
                     }
                     break;
             }
