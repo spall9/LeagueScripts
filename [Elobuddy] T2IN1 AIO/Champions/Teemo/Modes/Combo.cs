@@ -15,12 +15,11 @@ namespace T2IN1_Teemo
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
 
-            //Cast Q
             if (qtarget == null || qtarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast Q
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
             {
                 if (qtarget.IsValidTarget(Q.Range) && Q.IsReady())
@@ -34,17 +33,16 @@ namespace T2IN1_Teemo
         {
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
         
-            //Cast R
             if (rtarget == null || rtarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast R
             if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
             {
                 if (rtarget.IsValidTarget(R.Range) && R.IsReady())
                 {
-                    R.TryToCast(rtarget, ComboMenu);
+                    R.TryToCast(rtarget.Position, ComboMenu);
 
                 }
             }
@@ -62,12 +60,12 @@ namespace T2IN1_Teemo
             var glptarget = TargetSelector.GetTarget(GLP.Range, DamageType.Magical);
             var cutlasstarget = TargetSelector.GetTarget(Cutlass.Range, DamageType.Magical);
 
-            //Cast Hydra
+
             if (hydratarget == null || hydratarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast Hydra
             if (ComboMenu["HydraTiamat"].Cast<CheckBox>().CurrentValue)
             {
                 if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
@@ -76,12 +74,11 @@ namespace T2IN1_Teemo
                 }
             }
 
-            //Cast Tiamat
             if (tiamattarget == null || tiamattarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast Tiamat
             if (ComboMenu["HydraTiamat"].Cast<CheckBox>().CurrentValue)
             {
                 if (tiamattarget.IsValidTarget(Tiamat.Range) && Tiamat.IsReady())
@@ -90,12 +87,11 @@ namespace T2IN1_Teemo
                 }
             }
 
-            //Cast TitanicHydra
             if (titanichydratarget == null || titanichydratarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast TitanicHydra
             if (ComboMenu["TitanicHydra"].Cast<CheckBox>().CurrentValue)
             {
                 if (titanichydratarget.IsValidTarget(HydraTitanic.Range) && HydraTitanic.IsReady())
@@ -104,12 +100,11 @@ namespace T2IN1_Teemo
                 }
             }
 
-            //Cast Blade of the Ruined King
             if (botrktarget == null || botrktarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast Blade of the Ruined King
             if (ComboMenu["Botrk"].Cast<CheckBox>().CurrentValue)
             {
                 if (botrktarget.IsValidTarget(Botrk.Range) && Botrk.IsReady())
@@ -118,12 +113,11 @@ namespace T2IN1_Teemo
                 }
             }
 
-            //Cast Hextech Gunblade
             if (gunbladetarget == null || gunbladetarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast Hextech Gunblade
             if (ComboMenu["Gunblade"].Cast<CheckBox>().CurrentValue)
             {
                 if (gunbladetarget.IsValidTarget(Gunblade.Range) && Gunblade.IsReady())
@@ -132,12 +126,11 @@ namespace T2IN1_Teemo
                 }
             }
 
-            //Cast Protobelt
             if (protobelttarget == null || protobelttarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast Protobelt
             if (ComboMenu["Protobelt"].Cast<CheckBox>().CurrentValue)
             {
                 if (protobelttarget.IsValidTarget(Protobelt.Range) && Protobelt.IsReady())
@@ -146,12 +139,11 @@ namespace T2IN1_Teemo
                 }
             }
 
-            //Cast GLP
             if (glptarget == null || glptarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast GLP
             if (ComboMenu["GLP"].Cast<CheckBox>().CurrentValue)
             {
                 if (glptarget.IsValidTarget(GLP.Range) && GLP.IsReady())
@@ -160,12 +152,11 @@ namespace T2IN1_Teemo
                 }
             }
 
-            //Cast Bilgewater Cutlass
             if (cutlasstarget == null || cutlasstarget.IsInvulnerable)
             {
                 return;
             }
-
+            //Cast Bilgewater Cutlass
             if (ComboMenu["Cutlass"].Cast<CheckBox>().CurrentValue)
             {
                 if (cutlasstarget.IsValidTarget(Cutlass.Range) && Cutlass.IsReady())
