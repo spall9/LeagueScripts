@@ -35,7 +35,7 @@ namespace T2IN1_Teemo
             //Cast R
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
 
-            if (rtarget == null || rtarget.IsInvulnerable)
+            if (rtarget == null)
             {
                 return;
             }
