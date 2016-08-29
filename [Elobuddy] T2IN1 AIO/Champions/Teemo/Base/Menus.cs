@@ -92,10 +92,10 @@ namespace T2IN1_Teemo
             DrawingsMenu.CreateCheckBox(" - Draw E.", "eDraw");
             DrawingsMenu.CreateCheckBox(" - Draw R.", "rDraw");
             DrawingsMenu.AddGroupLabel("Drawings Color");
-            QColorSlide = new ColorSlide(DrawingsMenu, "qColor", Color.Red, "Q Color:");
-            WColorSlide = new ColorSlide(DrawingsMenu, "wColor", Color.Purple, "W Color:");
-            EColorSlide = new ColorSlide(DrawingsMenu, "eColor", Color.Orange, "E Color:");
-            RColorSlide = new ColorSlide(DrawingsMenu, "rColor", Color.DeepPink, "R Color:");
+            QColorSlide = new ColorSlide(DrawingsMenu, "qColor", Color.CornflowerBlue, "Q Color:");
+            WColorSlide = new ColorSlide(DrawingsMenu, "wColor", Color.White, "W Color:");
+            EColorSlide = new ColorSlide(DrawingsMenu, "eColor", Color.White, "E Color:");
+            RColorSlide = new ColorSlide(DrawingsMenu, "rColor", Color.Red, "R Color:");
             DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen, "DamageIndicator Color:");
 
             MiscMenu.AddGroupLabel("Auto Level UP");
