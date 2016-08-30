@@ -4,6 +4,7 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
+using EloBuddy;
 using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 using static T2IN1_Teemo.Menus;
@@ -17,14 +18,8 @@ namespace T2IN1_Teemo
         public static void Execute()
         {
             //Cast R
-            if (LaneClearMenu["R"].Cast<CheckBox>().CurrentValue)
-                if (R.IsReady())
-                    R.TryToCast(R.GetBestCircularFarmPosition(4), LaneClearMenu);
-
-            //Cast R Spam
-            if (LaneClearMenu["RSpam"].Cast<CheckBox>().CurrentValue)
-                if (R.IsReady())
-                    R.TryToCast(R.GetBestCircularFarmPosition(4), LaneClearMenu);
+            if (LaneClearMenu["R"].Cast<CheckBox>().CurrentValue && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > LaneClearMenu["LaneRCount"].Cast<Slider>().CurrentValue)
+                    R.Cast(R.GetBestCircularFarmPosition(4));
 
             //Cast Q
             if (LaneClearMenu["Q"].Cast<CheckBox>().CurrentValue)

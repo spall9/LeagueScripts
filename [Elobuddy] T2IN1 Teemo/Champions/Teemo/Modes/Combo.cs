@@ -7,6 +7,7 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
+using EloBuddy.SDK.Enumerations;
 using T2IN1_Lib;
 using static T2IN1_Teemo.Menus;
 using static T2IN1_Teemo.SpellsManager;
@@ -31,19 +32,15 @@ namespace T2IN1_Teemo
 
         public static void ExecuteR()
         {
+            // R Target
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
 
             if ((rtarget == null) || rtarget.IsInvulnerable)
                 return;
             //Cast R
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
-                if (rtarget.IsValidTarget(R.Range) && R.IsReady())
-                    R.TryToCast(rtarget, ComboMenu);
-
-            //Cast R Spam
-            if (ComboMenu["RSpam"].Cast<CheckBox>().CurrentValue)
-                if (rtarget.IsValidTarget(R.Range) && R.IsReady())
-                    R.TryToCast(rtarget, ComboMenu);
+            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["ComboRCount"].Cast<Slider>().CurrentValue)
+                if (rtarget.IsValidTarget(R.Range))
+                        R.Cast(rtarget.Position);
         }
 
         public static void ExecuteItems()
@@ -115,6 +112,7 @@ namespace T2IN1_Teemo
                 if (cutlasstarget.IsValidTarget(Cutlass.Range) && Cutlass.IsReady())
                     Cutlass.Cast(cutlasstarget);
 
+            /*
             //Summoners Target
             var Summ1 = TargetSelector.GetTarget(Smite.Range, DamageType.Mixed);
             var Summ2 = TargetSelector.GetTarget(Ignite.Range, DamageType.Mixed);
@@ -132,6 +130,7 @@ namespace T2IN1_Teemo
             if (ComboMenu["Ignite"].Cast<CheckBox>().CurrentValue)
                 if (Summ2.IsValidTarget(Ignite.Range) && Ignite.IsReady())
                     Ignite.Cast(Ignite.GetKillableHero());
+            */
         }
     }
 }
