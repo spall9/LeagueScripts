@@ -13,6 +13,8 @@ ___
 
 **-Damage Indicator**
 
+**-Mana Manager**
+
 **-ComboMode**
 
 **-LaneClear**
