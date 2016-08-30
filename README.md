@@ -1,5 +1,5 @@
 # League of Legend Scripts
--**[Elobuddy] T2IN1 AIO**
+-**[Elobuddy] T2IN1 AIO [Paused until Teemo is Fully Finished!]**
 
 -**[Elobuddy] T2IN1 AIO Library**
 
