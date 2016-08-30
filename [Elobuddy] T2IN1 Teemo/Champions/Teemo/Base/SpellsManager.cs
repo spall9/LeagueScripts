@@ -33,12 +33,22 @@ namespace T2IN1_Teemo
         public static Spell.Skillshot R;
         public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
 
+        public static float GetRRange()
+        {
+            float range = 0f;
+            if (Player.GetSpell(SpellSlot.R).Level > 0)
+            {
+                range = (float)150 + 250 * Player.GetSpell(SpellSlot.R).Level;
+            }
+            return range;
+        }
+
         public static void InitializeSpells()
         {
             Q = new Spell.Targeted(SpellSlot.Q, 680);
             W = new Spell.Active(SpellSlot.W);
             E = new Spell.Active(SpellSlot.E, 680);
-            R = new Spell.Skillshot(SpellSlot.R, 400, SkillShotType.Cone, 500, 1000, 120);
+            R = new Spell.Skillshot(SpellSlot.R, (uint)GetRRange(), SkillShotType.Cone, 500, 1000, 120);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
 
