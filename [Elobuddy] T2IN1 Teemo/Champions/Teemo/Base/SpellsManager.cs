@@ -5,6 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 using System;
+using System.Collections.Generic;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
@@ -30,6 +31,7 @@ namespace T2IN1_Teemo
         public static Spell.Active W;
         public static Spell.Active E;
         public static Spell.Skillshot R;
+        public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
 
         public static void InitializeSpells()
         {
@@ -47,7 +49,7 @@ namespace T2IN1_Teemo
         /// It will return the damage but you need to set them before getting the damage
         public static float GetDamage(this Obj_AI_Base target, SpellSlot slot)
         {
-            var damageType = DamageType.Magical;
+            var damageType = DamageType.Mixed;
             var AD = Player.Instance.FlatPhysicalDamageMod;
             var AP = Player.Instance.FlatMagicDamageMod;
             var sLevel = Player.GetSpell(slot).Level - 1;
@@ -64,22 +66,16 @@ namespace T2IN1_Teemo
                         dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
                     }
                     break;
-                case SpellSlot.W:
-                    if (W.IsReady())
-                    {
-                        dmg += new float[] { 0, 0, 0, 0, 0 }[sLevel];
-                    }
-                    break;
                 case SpellSlot.E:
                     if (E.IsReady())
                     {
-                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.4f * AP; 
+                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.4f * AP;
                     }
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
                     {
-                        dmg += new float[] {250, 406, 562}[sLevel] + 0.7f * AP;
+                        dmg += new float[] { 250, 406, 562 }[sLevel] + 0.7f * AP;
                     }
                     break;
             }

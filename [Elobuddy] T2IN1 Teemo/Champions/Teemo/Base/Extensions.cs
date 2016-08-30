@@ -15,7 +15,7 @@ namespace T2IN1_Teemo
         /// Get total damge using the custom values provided by you in the spellmanager
         public static float GetTotalDamage(this Obj_AI_Base target)
         {
-            var slots = new[] { SpellSlot.Q, SpellSlot.W, SpellSlot.E, SpellSlot.R };
+            var slots = new[] { SpellSlot.Q, SpellSlot.E, SpellSlot.R };
             var dmg = Player.Spells.Where(s => slots.Contains(s.Slot)).Sum(s => target.GetDamage(s.Slot));
             dmg += Orbwalker.CanAutoAttack ? Player.Instance.GetAutoAttackDamage(target) : 0f;
 
