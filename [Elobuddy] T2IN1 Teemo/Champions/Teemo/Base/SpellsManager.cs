@@ -4,14 +4,10 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-using System;
 using System.Collections.Generic;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
-
-using T2IN1_Lib;
-using static T2IN1_Teemo.Menus;
 using static T2IN1_Teemo.AutoLevel;
 
 namespace T2IN1_Teemo
@@ -35,11 +31,9 @@ namespace T2IN1_Teemo
 
         public static float GetRRange()
         {
-            float range = 0f;
+            var range = 0f;
             if (Player.GetSpell(SpellSlot.R).Level > 0)
-            {
-                range = (float)150 + 250 * Player.GetSpell(SpellSlot.R).Level;
-            }
+                range = (float) 150 + 250*Player.GetSpell(SpellSlot.R).Level;
             return range;
         }
 
@@ -48,10 +42,9 @@ namespace T2IN1_Teemo
             Q = new Spell.Targeted(SpellSlot.Q, 680);
             W = new Spell.Active(SpellSlot.W);
             E = new Spell.Active(SpellSlot.E, 680);
-            R = new Spell.Skillshot(SpellSlot.R, (uint)GetRRange(), SkillShotType.Cone, 500, 1000, 120);
+            R = new Spell.Skillshot(SpellSlot.R, (uint) GetRRange(), SkillShotType.Cone, 500, 1000, 120);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
-
         }
 
         #region Damages
@@ -72,25 +65,20 @@ namespace T2IN1_Teemo
             {
                 case SpellSlot.Q:
                     if (Q.IsReady())
-                    {
-                        dmg += new float[] { 80, 125, 170, 215, 260 }[sLevel] + 0.8f * AP;
-                    }
+                        dmg += new float[] {80, 125, 170, 215, 260}[sLevel] + 0.8f*AP;
                     break;
                 case SpellSlot.E:
                     if (E.IsReady())
-                    {
-                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.4f * AP;
-                    }
+                        dmg += new float[] {30, 60, 90, 120, 150}[sLevel] + 0.4f*AP;
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
-                    {
-                        dmg += new float[] { 250, 406, 562 }[sLevel] + 0.7f * AP;
-                    }
+                        dmg += new float[] {250, 406, 562}[sLevel] + 0.7f*AP;
                     break;
             }
             return Player.Instance.CalculateDamageOnUnit(target, damageType, dmg - 10);
         }
+
         #endregion Damages
     }
 }

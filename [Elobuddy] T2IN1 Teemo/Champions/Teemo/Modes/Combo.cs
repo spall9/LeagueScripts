@@ -8,7 +8,6 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
-
 using static T2IN1_Teemo.Menus;
 using static T2IN1_Teemo.SpellsManager;
 using static T2IN1_Teemo.Offensive;
@@ -21,36 +20,24 @@ namespace T2IN1_Teemo
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
 
-            if (qtarget == null || qtarget.IsInvulnerable)
-            {
+            if ((qtarget == null) || qtarget.IsInvulnerable)
                 return;
-            }
             //Cast Q
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-            {
                 if (qtarget.IsValidTarget(Q.Range) && Q.IsReady())
-                {
                     Q.TryToCast(qtarget, ComboMenu);
-                }
-            }
         }
 
         public static void ExecuteR()
         {
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
-        
-            if (rtarget == null || rtarget.IsInvulnerable)
-            {
+
+            if ((rtarget == null) || rtarget.IsInvulnerable)
                 return;
-            }
             //Cast R
             if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
-            {
                 if (rtarget.IsValidTarget(R.Range) && R.IsReady())
-                {
                     R.TryToCast(rtarget, ComboMenu);
-                }
-            }
         }
 
         public static void ExecuteItems()
@@ -66,109 +53,61 @@ namespace T2IN1_Teemo
             var cutlasstarget = TargetSelector.GetTarget(Cutlass.Range, DamageType.Magical);
 
 
-            if (hydratarget == null || hydratarget.IsInvulnerable)
-            {
+            if ((hydratarget == null) || hydratarget.IsInvulnerable)
                 return;
-            }
             //Cast Hydra
             if (ComboMenu["HydraTiamat"].Cast<CheckBox>().CurrentValue)
-            {
                 if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
-                {
                     Hydra.Cast();
-                }
-            }
 
-            if (tiamattarget == null || tiamattarget.IsInvulnerable)
-            {
+            if ((tiamattarget == null) || tiamattarget.IsInvulnerable)
                 return;
-            }
             //Cast Tiamat
             if (ComboMenu["HydraTiamat"].Cast<CheckBox>().CurrentValue)
-            {
                 if (tiamattarget.IsValidTarget(Tiamat.Range) && Tiamat.IsReady())
-                {
                     Tiamat.Cast();
-                }
-            }
 
-            if (titanichydratarget == null || titanichydratarget.IsInvulnerable)
-            {
+            if ((titanichydratarget == null) || titanichydratarget.IsInvulnerable)
                 return;
-            }
             //Cast TitanicHydra
             if (ComboMenu["TitanicHydra"].Cast<CheckBox>().CurrentValue)
-            {
                 if (titanichydratarget.IsValidTarget(HydraTitanic.Range) && HydraTitanic.IsReady())
-                {
                     HydraTitanic.Cast();
-                }
-            }
 
-            if (botrktarget == null || botrktarget.IsInvulnerable)
-            {
+            if ((botrktarget == null) || botrktarget.IsInvulnerable)
                 return;
-            }
             //Cast Blade of the Ruined King
             if (ComboMenu["Botrk"].Cast<CheckBox>().CurrentValue)
-            {
                 if (botrktarget.IsValidTarget(Botrk.Range) && Botrk.IsReady())
-                {
                     Botrk.Cast(botrktarget);
-                }
-            }
 
-            if (gunbladetarget == null || gunbladetarget.IsInvulnerable)
-            {
+            if ((gunbladetarget == null) || gunbladetarget.IsInvulnerable)
                 return;
-            }
             //Cast Hextech Gunblade
             if (ComboMenu["Gunblade"].Cast<CheckBox>().CurrentValue)
-            {
                 if (gunbladetarget.IsValidTarget(Gunblade.Range) && Gunblade.IsReady())
-                {
                     Gunblade.Cast(gunbladetarget);
-                }
-            }
 
-            if (protobelttarget == null || protobelttarget.IsInvulnerable)
-            {
+            if ((protobelttarget == null) || protobelttarget.IsInvulnerable)
                 return;
-            }
             //Cast Protobelt
             if (ComboMenu["Protobelt"].Cast<CheckBox>().CurrentValue)
-            {
                 if (protobelttarget.IsValidTarget(Protobelt.Range) && Protobelt.IsReady())
-                {
                     Protobelt.Cast(protobelttarget.Position);
-                }
-            }
 
-            if (glptarget == null || glptarget.IsInvulnerable)
-            {
+            if ((glptarget == null) || glptarget.IsInvulnerable)
                 return;
-            }
             //Cast GLP
             if (ComboMenu["GLP"].Cast<CheckBox>().CurrentValue)
-            {
                 if (glptarget.IsValidTarget(GLP.Range) && GLP.IsReady())
-                {
                     GLP.Cast(glptarget);
-                }
-            }
 
-            if (cutlasstarget == null || cutlasstarget.IsInvulnerable)
-            {
+            if ((cutlasstarget == null) || cutlasstarget.IsInvulnerable)
                 return;
-            }
             //Cast Bilgewater Cutlass
             if (ComboMenu["Cutlass"].Cast<CheckBox>().CurrentValue)
-            {
                 if (cutlasstarget.IsValidTarget(Cutlass.Range) && Cutlass.IsReady())
-                {
                     Cutlass.Cast(cutlasstarget);
-                }
-            }
         }
     }
 }

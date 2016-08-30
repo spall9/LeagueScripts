@@ -5,13 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 using System;
-using System.Collections.Generic;
 using EloBuddy;
-using EloBuddy.SDK;
-using EloBuddy.SDK.Enumerations;
-
-using T2IN1_Lib;
-
 using static T2IN1_Teemo.SpellsManager;
 
 
@@ -28,6 +22,5 @@ namespace T2IN1_Teemo
         {
             R.Range = (uint) GetRRange();
         }
-
     }
 }

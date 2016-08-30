@@ -7,6 +7,7 @@
 using System;
 using EloBuddy;
 using EloBuddy.SDK.Events;
+using T2IN1_Teemo;
 
 namespace T2IN1
 {
@@ -22,10 +23,10 @@ namespace T2IN1
             //Teemo
             if (Player.Instance.Hero == Champion.Teemo)
             {
-                T2IN1_Teemo.SpellsManager.InitializeSpells();
-                T2IN1_Teemo.Menus.CreateMenu();
-                T2IN1_Teemo.ModeManager.InitializeModes();
-                T2IN1_Teemo.DrawingsManager.InitializeDrawings();
+                SpellsManager.InitializeSpells();
+                Menus.CreateMenu();
+                ModeManager.InitializeModes();
+                DrawingsManager.InitializeDrawings();
 
                 Chat.Print("T2IN1 Teemo Loaded!");
                 Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");

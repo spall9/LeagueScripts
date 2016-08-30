@@ -10,8 +10,8 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
-
 using T2IN1_Lib;
+using T2IN1_Lib.DataBases;
 
 namespace T2IN1_Teemo
 {
@@ -35,7 +35,8 @@ namespace T2IN1_Teemo
 
         public static void CreateMenu()
         {
-            FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
+            FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName,
+                Player.Instance.ChampionName.ToLower() + "Teemo");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             LastHitMenu = FirstMenu.AddSubMenu("• LastHit");
@@ -72,14 +73,15 @@ namespace T2IN1_Teemo
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
-            var skinList = T2IN1_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
+            var skinList = Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
             if (skinList != null)
             {
                 MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
-                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange += delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
-                {
-                    Player.Instance.SetSkinId(sender.CurrentValue);
-                };
+                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
+                    delegate(ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
+                    {
+                        Player.Instance.SetSkinId(sender.CurrentValue);
+                    };
             }
 
             DrawingsMenu.AddGroupLabel("Setting");
@@ -97,14 +99,15 @@ namespace T2IN1_Teemo
             WColorSlide = new ColorSlide(DrawingsMenu, "wColor", Color.White, "W Color:");
             EColorSlide = new ColorSlide(DrawingsMenu, "eColor", Color.White, "E Color:");
             RColorSlide = new ColorSlide(DrawingsMenu, "rColor", Color.Red, "R Color:");
-            DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen, "DamageIndicator Color:");
+            DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen,
+                "DamageIndicator Color:");
 
             MiscMenu.AddGroupLabel("Auto Level UP");
             MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL", false);
             MiscMenu.AddLabel("The Auto Leveler will always Focus R than the rest of the Spells");
-            MiscMenu.CreateComboBox("1 Spell to Focus", "firstFocus", new List<string> { "Q", "W", "E" });
-            MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> { "Q", "W", "E" }, 1);
-            MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> { "Q", "W", "E" }, 2);
+            MiscMenu.CreateComboBox("1 Spell to Focus", "firstFocus", new List<string> {"Q", "W", "E"});
+            MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
+            MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
             MiscMenu.CreateSlider("Delay Slider", "delaySlider", 200, 150, 500);
         }
     }
