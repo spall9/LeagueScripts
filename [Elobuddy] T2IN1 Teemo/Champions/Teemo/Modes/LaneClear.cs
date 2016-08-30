@@ -21,6 +21,11 @@ namespace T2IN1_Teemo
                 if (R.IsReady())
                     R.TryToCast(R.GetBestCircularFarmPosition(4), LaneClearMenu);
 
+            //Cast R Spam
+            if (LaneClearMenu["RSpam"].Cast<CheckBox>().CurrentValue)
+                if (R.IsReady())
+                    R.TryToCast(R.GetBestCircularFarmPosition(4), LaneClearMenu);
+
             //Cast Q
             if (LaneClearMenu["Q"].Cast<CheckBox>().CurrentValue)
                 if (Q.IsReady())

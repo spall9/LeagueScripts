@@ -47,6 +47,7 @@ namespace T2IN1_Teemo
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
+            ComboMenu.Add("RSpam", new CheckBox("- Use R Spam", false));
             ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
             ComboMenu.AddGroupLabel("Summoner Settings");
             ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
@@ -63,6 +64,7 @@ namespace T2IN1_Teemo
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("R", new CheckBox("- Use R"));
+            LaneClearMenu.Add("RSpam", new CheckBox("- Use R Spam", false));
             LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 50);
             LaneClearMenu.AddGroupLabel("Item Settings");
             LaneClearMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));

@@ -39,6 +39,11 @@ namespace T2IN1_Teemo
             if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
                 if (rtarget.IsValidTarget(R.Range) && R.IsReady())
                     R.TryToCast(rtarget, ComboMenu);
+
+            //Cast R Spam
+            if (ComboMenu["RSpam"].Cast<CheckBox>().CurrentValue)
+                if (rtarget.IsValidTarget(R.Range) && R.IsReady())
+                    R.TryToCast(rtarget, ComboMenu);
         }
 
         public static void ExecuteItems()
