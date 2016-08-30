@@ -11,6 +11,7 @@ using T2IN1_Lib;
 using static T2IN1_Teemo.Menus;
 using static T2IN1_Teemo.SpellsManager;
 using static T2IN1_Teemo.Offensive;
+using static T2IN1_Teemo.Spells;
 
 namespace T2IN1_Teemo
 {
@@ -108,6 +109,24 @@ namespace T2IN1_Teemo
             if (ComboMenu["Cutlass"].Cast<CheckBox>().CurrentValue)
                 if (cutlasstarget.IsValidTarget(Cutlass.Range) && Cutlass.IsReady())
                     Cutlass.Cast(cutlasstarget);
+
+            //Summoners Target
+            var Summ1 = TargetSelector.GetTarget(Smite.Range, DamageType.Mixed);
+            var Summ2 = TargetSelector.GetTarget(Ignite.Range, DamageType.Mixed);
+
+            if ((Summ1 == null) || Summ1.IsInvulnerable)
+                return;
+            //Cast Smite
+            if (ComboMenu["Smite"].Cast<CheckBox>().CurrentValue)
+                if (Summ1.IsValidTarget(Smite.Range) && Smite.IsReady())
+                    Smite.Cast(Smite.GetKillableHero());
+
+            if ((Summ2 == null) || Summ2.IsInvulnerable)
+                return;
+            //Cast Ignite
+            if (ComboMenu["Ignite"].Cast<CheckBox>().CurrentValue)
+                if (Summ2.IsValidTarget(Ignite.Range) && Ignite.IsReady())
+                    Ignite.Cast(Ignite.GetKillableHero());
         }
     }
 }

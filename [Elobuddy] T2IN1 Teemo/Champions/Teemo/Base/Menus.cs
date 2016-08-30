@@ -48,6 +48,9 @@ namespace T2IN1_Teemo
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
+            ComboMenu.AddGroupLabel("Summoner Settings");
+            ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
+            ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
             ComboMenu.AddGroupLabel("Item Settings");
             ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
             ComboMenu.Add("Cutlass", new CheckBox("- Use Bilgewater Cutlass"));
