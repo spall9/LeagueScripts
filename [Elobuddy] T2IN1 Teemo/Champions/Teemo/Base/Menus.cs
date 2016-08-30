@@ -23,7 +23,6 @@ namespace T2IN1_Teemo
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
-        public static Menu KSMenu;
         public static Menu LastHitMenu;
         public static Menu FleeMenu;
         public static Menu MiscMenu;
@@ -40,7 +39,6 @@ namespace T2IN1_Teemo
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             LastHitMenu = FirstMenu.AddSubMenu("• LastHit");
-            KSMenu = FirstMenu.AddSubMenu("• KillSteal");
             FleeMenu = FirstMenu.AddSubMenu("• Flee");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
@@ -68,9 +66,6 @@ namespace T2IN1_Teemo
             LastHitMenu.AddGroupLabel("Last Hit Settings");
             LastHitMenu.Add("Q", new CheckBox("- Use Q"));
             LastHitMenu.CreateSlider("Mana must be higher than [{0}%] to use Last Hit spells", "manaSlider", 45);
-
-            KSMenu.AddGroupLabel("KillSteal Settings");
-            KSMenu.Add("Q", new CheckBox("- Use Q"));
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
