@@ -65,9 +65,9 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\MenuHelper.cs" />
     <Compile Include="Database\Skins.cs" />
     <Compile Include="Loader.cs" />
-    <Compile Include="MenuHelper.cs" />
     <Compile Include="SkinChanger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
