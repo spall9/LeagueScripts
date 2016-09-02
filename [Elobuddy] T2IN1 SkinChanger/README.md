@@ -11,7 +11,7 @@ ___
 
 -Add Random Skin Option
 
--Change Minion SKins
+-Add Option to Change Minion Skins
 
 -Update Skin Database
 
