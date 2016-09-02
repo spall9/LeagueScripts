@@ -7,6 +7,16 @@ ___
 **-Curent Version 6.17**
 
 
+# To Do:
+___
+
+-Add Random Skin Option
+
+-Change Minion SKins
+
+-Update Skin Database
+
+
 # Credits:
 ___
 
