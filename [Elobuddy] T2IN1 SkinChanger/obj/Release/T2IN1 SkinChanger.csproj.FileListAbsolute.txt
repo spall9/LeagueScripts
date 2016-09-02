@@ -8,3 +8,4 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 SkinChanger\bin\Release\SharpDX.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 SkinChanger\bin\Release\Newtonsoft.Json.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 SkinChanger\obj\Release\T2IN1_SkinChanger.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 SkinChanger\obj\Release\T2IN1_SkinChanger.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 SkinChanger\obj\Release\T2IN1 SkinChanger.csprojResolveAssemblyReference.cache
