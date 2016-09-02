@@ -1,0 +1,2 @@
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 SkinChanger\bin\Debug\T2IN1_Teemo.exe.config
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 SkinChanger\bin\Debug\T2IN1_SkinChanger.exe.config
