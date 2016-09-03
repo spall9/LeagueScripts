@@ -4,6 +4,7 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using EloBuddy;
@@ -23,7 +24,8 @@ namespace T2IN1_Teemo
 {
     internal class Active
     {
-        #region Defensive Items Cast
+
+        #region Defensive Items Cast only if Enemy is in Range
 
         public static void Defensive()
         {
@@ -61,6 +63,68 @@ namespace T2IN1_Teemo
                 if (Player.Instance.CountEnemiesInRange(600) >= 1 && Solari.IsOwned() && Solari.IsReady())
                 {
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.SolariHp"].Cast<Slider>().CurrentValue)
+                    {
+                        Solari.Cast();
+                    }
+                }
+            }
+            //Face
+            var Ally = EntityManager.Heroes.Allies.Where(a => a.HealthPercent <= ActiveMenu["Item.FaceHP"].Cast<Slider>().CurrentValue).FirstOrDefault(a => a.IsValidTarget(Face.Range));
+
+            if (ActiveMenu["Face"].Cast<CheckBox>().CurrentValue)
+            {
+                if (Player.Instance.IsDead) return;
+
+                if (Player.Instance.CountAlliesInRange(600) >= 1 && Face.IsOwned() && Face.IsReady())
+                {
+                    if (Ally.IsValid && Face.IsReady())
+                    {
+                        Face.Cast(Ally);
+                    }
+                }
+            }
+        }
+
+        #endregion Defensive Items Cast only if Enemy is in Range
+
+        #region Defensive Items Cast
+
+        public static void Defensive2()
+        {
+            //Zhonyas
+            if (ActiveMenu["Zhonyas2"].Cast<CheckBox>().CurrentValue)
+            {
+                if (Player.Instance.IsDead) return;
+
+                if (Zhonyas.IsOwned() && Zhonyas.IsReady())
+                {
+                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.ZyHp2"].Cast<Slider>().CurrentValue)
+                    {
+                        Zhonyas.Cast();
+                    }
+                }
+            }
+            //Seraph
+            if (ActiveMenu["Seraph2"].Cast<CheckBox>().CurrentValue)
+            {
+                if (Player.Instance.IsDead) return;
+
+                if (Seraph.IsOwned() && Seraph.IsReady())
+                {
+                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.SeraphHp2"].Cast<Slider>().CurrentValue)
+                    {
+                        Seraph.Cast();
+                    }
+                }
+            }
+            //Solari
+            if (ActiveMenu["Solari2"].Cast<CheckBox>().CurrentValue)
+            {
+                if (Player.Instance.IsDead) return;
+
+                if (Solari.IsOwned() && Solari.IsReady())
+                {
+                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.SolariHp2"].Cast<Slider>().CurrentValue)
                     {
                         Solari.Cast();
                     }

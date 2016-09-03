@@ -76,14 +76,18 @@ namespace T2IN1_Teemo
             FleeMenu.Add("W", new CheckBox("- Use W"));
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
-            ActiveMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas"));
+            ActiveMenu.AddGroupLabel("Only one Option can be Active at a Time!");
+            ActiveMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas Only if Enemy is in Range"));
+            ActiveMenu.Add("Zhonyas2", new CheckBox("- Use Zhonyas"));
             ActiveMenu.CreateSlider("Use Zhonyas if {0}% Health", "Item.ZyHp", 35);
-            ActiveMenu.Add("Seraph", new CheckBox("- Use Seraph"));
-            ActiveMenu.CreateSlider("Use Seraph if {0}% Health", "Item.SeraphHp", 35);
-            ActiveMenu.Add("Solari", new CheckBox("- Use Seraph"));
-            ActiveMenu.CreateSlider("Use Solari if {0}% Health", "Item.SolariHp", 35);
-            //ActiveMenu.Add("Face", new CheckBox("- Use Face"));
-            //ActiveMenu.CreateSlider("Use Face if {0}% Health", "Item.FaceHp", 35);
+            ActiveMenu.Add("Seraph", new CheckBox("- Use Seraph Only if Enemy is in Range"));
+            ActiveMenu.Add("Seraph2", new CheckBox("- Use Seraph"));
+            ActiveMenu.CreateSlider("Use Seraphs Embrace if {0}% Health", "Item.SeraphHp", 35);
+            ActiveMenu.Add("Solari", new CheckBox("- Use Solari Only if Enemy is in Range"));
+            ActiveMenu.Add("Solari2", new CheckBox("- Use Solari"));
+            ActiveMenu.CreateSlider("Use Locket of the Iron Solari if {0}% Health", "Item.SolariHp", 35);
+            ActiveMenu.Add("Face", new CheckBox("- Use Face"));
+            ActiveMenu.CreateSlider("Use Face of the Mountain if Ally Health is {0}% ", "Item.FaceHp", 35);
 
             //ActiveMenu.AddGroupLabel("Item Consumables Settings");
             //ActiveMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));
