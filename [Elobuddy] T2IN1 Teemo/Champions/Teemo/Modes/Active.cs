@@ -75,12 +75,9 @@ namespace T2IN1_Teemo
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Player.Instance.CountAlliesInRange(600) >= 1 && Face.IsOwned() && Face.IsReady())
+                if (Face.IsOwned() && Face.IsReady() && Ally.IsValid)
                 {
-                    if (Ally.IsValid && Face.IsReady())
-                    {
-                        Face.Cast(Ally);
-                    }
+                    Face.Cast(Ally);
                 }
             }
         }
@@ -135,15 +132,21 @@ namespace T2IN1_Teemo
         #endregion Defensive Items Cast
 
         #region Consumables Cast
-        /*
 
         //Cast Potions
         public static void Potions()
         {
+            var HealBuff = Player.HasBuff("RegenerationPotion") 
+                        || Player.HasBuff("ItemMiniRegenPotion") 
+                        || Player.HasBuff("ItemCrystalFlask") 
+                        || Player.HasBuff("ItemDarkCrystalFlask") 
+                        || Player.HasBuff("ItemCrystalFlaskJungle")
+                        || Player.Instance.IsRecalling();
+
             //Health Potion
             if (ActiveMenu["HealthPotion"].Cast<CheckBox>().CurrentValue)
             {
-                if (Player.Instance.IsDead) return;
+                if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Consumables.Health.IsOwned() && Consumables.Health.IsReady())
                 {
@@ -156,7 +159,7 @@ namespace T2IN1_Teemo
             //Hunters Potion
             if (ActiveMenu["HuntersPotion"].Cast<CheckBox>().CurrentValue)
             {
-                if (Player.Instance.IsDead) return;
+                if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Consumables.Hunters.IsOwned() && Consumables.Hunters.IsReady())
                 {
@@ -170,13 +173,14 @@ namespace T2IN1_Teemo
             //Biscuit
             if (ActiveMenu["Biscuit"].Cast<CheckBox>().CurrentValue)
             {
-                if (Player.Instance.IsDead) return;
-
-                if (Consumables.Biscuit.IsOwned() && Consumables.Biscuit.IsReady())
+                if (Player.Instance.IsDead || HealBuff) return;
                 {
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.BiscuitHp"].Cast<Slider>().CurrentValue)
+                    if (Consumables.Biscuit.IsOwned() && Consumables.Biscuit.IsReady())
                     {
-                        Consumables.Biscuit.Cast();
+                        if (Player.Instance.HealthPercent <= ActiveMenu["Item.BiscuitHp"].Cast<Slider>().CurrentValue)
+                        {
+                            Consumables.Biscuit.Cast();
+                        }
                     }
                 }
             }
@@ -184,7 +188,7 @@ namespace T2IN1_Teemo
             //Refillable
             if (ActiveMenu["Refillable"].Cast<CheckBox>().CurrentValue)
             {
-                if (Player.Instance.IsDead) return;
+                if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Consumables.Refillable.IsOwned() && Consumables.Refillable.IsReady())
                 {
@@ -198,7 +202,7 @@ namespace T2IN1_Teemo
             //Corrupting
             if (ActiveMenu["Corrupting"].Cast<CheckBox>().CurrentValue)
             {
-                if (Player.Instance.IsDead) return;
+                if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Consumables.Corrupting.IsOwned() && Consumables.Corrupting.IsReady())
                 {
@@ -209,7 +213,6 @@ namespace T2IN1_Teemo
                 }
             }
         }
-        */
         #endregion Consumables Cast
     }
 }

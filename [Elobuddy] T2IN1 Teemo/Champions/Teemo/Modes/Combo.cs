@@ -4,6 +4,7 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using EloBuddy;
@@ -30,6 +31,10 @@ namespace T2IN1_Teemo
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
                 if (Player.Instance.CountEnemiesInRange(680) >= 1 && Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
                     Q.TryToCast(qtarget, ComboMenu);
+            //W
+            if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
+                if (Player.Instance.CountEnemiesInRange(1300) >= 1 && W.IsReady() && W.IsLearned)
+                    W.Cast();
         }
 
         public static void ExecuteR()
@@ -38,16 +43,14 @@ namespace T2IN1_Teemo
             {
                 //R Target
                 var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
-                //R Prediction
-                var rPrediction = SpellsManager.R.GetPrediction(rtarget);
 
                 if ((rtarget == null) || rtarget.IsInvulnerable)
                     return;
 
                 //R
-                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && rPrediction.HitChance >= HitChance.High && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["RCount"].Cast<Slider>().CurrentValue)
+                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["RCount"].Cast<Slider>().CurrentValue)
                     if (Player.Instance.CountEnemiesInRange(900) >= 1 && R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
-                        R.Cast(rPrediction.CastPosition);
+                        R.TryToCast(rtarget, ComboMenu);
             }
         }
 

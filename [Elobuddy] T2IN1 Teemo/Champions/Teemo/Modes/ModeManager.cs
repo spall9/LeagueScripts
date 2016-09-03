@@ -27,7 +27,7 @@ namespace T2IN1_Teemo
             rRangeLevel.LevelRRange();
             Active.Defensive();
             Active.Defensive2();
-            //Active.Potions();
+            Active.Potions();
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.Execute1();

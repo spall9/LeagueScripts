@@ -48,6 +48,7 @@ namespace T2IN1_Teemo
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
+            ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R in Combo [{0}]", 1, 1, 3));
             ComboMenu.CreateSlider("Mana must be higher than {0}% to use R in Combo", "manaSlider", 30);
@@ -76,7 +77,7 @@ namespace T2IN1_Teemo
             FleeMenu.Add("W", new CheckBox("- Use W"));
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
-            ActiveMenu.AddGroupLabel("Only one Option can be Active at a Time!");
+            ActiveMenu.AddGroupLabel("Only one Option for each Defensive Item can be Active at a Time!");
             ActiveMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas Only if Enemy is in Range"));
             ActiveMenu.Add("Zhonyas2", new CheckBox("- Use Zhonyas", false));
             ActiveMenu.CreateSlider("Use Zhonyas if {0}% Health", "Item.ZyHp", 35);
@@ -87,19 +88,19 @@ namespace T2IN1_Teemo
             ActiveMenu.Add("Solari2", new CheckBox("- Use Solari", false));
             ActiveMenu.CreateSlider("Use Locket of the Iron Solari if {0}% Health", "Item.SolariHp", 35);
             ActiveMenu.Add("Face", new CheckBox("- Use Face"));
-            ActiveMenu.CreateSlider("Use Face of the Mountain if Ally Health is {0}% ", "Item.FaceHp", 35);
+            ActiveMenu.CreateSlider("Use Face of the Mountain if Ally Health has {0}% ", "Item.FaceHp", 35);
 
-            //ActiveMenu.AddGroupLabel("Item Consumables Settings");
-            //ActiveMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));
-            //ActiveMenu.CreateSlider("Use Health Potion if below {0}% Health", "Item.HealthPotionHp", 35);
-            //ActiveMenu.Add("HuntersPotion", new CheckBox("- Use Hunters Potion"));
-            //ActiveMenu.CreateSlider("Use Hunters if below {0}% Health", "Item.HuntersPotionHp", 35);
-            //ActiveMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
-            //ActiveMenu.CreateSlider("Use Biscuit if below {0}% Health", "Item.BiscuitHp", 35);
-            //ActiveMenu.Add("Refillable", new CheckBox("- Use Biscuit"));
-            //ActiveMenu.CreateSlider("Use Refillable if below {0}% Health", "Item.RefillableHp", 35);
-            //ActiveMenu.Add("Corrupting", new CheckBox("- Use Biscuit"));
-            //ActiveMenu.CreateSlider("Use Corrupting if below {0}% Health", "Item.CorruptingHp", 35);
+            ActiveMenu.AddGroupLabel("Item Consumables Settings");
+            ActiveMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));
+            ActiveMenu.CreateSlider("Use Health Potion if below {0}% Health", "Item.HealthPotionHp", 35);
+            ActiveMenu.Add("HuntersPotion", new CheckBox("- Use Hunters Potion"));
+            ActiveMenu.CreateSlider("Use Hunters if below {0}% Health", "Item.HuntersPotionHp", 35);
+            ActiveMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
+            ActiveMenu.CreateSlider("Use Biscuit if below {0}% Health", "Item.BiscuitHp", 35);
+            ActiveMenu.Add("Refillable", new CheckBox("- Use Biscuit"));
+            ActiveMenu.CreateSlider("Use Refillable if below {0}% Health", "Item.RefillableHp", 35);
+            ActiveMenu.Add("Corrupting", new CheckBox("- Use Biscuit"));
+            ActiveMenu.CreateSlider("Use Corrupting if below {0}% Health", "Item.CorruptingHp", 35);
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
