@@ -31,12 +31,14 @@ ___
 
 -MarioGK (Addon Template and Lib)
 
--Joker (Some things from his Lib)
+-Joker (Lib)
 
 
 # Helpers:
 ___
 
 -MarioGK
+
+-Definitely not Kappa
 
 -Scar
