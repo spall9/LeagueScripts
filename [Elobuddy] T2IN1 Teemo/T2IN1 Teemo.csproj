@@ -79,6 +79,7 @@
     <Compile Include="Champions\Teemo\Items\Defensive.cs" />
     <Compile Include="Champions\Teemo\Items\Offensive.cs" />
     <Compile Include="Champions\Teemo\Modes\Active.cs" />
+    <Compile Include="Champions\Teemo\Modes\rRangeLevel.cs" />
     <Compile Include="Champions\Teemo\Modes\Combo.cs" />
     <Compile Include="Champions\Teemo\Modes\Flee.cs" />
     <Compile Include="Champions\Teemo\Modes\LaneClear.cs" />

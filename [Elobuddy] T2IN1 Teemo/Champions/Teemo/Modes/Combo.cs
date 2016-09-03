@@ -26,116 +26,98 @@ namespace T2IN1_Teemo
 
             if ((qtarget == null) || qtarget.IsInvulnerable)
                 return;
-            //Cast Q
+            //Q
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                if (qtarget.IsValidTarget(Q.Range) && Q.IsReady())
+                if (Player.Instance.CountEnemiesInRange(680) >= 1 && Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
                     Q.TryToCast(qtarget, ComboMenu);
         }
 
         public static void ExecuteR()
         {
-            //R Target
-            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
-            //R Prediction
-            var rPrediction = SpellsManager.R.GetPrediction(rtarget);
+            if (R.IsReady())
+            {
+                //R Target
+                var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
+                //R Prediction
+                var rPrediction = SpellsManager.R.GetPrediction(rtarget);
 
-            if ((rtarget == null) || rtarget.IsInvulnerable)
-                return;
+                if ((rtarget == null) || rtarget.IsInvulnerable)
+                    return;
 
-            //Cast R
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && rPrediction.HitChance >= HitChance.High && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["RCount"].Cast<Slider>().CurrentValue)
-                    if (rtarget.IsValidTarget(R.Range))
+                //R
+                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && rPrediction.HitChance >= HitChance.High && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["RCount"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.CountEnemiesInRange(900) >= 1 && R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
                         R.Cast(rPrediction.CastPosition);
+            }
         }
 
         public static void ExecuteItems()
         {
             //Item Target's
-            var hydratarget = TargetSelector.GetTarget(Hydra.Range, DamageType.True);
-            var tiamattarget = TargetSelector.GetTarget(Tiamat.Range, DamageType.True);
-            var titanichydratarget = TargetSelector.GetTarget(HydraTitanic.Range, DamageType.True);
             var botrktarget = TargetSelector.GetTarget(Botrk.Range, DamageType.Physical);
             var gunbladetarget = TargetSelector.GetTarget(Gunblade.Range, DamageType.Magical);
             var protobelttarget = TargetSelector.GetTarget(Protobelt.Range, DamageType.Magical);
             var glptarget = TargetSelector.GetTarget(GLP.Range, DamageType.Magical);
             var cutlasstarget = TargetSelector.GetTarget(Cutlass.Range, DamageType.Magical);
 
-
-            if ((hydratarget == null) || hydratarget.IsInvulnerable)
-                return;
-            //Cast Hydra
-            if (ComboMenu["HydraTiamat"].Cast<CheckBox>().CurrentValue)
-                if (hydratarget.IsValidTarget(Hydra.Range) && Hydra.IsReady())
-                    Hydra.Cast();
-
-            if ((tiamattarget == null) || tiamattarget.IsInvulnerable)
-                return;
-            //Cast Tiamat
-            if (ComboMenu["HydraTiamat"].Cast<CheckBox>().CurrentValue)
-                if (tiamattarget.IsValidTarget(Tiamat.Range) && Tiamat.IsReady())
-                    Tiamat.Cast();
-
-            if ((titanichydratarget == null) || titanichydratarget.IsInvulnerable)
-                return;
-            //Cast TitanicHydra
-            if (ComboMenu["TitanicHydra"].Cast<CheckBox>().CurrentValue)
-                if (titanichydratarget.IsValidTarget(HydraTitanic.Range) && HydraTitanic.IsReady())
-                    HydraTitanic.Cast();
-
             if ((botrktarget == null) || botrktarget.IsInvulnerable)
                 return;
-            //Cast Blade of the Ruined King
+            //Blade of the Ruined King
             if (ComboMenu["Botrk"].Cast<CheckBox>().CurrentValue)
-                if (botrktarget.IsValidTarget(Botrk.Range) && Botrk.IsReady())
+                if (Player.Instance.CountEnemiesInRange(550) >= 1 && Botrk.IsReady() && Botrk.IsOwned() && botrktarget.IsValidTarget(Botrk.Range))
                     Botrk.Cast(botrktarget);
 
             if ((gunbladetarget == null) || gunbladetarget.IsInvulnerable)
                 return;
-            //Cast Hextech Gunblade
+            //Hextech Gunblade
             if (ComboMenu["Gunblade"].Cast<CheckBox>().CurrentValue)
-                if (gunbladetarget.IsValidTarget(Gunblade.Range) && Gunblade.IsReady())
+                if (Player.Instance.CountEnemiesInRange(700) >= 1 && Gunblade.IsReady() && Gunblade.IsOwned() && gunbladetarget.IsValidTarget(Gunblade.Range))
                     Gunblade.Cast(gunbladetarget);
 
             if ((protobelttarget == null) || protobelttarget.IsInvulnerable)
                 return;
-            //Cast Protobelt
+            //Protobelt
             if (ComboMenu["Protobelt"].Cast<CheckBox>().CurrentValue)
-                if (protobelttarget.IsValidTarget(Protobelt.Range) && Protobelt.IsReady())
+                if (Player.Instance.CountEnemiesInRange(600) >= 1 && Protobelt.IsReady() && Protobelt.IsOwned() && protobelttarget.IsValidTarget(Protobelt.Range))
                     Protobelt.Cast(protobelttarget.Position);
 
             if ((glptarget == null) || glptarget.IsInvulnerable)
                 return;
-            //Cast GLP
+            //GLP
             if (ComboMenu["GLP"].Cast<CheckBox>().CurrentValue)
-                if (glptarget.IsValidTarget(GLP.Range) && GLP.IsReady())
+                if (Player.Instance.CountEnemiesInRange(600) >= 1 && GLP.IsReady() && GLP.IsOwned() && glptarget.IsValidTarget(GLP.Range))
                     GLP.Cast(glptarget);
 
             if ((cutlasstarget == null) || cutlasstarget.IsInvulnerable)
                 return;
-            //Cast Bilgewater Cutlass
+            //Bilgewater Cutlass
             if (ComboMenu["Cutlass"].Cast<CheckBox>().CurrentValue)
-                if (cutlasstarget.IsValidTarget(Cutlass.Range) && Cutlass.IsReady())
+                if (Player.Instance.CountEnemiesInRange(550) >= 1 && Cutlass.IsReady() && Cutlass.IsOwned() && cutlasstarget.IsValidTarget(Cutlass.Range))
                     Cutlass.Cast(cutlasstarget);
 
             /*
+
             //Summoners Target
             var Summ1 = TargetSelector.GetTarget(Smite.Range, DamageType.Mixed);
             var Summ2 = TargetSelector.GetTarget(Ignite.Range, DamageType.Mixed);
 
             if ((Summ1 == null) || Summ1.IsInvulnerable)
                 return;
-            //Cast Smite
+            //Smite
             if (ComboMenu["Smite"].Cast<CheckBox>().CurrentValue)
-                if (Summ1.IsValidTarget(Smite.Range) && Smite.IsReady())
-                    Smite.Cast(Smite.GetKillableHero());
+                if (Player.Instance.CountEnemiesInRange(500) >= 1 && Smite.IsReady() && Smite.IsLearned && Summ1.IsValidTarget(Smite.Range))
+                    Smite.Cast(Summ1);
+
 
             if ((Summ2 == null) || Summ2.IsInvulnerable)
                 return;
-            //Cast Ignite
+            //Ignite
             if (ComboMenu["Ignite"].Cast<CheckBox>().CurrentValue)
-                if (Summ2.IsValidTarget(Ignite.Range) && Ignite.IsReady())
-                    Ignite.Cast(Ignite.GetKillableHero());
+                if (Player.Instance.CountEnemiesInRange(600) >= 1 && Ignite.IsReady() && Ignite.IsLearned && Summ2.IsValidTarget(Ignite.Range))
+                    Ignite.Cast(Summ2);
+
             */
+
         }
     }
 }

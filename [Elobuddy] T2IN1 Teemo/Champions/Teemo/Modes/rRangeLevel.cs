@@ -4,26 +4,23 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
+using System;
 using EloBuddy;
-using EloBuddy.SDK;
-using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Teemo.Menus;
 using static T2IN1_Teemo.SpellsManager;
+
 
 namespace T2IN1_Teemo
 {
-    internal class Flee
+    internal static class rRangeLevel
     {
-        public static void Execute()
+        public static void LevelRRange()
         {
-            if (FleeMenu["W"].Cast<CheckBox>().CurrentValue)
-            {
-                if (Player.Instance.CountEnemiesInRange(700) >= 1 && W.IsReady())
-                {
-                    W.Cast();
-                }
-            }
-                    
+            Game.OnTick += Game_OnTick;
+        }
+
+        private static void Game_OnTick(EventArgs args)
+        {
+            R.Range = (uint) GetRRange();
         }
     }
 }
