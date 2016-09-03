@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Champions\Teemo\Base\AutoLevel.cs" />
     <Compile Include="Champions\Teemo\Base\DamageIndicator.cs" />
+    <Compile Include="Champions\Teemo\Base\EventManager.cs" />
     <Compile Include="Champions\Teemo\Base\Extensions.cs" />
     <Compile Include="Champions\Teemo\Base\Menus.cs" />
     <Compile Include="Champions\Teemo\Base\DrawingsManager.cs" />

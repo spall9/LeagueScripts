@@ -9,3 +9,4 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Teemo\bin\Release\T2IN1 Lib.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Teemo\bin\Release\Newtonsoft.Json.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Teemo\obj\Release\T2IN1_Teemo.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Teemo\obj\Release\T2IN1_Teemo.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Teemo\obj\Release\T2IN1 Teemo.csprojResolveAssemblyReference.cache
