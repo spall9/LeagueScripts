@@ -10,10 +10,13 @@ ___
 
 # Features
 ___
-
-**-Damage Indicator**
+**-Activator**
 
 **-Mana Manager**
+
+**-Skin Changer**
+
+**-Damage Indicator**
 
 **-ComboMode**
 
@@ -22,8 +25,6 @@ ___
 **-LastHit**
 
 **-Flee**
-
-**-Skin Changer**
 
 
 # Credits:
