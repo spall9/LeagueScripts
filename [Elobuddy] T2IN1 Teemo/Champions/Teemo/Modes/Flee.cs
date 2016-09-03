@@ -17,13 +17,8 @@ namespace T2IN1_Teemo
         public static void Execute()
         {
             if (FleeMenu["W"].Cast<CheckBox>().CurrentValue)
-            {
-                if (Player.Instance.CountEnemiesInRange(700) >= 1 && W.IsReady())
-                {
+                if ((Player.Instance.CountEnemiesInRange(700) >= 1) && W.IsReady())
                     W.Cast();
-                }
-            }
-                    
         }
     }
 }

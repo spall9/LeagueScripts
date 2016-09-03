@@ -5,26 +5,17 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using EloBuddy.SDK.Enumerations;
-
-using T2IN1_Lib;
-
 using static T2IN1_Teemo.Menus;
-using static T2IN1_Teemo.SpellsManager;
 using static T2IN1_Teemo.Consumables;
 using static T2IN1_Teemo.Defensive;
-using static T2IN1_Teemo.Spells;
 
 namespace T2IN1_Teemo
 {
     internal class Active
     {
-
         #region Defensive Items Cast only if Enemy is in Range
 
         public static void Defensive()
@@ -34,51 +25,40 @@ namespace T2IN1_Teemo
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Player.Instance.CountEnemiesInRange(700) >= 1 && Zhonyas.IsOwned() && Zhonyas.IsReady())
-                {
+                if ((Player.Instance.CountEnemiesInRange(700) >= 1) && Zhonyas.IsOwned() && Zhonyas.IsReady())
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.ZyHp"].Cast<Slider>().CurrentValue)
-                    {
                         Zhonyas.Cast();
-                    }
-                }
             }
             //Seraph
             if (ActiveMenu["Seraph"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Player.Instance.CountEnemiesInRange(650) >= 1 && Seraph.IsOwned() && Seraph.IsReady())
-                {
+                if ((Player.Instance.CountEnemiesInRange(650) >= 1) && Seraph.IsOwned() && Seraph.IsReady())
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.SeraphHp"].Cast<Slider>().CurrentValue)
-                    {
                         Seraph.Cast();
-                    }
-                }
             }
             //Solari
             if (ActiveMenu["Solari"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Player.Instance.CountEnemiesInRange(600) >= 1 && Solari.IsOwned() && Solari.IsReady())
-                {
+                if ((Player.Instance.CountEnemiesInRange(600) >= 1) && Solari.IsOwned() && Solari.IsReady())
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.SolariHp"].Cast<Slider>().CurrentValue)
-                    {
                         Solari.Cast();
-                    }
-                }
             }
             //Face
-            var Ally = EntityManager.Heroes.Allies.Where(a => a.HealthPercent <= ActiveMenu["Item.FaceHP"].Cast<Slider>().CurrentValue).FirstOrDefault(a => a.IsValidTarget(Face.Range));
+            var Ally =
+                EntityManager.Heroes.Allies.Where(
+                        a => a.HealthPercent <= ActiveMenu["Item.FaceHP"].Cast<Slider>().CurrentValue)
+                    .FirstOrDefault(a => a.IsValidTarget(Face.Range));
 
             if (ActiveMenu["Face"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
                 if (Face.IsOwned() && Face.IsReady() && Ally.IsValid)
-                {
                     Face.Cast(Ally);
-                }
             }
         }
 
@@ -94,12 +74,8 @@ namespace T2IN1_Teemo
                 if (Player.Instance.IsDead) return;
 
                 if (Zhonyas.IsOwned() && Zhonyas.IsReady())
-                {
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.ZyHp2"].Cast<Slider>().CurrentValue)
-                    {
                         Zhonyas.Cast();
-                    }
-                }
             }
             //Seraph
             if (ActiveMenu["Seraph2"].Cast<CheckBox>().CurrentValue)
@@ -107,12 +83,8 @@ namespace T2IN1_Teemo
                 if (Player.Instance.IsDead) return;
 
                 if (Seraph.IsOwned() && Seraph.IsReady())
-                {
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.SeraphHp2"].Cast<Slider>().CurrentValue)
-                    {
                         Seraph.Cast();
-                    }
-                }
             }
             //Solari
             if (ActiveMenu["Solari2"].Cast<CheckBox>().CurrentValue)
@@ -120,12 +92,8 @@ namespace T2IN1_Teemo
                 if (Player.Instance.IsDead) return;
 
                 if (Solari.IsOwned() && Solari.IsReady())
-                {
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.SolariHp2"].Cast<Slider>().CurrentValue)
-                    {
                         Solari.Cast();
-                    }
-                }
             }
         }
 
@@ -136,38 +104,30 @@ namespace T2IN1_Teemo
         //Cast Potions
         public static void Potions()
         {
-            var HealBuff = Player.HasBuff("RegenerationPotion") 
-                        || Player.HasBuff("ItemMiniRegenPotion") 
-                        || Player.HasBuff("ItemCrystalFlask") 
-                        || Player.HasBuff("ItemDarkCrystalFlask") 
-                        || Player.HasBuff("ItemCrystalFlaskJungle")
-                        || Player.Instance.IsRecalling();
+            var HealBuff = Player.HasBuff("RegenerationPotion")
+                           || Player.HasBuff("ItemMiniRegenPotion")
+                           || Player.HasBuff("ItemCrystalFlask")
+                           || Player.HasBuff("ItemDarkCrystalFlask")
+                           || Player.HasBuff("ItemCrystalFlaskJungle")
+                           || Player.Instance.IsRecalling();
 
             //Health Potion
             if (ActiveMenu["HealthPotion"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Consumables.Health.IsOwned() && Consumables.Health.IsReady())
-                {
+                if (Health.IsOwned() && Health.IsReady())
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.HealthPotionHp"].Cast<Slider>().CurrentValue)
-                    {
-                        Consumables.Health.Cast();
-                    }
-                }
+                        Health.Cast();
             }
             //Hunters Potion
             if (ActiveMenu["HuntersPotion"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Consumables.Hunters.IsOwned() && Consumables.Hunters.IsReady())
-                {
+                if (Hunters.IsOwned() && Hunters.IsReady())
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.HuntersPotionHp"].Cast<Slider>().CurrentValue)
-                    {
-                        Consumables.Hunters.Cast();
-                    }
-                }
+                        Hunters.Cast();
             }
 
             //Biscuit
@@ -175,13 +135,9 @@ namespace T2IN1_Teemo
             {
                 if (Player.Instance.IsDead || HealBuff) return;
                 {
-                    if (Consumables.Biscuit.IsOwned() && Consumables.Biscuit.IsReady())
-                    {
+                    if (Biscuit.IsOwned() && Biscuit.IsReady())
                         if (Player.Instance.HealthPercent <= ActiveMenu["Item.BiscuitHp"].Cast<Slider>().CurrentValue)
-                        {
-                            Consumables.Biscuit.Cast();
-                        }
-                    }
+                            Biscuit.Cast();
                 }
             }
 
@@ -190,13 +146,9 @@ namespace T2IN1_Teemo
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Consumables.Refillable.IsOwned() && Consumables.Refillable.IsReady())
-                {
+                if (Refillable.IsOwned() && Refillable.IsReady())
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.RefillableHp"].Cast<Slider>().CurrentValue)
-                    {
-                        Consumables.Refillable.Cast();
-                    }
-                }
+                        Refillable.Cast();
             }
 
             //Corrupting
@@ -204,15 +156,12 @@ namespace T2IN1_Teemo
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Consumables.Corrupting.IsOwned() && Consumables.Corrupting.IsReady())
-                {
+                if (Corrupting.IsOwned() && Corrupting.IsReady())
                     if (Player.Instance.HealthPercent <= ActiveMenu["Item.CorruptingHp"].Cast<Slider>().CurrentValue)
-                    {
-                        Consumables.Corrupting.Cast();
-                    }
-                }
+                        Corrupting.Cast();
             }
         }
+
         #endregion Consumables Cast
     }
 }

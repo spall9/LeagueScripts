@@ -88,7 +88,7 @@ namespace T2IN1_Teemo
             ActiveMenu.Add("Solari2", new CheckBox("- Use Solari", false));
             ActiveMenu.CreateSlider("Use Locket of the Iron Solari if {0}% Health", "Item.SolariHp", 35);
             ActiveMenu.Add("Face", new CheckBox("- Use Face"));
-            ActiveMenu.CreateSlider("Use Face of the Mountain if Ally Health has {0}% ", "Item.FaceHp", 35);
+            ActiveMenu.CreateSlider("Use Face of the Mountain if {0}% Health", "Item.FaceHp", 35);
 
             ActiveMenu.AddGroupLabel("Item Consumables Settings");
             ActiveMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));

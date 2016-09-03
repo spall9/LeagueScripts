@@ -4,18 +4,13 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using EloBuddy.SDK.Enumerations;
 using T2IN1_Lib;
 using static T2IN1_Teemo.Menus;
 using static T2IN1_Teemo.SpellsManager;
 using static T2IN1_Teemo.Offensive;
-using static T2IN1_Teemo.Spells;
 
 namespace T2IN1_Teemo
 {
@@ -29,11 +24,12 @@ namespace T2IN1_Teemo
                 return;
             //Q
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(680) >= 1 && Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
+                if ((Player.Instance.CountEnemiesInRange(680) >= 1) && Q.IsReady() && Q.IsLearned &&
+                    qtarget.IsValidTarget(Q.Range))
                     Q.TryToCast(qtarget, ComboMenu);
             //W
             if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(1300) >= 1 && W.IsReady() && W.IsLearned)
+                if ((Player.Instance.CountEnemiesInRange(1300) >= 1) && W.IsReady() && W.IsLearned)
                     W.Cast();
         }
 
@@ -48,8 +44,11 @@ namespace T2IN1_Teemo
                     return;
 
                 //R
-                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["RCount"].Cast<Slider>().CurrentValue)
-                    if (Player.Instance.CountEnemiesInRange(900) >= 1 && R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
+                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
+                    (Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo >
+                     ComboMenu["RCount"].Cast<Slider>().CurrentValue))
+                    if ((Player.Instance.CountEnemiesInRange(900) >= 1) && R.IsReady() && R.IsLearned &&
+                        rtarget.IsValidTarget(R.Range))
                         R.TryToCast(rtarget, ComboMenu);
             }
         }
@@ -67,35 +66,40 @@ namespace T2IN1_Teemo
                 return;
             //Blade of the Ruined King
             if (ComboMenu["Botrk"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(550) >= 1 && Botrk.IsReady() && Botrk.IsOwned() && botrktarget.IsValidTarget(Botrk.Range))
+                if ((Player.Instance.CountEnemiesInRange(550) >= 1) && Botrk.IsReady() && Botrk.IsOwned() &&
+                    botrktarget.IsValidTarget(Botrk.Range))
                     Botrk.Cast(botrktarget);
 
             if ((gunbladetarget == null) || gunbladetarget.IsInvulnerable)
                 return;
             //Hextech Gunblade
             if (ComboMenu["Gunblade"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(700) >= 1 && Gunblade.IsReady() && Gunblade.IsOwned() && gunbladetarget.IsValidTarget(Gunblade.Range))
+                if ((Player.Instance.CountEnemiesInRange(700) >= 1) && Gunblade.IsReady() && Gunblade.IsOwned() &&
+                    gunbladetarget.IsValidTarget(Gunblade.Range))
                     Gunblade.Cast(gunbladetarget);
 
             if ((protobelttarget == null) || protobelttarget.IsInvulnerable)
                 return;
             //Protobelt
             if (ComboMenu["Protobelt"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(600) >= 1 && Protobelt.IsReady() && Protobelt.IsOwned() && protobelttarget.IsValidTarget(Protobelt.Range))
+                if ((Player.Instance.CountEnemiesInRange(600) >= 1) && Protobelt.IsReady() && Protobelt.IsOwned() &&
+                    protobelttarget.IsValidTarget(Protobelt.Range))
                     Protobelt.Cast(protobelttarget.Position);
 
             if ((glptarget == null) || glptarget.IsInvulnerable)
                 return;
             //GLP
             if (ComboMenu["GLP"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(600) >= 1 && GLP.IsReady() && GLP.IsOwned() && glptarget.IsValidTarget(GLP.Range))
+                if ((Player.Instance.CountEnemiesInRange(600) >= 1) && GLP.IsReady() && GLP.IsOwned() &&
+                    glptarget.IsValidTarget(GLP.Range))
                     GLP.Cast(glptarget);
 
             if ((cutlasstarget == null) || cutlasstarget.IsInvulnerable)
                 return;
             //Bilgewater Cutlass
             if (ComboMenu["Cutlass"].Cast<CheckBox>().CurrentValue)
-                if (Player.Instance.CountEnemiesInRange(550) >= 1 && Cutlass.IsReady() && Cutlass.IsOwned() && cutlasstarget.IsValidTarget(Cutlass.Range))
+                if ((Player.Instance.CountEnemiesInRange(550) >= 1) && Cutlass.IsReady() && Cutlass.IsOwned() &&
+                    cutlasstarget.IsValidTarget(Cutlass.Range))
                     Cutlass.Cast(cutlasstarget);
 
             /*
@@ -120,7 +124,6 @@ namespace T2IN1_Teemo
                     Ignite.Cast(Summ2);
 
             */
-
         }
     }
 }
