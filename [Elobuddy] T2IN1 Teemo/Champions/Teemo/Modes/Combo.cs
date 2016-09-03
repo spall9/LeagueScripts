@@ -4,6 +4,8 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
+using System.Threading;
+using System.Threading.Tasks;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
@@ -32,15 +34,18 @@ namespace T2IN1_Teemo
 
         public static void ExecuteR()
         {
-            // R Target
+            //R Target
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
+            //R Prediction
+            var rPrediction = SpellsManager.R.GetPrediction(rtarget);
 
             if ((rtarget == null) || rtarget.IsInvulnerable)
                 return;
+
             //Cast R
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["ComboRCount"].Cast<Slider>().CurrentValue)
-                if (rtarget.IsValidTarget(R.Range))
-                        R.Cast(rtarget.Position);
+            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && rPrediction.HitChance >= HitChance.High && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo > ComboMenu["RCount"].Cast<Slider>().CurrentValue)
+                    if (rtarget.IsValidTarget(R.Range))
+                        R.Cast(rPrediction.CastPosition);
         }
 
         public static void ExecuteItems()

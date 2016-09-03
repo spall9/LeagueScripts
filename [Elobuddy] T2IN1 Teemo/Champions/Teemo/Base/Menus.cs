@@ -47,7 +47,7 @@ namespace T2IN1_Teemo
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
-            ComboMenu.CreateSlider("Use [{0}] Shroom for Combo", "ComboRCount", 1, 1, 3);
+            ComboMenu.Add("RCount", new Slider(("Use R in Combo [{0}]"), 1, 1, 3));
             ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
             //ComboMenu.AddGroupLabel("Summoner Settings");
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
@@ -64,7 +64,6 @@ namespace T2IN1_Teemo
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("R", new CheckBox("- Use R"));
-            LaneClearMenu.CreateSlider("Use [{0}] Shroom for Lane Clear", "LaneRCount", 1, 1, 3);
             LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 50);
             LaneClearMenu.AddGroupLabel("Item Settings");
             LaneClearMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
