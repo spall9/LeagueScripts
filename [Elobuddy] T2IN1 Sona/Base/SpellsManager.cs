@@ -50,7 +50,7 @@ namespace T2IN1_Sona
             E = new Spell.Active(SpellSlot.E, 430);
             R = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Linear, 250, 2400, 140);
 
-        Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
+            Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
 
         #region Damages

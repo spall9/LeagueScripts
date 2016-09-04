@@ -10,11 +10,11 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
-using T2IN1_Lib;
 using static T2IN1_Sona.Menus;
 using static T2IN1_Sona.Spells;
 using static T2IN1_Sona.SpellsManager;
 using static T2IN1_Sona.Active;
+using static T2IN1_Sona.Auto;
 
 namespace T2IN1_Sona
 {
@@ -24,10 +24,10 @@ namespace T2IN1_Sona
         {
             Game.OnTick += Game_OnTick;
             Interrupter.OnInterruptableSpell += Interruptererer;
+            Orbwalker.OnPreAttack += Orbwalker_OnPreAttack;
+            Game.OnWndProc += Game_OnWndProc;
+
             KillSteal.Execute();
-            Active.AutoW();
-            Active.GetPassiveCount();
-            Active.Passive();
         }
 
         private static void Game_OnTick(EventArgs args)
@@ -36,7 +36,12 @@ namespace T2IN1_Sona
             var playerMana = Player.Instance.ManaPercent;
             var target = TargetSelector.GetTarget(1200, DamageType.Magical);
 
-
+            SonaPassive.Passive();
+            SonaPassive.GetPassiveCount();
+            Auto.AutoW();
+            Active.Defensive();
+            Active.Defensive2();
+            Active.Potions();
 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.Execute();
@@ -47,16 +52,16 @@ namespace T2IN1_Sona
                     Harass.Execute();
 
                 if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
-                    LaneClear.Execute();
+                    LaneClear.LaneClearLogic();
 
                 if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit))
 
                     if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
-                    Flee.Execute();
+                        Flee.Execute();
 
                 if (!MiscMenu["UE"].Cast<CheckBox>().CurrentValue ||
-                    ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
-                    !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
+                    (ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
+                     !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo)))
                     return;
                 {
                     foreach (

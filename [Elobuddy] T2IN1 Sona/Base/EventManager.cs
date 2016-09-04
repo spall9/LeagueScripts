@@ -4,13 +4,8 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-using System;
-using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Menu.Values;
-
-using static T2IN1_Sona.Menus;
 using static T2IN1_Sona.SpellsManager;
 
 namespace T2IN1_Sona
@@ -21,7 +16,7 @@ namespace T2IN1_Sona
         {
             try
             {
-                if (target.Path.Length == 0 || !target.IsMoving)
+                if ((target.Path.Length == 0) || !target.IsMoving)
                     return;
                 var nextEnemPath = target.Path[0].To2D();
                 var dist = Sona.Position.To2D().Distance(target.Position.To2D());
@@ -29,10 +24,10 @@ namespace T2IN1_Sona
                 if (distToNext <= dist)
                     return;
                 var msDif = Sona.MoveSpeed - target.MoveSpeed;
-                if (msDif <= 0 && !target.IsInAutoAttackRange(target))
+                if ((msDif <= 0) && !target.IsInAutoAttackRange(target))
                     E.Cast();
 
-                var reachIn = dist / msDif;
+                var reachIn = dist/msDif;
                 if (reachIn > 4)
                     E.Cast();
             }

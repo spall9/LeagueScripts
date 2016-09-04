@@ -7,10 +7,9 @@
 using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
 using static T2IN1_Sona.Menus;
-using static T2IN1_Sona.Active;
+using static T2IN1_Sona.SonaPassive;
 using static T2IN1_Sona.SpellsManager;
 
 namespace T2IN1_Sona
@@ -20,14 +19,12 @@ namespace T2IN1_Sona
         public static void Execute()
         {
             if (MiscMenu["KS"].Cast<CheckBox>().CurrentValue && Q.IsReady())
-            {
                 try
                 {
                     foreach (
                         var qtarget in
                         EntityManager.Heroes.Enemies.Where(
                             hero => hero.IsValidTarget(Q.Range) && !hero.IsDead && !hero.IsZombie))
-                    {
                         if (Sona.GetSpellDamage(qtarget, SpellSlot.Q) >= qtarget.Health)
                         {
                             {
@@ -40,12 +37,10 @@ namespace T2IN1_Sona
                             {
                             }
                         }
-                    }
                 }
                 catch
                 {
                 }
-            }
         }
     }
 }

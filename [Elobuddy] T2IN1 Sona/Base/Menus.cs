@@ -46,6 +46,7 @@ namespace T2IN1_Sona
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
+
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
@@ -60,19 +61,11 @@ namespace T2IN1_Sona
             HarassMenu.Add("wAA", new CheckBox("Wait for AA to Finish", false));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
-            LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
-            LaneClearMenu.Add("W", new CheckBox("- Use W"));
-            LaneClearMenu.Add("E", new CheckBox("- Use E"));
-            LaneClearMenu.Add("R", new CheckBox("- Use R"));
-            LaneClearMenu.CreateSlider("Mana must be higher than {0}% to use Lane Clear Spells", "manaSlider", 50);
-            LaneClearMenu.AddGroupLabel("Item Settings");
-            LaneClearMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
+            LaneClearMenu.Add("LCQ", new CheckBox("- Use Q"));
+
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
-
-            ActiveMenu.AddGroupLabel("Summoner Settings");
-            ActiveMenu.Add("UE", new CheckBox("Use Exhaust"));
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
             ActiveMenu.AddGroupLabel("Only one Option for each Defensive Item can be Active at a Time!");
@@ -95,23 +88,10 @@ namespace T2IN1_Sona
             ActiveMenu.CreateSlider("Use Hunters if below {0}% Health", "Item.HuntersPotionHp", 35);
             ActiveMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
             ActiveMenu.CreateSlider("Use Biscuit if below {0}% Health", "Item.BiscuitHp", 35);
-            ActiveMenu.Add("Refillable", new CheckBox("- Use Biscuit"));
+            ActiveMenu.Add("Refillable", new CheckBox("- Use Refillable"));
             ActiveMenu.CreateSlider("Use Refillable if below {0}% Health", "Item.RefillableHp", 35);
-            ActiveMenu.Add("Corrupting", new CheckBox("- Use Biscuit"));
+            ActiveMenu.Add("Corrupting", new CheckBox("- Use Corrupting"));
             ActiveMenu.CreateSlider("Use Corrupting if below {0}% Health", "Item.CorruptingHp", 35);
-
-            MiscMenu.AddGroupLabel("Skin Changer");
-
-            var skinList = Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
-            if (skinList != null)
-            {
-                MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
-                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
-                    delegate(ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
-                    {
-                        Player.Instance.SetSkinId(sender.CurrentValue);
-                    };
-            }
 
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell Range only if Spell is Ready.", "readyDraw");
@@ -131,6 +111,29 @@ namespace T2IN1_Sona
             DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen,
                 "DamageIndicator Color:");
 
+            MiscMenu.AddGroupLabel("Other Settings");
+            MiscMenu.Add("KS", new CheckBox("Kill Steal"));
+            MiscMenu.Add("IS", new CheckBox("Try to Interrupt Enemy Spell with R"));
+            MiscMenu.Add("Sup", new CheckBox("Support Mode", false));
+            MiscMenu.Add("HPLA", new CheckBox("Use W on % HP Allies to Heal", false));
+            MiscMenu.Add("wS", new Slider("Ally Health Percentage to use W", 60));
+            MiscMenu.Add("UE", new CheckBox("Use Exhaust"));
+            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
+                MiscMenu.Add(source.ChampionName + "exhaust",
+                    new CheckBox("Exhaust " + source.ChampionName, false));
+            MiscMenu.AddSeparator();
+            MiscMenu.AddGroupLabel("Skin Changer");
+            var skinList = Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
+            if (skinList != null)
+            {
+                MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
+                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
+                    delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
+                    {
+                        Player.Instance.SetSkinId(sender.CurrentValue);
+                    };
+            }
+            MiscMenu.AddSeparator();
             MiscMenu.AddGroupLabel("Auto Level UP");
             MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL", false);
             MiscMenu.AddLabel("The Auto Leveler will always Focus R than the rest of the Spells");
@@ -138,18 +141,6 @@ namespace T2IN1_Sona
             MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
             MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
             MiscMenu.CreateSlider("Delay Slider", "delaySlider", 200, 150, 500);
-            MiscMenu.AddGroupLabel("Other");
-            MiscMenu.Add("KS", new CheckBox("KS"));
-            MiscMenu.Add("IS", new CheckBox("TRY to Interrupt spells"));
-            MiscMenu.Add("Sup", new CheckBox("Support Mode", false));
-            MiscMenu.Add("HPLA", new CheckBox("Use W on % HP Allies to Heal", false));
-            MiscMenu.Add("wS", new Slider("Ally Health Percentage to use W", 60));
-            MiscMenu.Add("UE", new CheckBox("Use Exhaust"));
-            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
-            {
-                MiscMenu.Add(source.ChampionName + "exhaust",
-                    new CheckBox("Exhaust " + source.ChampionName, false));
-            }
         }
     }
 }
