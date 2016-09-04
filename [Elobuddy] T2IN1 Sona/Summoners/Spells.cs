@@ -17,6 +17,7 @@ namespace T2IN1_Sona
         public static Spell.Targeted Ignite = new Spell.Targeted(ReturnSlot("summonerdot"), 600);
         public static Spell.Targeted Smite = new Spell.Targeted(ReturnSlot(SmiteNames), 500);
         public static Spell.Active Cleanse = new Spell.Active(ReturnSlot("summonerboost"));
+        public static Spell.Active Exhaust = new Spell.Active(ReturnSlot("summonerexhaust"), 650);
 
         private static string[] SmiteNames => new[]
         {

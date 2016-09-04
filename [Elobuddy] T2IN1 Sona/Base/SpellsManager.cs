@@ -34,7 +34,7 @@ namespace T2IN1_Sona
             Q = new Spell.Active(SpellSlot.Q, 825);
             W = new Spell.Active(SpellSlot.W, 1000);
             E = new Spell.Active(SpellSlot.E, 430);
-            R = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Cone, 500, 1000, 120);
+            R = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Linear, 250, 2400, 140);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
