@@ -9,6 +9,7 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
+using T2IN1_Lib;
 using static T2IN1_Sona.Menus;
 using static T2IN1_Sona.Consumables;
 using static T2IN1_Sona.Defensive;
@@ -25,10 +26,7 @@ namespace T2IN1_Sona
 
             if (healAllies)
             {
-                var ally =
-                    EntityManager.Heroes.Allies.Where(
-                        x => x.IsValidTarget(W.Range) && x.HealthPercent < healHealthPercent)
-                        .FirstOrDefault();
+                var ally = EntityManager.Heroes.Allies.FirstOrDefault(x => x.IsValidTarget(W.Range) && x.HealthPercent < healHealthPercent);
 
                 if (ally != null)
                 {

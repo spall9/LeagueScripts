@@ -25,6 +25,9 @@ namespace T2IN1_Sona
             Game.OnTick += Game_OnTick;
             Interrupter.OnInterruptableSpell += Interruptererer;
             KillSteal.Execute();
+            Active.AutoW();
+            Active.GetPassiveCount();
+            Active.Passive();
         }
 
         private static void Game_OnTick(EventArgs args)
@@ -33,9 +36,7 @@ namespace T2IN1_Sona
             var playerMana = Player.Instance.ManaPercent;
             var target = TargetSelector.GetTarget(1200, DamageType.Magical);
 
-            Active.Defensive();
-            Active.Defensive2();
-            Active.Potions();
+
 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.Execute();

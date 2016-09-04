@@ -17,9 +17,7 @@ namespace T2IN1_Sona
     {
         public static void Execute()
         {
-            if (LaneClearMenu["R"].Cast<CheckBox>().CurrentValue)
-                if ((Player.Instance.CountEnemyMinionsInRange(900) >= 4) && R.IsReady() && R.IsLearned)
-                    R.Cast(R.GetBestCircularFarmPosition(4));
+            
         }
     }
 }
