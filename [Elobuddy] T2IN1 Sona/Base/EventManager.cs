@@ -26,7 +26,7 @@ namespace T2IN1_Sona.Base
                 if ((msDif <= 0) && !target.IsInAutoAttackRange(target))
                     SpellsManager.E.Cast();
 
-                var reachIn = dist/msDif;
+                var reachIn = dist / msDif;
                 if (reachIn > 4)
                     SpellsManager.E.Cast();
             }

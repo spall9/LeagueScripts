@@ -9,4 +9,3 @@ F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Sona\bin\Release\T2IN1 Lib.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Sona\bin\Release\Newtonsoft.Json.dll
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Sona\obj\Release\T2IN1_Sona.exe
 F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Sona\obj\Release\T2IN1_Sona.pdb
-F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Sona\obj\Release\T2IN1 Sona.csprojResolveAssemblyReference.cache

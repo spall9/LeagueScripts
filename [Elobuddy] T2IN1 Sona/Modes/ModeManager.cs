@@ -24,6 +24,7 @@ namespace T2IN1_Sona.Modes
             Orbwalker.OnPreAttack += Active.Orbwalker_OnPreAttack;
             Game.OnWndProc += Active.Game_OnWndProc;
 
+            EventManager.SmartE(null);
             KillSteal.Execute();
         }
 
