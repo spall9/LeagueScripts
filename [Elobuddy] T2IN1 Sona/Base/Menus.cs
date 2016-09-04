@@ -23,7 +23,6 @@ namespace T2IN1_Sona
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
-        public static Menu LastHitMenu;
         public static Menu FleeMenu;
         public static Menu MiscMenu;
         public static Menu ActiveMenu;
@@ -43,7 +42,6 @@ namespace T2IN1_Sona
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             HarassMenu = FirstMenu.AddSubMenu("• Harass");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
-            LastHitMenu = FirstMenu.AddSubMenu("• LastHit");
             FleeMenu = FirstMenu.AddSubMenu("• Flee");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
@@ -70,20 +68,11 @@ namespace T2IN1_Sona
             LaneClearMenu.AddGroupLabel("Item Settings");
             LaneClearMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
 
-            LastHitMenu.AddGroupLabel("Last Hit Settings");
-            LastHitMenu.Add("Q", new CheckBox("- Use Q"));
-            LastHitMenu.CreateSlider("Mana must be higher than {0}% to use Last Hit spells", "manaSlider", 45);
-
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
 
             ActiveMenu.AddGroupLabel("Summoner Settings");
             ActiveMenu.Add("UE", new CheckBox("Use Exhaust"));
-            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
-            {
-                MiscMenu.Add(source.ChampionName + "exhaust",
-                    new CheckBox("Exhaust " + source.ChampionName, false));
-            }
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
             ActiveMenu.AddGroupLabel("Only one Option for each Defensive Item can be Active at a Time!");
@@ -149,6 +138,18 @@ namespace T2IN1_Sona
             MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
             MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
             MiscMenu.CreateSlider("Delay Slider", "delaySlider", 200, 150, 500);
+            MiscMenu.AddGroupLabel("Other");
+            MiscMenu.Add("KS", new CheckBox("KS"));
+            MiscMenu.Add("IS", new CheckBox("TRY to Interrupt spells"));
+            MiscMenu.Add("Sup", new CheckBox("Support Mode", false));
+            MiscMenu.Add("HPLA", new CheckBox("Use W on % HP Allies to Heal", false));
+            MiscMenu.Add("wS", new Slider("Ally Health Percentage to use W", 60));
+            MiscMenu.Add("UE", new CheckBox("Use Exhaust"));
+            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
+            {
+                MiscMenu.Add(source.ChampionName + "exhaust",
+                    new CheckBox("Exhaust " + source.ChampionName, false));
+            }
         }
     }
 }

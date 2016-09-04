@@ -25,5 +25,4 @@ namespace T2IN1_Sona
             }
         }
     }
-    }
 }

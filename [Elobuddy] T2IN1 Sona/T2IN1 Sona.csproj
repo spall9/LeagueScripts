@@ -84,8 +84,8 @@
     <Compile Include="Modes\Harass.cs" />
     <Compile Include="Modes\Combo.cs" />
     <Compile Include="Modes\Flee.cs" />
+    <Compile Include="Modes\KillSteal.cs" />
     <Compile Include="Modes\LaneClear.cs" />
-    <Compile Include="Modes\LastHit.cs" />
     <Compile Include="Modes\ModeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Summoners\Spells.cs" />

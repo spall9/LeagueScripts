@@ -7,15 +7,87 @@
 using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
+using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
 using static T2IN1_Sona.Menus;
 using static T2IN1_Sona.Consumables;
 using static T2IN1_Sona.Defensive;
+using static T2IN1_Sona.SpellsManager;
 
 namespace T2IN1_Sona
 {
     internal class Active
     {
+        public static void AutoW()
+        {
+            var healAllies = MiscMenu["HPLA"].Cast<CheckBox>().CurrentValue;
+            var healHealthPercent = MiscMenu["wS"].Cast<Slider>().CurrentValue;
+
+            if (healAllies)
+            {
+                var ally =
+                    EntityManager.Heroes.Allies.Where(
+                        x => x.IsValidTarget(W.Range) && x.HealthPercent < healHealthPercent)
+                        .FirstOrDefault();
+
+                if (ally != null)
+                {
+                    W.Cast();
+                }
+            }
+        }
+
+        public static int GetPassiveCount()
+        {
+            foreach (var buff in Sona.Buffs)
+            if (buff.Name == "SPC") return buff.Count;
+            return 0;
+        }
+
+        public static void Passive()
+        {
+            var unit = TargetSelector.GetTarget(550, DamageType.Magical);
+            if ((Q.IsReady() && GetPassiveCount() == 2 && unit.Distance(Sona) <= 550))
+            {
+                if (Q.IsReady()) Q.Cast();
+                Player.IssueOrder(GameObjectOrder.AttackUnit, unit);
+            }
+        }
+
+        public static void Game_OnWndProc(WndEventArgs args)
+        {
+            if (args.Msg != (uint)WindowMessages.LeftButtonDown)
+            {
+                return;
+            }
+            SelectedHero = EntityManager.Heroes.Enemies.FindAll(hero => hero.IsValidTarget() && hero.Distance(Game.CursorPos, true) < 39999).OrderBy(h => h.Distance(Game.CursorPos, true)).FirstOrDefault();
+        }
+
+        public static void Orbwalker_OnPreAttack(AttackableUnit target, Orbwalker.PreAttackArgs args)
+        {
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
+            {
+                var t = target as Obj_AI_Minion;
+                if (t != null)
+                {
+                    {
+                        if (MiscMenu["Sup"].Cast<CheckBox>().CurrentValue)
+                            args.Process = false;
+                    }
+                }
+            }
+        }
+
+        public static void Interruptererer(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs args)
+        {
+            var intTarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
+            {
+                if (R.IsReady() && sender.IsValidTarget(R.Range) &&
+                    MiscMenu["int"].Cast<CheckBox>().CurrentValue)
+                    R.Cast(intTarget.ServerPosition);
+            }
+        }
+
         #region Defensive Items Cast only if Enemy is in Range
 
         public static void Defensive()

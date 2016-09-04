@@ -5,9 +5,11 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 using System.Collections.Generic;
+using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
+using SharpDX;
 using static T2IN1_Sona.AutoLevel;
 
 namespace T2IN1_Sona
@@ -29,6 +31,17 @@ namespace T2IN1_Sona
         public static Spell.Skillshot R;
         public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
         public static AIHeroClient Sona = ObjectManager.Player;
+        public static AIHeroClient SelectedHero { get; set; }
+
+        public static Vector3 MousePos
+        {
+            get { return Game.CursorPos; }
+        }
+
+        public static bool HasSpell(string s)
+        {
+            return Player.Spells.FirstOrDefault(o => o.SData.Name.Contains(s)) != null;
+        }
 
         public static void InitializeSpells()
         {
