@@ -5,10 +5,14 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 using System;
+using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
+using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 using static T2IN1_Sona.Menus;
+using static T2IN1_Sona.Spells;
+using static T2IN1_Sona.SpellsManager;
 
 namespace T2IN1_Sona
 {
@@ -23,13 +27,11 @@ namespace T2IN1_Sona
         {
             var orbMode = Orbwalker.ActiveModesFlags;
             var playerMana = Player.Instance.ManaPercent;
+            var target = TargetSelector.GetTarget(1200, DamageType.Magical);
 
             Active.Defensive();
             Active.Defensive2();
             Active.Potions();
-
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
-                Combo.Execute();
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LastHit) &&
                 (playerMana > LastHitMenu.GetSliderValue("manaSlider")))
@@ -41,6 +43,45 @@ namespace T2IN1_Sona
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee) && (playerMana > LastHitMenu.GetSliderValue("manaSlider")))
                 Flee.Execute();
+
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
+                Combo.Execute();
+            if (target != null)
+            {
+                if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass))
+                    Harass.Execute();
+                if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
+                    LaneClear.Execute();
+                if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit))
+                    LastHit.Execute();
+                if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
+                    Flee.Execute();
+
+                if (!MiscMenu["UE"].Cast<CheckBox>().CurrentValue ||
+                    ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
+                    !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
+                    return;
+                {
+                    foreach (
+                        var enemy in
+                        ObjectManager.Get<AIHeroClient>()
+                            .Where(a => a.IsEnemy && a.IsValidTarget(Exhaust.Range))
+                            .Where(
+                                enemy =>
+                                        MiscMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
+                    {
+                        if (enemy.IsFacing(Sona))
+                        {
+                            if (!(Sona.HealthPercent < 50)) continue;
+                            Exhaust.Cast(enemy);
+                            return;
+                        }
+                        if (!(enemy.HealthPercent < 50)) continue;
+                        Exhaust.Cast(enemy);
+                        return;
+                    }
+                }
+            }
         }
     }
 }

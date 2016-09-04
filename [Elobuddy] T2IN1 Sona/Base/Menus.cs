@@ -27,6 +27,7 @@ namespace T2IN1_Sona
         public static Menu FleeMenu;
         public static Menu MiscMenu;
         public static Menu ActiveMenu;
+        public static Menu HarassMenu;
 
         public static ColorSlide QColorSlide;
         public static ColorSlide WColorSlide;
@@ -40,6 +41,7 @@ namespace T2IN1_Sona
                 Player.Instance.ChampionName.ToLower() + "Sona");
             ActiveMenu = FirstMenu.AddSubMenu("• Item Activator");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
+            HarassMenu = FirstMenu.AddSubMenu("• Harass");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             LastHitMenu = FirstMenu.AddSubMenu("• LastHit");
             FleeMenu = FirstMenu.AddSubMenu("• Flee");
@@ -54,6 +56,10 @@ namespace T2IN1_Sona
             ComboMenu.AddSeparator();
             ComboMenu.Add("rCount", new Slider("Minimum People for R", 1, 0, 5));
             ComboMenu.Add("wAA", new CheckBox("Wait for AA to Finish", false));
+
+            HarassMenu.AddGroupLabel("Harass Settings");
+            HarassMenu.Add("QHarass", new CheckBox("Use Q"));
+            HarassMenu.Add("wAA", new CheckBox("Wait for AA to Finish", false));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
@@ -70,6 +76,14 @@ namespace T2IN1_Sona
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
+
+            ActiveMenu.AddGroupLabel("Summoner Settings");
+            ActiveMenu.Add("UE", new CheckBox("Use Exhaust"));
+            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
+            {
+                MiscMenu.Add(source.ChampionName + "exhaust",
+                    new CheckBox("Exhaust " + source.ChampionName, false));
+            }
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
             ActiveMenu.AddGroupLabel("Only one Option for each Defensive Item can be Active at a Time!");
