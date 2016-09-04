@@ -54,7 +54,7 @@ namespace T2IN1_Sona.Modes
                 if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass))
                 Harass.Execute();
                 else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
-                LaneClear.LaneClearLogic();
+                LaneClear.LaneClearExecute();
                 else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit))
                 {
                 }

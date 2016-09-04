@@ -8,52 +8,50 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using T2IN1_Sona.Base;
+using static T2IN1_Sona.Base.SpellsManager;
+using static T2IN1_Sona.Base.Menus;
 
 namespace T2IN1_Sona.Modes
 {
-    public static class LaneClear
+    internal class LaneClear
     {
-        public static void LaneClearLogic()
+        public static AIHeroClient Sona
         {
-            var qcheck = Menus.LaneClearMenu["LCQ"].Cast<CheckBox>().CurrentValue;
-            var qready = SpellsManager.Q.IsReady();
+            get { return ObjectManager.Player; }
+        }
 
-            if (!qcheck || !qready) return;
+        public static Obj_AI_Base GetEnemy(float range, GameObjectType t)
+        {
+            switch (t)
             {
-                var qenemy = (Obj_AI_Minion) Execute.GetEnemy(SpellsManager.Q.Range, GameObjectType.obj_AI_Minion);
-
-                if (qenemy != null)
-                    SpellsManager.Q.Cast();
-                if (Orbwalker.CanAutoAttack)
-                {
-                    var enemy =
-                        (Obj_AI_Minion)
-                        Execute.GetEnemy(SpellsManager.Sona.GetAutoAttackRange(), GameObjectType.obj_AI_Minion);
-
-                    if (enemy != null)
-                        Orbwalker.ForcedTarget = enemy;
-                }
+                case GameObjectType.AIHeroClient:
+                    return EntityManager.Heroes.Enemies.OrderBy(a => a.Health).FirstOrDefault(
+                        a => a.Distance(Player.Instance) < range && !a.IsDead && !a.IsInvulnerable);
+                default:
+                    return EntityManager.MinionsAndMonsters.EnemyMinions.OrderBy(a => a.Health).FirstOrDefault(
+                        a => a.Distance(Player.Instance) < range && !a.IsDead && !a.IsInvulnerable);
             }
         }
 
-        internal class Execute
+        public static void LaneClearExecute()
         {
-            public static AIHeroClient Sona
-            {
-                get { return ObjectManager.Player; }
-            }
+            var qcheck = LaneClearMenu["LCQ"].Cast<CheckBox>().CurrentValue;
+            var qready = Q.IsReady();
 
-            public static Obj_AI_Base GetEnemy(float range, GameObjectType t)
+            if (!qcheck || !qready) return;
             {
-                switch (t)
+                var qenemy = (Obj_AI_Minion)GetEnemy(Q.Range, GameObjectType.obj_AI_Minion);
+
+                if (qenemy != null)
                 {
-                    case GameObjectType.AIHeroClient:
-                        return EntityManager.Heroes.Enemies.OrderBy(a => a.Health).FirstOrDefault(
-                            a => (a.Distance(Player.Instance) < range) && !a.IsDead && !a.IsInvulnerable);
-                    default:
-                        return EntityManager.MinionsAndMonsters.EnemyMinions.OrderBy(a => a.Health).FirstOrDefault(
-                            a => (a.Distance(Player.Instance) < range) && !a.IsDead && !a.IsInvulnerable);
+                    Q.Cast();
+                }
+                if (Orbwalker.CanAutoAttack)
+                {
+                    var enemy = (Obj_AI_Minion)GetEnemy(Sona.GetAutoAttackRange(), GameObjectType.obj_AI_Minion);
+
+                    if (enemy != null)
+                        Orbwalker.ForcedTarget = enemy;
                 }
             }
         }
