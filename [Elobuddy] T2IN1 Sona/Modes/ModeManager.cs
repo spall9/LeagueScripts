@@ -42,6 +42,7 @@ namespace T2IN1_Sona
             Active.Defensive();
             Active.Defensive2();
             Active.Potions();
+            KillSteal.Execute();
 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.Execute();
@@ -50,26 +51,24 @@ namespace T2IN1_Sona
             {
                 if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass))
                     Harass.Execute();
-
-                if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
+                else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
                     LaneClear.LaneClearLogic();
-
-                if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit))
-
-                    if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
-                        Flee.Execute();
-
-                if (!MiscMenu["UE"].Cast<CheckBox>().CurrentValue ||
-                    (ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
-                     !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo)))
-                    return;
+                else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit))
                 {
+                }
+                else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
+                    Flee.Execute();
+                {
+                    if (!MiscMenu["UE"].Cast<CheckBox>().CurrentValue ||
+                        ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
+                        !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
+                        return;
                     foreach (
                         var enemy in
-                        ObjectManager.Get<AIHeroClient>()
-                            .Where(a => a.IsEnemy && a.IsValidTarget(Exhaust.Range))
-                            .Where(
-                                enemy =>
+                            ObjectManager.Get<AIHeroClient>()
+                                .Where(a => a.IsEnemy && a.IsValidTarget(Exhaust.Range))
+                                .Where(
+                                    enemy =>
                                         MiscMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
                     {
                         if (enemy.IsFacing(Sona))
