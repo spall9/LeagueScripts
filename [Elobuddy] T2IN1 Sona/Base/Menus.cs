@@ -37,7 +37,7 @@ namespace T2IN1_Sona
         public static void CreateMenu()
         {
             FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName,
-                Player.Instance.ChampionName.ToLower() + "Teemo");
+                Player.Instance.ChampionName.ToLower() + "Sona");
             ActiveMenu = FirstMenu.AddSubMenu("• Item Activator");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
@@ -48,20 +48,12 @@ namespace T2IN1_Sona
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
-            ComboMenu.Add("W", new CheckBox("- Use W"));
-            ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
-            ComboMenu.Add("RCount", new Slider("Use R in Combo [{0}]", 1, 1, 3));
-            ComboMenu.CreateSlider("Mana must be higher than {0}% to use R in Combo", "manaSlider", 30);
-            //ComboMenu.AddGroupLabel("Summoner Settings");
-            //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
-            //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
-            ComboMenu.AddGroupLabel("Item Settings");
-            ComboMenu.Add("Cutlass", new CheckBox("- Use Bilgewater Cutlass"));
-            ComboMenu.Add("Botrk", new CheckBox("- Use Blade of the Ruined King"));
-            ComboMenu.Add("Gunblade", new CheckBox("- Use Hextech Gunblade"));
-            ComboMenu.Add("Protobelt", new CheckBox("- Use Hextech Protobelt"));
-            ComboMenu.Add("GLP", new CheckBox("- Use Hextech GLP-800"));
+            ComboMenu.Add("COE", new CheckBox("Use Exhaust (Combo Only)"));
+            ComboMenu.Add("UI", new CheckBox("Use Items"));
+            ComboMenu.AddSeparator();
+            ComboMenu.Add("rCount", new Slider("Minimum People for R", 1, 0, 5));
+            ComboMenu.Add("wAA", new CheckBox("Wait for AA to Finish", false));
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));

@@ -28,11 +28,8 @@ namespace T2IN1_Sona
             Active.Defensive2();
             Active.Potions();
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.Execute();
-
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
-                Combo.ExecuteItems();
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LastHit) &&
                 (playerMana > LastHitMenu.GetSliderValue("manaSlider")))
