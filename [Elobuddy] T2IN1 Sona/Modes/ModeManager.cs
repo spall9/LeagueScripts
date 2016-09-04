@@ -13,6 +13,11 @@ using EloBuddy.SDK.Menu.Values;
 using T2IN1_Sona.Base;
 using T2IN1_Sona.Summoners;
 
+using static T2IN1_Sona.Base.SpellsManager;
+using static T2IN1_Sona.Summoners.Spells;
+using static T2IN1_Sona.Base.Menus;
+
+
 namespace T2IN1_Sona.Modes
 {
     internal class ModeManager
@@ -32,10 +37,8 @@ namespace T2IN1_Sona.Modes
         {
             var orbMode = Orbwalker.ActiveModesFlags;
             var playerMana = Player.Instance.ManaPercent;
-            var target = TargetSelector.GetTarget(1200, DamageType.Magical);
 
             SonaPassive.Passive();
-            SonaPassive.GetPassiveCount();
             Auto.AutoW();
             Active.Defensive();
             Active.Defensive2();
@@ -45,39 +48,37 @@ namespace T2IN1_Sona.Modes
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.Execute();
 
+            var target = TargetSelector.GetTarget(1200, DamageType.Magical);
             if (target != null)
             {
                 if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass))
-                    Harass.Execute();
+                Harass.Execute();
                 else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
-                    LaneClear.LaneClearLogic();
+                LaneClear.LaneClearLogic();
                 else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit))
                 {
                 }
                 else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
-                    Flee.Execute();
+                Flee.Execute();
                 {
-                    if (!Menus.FleeMenu["UE"].Cast<CheckBox>().CurrentValue ||
-                        (Menus.ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
-                         !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo)))
-                        return;
-                    foreach (
-                        var enemy in
-                        ObjectManager.Get<AIHeroClient>()
-                            .Where(a => a.IsEnemy && a.IsValidTarget(Spells.Exhaust.Range))
-                            .Where(
-                                enemy =>
-                                        Menus.ComboMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
+                if (!FleeMenu["UE"].Cast<CheckBox>().CurrentValue || (ComboMenu["COE"].Cast<CheckBox>().CurrentValue && !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo)))
+                    return;
+
+                    foreach (var enemy in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy && a.IsValidTarget(Exhaust.Range)).Where(enemy => ComboMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
                     {
-                        if (enemy.IsFacing(SpellsManager.Sona))
+                        if (enemy.IsFacing(Sona))
                         {
-                            if (!(SpellsManager.Sona.HealthPercent < 50)) continue;
-                            Spells.Exhaust.Cast(enemy);
-                            return;
+                            if (!(Sona.HealthPercent < 50)) continue;
+                            {
+                                Exhaust.Cast(enemy);
+                                return;
+                            }
                         }
                         if (!(enemy.HealthPercent < 50)) continue;
-                        Spells.Exhaust.Cast(enemy);
-                        return;
+                        {
+                            Exhaust.Cast(enemy);
+                            return;
+                        }
                     }
                 }
             }

@@ -1,4 +1,5 @@
-﻿using EloBuddy;
+﻿using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
 using T2IN1_Sona.Base;
 
@@ -18,9 +19,7 @@ namespace T2IN1_Sona.Modes
 
         public static int GetPassiveCount()
         {
-            foreach (var buff in SpellsManager.Sona.Buffs)
-                if (buff.Name == "sonapassivecount") return buff.Count;
-            return 0;
+            return (from buff in SpellsManager.Sona.Buffs where buff.Name == "sonapassivecount" select buff.Count).FirstOrDefault();
         }
     }
 }
