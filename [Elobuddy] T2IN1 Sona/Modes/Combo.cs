@@ -31,7 +31,7 @@ namespace T2IN1_Sona
                 return;
 
             if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                if (Q.IsReady() && target.CountEnemiesInRange(Q.Range) >= 1)
+                if (Q.IsReady() && Sona.CountEnemiesInRange(Q.Range) >= 1)
                 {
                     Q.Cast();
                 }
