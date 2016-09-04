@@ -86,6 +86,7 @@
     <Compile Include="Champions\Pantheon\Summoners\Spells.cs" />
     <Compile Include="Champions\Teemo\Base\AutoLevel.cs" />
     <Compile Include="Champions\Teemo\Base\DamageIndicator.cs" />
+    <Compile Include="Champions\Teemo\Base\EventManager.cs" />
     <Compile Include="Champions\Teemo\Base\Extensions.cs" />
     <Compile Include="Champions\Teemo\Base\Menus.cs" />
     <Compile Include="Champions\Teemo\Base\DrawingsManager.cs" />
@@ -94,11 +95,13 @@
     <Compile Include="Champions\Teemo\Items\Consumable.cs" />
     <Compile Include="Champions\Teemo\Items\Defensive.cs" />
     <Compile Include="Champions\Teemo\Items\Offensive.cs" />
+    <Compile Include="Champions\Teemo\Modes\Active.cs" />
     <Compile Include="Champions\Teemo\Modes\Combo.cs" />
     <Compile Include="Champions\Teemo\Modes\Flee.cs" />
     <Compile Include="Champions\Teemo\Modes\LaneClear.cs" />
     <Compile Include="Champions\Teemo\Modes\LastHit.cs" />
     <Compile Include="Champions\Teemo\Modes\ModeManager.cs" />
+    <Compile Include="Champions\Teemo\Modes\rRangeLevel.cs" />
     <Compile Include="Champions\Teemo\Summoners\Spells.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

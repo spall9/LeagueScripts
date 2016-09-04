@@ -10,8 +10,8 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
-
 using T2IN1_Lib;
+using T2IN1_Lib.DataBases;
 
 namespace T2IN1_Teemo
 {
@@ -23,10 +23,10 @@ namespace T2IN1_Teemo
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
-        public static Menu KSMenu;
         public static Menu LastHitMenu;
         public static Menu FleeMenu;
         public static Menu MiscMenu;
+        public static Menu ActiveMenu;
 
         public static ColorSlide QColorSlide;
         public static ColorSlide WColorSlide;
@@ -36,23 +36,27 @@ namespace T2IN1_Teemo
 
         public static void CreateMenu()
         {
-            FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "Teemo");
+            FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName,
+                Player.Instance.ChampionName.ToLower() + "Teemo");
+            ActiveMenu = FirstMenu.AddSubMenu("• Item Activator");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             LastHitMenu = FirstMenu.AddSubMenu("• LastHit");
-            KSMenu = FirstMenu.AddSubMenu("• KillSteal");
             FleeMenu = FirstMenu.AddSubMenu("• Flee");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
+            ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
-            ComboMenu.CreateSlider("Mana must be higher than [{0}%] to use R in Combo", "manaSlider", 30);
+            ComboMenu.Add("RCount", new Slider("Use R in Combo [{0}]", 1, 1, 3));
+            ComboMenu.CreateSlider("Mana must be higher than {0}% to use R in Combo", "manaSlider", 30);
+            //ComboMenu.AddGroupLabel("Summoner Settings");
+            //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
+            //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
             ComboMenu.AddGroupLabel("Item Settings");
-            ComboMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
             ComboMenu.Add("Cutlass", new CheckBox("- Use Bilgewater Cutlass"));
-            ComboMenu.Add("TitanicHydra", new CheckBox("- Use Titanic Hydra"));
             ComboMenu.Add("Botrk", new CheckBox("- Use Blade of the Ruined King"));
             ComboMenu.Add("Gunblade", new CheckBox("- Use Hextech Gunblade"));
             ComboMenu.Add("Protobelt", new CheckBox("- Use Hextech Protobelt"));
@@ -61,30 +65,54 @@ namespace T2IN1_Teemo
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
             LaneClearMenu.Add("R", new CheckBox("- Use R"));
-            LaneClearMenu.CreateSlider("Mana must be higher than [{0}%] to use Lane Clear Spells", "manaSlider", 50);
+            LaneClearMenu.CreateSlider("Mana must be higher than {0}% to use Lane Clear Spells", "manaSlider", 50);
             LaneClearMenu.AddGroupLabel("Item Settings");
             LaneClearMenu.Add("HydraTiamat", new CheckBox("- Use Hydra / Tiamat"));
 
             LastHitMenu.AddGroupLabel("Last Hit Settings");
             LastHitMenu.Add("Q", new CheckBox("- Use Q"));
-            LastHitMenu.CreateSlider("Mana must be higher than [{0}%] to use Last Hit spells", "manaSlider", 45);
-
-            KSMenu.AddGroupLabel("KillSteal Settings");
-            KSMenu.Add("Q", new CheckBox("- Use Q"));
+            LastHitMenu.CreateSlider("Mana must be higher than {0}% to use Last Hit spells", "manaSlider", 45);
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
 
+            ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
+            ActiveMenu.AddGroupLabel("Only one Option for each Defensive Item can be Active at a Time!");
+            ActiveMenu.Add("Zhonyas", new CheckBox("- Use Zhonyas Only if Enemy is in Range"));
+            ActiveMenu.Add("Zhonyas2", new CheckBox("- Use Zhonyas", false));
+            ActiveMenu.CreateSlider("Use Zhonyas if {0}% Health", "Item.ZyHp", 35);
+            ActiveMenu.Add("Seraph", new CheckBox("- Use Seraph Only if Enemy is in Range"));
+            ActiveMenu.Add("Seraph2", new CheckBox("- Use Seraph", false));
+            ActiveMenu.CreateSlider("Use Seraphs Embrace if {0}% Health", "Item.SeraphHp", 35);
+            ActiveMenu.Add("Solari", new CheckBox("- Use Solari Only if Enemy is in Range"));
+            ActiveMenu.Add("Solari2", new CheckBox("- Use Solari", false));
+            ActiveMenu.CreateSlider("Use Locket of the Iron Solari if {0}% Health", "Item.SolariHp", 35);
+            ActiveMenu.Add("Face", new CheckBox("- Use Face"));
+            ActiveMenu.CreateSlider("Use Face of the Mountain if {0}% Health", "Item.FaceHp", 35);
+
+            ActiveMenu.AddGroupLabel("Item Consumables Settings");
+            ActiveMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));
+            ActiveMenu.CreateSlider("Use Health Potion if below {0}% Health", "Item.HealthPotionHp", 35);
+            ActiveMenu.Add("HuntersPotion", new CheckBox("- Use Hunters Potion"));
+            ActiveMenu.CreateSlider("Use Hunters if below {0}% Health", "Item.HuntersPotionHp", 35);
+            ActiveMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
+            ActiveMenu.CreateSlider("Use Biscuit if below {0}% Health", "Item.BiscuitHp", 35);
+            ActiveMenu.Add("Refillable", new CheckBox("- Use Biscuit"));
+            ActiveMenu.CreateSlider("Use Refillable if below {0}% Health", "Item.RefillableHp", 35);
+            ActiveMenu.Add("Corrupting", new CheckBox("- Use Biscuit"));
+            ActiveMenu.CreateSlider("Use Corrupting if below {0}% Health", "Item.CorruptingHp", 35);
+
             MiscMenu.AddGroupLabel("Skin Changer");
 
-            var skinList = T2IN1_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
+            var skinList = Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
             if (skinList != null)
             {
                 MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
-                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange += delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
-                {
-                    Player.Instance.SetSkinId(sender.CurrentValue);
-                };
+                MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
+                    delegate(ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
+                    {
+                        Player.Instance.SetSkinId(sender.CurrentValue);
+                    };
             }
 
             DrawingsMenu.AddGroupLabel("Setting");
@@ -102,14 +130,15 @@ namespace T2IN1_Teemo
             WColorSlide = new ColorSlide(DrawingsMenu, "wColor", Color.White, "W Color:");
             EColorSlide = new ColorSlide(DrawingsMenu, "eColor", Color.White, "E Color:");
             RColorSlide = new ColorSlide(DrawingsMenu, "rColor", Color.Red, "R Color:");
-            DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen, "DamageIndicator Color:");
+            DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen,
+                "DamageIndicator Color:");
 
             MiscMenu.AddGroupLabel("Auto Level UP");
             MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL", false);
             MiscMenu.AddLabel("The Auto Leveler will always Focus R than the rest of the Spells");
-            MiscMenu.CreateComboBox("1 Spell to Focus", "firstFocus", new List<string> { "Q", "W", "E" });
-            MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> { "Q", "W", "E" }, 1);
-            MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> { "Q", "W", "E" }, 2);
+            MiscMenu.CreateComboBox("1 Spell to Focus", "firstFocus", new List<string> {"Q", "W", "E"});
+            MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
+            MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
             MiscMenu.CreateSlider("Delay Slider", "delaySlider", 200, 150, 500);
         }
     }

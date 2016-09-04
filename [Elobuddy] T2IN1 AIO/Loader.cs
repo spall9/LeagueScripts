@@ -2,7 +2,7 @@
 //                                                                                                            //
 //           Credits to MarioGK for his Lib & Template also Credits to Joker for Parts of his Lib             //
 //                                                                                                            //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System;
 using EloBuddy;
@@ -22,12 +22,12 @@ namespace T2IN1
             //Teemo
             if (Player.Instance.Hero == Champion.Teemo)
             {
-                T2IN1_Teemo.SpellsManager.InitializeSpells();
-                T2IN1_Teemo.Menus.CreateMenu();
-                T2IN1_Teemo.ModeManager.InitializeModes();
-                T2IN1_Teemo.DrawingsManager.InitializeDrawings();
+              T2IN1_Teemo.SpellsManager.InitializeSpells();
+              T2IN1_Teemo.Menus.CreateMenu();
+              T2IN1_Teemo.ModeManager.InitializeModes();
+              T2IN1_Teemo.DrawingsManager.InitializeDrawings();
 
-                Chat.Print("T2IN1 AIO Teemo Loaded!");
+                Chat.Print("T2IN1 Teemo Loaded!");
                 Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");
             }
 
@@ -39,7 +39,7 @@ namespace T2IN1
                 T2IN1_Pantheon.ModeManager.InitializeModes();
                 T2IN1_Pantheon.DrawingsManager.InitializeDrawings();
 
-                Chat.Print("T2IN1 AIO Pantheon Loaded!");
+                Chat.Print("T2IN1 Pantheon Loaded!");
                 Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");
             }
         }

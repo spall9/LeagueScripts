@@ -7,7 +7,6 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using T2IN1_Lib;
-
 using static T2IN1_Teemo.Menus;
 
 namespace T2IN1_Teemo
@@ -21,17 +20,14 @@ namespace T2IN1_Teemo
             {
                 var delay = MiscMenu.GetSliderValue("delaySlider");
                 Core.DelayAction(LevelUPSpells, delay);
-
             }
         }
-        
+
         //It will level up the spell using the values of the comboboxes on the menu as a priority
         private static void LevelUPSpells()
         {
             if (Player.Instance.Spellbook.CanSpellBeUpgraded(SpellSlot.R))
-            {
                 Player.Instance.Spellbook.LevelSpell(SpellSlot.R);
-            }
 
             var firstFocusSlot = GetSlotFromComboBox(MiscMenu.GetComboBoxValue("firstFocus"));
             var secondFocusSlot = GetSlotFromComboBox(MiscMenu.GetComboBoxValue("secondFocus"));
@@ -43,30 +39,22 @@ namespace T2IN1_Teemo
             if (Player.Instance.Spellbook.CanSpellBeUpgraded(firstFocusSlot))
             {
                 if (!secondSpell.IsLearned)
-                {
                     Player.Instance.Spellbook.LevelSpell(secondFocusSlot);
-                }
                 if (!thirdSpell.IsLearned)
-                {
                     Player.Instance.Spellbook.LevelSpell(thirdFocusSlot);
-                }
                 Player.Instance.Spellbook.LevelSpell(firstFocusSlot);
             }
 
             if (Player.Instance.Spellbook.CanSpellBeUpgraded(secondFocusSlot))
             {
                 if (!thirdSpell.IsLearned)
-                {
                     Player.Instance.Spellbook.LevelSpell(thirdFocusSlot);
-                }
                 Player.Instance.Spellbook.LevelSpell(firstFocusSlot);
                 Player.Instance.Spellbook.LevelSpell(secondFocusSlot);
             }
 
             if (Player.Instance.Spellbook.CanSpellBeUpgraded(thirdFocusSlot))
-            {
                 Player.Instance.Spellbook.LevelSpell(thirdFocusSlot);
-            }
         }
 
         /// It will transform the value of the combobox into a SpellSlot

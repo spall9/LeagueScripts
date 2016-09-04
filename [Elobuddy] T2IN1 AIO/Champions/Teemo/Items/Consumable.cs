@@ -12,7 +12,7 @@ namespace T2IN1_Teemo
 {
     public static class Consumables
     {
-        // Cleansers
+        // Consumables
         public static Item Biscuit = new Item(ItemId.Total_Biscuit_of_Rejuvenation);
         public static Item Health = new Item(ItemId.Health_Potion);
         public static Item Refillable = new Item(ItemId.Refillable_Potion);

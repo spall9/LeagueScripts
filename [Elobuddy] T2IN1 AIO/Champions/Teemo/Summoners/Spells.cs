@@ -17,7 +17,7 @@ namespace T2IN1_Teemo
         public static Spell.Targeted Ignite = new Spell.Targeted(ReturnSlot("summonerdot"), 600);
         public static Spell.Targeted Smite = new Spell.Targeted(ReturnSlot(SmiteNames), 500);
         public static Spell.Active Cleanse = new Spell.Active(ReturnSlot("summonerboost"));
-        
+
         private static string[] SmiteNames => new[]
         {
             "s5_summonersmiteplayerganker", "s5_summonersmiteduel",

@@ -15,7 +15,7 @@ namespace T2IN1_Teemo
         /// Get total damge using the custom values provided by you in the spellmanager
         public static float GetTotalDamage(this Obj_AI_Base target)
         {
-            var slots = new[] { SpellSlot.Q, SpellSlot.W, SpellSlot.E, SpellSlot.R };
+            var slots = new[] {SpellSlot.Q, SpellSlot.E, SpellSlot.R};
             var dmg = Player.Spells.Where(s => slots.Contains(s.Slot)).Sum(s => target.GetDamage(s.Slot));
             dmg += Orbwalker.CanAutoAttack ? Player.Instance.GetAutoAttackDamage(target) : 0f;
 
@@ -29,7 +29,8 @@ namespace T2IN1_Teemo
                 EntityManager.MinionsAndMonsters.GetLaneMinions()
                     .FirstOrDefault(
                         m =>
-                            m.IsValidTarget(spell.Range) && Prediction.Health.GetPrediction(m, spell.CastDelay) <= m.GetDamage(spell.Slot) &&
+                            m.IsValidTarget(spell.Range) &&
+                            (Prediction.Health.GetPrediction(m, spell.CastDelay) <= m.GetDamage(spell.Slot)) &&
                             m.IsEnemy);
         }
 
@@ -39,7 +40,8 @@ namespace T2IN1_Teemo
             return
                 EntityManager.Heroes.Enemies.FirstOrDefault(
                     e =>
-                        e.IsValidTarget(spell.Range) && Prediction.Health.GetPrediction(e, spell.CastDelay) <= e.GetDamage(spell.Slot) &&
+                        e.IsValidTarget(spell.Range) &&
+                        (Prediction.Health.GetPrediction(e, spell.CastDelay) <= e.GetDamage(spell.Slot)) &&
                         !e.HasUndyingBuff());
         }
     }
