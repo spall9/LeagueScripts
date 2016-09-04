@@ -23,6 +23,8 @@ namespace T2IN1_Sona
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
+        public static Menu KillStealMenu;
+        public static Menu SupportMenu;
         public static Menu FleeMenu;
         public static Menu MiscMenu;
         public static Menu ActiveMenu;
@@ -39,13 +41,17 @@ namespace T2IN1_Sona
             FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName,
                 Player.Instance.ChampionName.ToLower() + "Sona");
             ActiveMenu = FirstMenu.AddSubMenu("• Item Activator");
-            ComboMenu = FirstMenu.AddSubMenu("• Combo ");
+            ComboMenu = FirstMenu.AddSubMenu("• Combo");
+            KillStealMenu = FleeMenu.AddSubMenu("• Kill Steal");
             HarassMenu = FirstMenu.AddSubMenu("• Harass");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             FleeMenu = FirstMenu.AddSubMenu("• Flee");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
+            SupportMenu = FleeMenu.AddSubMenu("• Support");
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
+            KillStealMenu.AddGroupLabel("Kill Steal Settings");
+            KillStealMenu.Add("KS", new CheckBox("Kill Steal"));
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
@@ -63,9 +69,19 @@ namespace T2IN1_Sona
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("LCQ", new CheckBox("- Use Q"));
 
+            SupportMenu.AddGroupLabel("Support Settings");
+            SupportMenu.Add("Sup", new CheckBox("Support Mode", false));
+            SupportMenu.Add("IS", new CheckBox("Try to Interrupt Enemy Spell with R"));
+            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
+                MiscMenu.Add(source.ChampionName + "exhaust",
+                    new CheckBox("Exhaust " + source.ChampionName, false));
+            SupportMenu.AddSeparator();
+            SupportMenu.Add("HPLA", new CheckBox("Use W on % HP Allies to Heal", false));
+            SupportMenu.Add("wS", new Slider("Ally Health Percentage to use W", 60));
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
+            FleeMenu.Add("UE", new CheckBox("Use Exhaust"));
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
             ActiveMenu.AddGroupLabel("Only one Option for each Defensive Item can be Active at a Time!");
@@ -111,17 +127,6 @@ namespace T2IN1_Sona
             DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen,
                 "DamageIndicator Color:");
 
-            MiscMenu.AddGroupLabel("Other Settings");
-            MiscMenu.Add("KS", new CheckBox("Kill Steal"));
-            MiscMenu.Add("IS", new CheckBox("Try to Interrupt Enemy Spell with R"));
-            MiscMenu.Add("Sup", new CheckBox("Support Mode", false));
-            MiscMenu.Add("HPLA", new CheckBox("Use W on % HP Allies to Heal", false));
-            MiscMenu.Add("wS", new Slider("Ally Health Percentage to use W", 60));
-            MiscMenu.Add("UE", new CheckBox("Use Exhaust"));
-            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
-                MiscMenu.Add(source.ChampionName + "exhaust",
-                    new CheckBox("Exhaust " + source.ChampionName, false));
-            MiscMenu.AddSeparator();
             MiscMenu.AddGroupLabel("Skin Changer");
             var skinList = Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
             if (skinList != null)

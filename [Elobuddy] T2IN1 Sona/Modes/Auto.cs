@@ -13,8 +13,8 @@ namespace T2IN1_Sona
     {
         public static void AutoW()
         {
-            var healAllies = MiscMenu["HPLA"].Cast<CheckBox>().CurrentValue;
-            var healHealthPercent = MiscMenu["wS"].Cast<Slider>().CurrentValue;
+            var healAllies = SupportMenu["HPLA"].Cast<CheckBox>().CurrentValue;
+            var healHealthPercent = SupportMenu["wS"].Cast<Slider>().CurrentValue;
 
             if (healAllies)
             {
@@ -32,7 +32,7 @@ namespace T2IN1_Sona
             var intTarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
             {
                 if (R.IsReady() && sender.IsValidTarget(R.Range) &&
-                    MiscMenu["IS"].Cast<CheckBox>().CurrentValue)
+                    SupportMenu["IS"].Cast<CheckBox>().CurrentValue)
                     R.Cast(intTarget.ServerPosition);
             }
         }

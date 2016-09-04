@@ -59,7 +59,7 @@ namespace T2IN1_Sona
                 else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
                     Flee.Execute();
                 {
-                    if (!MiscMenu["UE"].Cast<CheckBox>().CurrentValue ||
+                    if (!FleeMenu["UE"].Cast<CheckBox>().CurrentValue ||
                         ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
                         !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
                         return;
@@ -69,7 +69,7 @@ namespace T2IN1_Sona
                                 .Where(a => a.IsEnemy && a.IsValidTarget(Exhaust.Range))
                                 .Where(
                                     enemy =>
-                                        MiscMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
+                                        SupportMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
                     {
                         if (enemy.IsFacing(Sona))
                         {

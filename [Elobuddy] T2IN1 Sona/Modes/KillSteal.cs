@@ -18,7 +18,7 @@ namespace T2IN1_Sona
     {
         public static void Execute()
         {
-            if (MiscMenu["KS"].Cast<CheckBox>().CurrentValue && Q.IsReady())
+            if (KillStealMenu["KS"].Cast<CheckBox>().CurrentValue && Q.IsReady())
                 try
                 {
                     foreach (

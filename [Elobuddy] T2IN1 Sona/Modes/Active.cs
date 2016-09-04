@@ -38,7 +38,7 @@ namespace T2IN1_Sona
                 var t = target as Obj_AI_Minion;
                 if (t != null)
                 {
-                    if (MiscMenu["Sup"].Cast<CheckBox>().CurrentValue)
+                    if (SupportMenu["Sup"].Cast<CheckBox>().CurrentValue)
                         args.Process = false;
                 }
             }
