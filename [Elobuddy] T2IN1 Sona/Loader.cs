@@ -28,8 +28,9 @@ namespace T2IN1
                 ModeManager.InitializeModes();
                 DrawingsManager.InitializeDrawings();
 
-                Chat.Print("T2IN1 Teemo Loaded!");
-                Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");
+                Chat.Print("T2IN1 Sona Loaded!");
+                Chat.Print("Credits to MarioGK for his Lib");
+                Chat.Print("Credits to Bloodimir for some things from his Sona Script");
             }
         }
     }
