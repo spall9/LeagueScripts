@@ -16,17 +16,18 @@ namespace T2IN1_Sona.Modes
             var healAllies = Menus.SupportMenu["HPLA"].Cast<CheckBox>().CurrentValue;
             var healHealthPercent = Menus.SupportMenu["wS"].Cast<Slider>().CurrentValue;
 
+            if (Sona.IsRecalling())
+                return;
+
             if (healAllies)
             {
-                if (Sona.IsRecalling())
-                    return;
-                        var ally =
-                        EntityManager.Heroes.Allies
-                        .FirstOrDefault(
-                            x => x.IsValidTarget(W.Range) && (x.HealthPercent < healHealthPercent));
+                var ally =
+                EntityManager.Heroes.Allies
+                .FirstOrDefault(
+                    x => x.IsValidTarget(W.Range) && (x.HealthPercent < healHealthPercent));
 
-                        if (ally != null)
-                            W.Cast();
+                if (ally != null)
+                    W.Cast();
             }
         }
 
