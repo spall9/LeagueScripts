@@ -69,7 +69,7 @@ namespace T2IN1_Sona
                                 .Where(a => a.IsEnemy && a.IsValidTarget(Exhaust.Range))
                                 .Where(
                                     enemy =>
-                                        SupportMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
+                                        ComboMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
                     {
                         if (enemy.IsFacing(Sona))
                         {

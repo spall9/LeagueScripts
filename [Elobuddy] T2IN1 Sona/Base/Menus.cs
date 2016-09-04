@@ -42,12 +42,12 @@ namespace T2IN1_Sona
                 Player.Instance.ChampionName.ToLower() + "Sona");
             ActiveMenu = FirstMenu.AddSubMenu("• Item Activator");
             ComboMenu = FirstMenu.AddSubMenu("• Combo");
-            KillStealMenu = FleeMenu.AddSubMenu("• Kill Steal");
+            KillStealMenu = FirstMenu.AddSubMenu("• Kill Steal");
             HarassMenu = FirstMenu.AddSubMenu("• Harass");
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear");
             FleeMenu = FirstMenu.AddSubMenu("• Flee");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
-            SupportMenu = FleeMenu.AddSubMenu("• Support");
+            SupportMenu = FirstMenu.AddSubMenu("• Support");
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
             KillStealMenu.AddGroupLabel("Kill Steal Settings");
@@ -57,6 +57,9 @@ namespace T2IN1_Sona
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("COE", new CheckBox("Use Exhaust (Combo Only)"));
+            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
+                ComboMenu.Add(source.ChampionName + "exhaust",
+                    new CheckBox("Exhaust " + source.ChampionName, false));
             ComboMenu.Add("UI", new CheckBox("Use Items"));
             ComboMenu.AddSeparator();
             ComboMenu.Add("rCount", new Slider("Minimum People for R", 1, 0, 5));
@@ -72,9 +75,6 @@ namespace T2IN1_Sona
             SupportMenu.AddGroupLabel("Support Settings");
             SupportMenu.Add("Sup", new CheckBox("Support Mode", false));
             SupportMenu.Add("IS", new CheckBox("Try to Interrupt Enemy Spell with R"));
-            foreach (var source in ObjectManager.Get<AIHeroClient>().Where(a => a.IsEnemy))
-                MiscMenu.Add(source.ChampionName + "exhaust",
-                    new CheckBox("Exhaust " + source.ChampionName, false));
             SupportMenu.AddSeparator();
             SupportMenu.Add("HPLA", new CheckBox("Use W on % HP Allies to Heal", false));
             SupportMenu.Add("wS", new Slider("Ally Health Percentage to use W", 60));
