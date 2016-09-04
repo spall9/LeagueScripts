@@ -7,20 +7,19 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Sona.Menus;
-using static T2IN1_Sona.SpellsManager;
+using T2IN1_Sona.Base;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Modes
 {
     internal static class Harass
     {
         public static void Execute()
         {
             var target = TargetSelector.GetTarget(650, DamageType.Magical);
-            Orbwalker.OrbwalkTo(MousePos);
-            if (HarassMenu["QHarass"].Cast<CheckBox>().CurrentValue && Q.IsReady())
-                if (Q.IsInRange(target))
-                    Q.Cast();
+            Orbwalker.OrbwalkTo(SpellsManager.MousePos);
+            if (Menus.HarassMenu["QHarass"].Cast<CheckBox>().CurrentValue && SpellsManager.Q.IsReady())
+                if (SpellsManager.Q.IsInRange(target))
+                    SpellsManager.Q.Cast();
         }
     }
 }

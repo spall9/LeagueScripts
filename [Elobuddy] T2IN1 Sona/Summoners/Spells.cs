@@ -4,11 +4,12 @@
 //                                                                                                            //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
+using System.Collections.Generic;
 using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Summoners
 {
     public static class Spells
     {
@@ -18,6 +19,11 @@ namespace T2IN1_Sona
         public static Spell.Targeted Smite = new Spell.Targeted(ReturnSlot(SmiteNames), 500);
         public static Spell.Active Cleanse = new Spell.Active(ReturnSlot("summonerboost"));
         public static Spell.Targeted Exhaust = new Spell.Targeted(ReturnSlot("summonerexhaust"), 650);
+
+        public static List<Spell.Targeted> ItemList = new List<Spell.Targeted>
+        {
+            Exhaust
+        };
 
         private static string[] SmiteNames => new[]
         {

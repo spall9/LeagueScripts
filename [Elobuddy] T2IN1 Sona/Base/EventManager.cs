@@ -6,9 +6,8 @@
 
 using EloBuddy;
 using EloBuddy.SDK;
-using static T2IN1_Sona.SpellsManager;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Base
 {
     internal class EventManager
     {
@@ -19,17 +18,17 @@ namespace T2IN1_Sona
                 if ((target.Path.Length == 0) || !target.IsMoving)
                     return;
                 var nextEnemPath = target.Path[0].To2D();
-                var dist = Sona.Position.To2D().Distance(target.Position.To2D());
-                var distToNext = nextEnemPath.Distance(Sona.Position.To2D());
+                var dist = SpellsManager.Sona.Position.To2D().Distance(target.Position.To2D());
+                var distToNext = nextEnemPath.Distance(SpellsManager.Sona.Position.To2D());
                 if (distToNext <= dist)
                     return;
-                var msDif = Sona.MoveSpeed - target.MoveSpeed;
+                var msDif = SpellsManager.Sona.MoveSpeed - target.MoveSpeed;
                 if ((msDif <= 0) && !target.IsInAutoAttackRange(target))
-                    E.Cast();
+                    SpellsManager.E.Cast();
 
                 var reachIn = dist/msDif;
                 if (reachIn > 4)
-                    E.Cast();
+                    SpellsManager.E.Cast();
             }
             catch
             {

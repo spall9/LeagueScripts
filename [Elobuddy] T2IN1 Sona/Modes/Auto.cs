@@ -3,37 +3,36 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Sona.Menus;
-using static T2IN1_Sona.SpellsManager;
-using static T2IN1_Sona.SonaPassive;
+using T2IN1_Sona.Base;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Modes
 {
     internal class Auto
     {
         public static void AutoW()
         {
-            var healAllies = SupportMenu["HPLA"].Cast<CheckBox>().CurrentValue;
-            var healHealthPercent = SupportMenu["wS"].Cast<Slider>().CurrentValue;
+            var healAllies = Menus.SupportMenu["HPLA"].Cast<CheckBox>().CurrentValue;
+            var healHealthPercent = Menus.SupportMenu["wS"].Cast<Slider>().CurrentValue;
 
             if (healAllies)
             {
                 var ally =
                     EntityManager.Heroes.Allies
-                        .FirstOrDefault(x => x.IsValidTarget(W.Range) && x.HealthPercent < healHealthPercent);
+                        .FirstOrDefault(
+                            x => x.IsValidTarget(SpellsManager.W.Range) && (x.HealthPercent < healHealthPercent));
 
                 if (ally != null)
-                    W.Cast();
+                    SpellsManager.W.Cast();
             }
         }
 
         public static void Interruptererer(Obj_AI_Base sender, Interrupter.InterruptableSpellEventArgs args)
         {
-            var intTarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
+            var intTarget = TargetSelector.GetTarget(SpellsManager.R.Range, DamageType.Magical);
             {
-                if (R.IsReady() && sender.IsValidTarget(R.Range) &&
-                    SupportMenu["IS"].Cast<CheckBox>().CurrentValue)
-                    R.Cast(intTarget.ServerPosition);
+                if (SpellsManager.R.IsReady() && sender.IsValidTarget(SpellsManager.R.Range) &&
+                    Menus.SupportMenu["IS"].Cast<CheckBox>().CurrentValue)
+                    SpellsManager.R.Cast(intTarget.ServerPosition);
             }
         }
     }

@@ -10,22 +10,19 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Sona.Menus;
-using static T2IN1_Sona.Spells;
-using static T2IN1_Sona.SpellsManager;
-using static T2IN1_Sona.Active;
-using static T2IN1_Sona.Auto;
+using T2IN1_Sona.Base;
+using T2IN1_Sona.Summoners;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Modes
 {
     internal class ModeManager
     {
         public static void InitializeModes()
         {
             Game.OnTick += Game_OnTick;
-            Interrupter.OnInterruptableSpell += Interruptererer;
-            Orbwalker.OnPreAttack += Orbwalker_OnPreAttack;
-            Game.OnWndProc += Game_OnWndProc;
+            Interrupter.OnInterruptableSpell += Auto.Interruptererer;
+            Orbwalker.OnPreAttack += Active.Orbwalker_OnPreAttack;
+            Game.OnWndProc += Active.Game_OnWndProc;
 
             KillSteal.Execute();
         }
@@ -59,26 +56,26 @@ namespace T2IN1_Sona
                 else if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
                     Flee.Execute();
                 {
-                    if (!FleeMenu["UE"].Cast<CheckBox>().CurrentValue ||
-                        ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
-                        !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
+                    if (!Menus.FleeMenu["UE"].Cast<CheckBox>().CurrentValue ||
+                        (Menus.ComboMenu["COE"].Cast<CheckBox>().CurrentValue &&
+                         !Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo)))
                         return;
                     foreach (
                         var enemy in
-                            ObjectManager.Get<AIHeroClient>()
-                                .Where(a => a.IsEnemy && a.IsValidTarget(Exhaust.Range))
-                                .Where(
-                                    enemy =>
-                                        ComboMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
+                        ObjectManager.Get<AIHeroClient>()
+                            .Where(a => a.IsEnemy && a.IsValidTarget(Spells.Exhaust.Range))
+                            .Where(
+                                enemy =>
+                                        Menus.ComboMenu[enemy.ChampionName + "exhaust"].Cast<CheckBox>().CurrentValue))
                     {
-                        if (enemy.IsFacing(Sona))
+                        if (enemy.IsFacing(SpellsManager.Sona))
                         {
-                            if (!(Sona.HealthPercent < 50)) continue;
-                            Exhaust.Cast(enemy);
+                            if (!(SpellsManager.Sona.HealthPercent < 50)) continue;
+                            Spells.Exhaust.Cast(enemy);
                             return;
                         }
                         if (!(enemy.HealthPercent < 50)) continue;
-                        Exhaust.Cast(enemy);
+                        Spells.Exhaust.Cast(enemy);
                         return;
                     }
                 }

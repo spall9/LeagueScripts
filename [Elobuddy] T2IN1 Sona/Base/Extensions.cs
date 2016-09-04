@@ -8,7 +8,7 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Base
 {
     public static class Extensions
     {

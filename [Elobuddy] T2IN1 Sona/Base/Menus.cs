@@ -13,7 +13,7 @@ using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 using T2IN1_Lib.DataBases;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Base
 {
     internal class Menus
     {
@@ -133,7 +133,7 @@ namespace T2IN1_Sona
             {
                 MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
                 MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
-                    delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
+                    delegate(ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
                     {
                         Player.Instance.SetSkinId(sender.CurrentValue);
                     };

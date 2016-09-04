@@ -7,19 +7,17 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Sona.Menus;
-using static T2IN1_Sona.SpellsManager;
+using T2IN1_Sona.Base;
 
-
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Modes
 {
     internal class Flee
     {
         public static void Execute()
         {
-            if (FleeMenu["W"].Cast<CheckBox>().CurrentValue)
+            if (Menus.FleeMenu["W"].Cast<CheckBox>().CurrentValue)
             {
-                E.Cast();
+                SpellsManager.E.Cast();
                 Orbwalker.MoveTo(Game.CursorPos);
             }
         }

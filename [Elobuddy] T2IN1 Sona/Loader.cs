@@ -7,9 +7,10 @@
 using System;
 using EloBuddy;
 using EloBuddy.SDK.Events;
-using T2IN1_Sona;
+using T2IN1_Sona.Base;
+using T2IN1_Sona.Modes;
 
-namespace T2IN1
+namespace T2IN1_Sona
 {
     internal class Loader
     {

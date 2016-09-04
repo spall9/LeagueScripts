@@ -48,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotMemory.Unit, Version=103.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>packages\JetBrains.dotMemoryUnit.2.3.20160517.113140\lib\dotMemory.Unit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EloBuddy">
       <HintPath>C:\Users\RaIN\AppData\Roaming\EloBuddy\Addons\Libraries\EloBuddy.dll</HintPath>
     </Reference>
@@ -76,7 +80,7 @@
     <Compile Include="Base\Menus.cs" />
     <Compile Include="Base\SpellsManager.cs" />
     <Compile Include="Items\Cleansers.cs" />
-    <Compile Include="Items\Consumable.cs" />
+    <Compile Include="Items\Consumables.cs" />
     <Compile Include="Items\Defensive.cs" />
     <Compile Include="Items\Offensive.cs" />
     <Compile Include="Loader.cs" />
@@ -88,12 +92,13 @@
     <Compile Include="Modes\KillSteal.cs" />
     <Compile Include="Modes\LaneClear.cs" />
     <Compile Include="Modes\ModeManager.cs" />
-    <Compile Include="Modes\Passive.cs" />
+    <Compile Include="Modes\SonaPassive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Summoners\Spells.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

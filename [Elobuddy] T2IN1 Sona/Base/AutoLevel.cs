@@ -7,18 +7,17 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using T2IN1_Lib;
-using static T2IN1_Sona.Menus;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Base
 {
     public static class AutoLevel
     {
         //This event is triggered when a unit levels up
         public static void Obj_AI_Base_OnLevelUp(Obj_AI_Base sender, Obj_AI_BaseLevelUpEventArgs args)
         {
-            if (MiscMenu.GetCheckBoxValue("activateAutoLVL") && sender.IsMe)
+            if (Menus.MiscMenu.GetCheckBoxValue("activateAutoLVL") && sender.IsMe)
             {
-                var delay = MiscMenu.GetSliderValue("delaySlider");
+                var delay = Menus.MiscMenu.GetSliderValue("delaySlider");
                 Core.DelayAction(LevelUPSpells, delay);
             }
         }
@@ -29,9 +28,9 @@ namespace T2IN1_Sona
             if (Player.Instance.Spellbook.CanSpellBeUpgraded(SpellSlot.R))
                 Player.Instance.Spellbook.LevelSpell(SpellSlot.R);
 
-            var firstFocusSlot = GetSlotFromComboBox(MiscMenu.GetComboBoxValue("firstFocus"));
-            var secondFocusSlot = GetSlotFromComboBox(MiscMenu.GetComboBoxValue("secondFocus"));
-            var thirdFocusSlot = GetSlotFromComboBox(MiscMenu.GetComboBoxValue("thirdFocus"));
+            var firstFocusSlot = GetSlotFromComboBox(Menus.MiscMenu.GetComboBoxValue("firstFocus"));
+            var secondFocusSlot = GetSlotFromComboBox(Menus.MiscMenu.GetComboBoxValue("secondFocus"));
+            var thirdFocusSlot = GetSlotFromComboBox(Menus.MiscMenu.GetComboBoxValue("thirdFocus"));
 
             var secondSpell = Player.GetSpell(secondFocusSlot);
             var thirdSpell = Player.GetSpell(thirdFocusSlot);

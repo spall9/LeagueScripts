@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using EloBuddy;
 using EloBuddy.SDK;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Items
 {
     public static class Consumables
     {

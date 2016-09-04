@@ -8,12 +8,10 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Sona.Menus;
-using static T2IN1_Sona.Consumables;
-using static T2IN1_Sona.Defensive;
-using static T2IN1_Sona.SpellsManager;
+using T2IN1_Sona.Base;
+using T2IN1_Sona.Items;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Modes
 {
     internal class Active
     {
@@ -21,7 +19,7 @@ namespace T2IN1_Sona
         {
             if (args.Msg != (uint) WindowMessages.LeftButtonDown)
                 return;
-            SelectedHero =
+            SpellsManager.SelectedHero =
                 EntityManager.Heroes.Enemies.FindAll(
                         hero => hero.IsValidTarget() && (hero.Distance(Game.CursorPos, true) < 39999))
                     .OrderBy(h => h.Distance(Game.CursorPos, true))
@@ -37,10 +35,8 @@ namespace T2IN1_Sona
             {
                 var t = target as Obj_AI_Minion;
                 if (t != null)
-                {
-                    if (SupportMenu["Sup"].Cast<CheckBox>().CurrentValue)
+                    if (Menus.SupportMenu["Sup"].Cast<CheckBox>().CurrentValue)
                         args.Process = false;
-                }
             }
         }
 
@@ -49,44 +45,47 @@ namespace T2IN1_Sona
         public static void Defensive()
         {
             //Zhonyas
-            if (ActiveMenu["Zhonyas"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Zhonyas"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if ((Player.Instance.CountEnemiesInRange(700) >= 1) && Zhonyas.IsOwned() && Zhonyas.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.ZyHp"].Cast<Slider>().CurrentValue)
-                        Zhonyas.Cast();
+                if ((Player.Instance.CountEnemiesInRange(700) >= 1) && Items.Defensive.Zhonyas.IsOwned() &&
+                    Items.Defensive.Zhonyas.IsReady())
+                    if (Player.Instance.HealthPercent <= Menus.ActiveMenu["Item.ZyHp"].Cast<Slider>().CurrentValue)
+                        Items.Defensive.Zhonyas.Cast();
             }
             //Seraph
-            if (ActiveMenu["Seraph"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Seraph"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if ((Player.Instance.CountEnemiesInRange(650) >= 1) && Seraph.IsOwned() && Seraph.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.SeraphHp"].Cast<Slider>().CurrentValue)
-                        Seraph.Cast();
+                if ((Player.Instance.CountEnemiesInRange(650) >= 1) && Items.Defensive.Seraph.IsOwned() &&
+                    Items.Defensive.Seraph.IsReady())
+                    if (Player.Instance.HealthPercent <= Menus.ActiveMenu["Item.SeraphHp"].Cast<Slider>().CurrentValue)
+                        Items.Defensive.Seraph.Cast();
             }
             //Solari
-            if (ActiveMenu["Solari"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Solari"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if ((Player.Instance.CountEnemiesInRange(600) >= 1) && Solari.IsOwned() && Solari.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.SolariHp"].Cast<Slider>().CurrentValue)
-                        Solari.Cast();
+                if ((Player.Instance.CountEnemiesInRange(600) >= 1) && Items.Defensive.Solari.IsOwned() &&
+                    Items.Defensive.Solari.IsReady())
+                    if (Player.Instance.HealthPercent <= Menus.ActiveMenu["Item.SolariHp"].Cast<Slider>().CurrentValue)
+                        Items.Defensive.Solari.Cast();
             }
             //Face
             var Ally =
                 EntityManager.Heroes.Allies.Where(
-                        a => a.HealthPercent <= ActiveMenu["Item.FaceHP"].Cast<Slider>().CurrentValue)
-                    .FirstOrDefault(a => a.IsValidTarget(Face.Range));
+                        a => a.HealthPercent <= Menus.ActiveMenu["Item.FaceHP"].Cast<Slider>().CurrentValue)
+                    .FirstOrDefault(a => a.IsValidTarget(Items.Defensive.Face.Range));
 
-            if (ActiveMenu["Face"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Face"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Face.IsOwned() && Face.IsReady() && Ally.IsValid)
-                    Face.Cast(Ally);
+                if (Items.Defensive.Face.IsOwned() && Items.Defensive.Face.IsReady() && Ally.IsValid)
+                    Items.Defensive.Face.Cast(Ally);
             }
         }
 
@@ -97,31 +96,31 @@ namespace T2IN1_Sona
         public static void Defensive2()
         {
             //Zhonyas
-            if (ActiveMenu["Zhonyas2"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Zhonyas2"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Zhonyas.IsOwned() && Zhonyas.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.ZyHp2"].Cast<Slider>().CurrentValue)
-                        Zhonyas.Cast();
+                if (Items.Defensive.Zhonyas.IsOwned() && Items.Defensive.Zhonyas.IsReady())
+                    if (Player.Instance.HealthPercent <= Menus.ActiveMenu["Item.ZyHp2"].Cast<Slider>().CurrentValue)
+                        Items.Defensive.Zhonyas.Cast();
             }
             //Seraph
-            if (ActiveMenu["Seraph2"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Seraph2"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Seraph.IsOwned() && Seraph.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.SeraphHp2"].Cast<Slider>().CurrentValue)
-                        Seraph.Cast();
+                if (Items.Defensive.Seraph.IsOwned() && Items.Defensive.Seraph.IsReady())
+                    if (Player.Instance.HealthPercent <= Menus.ActiveMenu["Item.SeraphHp2"].Cast<Slider>().CurrentValue)
+                        Items.Defensive.Seraph.Cast();
             }
             //Solari
-            if (ActiveMenu["Solari2"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Solari2"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead) return;
 
-                if (Solari.IsOwned() && Solari.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.SolariHp2"].Cast<Slider>().CurrentValue)
-                        Solari.Cast();
+                if (Items.Defensive.Solari.IsOwned() && Items.Defensive.Solari.IsReady())
+                    if (Player.Instance.HealthPercent <= Menus.ActiveMenu["Item.SolariHp2"].Cast<Slider>().CurrentValue)
+                        Items.Defensive.Solari.Cast();
             }
         }
 
@@ -140,53 +139,58 @@ namespace T2IN1_Sona
                            || Player.Instance.IsRecalling();
 
             //Health Potion
-            if (ActiveMenu["HealthPotion"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["HealthPotion"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Health.IsOwned() && Health.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.HealthPotionHp"].Cast<Slider>().CurrentValue)
-                        Health.Cast();
+                if (Consumables.Health.IsOwned() && Consumables.Health.IsReady())
+                    if (Player.Instance.HealthPercent <=
+                        Menus.ActiveMenu["Item.HealthPotionHp"].Cast<Slider>().CurrentValue)
+                        Consumables.Health.Cast();
             }
             //Hunters Potion
-            if (ActiveMenu["HuntersPotion"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["HuntersPotion"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Hunters.IsOwned() && Hunters.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.HuntersPotionHp"].Cast<Slider>().CurrentValue)
-                        Hunters.Cast();
+                if (Consumables.Hunters.IsOwned() && Consumables.Hunters.IsReady())
+                    if (Player.Instance.HealthPercent <=
+                        Menus.ActiveMenu["Item.HuntersPotionHp"].Cast<Slider>().CurrentValue)
+                        Consumables.Hunters.Cast();
             }
 
             //Biscuit
-            if (ActiveMenu["Biscuit"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Biscuit"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
                 {
-                    if (Biscuit.IsOwned() && Biscuit.IsReady())
-                        if (Player.Instance.HealthPercent <= ActiveMenu["Item.BiscuitHp"].Cast<Slider>().CurrentValue)
-                            Biscuit.Cast();
+                    if (Consumables.Biscuit.IsOwned() && Consumables.Biscuit.IsReady())
+                        if (Player.Instance.HealthPercent <=
+                            Menus.ActiveMenu["Item.BiscuitHp"].Cast<Slider>().CurrentValue)
+                            Consumables.Biscuit.Cast();
                 }
             }
 
             //Refillable
-            if (ActiveMenu["Refillable"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Refillable"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Refillable.IsOwned() && Refillable.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.RefillableHp"].Cast<Slider>().CurrentValue)
-                        Refillable.Cast();
+                if (Consumables.Refillable.IsOwned() && Consumables.Refillable.IsReady())
+                    if (Player.Instance.HealthPercent <=
+                        Menus.ActiveMenu["Item.RefillableHp"].Cast<Slider>().CurrentValue)
+                        Consumables.Refillable.Cast();
             }
 
             //Corrupting
-            if (ActiveMenu["Corrupting"].Cast<CheckBox>().CurrentValue)
+            if (Menus.ActiveMenu["Corrupting"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
-                if (Corrupting.IsOwned() && Corrupting.IsReady())
-                    if (Player.Instance.HealthPercent <= ActiveMenu["Item.CorruptingHp"].Cast<Slider>().CurrentValue)
-                        Corrupting.Cast();
+                if (Consumables.Corrupting.IsOwned() && Consumables.Corrupting.IsReady())
+                    if (Player.Instance.HealthPercent <=
+                        Menus.ActiveMenu["Item.CorruptingHp"].Cast<Slider>().CurrentValue)
+                        Consumables.Corrupting.Cast();
             }
         }
 

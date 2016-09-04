@@ -8,10 +8,8 @@ using System;
 using EloBuddy;
 using EloBuddy.SDK.Rendering;
 using T2IN1_Lib;
-using static T2IN1_Sona.SpellsManager;
-using static T2IN1_Sona.Menus;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Base
 {
     internal class DrawingsManager
     {
@@ -24,27 +22,27 @@ namespace T2IN1_Sona
 
         private static void Drawing_OnDraw(EventArgs args)
         {
-            var readyDraw = DrawingsMenu.GetCheckBoxValue("readyDraw");
+            var readyDraw = Menus.DrawingsMenu.GetCheckBoxValue("readyDraw");
 
-            if (DrawingsMenu.GetCheckBoxValue("qDraw") && readyDraw
-                ? Q.IsReady()
-                : DrawingsMenu.GetCheckBoxValue("qDraw"))
-                Circle.Draw(QColorSlide.GetSharpColor(), Q.Range, 1f, Player.Instance);
+            if (Menus.DrawingsMenu.GetCheckBoxValue("qDraw") && readyDraw
+                ? SpellsManager.Q.IsReady()
+                : Menus.DrawingsMenu.GetCheckBoxValue("qDraw"))
+                Circle.Draw(Menus.QColorSlide.GetSharpColor(), SpellsManager.Q.Range, 1f, Player.Instance);
 
-            if (DrawingsMenu.GetCheckBoxValue("wDraw") && readyDraw
-                ? W.IsReady()
-                : DrawingsMenu.GetCheckBoxValue("wDraw"))
-                Circle.Draw(WColorSlide.GetSharpColor(), W.Range, 1f, Player.Instance);
+            if (Menus.DrawingsMenu.GetCheckBoxValue("wDraw") && readyDraw
+                ? SpellsManager.W.IsReady()
+                : Menus.DrawingsMenu.GetCheckBoxValue("wDraw"))
+                Circle.Draw(Menus.WColorSlide.GetSharpColor(), SpellsManager.W.Range, 1f, Player.Instance);
 
-            if (DrawingsMenu.GetCheckBoxValue("eDraw") && readyDraw
-                ? E.IsReady()
-                : DrawingsMenu.GetCheckBoxValue("eDraw"))
-                Circle.Draw(EColorSlide.GetSharpColor(), E.Range, 1f, Player.Instance);
+            if (Menus.DrawingsMenu.GetCheckBoxValue("eDraw") && readyDraw
+                ? SpellsManager.E.IsReady()
+                : Menus.DrawingsMenu.GetCheckBoxValue("eDraw"))
+                Circle.Draw(Menus.EColorSlide.GetSharpColor(), SpellsManager.E.Range, 1f, Player.Instance);
 
-            if (DrawingsMenu.GetCheckBoxValue("rDraw") && readyDraw
-                ? R.IsReady()
-                : DrawingsMenu.GetCheckBoxValue("rDraw"))
-                Circle.Draw(RColorSlide.GetSharpColor(), R.Range, 1f, Player.Instance);
+            if (Menus.DrawingsMenu.GetCheckBoxValue("rDraw") && readyDraw
+                ? SpellsManager.R.IsReady()
+                : Menus.DrawingsMenu.GetCheckBoxValue("rDraw"))
+                Circle.Draw(Menus.RColorSlide.GetSharpColor(), SpellsManager.R.Range, 1f, Player.Instance);
         }
 
         private static void Drawing_OnEndScene(EventArgs args)

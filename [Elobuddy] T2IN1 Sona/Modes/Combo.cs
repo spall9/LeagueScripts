@@ -7,11 +7,10 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Sona.Menus;
-using static T2IN1_Sona.SpellsManager;
-using static T2IN1_Sona.Defensive;
+using T2IN1_Sona.Base;
+using T2IN1_Sona.Items;
 
-namespace T2IN1_Sona
+namespace T2IN1_Sona.Modes
 {
     internal static class Combo
     {
@@ -22,22 +21,23 @@ namespace T2IN1_Sona
             if ((target == null) || !target.IsValid())
                 return;
 
-            if (Orbwalker.IsAutoAttacking && ComboMenu["wAA"].Cast<CheckBox>().CurrentValue)
+            if (Orbwalker.IsAutoAttacking && Menus.ComboMenu["wAA"].Cast<CheckBox>().CurrentValue)
                 return;
 
-            if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                if (Q.IsReady() && (Sona.CountEnemiesInRange(Q.Range) >= 1))
-                    Q.Cast();
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue)
-                if (R.IsReady())
+            if (Menus.ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+                if (SpellsManager.Q.IsReady() && (SpellsManager.Sona.CountEnemiesInRange(SpellsManager.Q.Range) >= 1))
+                    SpellsManager.Q.Cast();
+            if (Menus.ComboMenu["R"].Cast<CheckBox>().CurrentValue)
+                if (SpellsManager.R.IsReady())
                 {
-                    var predR = R.GetPrediction(target).CastPosition;
-                    if (target.CountEnemiesInRange(R.Width) >= ComboMenu["rCount"].Cast<Slider>().CurrentValue)
-                        R.Cast(predR);
+                    var predR = SpellsManager.R.GetPrediction(target).CastPosition;
+                    if (target.CountEnemiesInRange(SpellsManager.R.Width) >=
+                        Menus.ComboMenu["rCount"].Cast<Slider>().CurrentValue)
+                        SpellsManager.R.Cast(predR);
                 }
-            if (ComboMenu["UI"].Cast<CheckBox>().CurrentValue)
-                if (FrostQueen.IsOwned() && FrostQueen.IsReady())
-                    FrostQueen.Cast();
+            if (Menus.ComboMenu["UI"].Cast<CheckBox>().CurrentValue)
+                if (Defensive.FrostQueen.IsOwned() && Defensive.FrostQueen.IsReady())
+                    Defensive.FrostQueen.Cast();
         }
     }
 }
