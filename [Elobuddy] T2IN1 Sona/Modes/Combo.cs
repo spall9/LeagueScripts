@@ -9,15 +9,15 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
 using T2IN1;
 using T2IN1_Lib;
-using static T2IN1_Teemo.Menus;
-using static T2IN1_Teemo.SpellsManager;
-using static T2IN1_Teemo.Offensive;
+using static T2IN1_Sona.Menus;
+using static T2IN1_Sona.SpellsManager;
+using static T2IN1_Sona.Offensive;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     internal static class Combo
     {
-        public static void Execute1()
+        public static void Execute()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
 
@@ -28,30 +28,6 @@ namespace T2IN1_Teemo
                 if ((Player.Instance.CountEnemiesInRange(680) >= 1) && Q.IsReady() && Q.IsLearned &&
                     qtarget.IsValidTarget(Q.Range))
                     Q.TryToCast(qtarget, ComboMenu);
-            //W
-            if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                if ((Player.Instance.CountEnemiesInRange(1300) >= 1) && W.IsReady() && W.IsLearned)
-                    W.Cast();
-        }
-
-        public static void ExecuteR()
-        {
-            if (R.IsReady())
-            {
-                //R Target
-                var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
-
-                if ((rtarget == null) || rtarget.IsInvulnerable)
-                    return;
-
-                //R
-                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
-                    (Player.Instance.Spellbook.GetSpell(SpellSlot.R).Ammo >
-                     ComboMenu["RCount"].Cast<Slider>().CurrentValue))
-                    if ((Player.Instance.CountEnemiesInRange(900) >= 1) && R.IsReady() && R.IsLearned &&
-                        rtarget.IsValidTarget(R.Range))
-                        R.TryToCast(rtarget, ComboMenu);
-            }
         }
 
         public static void ExecuteItems()

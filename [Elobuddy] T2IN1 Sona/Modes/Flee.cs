@@ -7,10 +7,10 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Teemo.Menus;
-using static T2IN1_Teemo.SpellsManager;
+using static T2IN1_Sona.Menus;
+using static T2IN1_Sona.SpellsManager;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     internal class Flee
     {

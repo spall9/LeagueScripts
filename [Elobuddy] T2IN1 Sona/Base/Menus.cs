@@ -13,7 +13,7 @@ using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 using T2IN1_Lib.DataBases;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     internal class Menus
     {
@@ -49,6 +49,7 @@ namespace T2IN1_Teemo
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("W", new CheckBox("- Use W"));
+            ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R in Combo [{0}]", 1, 1, 3));
             ComboMenu.CreateSlider("Mana must be higher than {0}% to use R in Combo", "manaSlider", 30);
@@ -64,6 +65,8 @@ namespace T2IN1_Teemo
 
             LaneClearMenu.AddGroupLabel("Lane Clear Settings");
             LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
+            LaneClearMenu.Add("W", new CheckBox("- Use W"));
+            LaneClearMenu.Add("E", new CheckBox("- Use E"));
             LaneClearMenu.Add("R", new CheckBox("- Use R"));
             LaneClearMenu.CreateSlider("Mana must be higher than {0}% to use Lane Clear Spells", "manaSlider", 50);
             LaneClearMenu.AddGroupLabel("Item Settings");

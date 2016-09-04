@@ -8,9 +8,9 @@ using System;
 using EloBuddy;
 using EloBuddy.SDK;
 using T2IN1_Lib;
-using static T2IN1_Teemo.Menus;
+using static T2IN1_Sona.Menus;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     internal class ModeManager
     {
@@ -24,16 +24,12 @@ namespace T2IN1_Teemo
             var orbMode = Orbwalker.ActiveModesFlags;
             var playerMana = Player.Instance.ManaPercent;
 
-            rRangeLevel.LevelRRange();
             Active.Defensive();
             Active.Defensive2();
             Active.Potions();
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
-                Combo.Execute1();
-
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (playerMana > ComboMenu.GetSliderValue("manaSlider")))
-                Combo.ExecuteR();
+                Combo.Execute();
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
                 Combo.ExecuteItems();

@@ -8,11 +8,11 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Teemo.Menus;
-using static T2IN1_Teemo.Consumables;
-using static T2IN1_Teemo.Defensive;
+using static T2IN1_Sona.Menus;
+using static T2IN1_Sona.Consumables;
+using static T2IN1_Sona.Defensive;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     internal class Active
     {

@@ -7,7 +7,7 @@
 using System;
 using EloBuddy;
 using EloBuddy.SDK.Events;
-using T2IN1_Teemo;
+using T2IN1_Sona;
 
 namespace T2IN1
 {
@@ -20,8 +20,8 @@ namespace T2IN1
 
         private static void Loading_OnLoadingComplete(EventArgs args)
         {
-            //Teemo
-            if (Player.Instance.Hero == Champion.Teemo)
+            //Sona
+            if (Player.Instance.Hero == Champion.Sona)
             {
                 SpellsManager.InitializeSpells();
                 Menus.CreateMenu();

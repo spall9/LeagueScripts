@@ -11,11 +11,11 @@ using EloBuddy.SDK;
 using SharpDX;
 using SharpDX.Direct3D9;
 using T2IN1_Lib;
-using static T2IN1_Teemo.Menus;
+using static T2IN1_Sona.Menus;
 using Color = System.Drawing.Color;
 using Line = EloBuddy.SDK.Rendering.Line;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     internal class DamageIndicator
     {

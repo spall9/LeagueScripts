@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
-using static T2IN1_Teemo.AutoLevel;
+using static T2IN1_Sona.AutoLevel;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     public static class SpellsManager
     {
@@ -23,26 +23,18 @@ namespace T2IN1_Teemo
         */
 
         //Remenber of putting the correct type of the spell here
-        public static Spell.Targeted Q;
+        public static Spell.Active Q;
         public static Spell.Active W;
         public static Spell.Active E;
         public static Spell.Skillshot R;
         public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
 
-        public static float GetRRange()
-        {
-            var range = 0f;
-            if (Player.GetSpell(SpellSlot.R).Level > 0)
-                range = (float) 150 + 250*Player.GetSpell(SpellSlot.R).Level;
-            return range;
-        }
-
         public static void InitializeSpells()
         {
-            Q = new Spell.Targeted(SpellSlot.Q, 680);
-            W = new Spell.Active(SpellSlot.W);
-            E = new Spell.Active(SpellSlot.E, 680);
-            R = new Spell.Skillshot(SpellSlot.R, (uint) GetRRange(), SkillShotType.Cone, 500, 1000, 120);
+            Q = new Spell.Active(SpellSlot.Q, 825);
+            W = new Spell.Active(SpellSlot.W, 1000);
+            E = new Spell.Active(SpellSlot.E, 430);
+            R = new Spell.Skillshot(SpellSlot.R, 900, SkillShotType.Cone, 500, 1000, 120);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
@@ -52,7 +44,7 @@ namespace T2IN1_Teemo
         /// It will return the damage but you need to set them before getting the damage
         public static float GetDamage(this Obj_AI_Base target, SpellSlot slot)
         {
-            var damageType = DamageType.Mixed;
+            var damageType = DamageType.Magical;
             var AD = Player.Instance.FlatPhysicalDamageMod;
             var AP = Player.Instance.FlatMagicDamageMod;
             var sLevel = Player.GetSpell(slot).Level - 1;
@@ -65,15 +57,11 @@ namespace T2IN1_Teemo
             {
                 case SpellSlot.Q:
                     if (Q.IsReady())
-                        dmg += new float[] {80, 125, 170, 215, 260}[sLevel] + 0.8f*AP;
-                    break;
-                case SpellSlot.E:
-                    if (E.IsReady())
-                        dmg += new float[] {30, 60, 90, 120, 150}[sLevel] + 0.4f*AP;
+                        dmg += new float[] {40, 70, 100, 130, 160}[sLevel] + 0.5f*AP;
                     break;
                 case SpellSlot.R:
                     if (R.IsReady())
-                        dmg += new float[] {250, 406, 562}[sLevel] + 0.7f*AP;
+                        dmg += new float[] {150, 250, 350}[sLevel] + 0.5f*AP;
                     break;
             }
             return Player.Instance.CalculateDamageOnUnit(target, damageType, dmg - 10);

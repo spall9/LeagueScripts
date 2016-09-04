@@ -7,7 +7,7 @@
 using System;
 using EloBuddy;
 
-namespace T2IN1_Teemo
+namespace T2IN1_Sona
 {
     internal class EventManager
     {
