@@ -81,7 +81,7 @@ namespace T2IN1_Sona
 
             FleeMenu.AddGroupLabel("Flee Settings");
             FleeMenu.Add("W", new CheckBox("- Use W"));
-            FleeMenu.Add("UE", new CheckBox("Use Exhaust"));
+            FleeMenu.Add("UE", new CheckBox("Use Exhaust", false));
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");
             ActiveMenu.AddGroupLabel("Only one Option for each Defensive Item can be Active at a Time!");
