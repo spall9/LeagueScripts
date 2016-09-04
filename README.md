@@ -5,6 +5,8 @@
 
 -**[Elobuddy] T2IN1 Standalone Teemo**
 
+-**[Elobuddy] T2IN1 Standalone Sona**
+
 -**[Elobuddy] T2IN1 SkinChanger**
 ___
 
