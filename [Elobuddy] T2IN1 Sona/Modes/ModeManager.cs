@@ -82,13 +82,13 @@ namespace T2IN1_Sona.Modes
         public static void Orbwalker_OnPreAttack(AttackableUnit target, Orbwalker.PreAttackArgs args)
         {
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear)
-                || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit) ||
-                Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) ||
-                Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
+                || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit)
+                || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass)
+                || Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
             {
                 var t = target as Obj_AI_Minion;
                 if (t != null)
-                    if (SupportMenu["Sub"].Cast<CheckBox>().CurrentValue)
+                    if (SupportMenu["Sup"].Cast<CheckBox>().CurrentValue)
                         args.Process = false;
             }
         }
