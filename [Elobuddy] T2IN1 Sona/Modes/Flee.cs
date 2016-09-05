@@ -7,7 +7,8 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using T2IN1_Sona.Base;
+using static T2IN1_Sona.Base.Menus;
+using static T2IN1_Sona.Base.SpellsManager;
 
 namespace T2IN1_Sona.Modes
 {
@@ -15,9 +16,9 @@ namespace T2IN1_Sona.Modes
     {
         public static void Execute()
         {
-            if (Menus.FleeMenu["W"].Cast<CheckBox>().CurrentValue)
+            if (FleeMenu["E"].Cast<CheckBox>().CurrentValue)
             {
-                SpellsManager.E.Cast();
+                E.Cast();
                 Orbwalker.MoveTo(Game.CursorPos);
             }
         }

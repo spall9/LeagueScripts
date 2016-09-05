@@ -15,31 +15,6 @@ namespace T2IN1_Sona.Modes
 {
     internal class Active
     {
-        public static void Game_OnWndProc(WndEventArgs args)
-        {
-            if (args.Msg != (uint) WindowMessages.LeftButtonDown)
-                return;
-            SpellsManager.SelectedHero =
-                EntityManager.Heroes.Enemies.FindAll(
-                        hero => hero.IsValidTarget() && (hero.Distance(Game.CursorPos, true) < 39999))
-                    .OrderBy(h => h.Distance(Game.CursorPos, true))
-                    .FirstOrDefault();
-        }
-
-        public static void Orbwalker_OnPreAttack(AttackableUnit target, Orbwalker.PreAttackArgs args)
-        {
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear) ||
-                Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LastHit) ||
-                Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Harass) ||
-                Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
-            {
-                var t = target as Obj_AI_Minion;
-                if (t != null)
-                    if (Menus.SupportMenu["Sup"].Cast<CheckBox>().CurrentValue)
-                        args.Process = false;
-            }
-        }
-
         #region Defensive Items Cast only if Enemy is in Range
 
         public static void Defensive()

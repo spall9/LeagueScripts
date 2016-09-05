@@ -26,10 +26,10 @@ namespace T2IN1_Sona.Modes
             {
                 case GameObjectType.AIHeroClient:
                     return EntityManager.Heroes.Enemies.OrderBy(a => a.Health).FirstOrDefault(
-                        a => a.Distance(Player.Instance) < range && !a.IsDead && !a.IsInvulnerable);
+                        a => (a.Distance(Player.Instance) < range) && !a.IsDead && !a.IsInvulnerable);
                 default:
                     return EntityManager.MinionsAndMonsters.EnemyMinions.OrderBy(a => a.Health).FirstOrDefault(
-                        a => a.Distance(Player.Instance) < range && !a.IsDead && !a.IsInvulnerable);
+                        a => (a.Distance(Player.Instance) < range) && !a.IsDead && !a.IsInvulnerable);
             }
         }
 
@@ -40,15 +40,13 @@ namespace T2IN1_Sona.Modes
 
             if (!qcheck || !qready) return;
             {
-                var qenemy = (Obj_AI_Minion)GetEnemy(Q.Range, GameObjectType.obj_AI_Minion);
+                var qenemy = (Obj_AI_Minion) GetEnemy(Q.Range, GameObjectType.obj_AI_Minion);
 
                 if (qenemy != null)
-                {
                     Q.Cast();
-                }
                 if (Orbwalker.CanAutoAttack)
                 {
-                    var enemy = (Obj_AI_Minion)GetEnemy(Sona.GetAutoAttackRange(), GameObjectType.obj_AI_Minion);
+                    var enemy = (Obj_AI_Minion) GetEnemy(Sona.GetAutoAttackRange(), GameObjectType.obj_AI_Minion);
 
                     if (enemy != null)
                         Orbwalker.ForcedTarget = enemy;

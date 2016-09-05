@@ -80,7 +80,7 @@ namespace T2IN1_Sona.Base
             SupportMenu.Add("wS", new Slider("Ally Health Percentage to use W", 60));
 
             FleeMenu.AddGroupLabel("Flee Settings");
-            FleeMenu.Add("W", new CheckBox("- Use W"));
+            FleeMenu.Add("E", new CheckBox("- Use E"));
             FleeMenu.Add("UE", new CheckBox("Use Exhaust", false));
 
             ActiveMenu.AddGroupLabel("Item Defensive Items Settings");

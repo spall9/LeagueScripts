@@ -24,13 +24,13 @@ namespace T2IN1_Sona.Base
         private const float Width = 107;
         private const float Thick = 9.82f;
         //Offsets
-        private static Font _Font, _Font2;
+        private static Font _font, _font2;
 
         public static void Init()
         {
             Drawing.OnEndScene += Drawing_OnEndScene;
 
-            _Font = new Font(
+            _font = new Font(
                 Drawing.Direct3DDevice,
                 new FontDescription
                 {
@@ -41,7 +41,7 @@ namespace T2IN1_Sona.Base
                     Quality = FontQuality.ClearType
                 });
 
-            _Font2 = new Font(
+            _font2 = new Font(
                 Drawing.Direct3DDevice,
                 new FontDescription
                 {
@@ -66,10 +66,10 @@ namespace T2IN1_Sona.Base
                 {
                     var dmgPer = (enemy.TotalShieldHealth() - damage > 0 ? enemy.TotalShieldHealth() - damage : 0)/
                                  enemy.TotalShieldMaxHealth();
-                    var currentHPPer = enemy.TotalShieldHealth()/enemy.TotalShieldMaxHealth();
+                    var currentHpPer = enemy.TotalShieldHealth()/enemy.TotalShieldMaxHealth();
                     var initPoint = new Vector2((int) (enemy.HPBarPosition.X + XOff + dmgPer*Width),
                         (int) enemy.HPBarPosition.Y + YOff);
-                    var endPoint = new Vector2((int) (enemy.HPBarPosition.X + XOff + currentHPPer*Width) + 1,
+                    var endPoint = new Vector2((int) (enemy.HPBarPosition.X + XOff + currentHpPer*Width) + 1,
                         (int) enemy.HPBarPosition.Y + YOff);
 
                     var colour = Color.FromArgb(180, Menus.DamageIndicatorColorSlide.GetSystemColor());
@@ -83,7 +83,7 @@ namespace T2IN1_Sona.Base
                     var posYStat = (int) enemy.HPBarPosition[1] + 12;
                     var mathStat = "- " + Math.Round(damage) + " / " +
                                    Math.Round(enemy.Health - damage);
-                    _Font2.DrawText(null, mathStat, posXStat, posYStat, Menus.DamageIndicatorColorSlide.GetSharpColor());
+                    _font2.DrawText(null, mathStat, posXStat, posYStat, Menus.DamageIndicatorColorSlide.GetSharpColor());
                 }
 
                 if (Menus.DrawingsMenu.GetCheckBoxValue("perDraw"))
@@ -91,7 +91,7 @@ namespace T2IN1_Sona.Base
                     //Percent
                     var posXPer = (int) enemy.HPBarPosition[0] - 28;
                     var posYPer = (int) enemy.HPBarPosition[1];
-                    _Font.DrawText(null, string.Concat(Math.Ceiling((int) damage/enemy.TotalShieldHealth()*100), "%"),
+                    _font.DrawText(null, string.Concat(Math.Ceiling((int) damage/enemy.TotalShieldHealth()*100), "%"),
                         posXPer, posYPer, Menus.DamageIndicatorColorSlide.GetSharpColor());
                 }
             }

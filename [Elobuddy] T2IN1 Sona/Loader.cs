@@ -28,6 +28,7 @@ namespace T2IN1_Sona
                 Menus.CreateMenu();
                 ModeManager.InitializeModes();
                 DrawingsManager.InitializeDrawings();
+                EventManager.InitializeModes();
 
                 Chat.Print("T2IN1 Sona Loaded!");
                 Chat.Print("Credits to MarioGK for his Lib");

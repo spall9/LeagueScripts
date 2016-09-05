@@ -7,8 +7,6 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using T2IN1_Sona.Base;
-
 using static T2IN1_Sona.Base.SpellsManager;
 using static T2IN1_Sona.Base.Menus;
 
