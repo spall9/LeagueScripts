@@ -16,18 +16,6 @@ ___
 # Features
 ___
 
-**-Damage Indicator**
-
-**-ComboMode**
-
-**-LaneClear**
-
-**-LastHit**
-
-**-Flee**
-
-**-Skin Changer**
-
 
 # Credits:
 ___
@@ -40,6 +28,3 @@ ___
 # Helpers:
 ___
 
--MarioGK
-
--
