@@ -10,7 +10,7 @@ ___
 
 # Features
 ___
-**-Auto Smite**
+**-Auto Smite / Smite Steal**
 
 **-Mana Manager for Lane Clear Mode**
 
