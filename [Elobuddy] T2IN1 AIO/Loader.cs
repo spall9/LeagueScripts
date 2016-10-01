@@ -4,9 +4,11 @@
 //                                                                                                            //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using System;
 using EloBuddy;
 using EloBuddy.SDK.Events;
+using System;
+using T2IN1_SkinChanger;
+using TextColor = System.Drawing.Color;
 
 namespace T2IN1
 {
@@ -22,25 +24,15 @@ namespace T2IN1
             //Teemo
             if (Player.Instance.Hero == Champion.Teemo)
             {
-              T2IN1_Teemo.SpellsManager.InitializeSpells();
-              T2IN1_Teemo.Menus.CreateMenu();
-              T2IN1_Teemo.ModeManager.InitializeModes();
-              T2IN1_Teemo.DrawingsManager.InitializeDrawings();
 
-                Chat.Print("T2IN1 Teemo Loaded!");
-                Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");
+
             }
-
-            //Pantheon
-            if (Player.Instance.Hero == Champion.Pantheon)
+            else
             {
-                T2IN1_Pantheon.SpellsManager.InitializeSpells();
-                T2IN1_Pantheon.Menus.CreateMenu();
-                T2IN1_Pantheon.ModeManager.InitializeModes();
-                T2IN1_Pantheon.DrawingsManager.InitializeDrawings();
+                SkinChanger.CreateMenu();
 
-                Chat.Print("T2IN1 Pantheon Loaded!");
-                Chat.Print("Credits to MarioGK for his Template & Lib also Credits to Joker for Parts of his Lib");
+                Chat.Print("[T2IN1] " + ObjectManager.Player.ChampionName + " is not Supported!", TextColor.PaleVioletRed);
+                Chat.Print("[T2IN1] Loading T2IN1 Skin Changer.", TextColor.Blue);
             }
         }
     }

@@ -68,43 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Champions\Pantheon\Base\Active.cs" />
-    <Compile Include="Champions\Pantheon\Base\AutoLevel.cs" />
-    <Compile Include="Champions\Pantheon\Base\DamageIndicator.cs" />
-    <Compile Include="Champions\Pantheon\Base\DrawingsManager.cs" />
-    <Compile Include="Champions\Pantheon\Base\Extensions.cs" />
-    <Compile Include="Champions\Pantheon\Base\Menus.cs" />
-    <Compile Include="Champions\Pantheon\Base\SpellsManager.cs" />
-    <Compile Include="Champions\Pantheon\Items\Cleansers.cs" />
-    <Compile Include="Champions\Pantheon\Items\Consumable.cs" />
-    <Compile Include="Champions\Pantheon\Items\Defensive.cs" />
-    <Compile Include="Champions\Pantheon\Items\Offensive.cs" />
-    <Compile Include="Champions\Pantheon\Modes\Combo.cs" />
-    <Compile Include="Champions\Pantheon\Modes\LaneClear.cs" />
-    <Compile Include="Champions\Pantheon\Modes\LastHit.cs" />
-    <Compile Include="Champions\Pantheon\Modes\ModeManager.cs" />
-    <Compile Include="Champions\Pantheon\Summoners\Spells.cs" />
-    <Compile Include="Champions\Teemo\Base\AutoLevel.cs" />
-    <Compile Include="Champions\Teemo\Base\DamageIndicator.cs" />
-    <Compile Include="Champions\Teemo\Base\EventManager.cs" />
-    <Compile Include="Champions\Teemo\Base\Extensions.cs" />
-    <Compile Include="Champions\Teemo\Base\Menus.cs" />
-    <Compile Include="Champions\Teemo\Base\DrawingsManager.cs" />
-    <Compile Include="Champions\Teemo\Base\SpellsManager.cs" />
-    <Compile Include="Champions\Teemo\Items\Cleansers.cs" />
-    <Compile Include="Champions\Teemo\Items\Consumable.cs" />
-    <Compile Include="Champions\Teemo\Items\Defensive.cs" />
-    <Compile Include="Champions\Teemo\Items\Offensive.cs" />
-    <Compile Include="Champions\Teemo\Modes\Active.cs" />
-    <Compile Include="Champions\Teemo\Modes\Combo.cs" />
-    <Compile Include="Champions\Teemo\Modes\Flee.cs" />
-    <Compile Include="Champions\Teemo\Modes\LaneClear.cs" />
-    <Compile Include="Champions\Teemo\Modes\LastHit.cs" />
-    <Compile Include="Champions\Teemo\Modes\ModeManager.cs" />
-    <Compile Include="Champions\Teemo\Modes\rRangeLevel.cs" />
-    <Compile Include="Champions\Teemo\Summoners\Spells.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkinChanger\Database\MenuHelper.cs" />
+    <Compile Include="SkinChanger\Database\Skins.cs" />
+    <Compile Include="SkinChanger\SkinChanger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -121,7 +89,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Champions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
