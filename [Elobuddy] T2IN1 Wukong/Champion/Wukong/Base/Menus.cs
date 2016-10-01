@@ -56,10 +56,10 @@ namespace T2IN1_Wukong
             JungleClearMenu.Add("W", new CheckBox("- Use W"));
             JungleClearMenu.Add("E", new CheckBox("- Use E"));
             JungleClearMenu.AddSeparator();
-            JungleClearMenu.AddLabel("Auto Smite Settings");
-            JungleClearMenu.Add("AutoSmite", new CheckBox("- Smite Important Only (Dragon, Baron, Herald)"));
-            JungleClearMenu.Add("AutoSmiteNormal", new CheckBox("- Smite Normal (Greater Murk, Ancient Krug, Gromp...)", false));
-            JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite Red & Blue Buff"));
+            JungleClearMenu.AddLabel("Auto Steal Settings");
+            JungleClearMenu.Add("AutoSmite", new CheckBox("- Steal Important (Dragon, Baron, Herald)"));
+            JungleClearMenu.Add("AutoSmiteNormal", new CheckBox("- Auto Smite", false));
+            JungleClearMenu.Add("JRed&Blue", new CheckBox("- Steal Red & Blue Buff"));
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
