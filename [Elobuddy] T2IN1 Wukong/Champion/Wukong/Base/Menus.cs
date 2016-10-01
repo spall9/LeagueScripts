@@ -58,7 +58,7 @@ namespace T2IN1_Wukong
             JungleClearMenu.AddSeparator();
             JungleClearMenu.AddLabel("Auto Smite Settings");
             JungleClearMenu.Add("AutoSmite", new CheckBox("- Smite Important Only (Dragon, Baron, Herald)"));
-            JungleClearMenu.Add("AutoSmiteNormal", new CheckBox("- Smite Normal (Greater Murk, Ancient Krug, Gromp...)"));
+            JungleClearMenu.Add("AutoSmiteNormal", new CheckBox("- Smite Normal (Greater Murk, Ancient Krug, Gromp...)", false));
             JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite Red & Blue Buff"));
 
             MiscMenu.AddGroupLabel("Skin Changer");

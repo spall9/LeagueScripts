@@ -22,6 +22,7 @@ namespace T2IN1
                 Menus.CreateMenu();
                 ModeManager.InitializeModes();
                 DrawingsManager.InitializeDrawings();
+                JungleClear.Init();
 
                 if (ObjectManager.Player.ChampionName.Equals("MonkeyKing"))
                     Chat.Print("[T2IN1] " + ObjectManager.Player.ChampionName + " Loaded!", TextColor.LightSkyBlue);
