@@ -26,9 +26,9 @@ namespace T2IN1_Wukong
         public static bool AutoSmiteNMinionCamp(Obj_AI_Minion minion)
         {
             return minion.IsValidTarget()
-                && (minion.Name.ToLower().Contains("murkwolf")
-                || minion.Name.ToLower().Contains("razorbreak")
-                || minion.Name.ToLower().Contains("krug")
+                && (minion.Name.ToLower().Contains("sru_murkwolf")
+                || minion.Name.ToLower().Contains("sru_razorbeak")
+                || minion.Name.ToLower().Contains("sru_krug")
                 || minion.Name.ToLower().Contains("gromp"));
         }
 
