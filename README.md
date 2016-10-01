@@ -1,14 +1,14 @@
 # League of Legend Scripts
 -**[Elobuddy] T2IN1 AIO [Paused until Teemo is Fully Finished!]**
 
--**[Elobuddy][1.69+] T2IN1 Library**
+-**[Elobuddy]T2IN1 Library** [1.69+]
 
--**[Elobuddy][1.67+] T2IN1 Standalone Teemo**
+-**[Elobuddy]T2IN1 Standalone Teemo** [1.67+]
 
--**[Elobuddy][1.67+] T2IN1 Standalone Sona**
+-**[Elobuddy]T2IN1 Standalone Sona** [1.67+]
 
--**[Elobuddy][1.69+] T2IN1 Standalone Wukong**
+-**[Elobuddy]T2IN1 Standalone Wukong** [1.69+]
 
--**[Elobuddy][1.67+] T2IN1 SkinChanger**
+-**[Elobuddy]T2IN1 SkinChanger** [1.67+]
 ___
 
