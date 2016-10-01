@@ -1,0 +1,22 @@
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\T2IN1_Wukong.exe.config
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\T2IN1_Wukong.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\T2IN1_Wukong.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\EloBuddy.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\EloBuddy.SDK.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\SharpDX.Direct3D9.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\SharpDX.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\T2IN1 Lib.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Release\Newtonsoft.Json.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\obj\Release\T2IN1_Wukong.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\obj\Release\T2IN1_Wukong.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\T2IN1_Wukong.exe.config
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\T2IN1_Wukong.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\T2IN1_Wukong.pdb
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\EloBuddy.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\EloBuddy.SDK.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\SharpDX.Direct3D9.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\SharpDX.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\T2IN1 Lib.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Release\Newtonsoft.Json.dll
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\obj\Release\T2IN1_Wukong.exe
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\obj\Release\T2IN1_Wukong.pdb

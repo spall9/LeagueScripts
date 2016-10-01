@@ -1,0 +1,2 @@
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Test\bin\Debug\T2IN1_Wukong.exe.config
+F:\RaIN Repos\LeagueScripts\[Elobuddy] T2IN1 Wukong\bin\Debug\T2IN1_Wukong.exe.config
