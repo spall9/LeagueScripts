@@ -7,6 +7,8 @@
 
 -**[Elobuddy] T2IN1 Standalone Sona**
 
+-**[Elobuddy] T2IN1 Standalone Wukong**
+
 -**[Elobuddy] T2IN1 SkinChanger**
 ___
 
