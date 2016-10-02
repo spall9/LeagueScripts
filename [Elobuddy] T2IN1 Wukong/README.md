@@ -5,7 +5,7 @@
 ___
 **-This is Work in Progress!**
 
-**-Curent Version 6.19+**
+**-Current Version 6.19+**
 
 
 # Features
