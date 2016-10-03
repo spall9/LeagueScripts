@@ -28,7 +28,7 @@ ___
 # Credits:
 ___
 
--MarioGK (Addon Template and Lib)
+-MarioGK (Learned from his Template and Lib)
 
 -Joker (Lib)
 
