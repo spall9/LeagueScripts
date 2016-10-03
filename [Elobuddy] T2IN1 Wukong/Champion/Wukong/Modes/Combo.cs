@@ -28,7 +28,7 @@ namespace T2IN1_Wukong
                 if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range))
                     W.TryToCast(wtarget, ComboMenu);
 
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && (Player.Instance.CountEnemiesInRange(315) > ComboMenu["RCount"].Cast<Slider>().CurrentValue))
+            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
                 if (E.IsOnCooldown && Q.IsOnCooldown && R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
                     R.TryToCast(rtarget, ComboMenu);
         }
