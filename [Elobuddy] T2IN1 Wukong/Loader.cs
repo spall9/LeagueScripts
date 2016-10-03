@@ -25,7 +25,7 @@ namespace T2IN1
                 JungleClear.Init();
 
                 if (ObjectManager.Player.ChampionName.Equals("MonkeyKing"))
-                    Chat.Print("[T2IN1]", TextColor.LimeGreen + "Wukong Loaded!", TextColor.OrangeRed);
+                    Chat.Print("[T2IN1] Wukong Loaded!", TextColor.LimeGreen);
                 else
                     Chat.Print("[T2IN1] " + ObjectManager.Player.ChampionName + " is not Supported!", TextColor.PaleVioletRed);
             }
