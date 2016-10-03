@@ -41,3 +41,7 @@ ___
 **-Combo AA**
 
 **-Better Combo Logic**
+
+**-Better W Combo Logic**
+
+**-Better Spell usage in some situations**
