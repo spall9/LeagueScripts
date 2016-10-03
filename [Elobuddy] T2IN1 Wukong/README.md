@@ -32,7 +32,7 @@ ___
 
 -MarioGK (Learned from his Template and Lib)
 
--Joker (Lib)
+-Joker (used parts of his Lib)
 
 -Uzumaki-Boruto (Learned from his Activator)
 
