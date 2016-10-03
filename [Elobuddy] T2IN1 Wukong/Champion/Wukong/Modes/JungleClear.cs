@@ -43,7 +43,6 @@ namespace T2IN1_Wukong
             var Important = JungleClearMenu["AutoSmite"].Cast<CheckBox>().CurrentValue;
             var NormalCamps = JungleClearMenu["AutoSmiteNormal"].Cast<CheckBox>().CurrentValue;
             var IMinionC = ObjectManager.Get<Obj_AI_Minion>().FirstOrDefault(imc => imc.IsMonster && imc.IsValidTarget(Smite.Range) && Extensions.AutoSmiteIMinions(imc));
-            var NMinionC = ObjectManager.Get<Obj_AI_Minion>().FirstOrDefault(nmc => nmc.IsMonster && nmc.IsValidTarget(Smite.Range) && Extensions.AutoSmiteNMinionCamp(nmc));
             var RedBuff = ObjectManager.Get<Obj_AI_Minion>().Where(rb => rb.IsMonster && rb.IsValidTarget(Smite.Range) && rb.Name.Contains("Red")).OrderBy(x => x.MaxHealth).LastOrDefault();
             var BlueBuff = ObjectManager.Get<Obj_AI_Minion>().Where(bb => bb.IsMonster && bb.IsValidTarget(Smite.Range) && bb.Name.Contains("Blue")).OrderBy(x => x.MaxHealth).LastOrDefault();
 
@@ -58,10 +57,6 @@ namespace T2IN1_Wukong
             if (BlueBuff != null && BlueBuff.IsValid && JungleClearMenu["JRed&Blue"].Cast<CheckBox>().CurrentValue)
                 if (BlueBuff.Health <= Player.Instance.GetSummonerSpellDamage(IMinionC, DamageLibrary.SummonerSpells.Smite))
                     Smite.Cast(BlueBuff);
-
-            if (NMinionC != null && NMinionC.IsValid && NormalCamps)
-                if (NMinionC.Health <= Player.Instance.GetSummonerSpellDamage(NMinionC, DamageLibrary.SummonerSpells.Smite))
-                    Smite.Cast(NMinionC);
         }
     }
 }

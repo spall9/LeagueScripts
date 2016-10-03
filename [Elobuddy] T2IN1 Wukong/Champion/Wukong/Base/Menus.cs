@@ -58,7 +58,6 @@ namespace T2IN1_Wukong
             JungleClearMenu.AddSeparator();
             JungleClearMenu.AddLabel("Auto Smite / Steal Settings");
             JungleClearMenu.Add("AutoSmite", new CheckBox("- Smite/Steal (Dragon, Baron, Herald)"));
-            JungleClearMenu.Add("AutoSmiteNormal", new CheckBox("- Smite/Steal Normal Camps"));
             JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite/Steal Red & Blue Buff"));
 
             MiscMenu.AddGroupLabel("Skin Changer");

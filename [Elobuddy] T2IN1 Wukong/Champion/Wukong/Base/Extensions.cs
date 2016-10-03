@@ -23,15 +23,6 @@ namespace T2IN1_Wukong
                 || minion.Name.ToLower().Contains("herald"));
         }
 
-        public static bool AutoSmiteNMinionCamp(Obj_AI_Minion minion)
-        {
-            return minion.IsValidTarget()
-                && (minion.Name.ToLower().Contains("sru_murkwolf")
-                || minion.Name.ToLower().Contains("sru_razorbeak")
-                || minion.Name.ToLower().Contains("sru_krug")
-                || minion.Name.ToLower().Contains("gromp"));
-        }
-
         public static Obj_AI_Minion GetLastHitMinion(this Spell.SpellBase spell)
         {
             return
