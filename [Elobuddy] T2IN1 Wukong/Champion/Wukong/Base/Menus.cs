@@ -41,6 +41,7 @@ namespace T2IN1_Wukong
             ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
+            ComboMenu.Add("RCount", new Slider("Use R Only if [{0}] Player(s) in Range", 1, 1, 5));
             //ComboMenu.AddGroupLabel("Summoner Settings");
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
