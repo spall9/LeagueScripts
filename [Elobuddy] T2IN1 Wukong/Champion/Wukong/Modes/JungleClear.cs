@@ -41,7 +41,6 @@ namespace T2IN1_Wukong
         public static void Game_OnTick(EventArgs agrs)
         {
             var Important = JungleClearMenu["AutoSmite"].Cast<CheckBox>().CurrentValue;
-            var NormalCamps = JungleClearMenu["AutoSmiteNormal"].Cast<CheckBox>().CurrentValue;
             var IMinionC = ObjectManager.Get<Obj_AI_Minion>().FirstOrDefault(imc => imc.IsMonster && imc.IsValidTarget(Smite.Range) && Extensions.AutoSmiteIMinions(imc));
             var RedBuff = ObjectManager.Get<Obj_AI_Minion>().Where(rb => rb.IsMonster && rb.IsValidTarget(Smite.Range) && rb.Name.Contains("Red")).OrderBy(x => x.MaxHealth).LastOrDefault();
             var BlueBuff = ObjectManager.Get<Obj_AI_Minion>().Where(bb => bb.IsMonster && bb.IsValidTarget(Smite.Range) && bb.Name.Contains("Blue")).OrderBy(x => x.MaxHealth).LastOrDefault();
