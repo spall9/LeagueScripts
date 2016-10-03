@@ -10,7 +10,7 @@ ___
 
 # Features
 ___
-**-Auto Smite / Smite Steal**
+**-Auto Smite / Smite Steal (Red & Blue Buff + Baron, Herald & Dragon)**
 
 **-Mana Manager for Lane Clear Mode**
 
