@@ -32,6 +32,8 @@ ___
 
 -Joker (Lib)
 
+-Uzumaki-Boruto (Learned from his Activator)
+
 
 # To Do
 ___
