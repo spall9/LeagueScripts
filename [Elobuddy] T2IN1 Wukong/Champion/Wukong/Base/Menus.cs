@@ -38,7 +38,7 @@ namespace T2IN1_Wukong
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
-            ComboMenu.Add("W", new CheckBox("- Use W"));
+            ComboMenu.Add("W", new CheckBox("- Use W", false));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R Only if  {0}  Player(s) in Range", 1, 1, 5));
