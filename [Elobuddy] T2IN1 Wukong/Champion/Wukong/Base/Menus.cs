@@ -68,8 +68,8 @@ namespace T2IN1_Wukong
             JungleClearMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));
             JungleClearMenu.Add("HuntersPotion", new CheckBox("- Use Hunters Potion"));
             JungleClearMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
-            JungleClearMenu.Add("Refillable", new CheckBox("- Use Biscuit"));
-            JungleClearMenu.Add("Corrupting", new CheckBox("- Use Biscuit"));
+            JungleClearMenu.Add("Refillable", new CheckBox("- Use Refillable"));
+            JungleClearMenu.Add("Corrupting", new CheckBox("- Use Corrupting"));
             JungleClearMenu.CreateSlider("Use Potion if below {0}% Health", "PotionHp", 35);
 
             MiscMenu.AddGroupLabel("Skin Changer");
