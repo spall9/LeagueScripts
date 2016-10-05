@@ -15,7 +15,7 @@ namespace T2IN1
 
         private static void Loading_OnLoadingComplete(EventArgs args)
         {
-            //Teemo
+            //Wukong
             if (Player.Instance.Hero == Champion.MonkeyKing)
             {
                 SpellsManager.InitializeSpells();

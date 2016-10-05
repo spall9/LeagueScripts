@@ -25,16 +25,15 @@ namespace T2IN1_Wukong
         {
             Drawing.OnEndScene += Drawing_OnEndScene;
 
+            var newFontDescription = new FontDescription();
+            newFontDescription.FaceName = "Segoi UI";
+            newFontDescription.Height = 16;
+            newFontDescription.Weight = FontWeight.Bold;
+            newFontDescription.OutputPrecision = FontPrecision.TrueType;
+            newFontDescription.Quality = FontQuality.ClearType;
             _Font = new Font(
-                Drawing.Direct3DDevice,
-                new FontDescription
-                {
-                    FaceName = "Segoi UI",
-                    Height = 16,
-                    Weight = FontWeight.Bold,
-                    OutputPrecision = FontPrecision.TrueType,
-                    Quality = FontQuality.ClearType
-                });
+                            Drawing.Direct3DDevice,
+            newFontDescription);
 
             _Font2 = new Font(
                 Drawing.Direct3DDevice,

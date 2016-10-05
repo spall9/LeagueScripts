@@ -30,14 +30,6 @@ namespace T2IN1_Wukong
                     E.TryToCast(JungleMinionE, JungleClearMenu);
         }
 
-        public static void Init()
-        {
-            if (Smite != null)
-            {
-                Game.OnTick += Game_OnTick;
-            }
-        }
-
         public static void Game_OnTick(EventArgs agrs)
         {
             var Important = JungleClearMenu["AutoSmite"].Cast<CheckBox>().CurrentValue;
@@ -56,6 +48,12 @@ namespace T2IN1_Wukong
             if (BlueBuff != null && BlueBuff.IsValid && JungleClearMenu["JRed&Blue"].Cast<CheckBox>().CurrentValue)
                 if (BlueBuff.Health <= Player.Instance.GetSummonerSpellDamage(IMinionC, DamageLibrary.SummonerSpells.Smite))
                     Smite.Cast(BlueBuff);
+        }
+
+        public static void Init()
+        {
+            if (Smite != null)
+                Game.OnTick += Game_OnTick;
         }
     }
 }
