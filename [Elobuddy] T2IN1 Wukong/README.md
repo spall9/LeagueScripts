@@ -16,11 +16,15 @@ ___
 
 **-Mana Manager for Lane Clear Mode**
 
+**-Auto Potion**
+
 **-Skin Changer**
 
 **-Damage Indicator**
 
 **-Combo Mode**
+
+**-W GapCloser**
 
 **-Lane Clear**
 
@@ -41,9 +45,5 @@ ___
 ___
 
 **-Combo AA**
-
-**-Better Combo Logic**
-
-**-Better W Combo Logic**
 
 **-Better Spell usage in some situations**
