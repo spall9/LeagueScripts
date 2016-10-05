@@ -78,6 +78,7 @@
     <Compile Include="Champion\Wukong\Modes\LaneClear.cs" />
     <Compile Include="Champion\Wukong\Modes\JungleClear.cs" />
     <Compile Include="Champion\Wukong\Modes\ModeManager.cs" />
+    <Compile Include="Champion\Wukong\Potions\Potions.cs" />
     <Compile Include="Champion\Wukong\Summoners\Spells.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Loader.cs" />

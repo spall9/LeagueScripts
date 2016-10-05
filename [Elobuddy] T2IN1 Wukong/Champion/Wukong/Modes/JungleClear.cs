@@ -1,7 +1,9 @@
 ﻿using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
+using EloBuddy.SDK.Utils;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using T2IN1_Lib;
 using static T2IN1_Wukong.Menus;
@@ -12,6 +14,8 @@ namespace T2IN1_Wukong
 {
     internal class JungleClear
     {
+        public static readonly List<string> PotBuffs = new List<string> { "Health Potion", "ItemCrystalFlask", "ItemDarkCrystalFlask", "ItemMiniRegenPotion" };
+
         public static void Execute()
         {
             var JungleMinionQ = ObjectManager.Get<Obj_AI_Minion>().FirstOrDefault(njmq => njmq.IsMonster && njmq.IsValidTarget(Q.Range));

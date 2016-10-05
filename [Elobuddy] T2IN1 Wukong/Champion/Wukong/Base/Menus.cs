@@ -63,6 +63,18 @@ namespace T2IN1_Wukong
             JungleClearMenu.AddLabel("Auto Smite / Steal Settings");
             JungleClearMenu.Add("AutoSmite", new CheckBox("- Smite/Steal (Dragon, Baron, Herald)"));
             JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite/Steal Red & Blue Buff"));
+            JungleClearMenu.AddSeparator();
+            JungleClearMenu.AddGroupLabel("Consumables Settings");
+            JungleClearMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));
+            JungleClearMenu.CreateSlider("Use Health Potion if below {0}% Health", "Item.HealthPotionHp", 35);
+            JungleClearMenu.Add("HuntersPotion", new CheckBox("- Use Hunters Potion"));
+            JungleClearMenu.CreateSlider("Use Hunters if below {0}% Health", "Item.HuntersPotionHp", 35);
+            JungleClearMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
+            JungleClearMenu.CreateSlider("Use Biscuit if below {0}% Health", "Item.BiscuitHp", 35);
+            JungleClearMenu.Add("Refillable", new CheckBox("- Use Biscuit"));
+            JungleClearMenu.CreateSlider("Use Refillable if below {0}% Health", "Item.RefillableHp", 35);
+            JungleClearMenu.Add("Corrupting", new CheckBox("- Use Biscuit"));
+            JungleClearMenu.CreateSlider("Use Corrupting if below {0}% Health", "Item.CorruptingHp", 35);
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
