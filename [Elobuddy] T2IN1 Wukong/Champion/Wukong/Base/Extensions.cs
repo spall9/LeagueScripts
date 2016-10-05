@@ -79,7 +79,7 @@ namespace T2IN1_Wukong
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Health.IsOwned() && Health.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["Item.HealthPotionHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Health.Cast();
             }
             //Hunters Potion
@@ -88,7 +88,7 @@ namespace T2IN1_Wukong
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Hunters.IsOwned() && Hunters.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["Item.HuntersPotionHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Hunters.Cast();
             }
 
@@ -97,7 +97,7 @@ namespace T2IN1_Wukong
             {
                 if (Player.Instance.IsDead || HealBuff) return;
                 if (Biscuit.IsOwned() && Biscuit.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["Item.BiscuitHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Biscuit.Cast();
             }
 
@@ -107,7 +107,7 @@ namespace T2IN1_Wukong
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Refillable.IsOwned() && Refillable.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["Item.RefillableHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Refillable.Cast();
             }
 
@@ -117,7 +117,7 @@ namespace T2IN1_Wukong
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Corrupting.IsOwned() && Corrupting.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["Item.CorruptingHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Corrupting.Cast();
             }
         }
