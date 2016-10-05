@@ -6,6 +6,29 @@ namespace T2IN1_Wukong
 {
     public static class Extensions
     {
+        public static readonly AIHeroClient player = ObjectManager.Player;
+
+        public static void OnCastSpell(Spellbook sender, SpellbookCastSpellEventArgs args)
+        {
+            if (sender.Owner.IsMe && (args.Slot == SpellSlot.Q || args.Slot == SpellSlot.W || args.Slot == SpellSlot.E))
+            {
+                if (player.HasBuff("MonkeyKingSpinToWin"))
+                {
+                    args.Process = false;
+                }
+            }
+        }
+
+        public static bool RIsActive()
+        {
+            if (ObjectManager.Player.HasBuff("MonkeyKingSpinToWin"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static bool AutoSmiteIMinions(Obj_AI_Minion minion)
         {
             return minion.IsValidTarget()

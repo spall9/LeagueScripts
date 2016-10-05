@@ -44,7 +44,7 @@ namespace T2IN1_Wukong
             ComboMenu.CreateSlider("Mana must be higher than {0}% to use W as GapCloser in Combo", "manaSlider", 50);
             ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
-            ComboMenu.Add("RCount", new Slider("Use R Only if  {0}  Player(s) in Range", 1, 1, 5));
+            ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
             //ComboMenu.AddGroupLabel("Summoner Settings");
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));

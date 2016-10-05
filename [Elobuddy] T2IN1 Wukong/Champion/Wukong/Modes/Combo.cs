@@ -6,6 +6,7 @@ using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 using static T2IN1_Wukong.Menus;
 using static T2IN1_Wukong.SpellsManager;
+using static T2IN1_Wukong.Extensions;
 
 namespace T2IN1_Wukong
 {
@@ -14,7 +15,6 @@ namespace T2IN1_Wukong
         public static void ExecuteCombo()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
-            var wtarget = TargetSelector.GetTarget(E.Range, DamageType.Magical);
             var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
 
@@ -32,24 +32,9 @@ namespace T2IN1_Wukong
                     if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
                         Q.TryToCast(qtarget, ComboMenu);
 
-            if (RIsActive())
-                return;
-            else
-                if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                    if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range))
-                        W.TryToCast(wtarget, ComboMenu);
-
             if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
                 if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
                     R.TryToCast(rtarget, ComboMenu);
-        }
-
-        public static bool RIsActive()
-        {
-            if (ObjectManager.Player.HasBuff("MonkeyKingSpinToWin"))
-                return true;
-
-            return false;
         }
     }
 }

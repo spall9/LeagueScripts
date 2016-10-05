@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using T2IN1_Lib;
 using static T2IN1_Wukong.Combo;
+using static T2IN1_Wukong.Extensions;
 using static T2IN1_Wukong.Menus;
 using static T2IN1_Wukong.SpellsManager;
 
@@ -13,9 +14,6 @@ namespace T2IN1_Wukong
 {
     internal class ModeManager
     {
-
-        public static readonly AIHeroClient player = ObjectManager.Player;
-
         public static void InitializeModes()
         {
             Game.OnTick += Game_OnTick;
@@ -32,7 +30,7 @@ namespace T2IN1_Wukong
                 var playerMana = Player.Instance.ManaPercent;
 
                 if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(650) >= 1))
-                    Combo.ExecuteCombo();
+                    ExecuteCombo();
 
                 if (orbMode.HasFlag(Orbwalker.ActiveModes.JungleClear))
                     JungleClear.Execute();
