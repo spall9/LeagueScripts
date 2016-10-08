@@ -34,9 +34,9 @@ ___
 # Credits:
 ___
 
--MarioGK (Learned from his Template and Lib)
+-MarioGK (Learned from his Template and Lib | Using his Lib)
 
--Joker (used parts of his Lib)
+-Joker (used part of his Lib)
 
 -Uzumaki-Boruto (Learned from his Activator)
 
