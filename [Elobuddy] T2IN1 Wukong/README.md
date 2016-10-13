@@ -7,7 +7,7 @@ ___
 
 **-Requires T2IN1 Lib!**
 
-**-Current Version 6.19+**
+**-Current Version 6.20+**
 
 
 # Features
@@ -24,7 +24,7 @@ ___
 
 **-Combo Mode**
 
-**-W GapCloser**
+**-W Gap Closer - Experimental**
 
 **-Lane Clear**
 
