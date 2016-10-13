@@ -40,8 +40,8 @@ namespace T2IN1_Wukong
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.AddSeparator();
-            ComboMenu.Add("wGapCloser", new CheckBox("- Use W as GapCloser"));
-            ComboMenu.CreateSlider("Mana must be higher than {0}% to use W as GapCloser in Combo", "manaSlider", 50);
+            ComboMenu.AddLabel("Experimental");
+            ComboMenu.Add("W", new CheckBox("- Use W as Gap Closer", false));
             ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
@@ -65,12 +65,8 @@ namespace T2IN1_Wukong
             JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite/Steal Red & Blue Buff"));
             JungleClearMenu.AddSeparator();
             JungleClearMenu.AddGroupLabel("Consumables Settings");
-            JungleClearMenu.Add("HealthPotion", new CheckBox("- Use Health Potion"));
-            JungleClearMenu.Add("HuntersPotion", new CheckBox("- Use Hunters Potion"));
-            JungleClearMenu.Add("Biscuit", new CheckBox("- Use Biscuit"));
-            JungleClearMenu.Add("Refillable", new CheckBox("- Use Refillable"));
-            JungleClearMenu.Add("Corrupting", new CheckBox("- Use Corrupting"));
-            JungleClearMenu.CreateSlider("Use Potion if below {0}% Health", "PotionHp", 35);
+            JungleClearMenu.Add("PotionHp", new CheckBox("- Use Potions"));
+            JungleClearMenu.CreateSlider("Use Potion's if below {0}% Health", "PotionHp", 35);
 
             MiscMenu.AddGroupLabel("Skin Changer");
 

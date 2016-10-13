@@ -1,6 +1,6 @@
-﻿using EloBuddy;
+﻿using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
-using System.Linq;
 
 namespace T2IN1_Wukong
 {

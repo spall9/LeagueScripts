@@ -1,13 +1,13 @@
-﻿using EloBuddy;
+﻿using System;
+using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
 using SharpDX;
 using SharpDX.Direct3D9;
-using System;
-using System.Linq;
 using T2IN1_Lib;
 using static T2IN1_Wukong.Menus;
-using Line = EloBuddy.SDK.Rendering.Line;
 using Color = System.Drawing.Color;
+using Line = EloBuddy.SDK.Rendering.Line;
 
 namespace T2IN1_Wukong
 {
@@ -32,8 +32,8 @@ namespace T2IN1_Wukong
             newFontDescription.OutputPrecision = FontPrecision.TrueType;
             newFontDescription.Quality = FontQuality.ClearType;
             _Font = new Font(
-                            Drawing.Direct3DDevice,
-            newFontDescription);
+                Drawing.Direct3DDevice,
+                newFontDescription);
 
             _Font2 = new Font(
                 Drawing.Direct3DDevice,
@@ -58,13 +58,13 @@ namespace T2IN1_Wukong
 
                 if (DrawingsMenu.GetCheckBoxValue("damageDraw"))
                 {
-                    var dmgPer = (enemy.TotalShieldHealth() - damage > 0 ? enemy.TotalShieldHealth() - damage : 0) /
+                    var dmgPer = (enemy.TotalShieldHealth() - damage > 0 ? enemy.TotalShieldHealth() - damage : 0)/
                                  enemy.TotalShieldMaxHealth();
-                    var currentHPPer = enemy.TotalShieldHealth() / enemy.TotalShieldMaxHealth();
-                    var initPoint = new Vector2((int)(enemy.HPBarPosition.X + XOff + dmgPer * Width),
-                        (int)enemy.HPBarPosition.Y + YOff);
-                    var endPoint = new Vector2((int)(enemy.HPBarPosition.X + XOff + currentHPPer * Width) + 1,
-                        (int)enemy.HPBarPosition.Y + YOff);
+                    var currentHPPer = enemy.TotalShieldHealth()/enemy.TotalShieldMaxHealth();
+                    var initPoint = new Vector2((int) (enemy.HPBarPosition.X + XOff + dmgPer*Width),
+                        (int) enemy.HPBarPosition.Y + YOff);
+                    var endPoint = new Vector2((int) (enemy.HPBarPosition.X + XOff + currentHPPer*Width) + 1,
+                        (int) enemy.HPBarPosition.Y + YOff);
 
                     var colour = Color.FromArgb(180, DamageIndicatorColorSlide.GetSystemColor());
                     Line.DrawLine(colour, Thick, initPoint, endPoint);
@@ -73,8 +73,8 @@ namespace T2IN1_Wukong
                 if (DrawingsMenu.GetCheckBoxValue("statDraw"))
                 {
                     //Statistics
-                    var posXStat = (int)enemy.HPBarPosition[0] - 46;
-                    var posYStat = (int)enemy.HPBarPosition[1] + 12;
+                    var posXStat = (int) enemy.HPBarPosition[0] - 46;
+                    var posYStat = (int) enemy.HPBarPosition[1] + 12;
                     var mathStat = "- " + Math.Round(damage) + " / " +
                                    Math.Round(enemy.Health - damage);
                     _Font2.DrawText(null, mathStat, posXStat, posYStat, DamageIndicatorColorSlide.GetSharpColor());
@@ -83,9 +83,9 @@ namespace T2IN1_Wukong
                 if (DrawingsMenu.GetCheckBoxValue("perDraw"))
                 {
                     //Percent
-                    var posXPer = (int)enemy.HPBarPosition[0] - 28;
-                    var posYPer = (int)enemy.HPBarPosition[1];
-                    _Font.DrawText(null, string.Concat(Math.Ceiling((int)damage / enemy.TotalShieldHealth() * 100), "%"),
+                    var posXPer = (int) enemy.HPBarPosition[0] - 28;
+                    var posYPer = (int) enemy.HPBarPosition[1];
+                    _Font.DrawText(null, string.Concat(Math.Ceiling((int) damage/enemy.TotalShieldHealth()*100), "%"),
                         posXPer, posYPer, DamageIndicatorColorSlide.GetSharpColor());
                 }
             }

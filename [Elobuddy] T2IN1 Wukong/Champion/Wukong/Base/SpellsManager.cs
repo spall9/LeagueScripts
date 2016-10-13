@@ -24,7 +24,7 @@ namespace T2IN1_Wukong
 
         public static void InitializeSpells()
         {
-            Q = new Spell.Active(SpellSlot.Q, 650);
+            Q = new Spell.Active(SpellSlot.Q, 315);
             W = new Spell.Active(SpellSlot.W);
             E = new Spell.Targeted(SpellSlot.E, 650);
             R = new Spell.Skillshot(SpellSlot.R, 315, SkillShotType.Cone);

@@ -18,7 +18,6 @@ namespace T2IN1_Wukong
         public static void InitializeModes()
         {
             Game.OnTick += Game_OnTick;
-            Gapcloser.OnGapcloser += AntiGapcloser_OnEnemyGapcloser;
         }
 
         public static void Game_OnTick(EventArgs args)
@@ -29,6 +28,9 @@ namespace T2IN1_Wukong
             {
                 var orbMode = Orbwalker.ActiveModesFlags;
                 var playerMana = Player.Instance.ManaPercent;
+
+                if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
+                    wGapCloser();
 
                 if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(650) >= 1))
                     ExecuteCombo();
@@ -49,7 +51,7 @@ namespace T2IN1_Wukong
                            || Player.Instance.IsRecalling();
 
             //Health Potion
-            if (JungleClearMenu["HealthPotion"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
@@ -58,7 +60,7 @@ namespace T2IN1_Wukong
                         Health.Cast();
             }
             //Hunters Potion
-            if (JungleClearMenu["HuntersPotion"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
@@ -68,7 +70,7 @@ namespace T2IN1_Wukong
             }
 
             //Biscuit
-            if (JungleClearMenu["Biscuit"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
                 if (Biscuit.IsOwned() && Biscuit.IsReady())
@@ -77,7 +79,7 @@ namespace T2IN1_Wukong
             }
 
             //Refillable
-            if (JungleClearMenu["Refillable"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
@@ -87,7 +89,7 @@ namespace T2IN1_Wukong
             }
 
             //Corrupting
-            if (JungleClearMenu["Corrupting"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
@@ -95,19 +97,6 @@ namespace T2IN1_Wukong
                     if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Corrupting.Cast();
             }
-        }
-
-        public static void AntiGapcloser_OnEnemyGapcloser(AIHeroClient Sender, Gapcloser.GapcloserEventArgs args)
-        {
-            var playerMana = Player.Instance.ManaPercent;
-
-            //GapCloser
-            if (RIsActive())
-                return;
-            else
-                if (ComboMenu["wGapCloser"].Cast<CheckBox>().CurrentValue && (playerMana > ComboMenu.GetSliderValue("manaSlider")))
-                if (Sender != null && W.IsReady() && Sender.IsEnemy && Sender.IsValidTarget(Q.Range))
-                    W.Cast();
         }
     }
 }

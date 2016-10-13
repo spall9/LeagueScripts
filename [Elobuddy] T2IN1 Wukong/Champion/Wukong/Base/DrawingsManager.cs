@@ -1,6 +1,6 @@
-﻿using EloBuddy;
+﻿using System;
+using EloBuddy;
 using EloBuddy.SDK.Rendering;
-using System;
 using T2IN1_Lib;
 using static T2IN1_Wukong.Menus;
 using static T2IN1_Wukong.SpellsManager;
@@ -9,7 +9,6 @@ namespace T2IN1_Wukong
 {
     internal class DrawingsManager
     {
-
         private static void Drawing_OnDraw(EventArgs args)
         {
             var readyDraw = DrawingsMenu.GetCheckBoxValue("readyDraw");

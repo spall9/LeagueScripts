@@ -1,7 +1,6 @@
-﻿using EloBuddy;
+﻿using System.Linq;
+using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Menu.Values;
-using System.Linq;
 
 namespace T2IN1_Wukong
 {
@@ -11,7 +10,8 @@ namespace T2IN1_Wukong
 
         public static void OnCastSpell(Spellbook sender, SpellbookCastSpellEventArgs args)
         {
-            if (sender.Owner.IsMe && (args.Slot == SpellSlot.Q || args.Slot == SpellSlot.W || args.Slot == SpellSlot.E))
+            if (sender.Owner.IsMe &&
+                ((args.Slot == SpellSlot.Q) || (args.Slot == SpellSlot.W) || (args.Slot == SpellSlot.E)))
                 if (player.HasBuff("MonkeyKingSpinToWin"))
                     args.Process = false;
         }
@@ -27,9 +27,9 @@ namespace T2IN1_Wukong
         public static bool AutoSmiteIMinions(Obj_AI_Minion minion)
         {
             return minion.IsValidTarget()
-                && (minion.Name.ToLower().Contains("baron")
-                || minion.Name.ToLower().Contains("dragon")
-                || minion.Name.ToLower().Contains("herald"));
+                   && (minion.Name.ToLower().Contains("baron")
+                       || minion.Name.ToLower().Contains("dragon")
+                       || minion.Name.ToLower().Contains("herald"));
         }
 
         public static AIHeroClient GetKillableHero(this Spell.SpellBase spell)
@@ -52,9 +52,10 @@ namespace T2IN1_Wukong
                             (Prediction.Health.GetPrediction(m, spell.CastDelay) <= m.GetDamage(spell.Slot)) &&
                             m.IsEnemy);
         }
+
         public static float GetTotalDamage(this Obj_AI_Base target)
         {
-            var slots = new[] { SpellSlot.Q, SpellSlot.E, SpellSlot.R };
+            var slots = new[] {SpellSlot.Q, SpellSlot.E, SpellSlot.R};
             var dmg = Player.Spells.Where(s => slots.Contains(s.Slot)).Sum(s => target.GetDamage(s.Slot));
             dmg += Orbwalker.CanAutoAttack ? Player.Instance.GetAutoAttackDamage(target) : 0f;
 
