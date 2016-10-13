@@ -51,7 +51,7 @@ namespace T2IN1_Wukong
                            || Player.Instance.IsRecalling();
 
             //Health Potion
-            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
@@ -60,7 +60,7 @@ namespace T2IN1_Wukong
                         Health.Cast();
             }
             //Hunters Potion
-            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
@@ -70,7 +70,7 @@ namespace T2IN1_Wukong
             }
 
             //Biscuit
-            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
                 if (Biscuit.IsOwned() && Biscuit.IsReady())
@@ -79,7 +79,7 @@ namespace T2IN1_Wukong
             }
 
             //Refillable
-            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
@@ -89,7 +89,7 @@ namespace T2IN1_Wukong
             }
 
             //Corrupting
-            if (JungleClearMenu["PotionHp"].Cast<CheckBox>().CurrentValue)
+            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 

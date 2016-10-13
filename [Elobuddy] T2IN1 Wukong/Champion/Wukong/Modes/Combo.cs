@@ -44,5 +44,16 @@ namespace T2IN1_Wukong
                 if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
                     R.TryToCast(rtarget, ComboMenu);
         }
+
+        //Testing Code
+        public static void Experimental()
+        {
+            var experimentaltarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
+
+            if (ComboMenu["Experimental"].Cast<CheckBox>().CurrentValue)
+            {
+                
+            }
+        }
     }
 }

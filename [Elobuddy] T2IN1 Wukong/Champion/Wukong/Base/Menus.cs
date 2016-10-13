@@ -43,6 +43,8 @@ namespace T2IN1_Wukong
             ComboMenu.AddLabel("Experimental");
             ComboMenu.Add("W", new CheckBox("- Use W as Gap Closer", false));
             ComboMenu.AddSeparator();
+            ComboMenu.Add("Experimental", new CheckBox("- Experimental Combo", false));
+            ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
             //ComboMenu.AddGroupLabel("Summoner Settings");
@@ -65,7 +67,7 @@ namespace T2IN1_Wukong
             JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite/Steal Red & Blue Buff"));
             JungleClearMenu.AddSeparator();
             JungleClearMenu.AddGroupLabel("Consumables Settings");
-            JungleClearMenu.Add("PotionHp", new CheckBox("- Use Potions"));
+            JungleClearMenu.Add("usePotions", new CheckBox("- Use Potions"));
             JungleClearMenu.CreateSlider("Use Potion's if below {0}% Health", "PotionHp", 35);
 
             MiscMenu.AddGroupLabel("Skin Changer");
