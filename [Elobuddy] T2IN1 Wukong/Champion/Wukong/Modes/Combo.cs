@@ -48,6 +48,7 @@ namespace T2IN1_Wukong
         //Testing Code
         public static void ExecuteCombo2()
         {
+            if (ComboMenu["expcombo1"].Cast<CheckBox>().CurrentValue)
             {
                 var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
                 var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);

@@ -43,6 +43,7 @@ namespace T2IN1_Wukong
             ComboMenu.AddLabel("Experimental");
             ComboMenu.Add("W", new CheckBox("- Use W as Gap Closer", false));
             ComboMenu.AddSeparator();
+            ComboMenu.Add("expcombo1", new CheckBox("- Experimental E>AA>Q", false));
             ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
