@@ -45,33 +45,34 @@ namespace T2IN1_Wukong
                     R.TryToCast(rtarget, ComboMenu);
         }
 
-        //Testing Code
+        //E>AA>Q Experimental Combo
         public static void ExecuteCombo2()
         {
-            if (ComboMenu["expcombo1"].Cast<CheckBox>().CurrentValue)
+            var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
+            var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
+            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+
+            if (RIsActive())
+                return;
+            if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
             {
-                var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
-                var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
-                var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
-
-                if (RIsActive())
-                    return;
-                if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
-                    if (E.IsReady() && E.IsLearned && etarget.IsValidTarget(E.Range))
-                        E.Cast(etarget);
-                        Orbwalker.ResetAutoAttack();
-                        Player.IssueOrder(GameObjectOrder.AutoAttack, etarget);
-
-                if (RIsActive())
-                    return;
-                if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
-                        Q.Cast();
-
-                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
-                    if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
-                        R.TryToCast(rtarget, ComboMenu);
+                if (E.IsReady() && E.IsLearned && etarget.IsValidTarget(E.Range))
+                {
+                    E.Cast(etarget);
+                    Orbwalker.ResetAutoAttack();
+                    Player.IssueOrder(GameObjectOrder.AutoAttack, etarget);
+                }
             }
+
+            if (RIsActive())
+                return;
+            if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+                if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
+                    Q.Cast();
+
+            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
+                if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
+                    R.TryToCast(rtarget, ComboMenu);
         }
     }
 }
