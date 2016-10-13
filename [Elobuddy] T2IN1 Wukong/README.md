@@ -38,7 +38,6 @@ ___
 
 -Joker (used part of his Lib)
 
--Uzumaki-Boruto (Learned from his Activator)
 
 
 # To Do
