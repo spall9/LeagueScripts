@@ -21,7 +21,7 @@ namespace T2IN1_Wukong
                     W.TryToCast(wtarget, ComboMenu);
         }
 
-        public static void ExecuteCombo()
+        public static void ExecuteCombo1()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
             var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
@@ -46,13 +46,30 @@ namespace T2IN1_Wukong
         }
 
         //Testing Code
-        public static void Experimental()
+        public static void ExecuteCombo2()
         {
-            var experimentaltarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
-
-            if (ComboMenu["Experimental"].Cast<CheckBox>().CurrentValue)
             {
-                
+                var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
+                var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
+                var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+
+                if (RIsActive())
+                    return;
+                if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
+                    if (E.IsReady() && E.IsLearned && etarget.IsValidTarget(E.Range))
+                        E.Cast(etarget);
+                        Orbwalker.ResetAutoAttack();
+                        Player.IssueOrder(GameObjectOrder.AutoAttack, etarget);
+
+                if (RIsActive())
+                    return;
+                if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
+                        Q.Cast();
+
+                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
+                    if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
+                        R.TryToCast(rtarget, ComboMenu);
             }
         }
     }

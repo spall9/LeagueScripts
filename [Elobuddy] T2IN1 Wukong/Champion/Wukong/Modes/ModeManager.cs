@@ -1,14 +1,11 @@
-﻿using EloBuddy;
+﻿using System;
+using EloBuddy;
 using EloBuddy.SDK;
-using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
-using System;
-using System.Linq;
 using T2IN1_Lib;
 using static T2IN1_Wukong.Combo;
 using static T2IN1_Wukong.Extensions;
 using static T2IN1_Wukong.Menus;
-using static T2IN1_Wukong.SpellsManager;
 using static T2IN1_Wukong.Potions;
 
 namespace T2IN1_Wukong
@@ -24,24 +21,31 @@ namespace T2IN1_Wukong
         {
             if (player.IsDead || MenuGUI.IsChatOpen || player.IsRecalling())
                 return;
-            else
+            var orbMode = Orbwalker.ActiveModesFlags;
+            var playerMana = Player.Instance.ManaPercent;
+
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
+                wGapCloser();
+
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(650) >= 1))
             {
-                var orbMode = Orbwalker.ActiveModesFlags;
-                var playerMana = Player.Instance.ManaPercent;
-
-                if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
-                    wGapCloser();
-
-                if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(650) >= 1))
-                    ExecuteCombo();
-
-                if (orbMode.HasFlag(Orbwalker.ActiveModes.JungleClear))
-                    JungleClear.Execute();
-
-                if (orbMode.HasFlag(Orbwalker.ActiveModes.LaneClear) &&
-                    (playerMana > LaneClearMenu.GetSliderValue("manaSlider")))
-                    LaneClear.Execute();
+                if (ComboMenu["expcombo1"].Cast<CheckBox>().CurrentValue)
+                {
+                    ExecuteCombo2();
+                }
+                else
+                {
+                    ExecuteCombo1();
+                }
             }
+                
+
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.JungleClear))
+                JungleClear.Execute();
+
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.LaneClear) &&
+                (playerMana > LaneClearMenu.GetSliderValue("manaSlider")))
+                LaneClear.Execute();
 
             var HealBuff = Player.HasBuff("RegenerationPotion")
                            || Player.HasBuff("ItemMiniRegenPotion")
