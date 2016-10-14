@@ -6,6 +6,7 @@ namespace T2IN1_Wukong
 {
     public static class Extensions
     {
+
         public static readonly AIHeroClient player = ObjectManager.Player;
 
         public static void OnCastSpell(Spellbook sender, SpellbookCastSpellEventArgs args)

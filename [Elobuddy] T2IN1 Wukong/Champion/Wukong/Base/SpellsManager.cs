@@ -3,6 +3,7 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 using System.Collections.Generic;
 using static T2IN1_Wukong.AutoLevel;
+using static T2IN1_Wukong.Combo;
 
 namespace T2IN1_Wukong
 {
@@ -41,13 +42,15 @@ namespace T2IN1_Wukong
             var AP = Player.Instance.FlatMagicDamageMod;
             var sLevel = Player.GetSpell(slot).Level - 1;
 
+            var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
+
             var dmg = 0f;
 
             switch (slot)
             {
                 case SpellSlot.Q:
                     if (Q.IsReady())
-                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.1f * AD;
+                        dmg += new float[] { 30, 60, 90, 120, 150 }[sLevel] + 0.1f * AD + Player.Instance.GetAutoAttackDamage(qtarget);
                     break;
                 case SpellSlot.W:
                     if (E.IsReady())

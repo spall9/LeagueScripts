@@ -27,16 +27,9 @@ namespace T2IN1_Wukong
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
                 wGapCloser();
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1000) >= 1))
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1300) >= 1))
             {
-                if (ComboMenu["expcombo2"].Cast<CheckBox>().CurrentValue)
-                {
-                    ExecuteCombo2();
-                }
-                else
-                {
-                    ExecuteCombo1();
-                }
+                ExecuteCombo1();
             }
                 
 
