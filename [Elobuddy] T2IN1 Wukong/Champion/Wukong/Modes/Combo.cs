@@ -11,35 +11,50 @@ namespace T2IN1_Wukong
 {
     internal static class Combo
     {
-        public static void InitializeExperimentalComboDelay()
+        public static void Initialize_Q_AA_Reset()
         {
-            Obj_AI_Base.OnPlayAnimation += ObjAiBaseOnOnPlayAnimation;
+            Obj_AI_Base.OnProcessSpellCast += OnProcessSpellCast;
+            Orbwalker.OnPostAttack += Orbwalker_OnPostAttack;
         }
 
-        #region Experminental Q Combo Delay Code
-        public static void ObjAiBaseOnOnPlayAnimation(Obj_AI_Base sender, GameObjectPlayAnimationEventArgs args)
+        #region Q AA RESET
+        public static void Orbwalker_OnPostAttack(AttackableUnit target, EventArgs args)
         {
-            if (args.Animation == "Spell1c")
+            var AAResetTarget = target as AIHeroClient;
+
+            if (AAResetTarget == null || !Q.IsReady() || !Player.Instance.IsInAutoAttackRange(AAResetTarget)) return;
+            if (ComboMenu["expcombo2"].Cast<CheckBox>().CurrentValue)
             {
-                Core.DelayAction(action: Orbwalker.ResetAutoAttack, delayTime: 300);
+                Q.Cast();
+                Orbwalker.ResetAutoAttack();
+                Player.IssueOrder(GameObjectOrder.AttackTo, AAResetTarget);
             }
         }
-        #endregion Experminental Q Combo Delay Code
+
+        public static void OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        {
+            if (!sender.IsMe) return;
+            if (args.Slot == SpellSlot.Q)
+            {
+                Orbwalker.ResetAutoAttack();
+            }
+        }
+        #endregion Q AA RESET
 
         #region GapCloser
         public static void wGapCloser()
         {
-            var wtarget = TargetSelector.GetTarget(1300, DamageType.Physical);
+            var wtarget = TargetSelector.GetTarget(range: 1100, damageType: DamageType.Physical);
 
             if (RIsActive())
                 return;
             if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range = 1300))
+                if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range = 1100))
                     W.TryToCast(wtarget, ComboMenu);
         }
         #endregion GapCloser
 
-        #region Current Normal Combo
+        #region Current Combo
         public static void ExecuteCombo1()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
@@ -51,31 +66,53 @@ namespace T2IN1_Wukong
                 if (RIsActive())
                     return;
                 if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
+                {
                     if (E.IsReady() && E.IsLearned && etarget.IsValidTarget(E.Range))
+                    {
                         E.Cast(etarget);
-                        Player.IssueOrder(GameObjectOrder.AutoAttack, etarget);
+                    }
+                }
+
+                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue && (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
+                {
+                    if (R.IsReady() && R.IsLearned && Q.IsOnCooldown && rtarget.IsValidTarget(R.Range))
+                    {
+                        R.Cast(rtarget);
+                    }
+                }
             }
             else
             {
                 if (RIsActive())
                     return;
                 if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
+                {
                     if (E.IsReady() && E.IsLearned && etarget.IsValidTarget(E.Range))
+                    {
                         E.Cast(etarget);
+                    }
+                }
+
+                if (RIsActive())
+                    return;
+                if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+                {
+                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
+                    {
+                        Q.Cast();
+                    }
+                }
+
+                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
+                    (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
+                {
+                    if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
+                    {
+                        R.Cast(rtarget);
+                    }
+                }        
             }
-
-
-            if (RIsActive())
-                return;
-            if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
-                    Q.Cast();
-
-            if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
-                (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
-                if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
-                    R.Cast(rtarget);
         }
-        #endregion Current Normal Combo
+        #endregion Current Combo
     }
 }

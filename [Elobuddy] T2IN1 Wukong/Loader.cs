@@ -23,7 +23,7 @@ namespace T2IN1
                 ModeManager.InitializeModes();
                 DrawingsManager.InitializeDrawings();
                 JungleClear.Init();
-                Combo.InitializeExperimentalComboDelay();
+                Combo.Initialize_Q_AA_Reset();
 
                 if (ObjectManager.Player.ChampionName.Equals("MonkeyKing"))
                     Chat.Print("[T2IN1] Wukong Loaded!", TextColor.LimeGreen);

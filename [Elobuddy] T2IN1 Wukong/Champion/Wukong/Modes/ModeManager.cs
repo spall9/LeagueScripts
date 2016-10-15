@@ -21,13 +21,14 @@ namespace T2IN1_Wukong
         {
             if (player.IsDead || MenuGUI.IsChatOpen || player.IsRecalling())
                 return;
+
             var orbMode = Orbwalker.ActiveModesFlags;
             var playerMana = Player.Instance.ManaPercent;
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
                 wGapCloser();
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1300) >= 1))
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1100)) >= 1)
             {
                 ExecuteCombo1();
             }
