@@ -26,6 +26,8 @@ ___
 
 **-W Gap Closer - Experimental**
 
+**-AA Reset with Q - Experimental**
+
 **-Lane Clear**
 
 **-Jungle Clear**
@@ -43,7 +45,6 @@ ___
 
 # To Do
 ___
-
-**-Combo AA**
-
 **-Better Spell usage in some situations**
+
+**-More Combos & AA Reset with Tiamat**
