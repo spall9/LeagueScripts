@@ -1,12 +1,12 @@
-# Paused
+# League of Legends Other
 ___
 -**[Elobuddy] T2IN1 AIO [Paused!]**
+
+-**[Elobuddy]T2IN1 Library**
 
 #League of Legends Patch [6.20+]
 ___
 -**[Elobuddy]T2IN1 Standalone Wukong**
-
--**[Elobuddy]T2IN1 Library**
 
 #League of Legends Patch [6.17+]
 ___
