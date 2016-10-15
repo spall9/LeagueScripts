@@ -4,13 +4,13 @@ ___
 
 #League of Legends Patch [6.20+]
 ___
--**[Elobuddy]T2IN1 Standalone Wukong** [1.69+]
+-**[Elobuddy]T2IN1 Standalone Wukong**
 
--**[Elobuddy]T2IN1 Library** [1.69+]
+-**[Elobuddy]T2IN1 Library**
 
 #League of Legends Patch [6.17+]
 ___
--**[Elobuddy]T2IN1 SkinChanger** [1.67+]
+-**[Elobuddy]T2IN1 SkinChanger**
 
--**[Elobuddy]T2IN1 Standalone Teemo** [1.67+]
+-**[Elobuddy]T2IN1 Standalone Teemo**
 
