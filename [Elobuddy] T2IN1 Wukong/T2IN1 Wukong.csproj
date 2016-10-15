@@ -75,6 +75,7 @@
     <Compile Include="Champion\Wukong\Base\DrawingsManager.cs" />
     <Compile Include="Champion\Wukong\Base\SpellsManager.cs" />
     <Compile Include="Champion\Wukong\Modes\Combo.cs" />
+    <Compile Include="Champion\Wukong\Modes\Harass.cs" />
     <Compile Include="Champion\Wukong\Modes\LaneClear.cs" />
     <Compile Include="Champion\Wukong\Modes\JungleClear.cs" />
     <Compile Include="Champion\Wukong\Modes\ModeManager.cs" />

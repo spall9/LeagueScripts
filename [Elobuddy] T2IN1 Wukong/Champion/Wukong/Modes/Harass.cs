@@ -9,7 +9,7 @@ using static T2IN1_Wukong.Extensions;
 
 namespace T2IN1_Wukong
 {
-    internal static class Combo
+    internal static class Harass
     {
         public static void Initialize_Q_AA_Reset()
         {
@@ -26,7 +26,7 @@ namespace T2IN1_Wukong
             if (RIsActive())
                 return;
             if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range = 1100))
-                W.TryToCast(wtarget, ComboMenu);
+                W.TryToCast(wtarget, HarassMenu);
         }
 
         #endregion Gap Closer
@@ -46,7 +46,7 @@ namespace T2IN1_Wukong
 
             if ((AA_Q_ResetTarget == null) || !Q.IsReady() || !Player.Instance.IsInAutoAttackRange(AA_Q_ResetTarget))
                 return;
-            if (ComboMenu["aaqcombo"].Cast<CheckBox>().CurrentValue)
+            if (HarassMenu["aaqcombo"].Cast<CheckBox>().CurrentValue)
             {
                 Q.Cast();
                 Orbwalker.ResetAutoAttack();
@@ -56,57 +56,44 @@ namespace T2IN1_Wukong
 
         #endregion Q AA RESET
 
-        #region Current Combo
+        #region Current Harass
 
-        public static void ExecuteCombo()
+        public static void ExecuteHarass()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
-            var wtarget = TargetSelector.GetTarget(150, DamageType.Physical);
             var etarget = TargetSelector.GetTarget(E.Range, DamageType.Physical);
-            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+            var wtarget = TargetSelector.GetTarget(150, DamageType.Physical);
 
-            if (ComboMenu["aaqcombo"].Cast<CheckBox>().CurrentValue)
+            if (HarassMenu["aaqcombo"].Cast<CheckBox>().CurrentValue)
             {
-                if (RIsActive())
-                    return;
-                if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
+                if (HarassMenu["E"].Cast<CheckBox>().CurrentValue)
                     if (E.IsReady() && E.IsLearned && etarget.IsValidTarget(E.Range))
                         E.Cast(etarget);
 
-                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
-                    (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
-                    if (R.IsReady() && R.IsLearned && Q.IsOnCooldown && rtarget.IsValidTarget(R.Range))
-                        R.Cast(rtarget);
+                if ((HarassMenu["wGapCloser"].Cast<CheckBox>().CurrentValue == false) &&
+                    HarassMenu["W"].Cast<CheckBox>().CurrentValue)
+                    if (HarassMenu["W"].Cast<CheckBox>().CurrentValue)
+                        if (W.IsReady() && W.IsLearned && Q.IsOnCooldown && wtarget.IsValidTarget(W.Range = 150))
+                            W.TryToCast(wtarget, HarassMenu);
             }
             else
             {
-                if (RIsActive())
-                    return;
-                if (ComboMenu["E"].Cast<CheckBox>().CurrentValue)
+                if ((HarassMenu["wGapCloser"].Cast<CheckBox>().CurrentValue == false) &&
+                    HarassMenu["W"].Cast<CheckBox>().CurrentValue)
+                    if (HarassMenu["W"].Cast<CheckBox>().CurrentValue)
+                        if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range = 150))
+                            W.TryToCast(wtarget, HarassMenu);
+
+                if (HarassMenu["E"].Cast<CheckBox>().CurrentValue)
                     if (E.IsReady() && E.IsLearned && etarget.IsValidTarget(E.Range))
                         E.Cast(etarget);
 
-                if (RIsActive())
-                    return;
-                if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+                if (HarassMenu["Q"].Cast<CheckBox>().CurrentValue)
                     if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
                         Q.Cast();
-
-                if (RIsActive())
-                    return;
-                if ((ComboMenu["wGapCloser"].Cast<CheckBox>().CurrentValue == false) &&
-                    ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                    if (HarassMenu["W"].Cast<CheckBox>().CurrentValue)
-                        if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range = 150))
-                            W.TryToCast(wtarget, ComboMenu);
-
-                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
-                    (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
-                    if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
-                        R.Cast(rtarget);
             }
         }
 
-        #endregion Current Combo
+        #endregion Current Harass
     }
 }

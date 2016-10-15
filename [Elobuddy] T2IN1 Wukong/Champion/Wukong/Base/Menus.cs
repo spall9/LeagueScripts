@@ -18,6 +18,7 @@ namespace T2IN1_Wukong
         public static Menu ComboMenu;
         public static Menu LaneClearMenu;
         public static Menu JungleClearMenu;
+        public static Menu HarassMenu;
         public static Menu MiscMenu;
 
         public static ColorSlide QColorSlide;
@@ -33,19 +34,33 @@ namespace T2IN1_Wukong
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
             LaneClearMenu = FirstMenu.AddSubMenu("• Lane Clear");
             JungleClearMenu = FirstMenu.AddSubMenu("• Jungle Clear");
+            HarassMenu = FirstMenu.AddSubMenu("• Harass");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
+            HarassMenu.AddGroupLabel("Harass Settings");
+            HarassMenu.Add("Q", new CheckBox("- Use Q"));
+            HarassMenu.Add("W", new CheckBox("- Use W"));
+            HarassMenu.Add("E", new CheckBox("- Use E"));
+            HarassMenu.CreateSlider("Mana must be higher than {0}% to use Harass", "manaSlider", 50);
+            HarassMenu.AddSeparator();
+            HarassMenu.AddLabel("Experimental");
+            HarassMenu.Add("wGapCloser", new CheckBox("- Use W as Gap Closer", false));
+            HarassMenu.Add("aaqcombo", new CheckBox("- Use Q for AA Reset", false));
+            HarassMenu.CreateSlider("Mana must be higher than {0}% to use W as Gap Closer", "GapCloserManaSlider", 50);
+
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
+            ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
             ComboMenu.AddSeparator();
             ComboMenu.AddLabel("Experimental");
-            ComboMenu.Add("W", new CheckBox("- Use W as Gap Closer", false));
+            ComboMenu.Add("wGapCloser", new CheckBox("- Use W as Gap Closer", false));
             ComboMenu.Add("aaqcombo", new CheckBox("- Use Q for AA Reset", false));
+            ComboMenu.CreateSlider("Mana must be higher than {0}% to use W as Gap Closer", "manaSlider", 50);
             //ComboMenu.AddGroupLabel("Summoner Settings");
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));

@@ -25,11 +25,19 @@ namespace T2IN1_Wukong
             var orbMode = Orbwalker.ActiveModesFlags;
             var playerMana = Player.Instance.ManaPercent;
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && ComboMenu["wGapCloser"].Cast<CheckBox>().CurrentValue &&
+                ComboMenu["W"].Cast<CheckBox>().CurrentValue && (playerMana > ComboMenu.GetSliderValue("manaSlider")))
                 wGapCloser();
 
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Harass) && (playerMana > HarassMenu.GetSliderValue("GapCloserManaSlider")) &&
+                HarassMenu["wGapCloser"].Cast<CheckBox>().CurrentValue && HarassMenu["W"].Cast<CheckBox>().CurrentValue)
+                Harass.wGapCloser();
+
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Harass) && (playerMana > HarassMenu.GetSliderValue("manaSlider")))
+                Harass.ExecuteHarass();
+
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1100) >= 1))
-                ExecuteCombo1();
+                ExecuteCombo();
 
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.JungleClear))

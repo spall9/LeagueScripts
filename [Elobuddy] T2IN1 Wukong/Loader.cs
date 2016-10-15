@@ -11,7 +11,6 @@ namespace T2IN1
         private static void Main(string[] args)
         {
             Loading.OnLoadingComplete += Loading_OnLoadingComplete;
-            Combo.Initialize_Q_AA_Reset();
         }
 
         private static void Loading_OnLoadingComplete(EventArgs args)
@@ -25,11 +24,15 @@ namespace T2IN1
                 DrawingsManager.InitializeDrawings();
                 JungleClear.Init();
 
-                if (ObjectManager.Player.ChampionName.Equals("MonkeyKing"))
-                    Chat.Print("[T2IN1] Wukong Loaded!", TextColor.LimeGreen);
-                else
-                    Chat.Print("[T2IN1] " + ObjectManager.Player.ChampionName + " is not Supported!",
-                        TextColor.PaleVioletRed);
+                Combo.Initialize_Q_AA_Reset();
+                Harass.Initialize_Q_AA_Reset();
+
+                Chat.Print("[T2IN1] Wukong Loaded!", TextColor.LimeGreen);
+            }
+            else
+            {
+                Chat.Print("[T2IN1] " + ObjectManager.Player.ChampionName + " is not Supported!",
+                    TextColor.PaleVioletRed);
             }
         }
     }
