@@ -48,3 +48,5 @@ ___
 **-Better Spell usage in some situations**
 
 **-More Combos & AA Reset with Tiamat**
+
+**-Chose Target Option**
