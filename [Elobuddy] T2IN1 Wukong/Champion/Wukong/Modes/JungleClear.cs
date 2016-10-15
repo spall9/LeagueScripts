@@ -20,18 +20,18 @@ namespace T2IN1_Wukong
                 if (Q.IsReady() && Q.IsLearned)
                     Q.TryToCast(JungleMinionQ, JungleClearMenu);
 
+            var JungleMinionE =
+                ObjectManager.Get<Obj_AI_Minion>().FirstOrDefault(njme => njme.IsMonster && njme.IsValidTarget(E.Range));
+            if (JungleClearMenu["E"].Cast<CheckBox>().CurrentValue)
+                if (E.IsReady() && E.IsLearned)
+                    E.TryToCast(JungleMinionE, JungleClearMenu);
+
             var JungleMinionW =
                 ObjectManager.Get<Obj_AI_Minion>()
                     .FirstOrDefault(njmw => njmw.IsMonster && njmw.IsValidTarget(W.Range = 150));
             if (JungleClearMenu["W"].Cast<CheckBox>().CurrentValue)
                 if (W.IsReady() && W.IsLearned)
                     W.TryToCast(JungleMinionW, JungleClearMenu);
-
-            var JungleMinionE =
-                ObjectManager.Get<Obj_AI_Minion>().FirstOrDefault(njme => njme.IsMonster && njme.IsValidTarget(E.Range));
-            if (JungleClearMenu["E"].Cast<CheckBox>().CurrentValue)
-                if (E.IsReady() && E.IsLearned)
-                    E.TryToCast(JungleMinionE, JungleClearMenu);
         }
 
         public static void Game_OnTick(EventArgs agrs)

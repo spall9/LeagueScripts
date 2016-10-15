@@ -28,11 +28,9 @@ namespace T2IN1_Wukong
             if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo))
                 wGapCloser();
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1100)) >= 1)
-            {
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1100) >= 1))
                 ExecuteCombo1();
-            }
-                
+
 
             if (orbMode.HasFlag(Orbwalker.ActiveModes.JungleClear))
                 JungleClear.Execute();
@@ -43,11 +41,11 @@ namespace T2IN1_Wukong
 
 
             var HealBuff = Player.HasBuff("RegenerationPotion")
-                || Player.HasBuff("ItemMiniRegenPotion")
-                || Player.HasBuff("ItemCrystalFlask")
-                || Player.HasBuff("ItemDarkCrystalFlask")
-                || Player.HasBuff("ItemCrystalFlaskJungle")
-                || Player.Instance.IsRecalling();
+                           || Player.HasBuff("ItemMiniRegenPotion")
+                           || Player.HasBuff("ItemCrystalFlask")
+                           || Player.HasBuff("ItemDarkCrystalFlask")
+                           || Player.HasBuff("ItemCrystalFlaskJungle")
+                           || Player.Instance.IsRecalling();
 
             //Health Potion
             if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)

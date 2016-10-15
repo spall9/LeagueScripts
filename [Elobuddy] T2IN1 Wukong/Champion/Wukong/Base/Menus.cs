@@ -1,9 +1,9 @@
-﻿using EloBuddy;
-using EloBuddy.SDK.Menu;
-using EloBuddy.SDK.Menu.Values;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using EloBuddy;
+using EloBuddy.SDK.Menu;
+using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 using T2IN1_Lib.DataBases;
 
@@ -40,12 +40,12 @@ namespace T2IN1_Wukong
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.AddSeparator();
-            ComboMenu.AddLabel("Experimental");
-            ComboMenu.Add("W", new CheckBox("- Use W as Gap Closer", false));
-            ComboMenu.Add("expcombo2", new CheckBox("- Use AA Reset with Q", false));
-            ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
+            ComboMenu.AddSeparator();
+            ComboMenu.AddLabel("Experimental");
+            ComboMenu.Add("W", new CheckBox("- Use W as Gap Closer", false));
+            ComboMenu.Add("aaqcombo", new CheckBox("- Use Q for AA Reset", false));
             //ComboMenu.AddGroupLabel("Summoner Settings");
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
@@ -76,7 +76,7 @@ namespace T2IN1_Wukong
             {
                 MiscMenu.CreateComboBox("Choose the skin", "skinComboBox", skinList.Skins);
                 MiscMenu.Get<ComboBox>("skinComboBox").OnValueChange +=
-                    delegate (ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
+                    delegate(ValueBase<int> sender, ValueBase<int>.ValueChangeArgs args)
                     {
                         Player.Instance.SetSkinId(sender.CurrentValue);
                     };
@@ -103,9 +103,9 @@ namespace T2IN1_Wukong
             MiscMenu.AddGroupLabel("Auto Level UP");
             MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL", false);
             MiscMenu.AddLabel("The Auto Leveler will always Focus R than the rest of the Spells");
-            MiscMenu.CreateComboBox("1 Spell to Focus", "firstFocus", new List<string> { "Q", "W", "E" });
-            MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> { "Q", "W", "E" }, 1);
-            MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> { "Q", "W", "E" }, 2);
+            MiscMenu.CreateComboBox("1 Spell to Focus", "firstFocus", new List<string> {"Q", "W", "E"});
+            MiscMenu.CreateComboBox("2 Spell to Focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
+            MiscMenu.CreateComboBox("3 Spell to Focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
             MiscMenu.CreateSlider("Delay Slider", "delaySlider", 200, 150, 500);
         }
     }

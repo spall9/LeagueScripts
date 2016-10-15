@@ -11,6 +11,7 @@ namespace T2IN1
         private static void Main(string[] args)
         {
             Loading.OnLoadingComplete += Loading_OnLoadingComplete;
+            Combo.Initialize_Q_AA_Reset();
         }
 
         private static void Loading_OnLoadingComplete(EventArgs args)
@@ -23,7 +24,6 @@ namespace T2IN1
                 ModeManager.InitializeModes();
                 DrawingsManager.InitializeDrawings();
                 JungleClear.Init();
-                Combo.Initialize_Q_AA_Reset();
 
                 if (ObjectManager.Player.ChampionName.Equals("MonkeyKing"))
                     Chat.Print("[T2IN1] Wukong Loaded!", TextColor.LimeGreen);
