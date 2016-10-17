@@ -23,7 +23,7 @@ namespace T2IN1_Blitzcrank
 
             var orbMode = Orbwalker.ActiveModesFlags;
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1100) >= 1))
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Combo) && (Player.Instance.CountEnemiesInRange(1000) >= 1))
                 ExecuteCombo();
 
 

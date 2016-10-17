@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
@@ -46,27 +48,36 @@ namespace T2IN1_Blitzcrank
 
         public static void ExecuteCombo()
         {
-            var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
-            var wtarget = TargetSelector.GetTarget(150, DamageType.Physical);
-            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+            var qtarget = TargetSelector.GetTarget(925, DamageType.Magical);
+            var wtarget = TargetSelector.GetTarget(600, DamageType.Physical);
+            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
 
             if (ComboMenu["aaecombo"].Cast<CheckBox>().CurrentValue)
             {
                 if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
-                        if (HitChance.High >= HitChance.Low)
-                        Q.TryToCast(qtarget, ComboMenu);
+                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range = 925))
+                        qPredictionLogic(qtarget);
 
                 if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                    if (W.IsReady() && W.IsLearned && W.IsOnCooldown && wtarget.IsValidTarget(W.Range = 150))
+                    if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range = 600))
                         W.Cast();
 
                 if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
                     (Player.Instance.CountEnemiesInRange(600) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
-                    if (R.IsReady() && R.IsLearned && Q.IsOnCooldown && rtarget.IsValidTarget(R.Range))
-                        R.Cast(rtarget);
+                    if (R.IsReady() && R.IsLearned && rtarget.IsValidTarget(R.Range))
+                        R.Cast();
             }
         }
         #endregion Combo
+
+        #region Q Prediction
+
+        private static void qPredictionLogic(AIHeroClient target)
+        {
+            if (target == null || !target.IsValidTarget(Q.Range) || Q.GetPrediction(target).HitChance < HitChance.Medium) return;
+            Q.Cast(Q.GetPrediction(target).CastPosition);
+        }
+
+        #endregion Q Prediction
     }
 }

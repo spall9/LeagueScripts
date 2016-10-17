@@ -19,15 +19,15 @@ namespace T2IN1_Blitzcrank
         public static Spell.Skillshot Q;
         public static Spell.Active W;
         public static Spell.Active E;
-        public static Spell.Skillshot R;
+        public static Spell.Active R;
         public static List<Spell.SpellBase> SpellList = new List<Spell.SpellBase>();
 
         public static void InitializeSpells()
         {
-            Q = new Spell.Skillshot(SpellSlot.Q, 925, SkillShotType.Linear);
+            Q = new Spell.Skillshot(SpellSlot.Q, 925, SkillShotType.Linear, 250, 1800, 70);
             W = new Spell.Active(SpellSlot.W);
             E = new Spell.Active(SpellSlot.E, 300);
-            R = new Spell.Skillshot(SpellSlot.R, 600, SkillShotType.Cone);
+            R = new Spell.Active(SpellSlot.R, 600);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }

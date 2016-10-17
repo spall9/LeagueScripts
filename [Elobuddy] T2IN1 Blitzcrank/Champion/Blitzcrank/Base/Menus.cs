@@ -68,7 +68,8 @@ namespace T2IN1_Blitzcrank
                         Player.Instance.SetSkinId(sender.CurrentValue);
                     };
             }
-
+            DrawingsMenu.AddGroupLabel("Prediction Settings");
+            DrawingsMenu.CreateCheckBox(" - Draw Q Prediction.", "QPredictionDraw");
             DrawingsMenu.AddGroupLabel("Setting");
             DrawingsMenu.CreateCheckBox(" - Draw Spell Range only if Spell is Ready.", "readyDraw");
             DrawingsMenu.CreateCheckBox(" - Draw Damage Indicator.", "damageDraw");
