@@ -52,10 +52,12 @@ namespace T2IN1_Blitzcrank
             var wtarget = TargetSelector.GetTarget(600, DamageType.Physical);
             var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Magical);
 
+            var playerMana = Player.Instance.ManaPercent;
+
             if (ComboMenu["aaecombo"].Cast<CheckBox>().CurrentValue)
             {
                 if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range = 925))
+                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range = 925) && (playerMana > ComboMenu.GetSliderValue("manaSlider")))
                         qPredictionLogic(qtarget);
 
                 if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)

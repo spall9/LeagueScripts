@@ -13,12 +13,12 @@ namespace T2IN1_Blitzcrank
         public static void Execute()
         {
             if (Smite != null)
-                Game.OnTick += Game_OnTick;
+                Game.OnUpdate += Game_OnTick;
         }
 
         public static void Game_OnTick(EventArgs agrs)
         {
-            var Important = JungleClearMenu["AutoSmite"].Cast<CheckBox>().CurrentValue;
+            var Important = JungleStealMenu["AutoSmite"].Cast<CheckBox>().CurrentValue;
             var IMinionC =
                 ObjectManager.Get<Obj_AI_Minion>()
                     .FirstOrDefault(
@@ -39,12 +39,12 @@ namespace T2IN1_Blitzcrank
                     Player.Instance.GetSummonerSpellDamage(IMinionC, DamageLibrary.SummonerSpells.Smite))
                     Smite.Cast(IMinionC);
 
-            if ((RedBuff != null) && RedBuff.IsValid && JungleClearMenu["JRed&Blue"].Cast<CheckBox>().CurrentValue)
+            if ((RedBuff != null) && RedBuff.IsValid && JungleStealMenu["JRed&Blue"].Cast<CheckBox>().CurrentValue)
                 if (RedBuff.Health <=
                     Player.Instance.GetSummonerSpellDamage(IMinionC, DamageLibrary.SummonerSpells.Smite))
                     Smite.Cast(RedBuff);
 
-            if ((BlueBuff != null) && BlueBuff.IsValid && JungleClearMenu["JRed&Blue"].Cast<CheckBox>().CurrentValue)
+            if ((BlueBuff != null) && BlueBuff.IsValid && JungleStealMenu["JRed&Blue"].Cast<CheckBox>().CurrentValue)
                 if (BlueBuff.Health <=
                     Player.Instance.GetSummonerSpellDamage(IMinionC, DamageLibrary.SummonerSpells.Smite))
                     Smite.Cast(BlueBuff);

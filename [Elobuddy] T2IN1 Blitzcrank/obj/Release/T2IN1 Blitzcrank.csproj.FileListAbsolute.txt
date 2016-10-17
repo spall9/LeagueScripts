@@ -9,4 +9,3 @@ F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Release\T2IN1 Li
 F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Release\Newtonsoft.Json.dll
 F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\obj\Release\T2IN1_Blitzcrank.exe
 F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\obj\Release\T2IN1_Blitzcrank.pdb
-F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\obj\Release\T2IN1 Blitzcrank.csprojResolveAssemblyReference.cache

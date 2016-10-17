@@ -35,50 +35,50 @@ namespace T2IN1_Blitzcrank
                            || Player.Instance.IsRecalling();
 
             //Health Potion
-            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
+            if (ConsumablesMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Health.IsOwned() && Health.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= ConsumablesMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Health.Cast();
             }
             //Hunters Potion
-            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
+            if (ConsumablesMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Hunters.IsOwned() && Hunters.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= ConsumablesMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Hunters.Cast();
             }
 
             //Biscuit
-            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
+            if (ConsumablesMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
                 if (Biscuit.IsOwned() && Biscuit.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= ConsumablesMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Biscuit.Cast();
             }
 
             //Refillable
-            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
+            if (ConsumablesMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Refillable.IsOwned() && Refillable.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= ConsumablesMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Refillable.Cast();
             }
 
             //Corrupting
-            if (JungleClearMenu["usePotions"].Cast<CheckBox>().CurrentValue)
+            if (ConsumablesMenu["usePotions"].Cast<CheckBox>().CurrentValue)
             {
                 if (Player.Instance.IsDead || HealBuff) return;
 
                 if (Corrupting.IsOwned() && Corrupting.IsReady())
-                    if (Player.Instance.HealthPercent <= JungleClearMenu["PotionHp"].Cast<Slider>().CurrentValue)
+                    if (Player.Instance.HealthPercent <= ConsumablesMenu["PotionHp"].Cast<Slider>().CurrentValue)
                         Corrupting.Cast();
             }
         }

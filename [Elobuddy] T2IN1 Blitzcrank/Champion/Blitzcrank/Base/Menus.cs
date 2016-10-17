@@ -16,8 +16,9 @@ namespace T2IN1_Blitzcrank
         public static Menu FirstMenu;
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
-        public static Menu JungleClearMenu;
+        public static Menu JungleStealMenu;
         public static Menu MiscMenu;
+        public static Menu ConsumablesMenu;
 
         public static ColorSlide QColorSlide;
         public static ColorSlide WColorSlide;
@@ -28,14 +29,16 @@ namespace T2IN1_Blitzcrank
         public static void CreateMenu()
         {
             FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName,
-                Player.Instance.ChampionName.ToLower() + "Wukong");
+                Player.Instance.ChampionName.ToLower() + "Blitzcrank");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
-            JungleClearMenu = FirstMenu.AddSubMenu("• Jungle Steal");
+            JungleStealMenu = FirstMenu.AddSubMenu("• Jungle Steal");
+            ConsumablesMenu = FirstMenu.AddSubMenu("• Consumables");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
+            ComboMenu.CreateSlider("Use Q only if above {0}% Mana", "manaSlider", 45);
             ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.AddSeparator();
@@ -48,13 +51,14 @@ namespace T2IN1_Blitzcrank
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
 
-            JungleClearMenu.AddGroupLabel("Steal Settings");
-            JungleClearMenu.Add("AutoSmite", new CheckBox("- Steal (Dragon, Baron, Herald)"));
-            JungleClearMenu.Add("JRed&Blue", new CheckBox("- Steal Red & Blue Buff"));
-            JungleClearMenu.AddSeparator();
-            JungleClearMenu.AddGroupLabel("Consumables Settings");
-            JungleClearMenu.Add("usePotions", new CheckBox("- Use Potions"));
-            JungleClearMenu.CreateSlider("Use Potion's if below {0}% Health", "PotionHp", 35);
+            JungleStealMenu.AddGroupLabel("Steal Settings");
+            JungleStealMenu.Add("AutoSmite", new CheckBox("- Steal (Dragon, Baron, Herald)"));
+            JungleStealMenu.Add("JRed&Blue", new CheckBox("- Steal Red & Blue Buff"));
+            JungleStealMenu.AddSeparator();
+
+            ConsumablesMenu.AddGroupLabel("Consumables Settings");
+            ConsumablesMenu.Add("usePotions", new CheckBox("- Use Potions"));
+            ConsumablesMenu.CreateSlider("Use Potion's if below {0}% Health", "PotionHp", 35);
 
             MiscMenu.AddGroupLabel("Skin Changer");
 
