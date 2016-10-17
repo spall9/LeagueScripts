@@ -5,4 +5,8 @@
 ___
 **-Requires T2IN1 Lib!**
 
-**-Current Version 0.00+**
+**-Current Version 6.20+**
+
+# Features
+___
+**-AA Reset with E**
