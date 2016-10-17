@@ -2,7 +2,7 @@
 using EloBuddy;
 using EloBuddy.SDK;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     public static class Spells
     {

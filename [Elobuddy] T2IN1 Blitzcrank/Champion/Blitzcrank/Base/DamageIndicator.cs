@@ -5,11 +5,11 @@ using EloBuddy.SDK;
 using SharpDX;
 using SharpDX.Direct3D9;
 using T2IN1_Lib;
-using static T2IN1_Wukong.Menus;
+using static T2IN1_Blitzcrank.Menus;
 using Color = System.Drawing.Color;
 using Line = EloBuddy.SDK.Rendering.Line;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     internal class DamageIndicator
     {

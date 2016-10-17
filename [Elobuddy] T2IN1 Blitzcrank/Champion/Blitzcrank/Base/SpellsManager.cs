@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
-using static T2IN1_Wukong.AutoLevel;
+using static T2IN1_Blitzcrank.AutoLevel;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     public static class SpellsManager
     {
@@ -16,7 +16,7 @@ namespace T2IN1_Wukong
         Cone Skillshots are like Annie`s W and ChoGath`s W
         */
 
-        public static Spell.Targeted Q;
+        public static Spell.Skillshot Q;
         public static Spell.Active W;
         public static Spell.Active E;
         public static Spell.Skillshot R;
@@ -24,7 +24,7 @@ namespace T2IN1_Wukong
 
         public static void InitializeSpells()
         {
-            Q = new Spell.Targeted(SpellSlot.Q, 925);
+            Q = new Spell.Skillshot(SpellSlot.Q, 925, SkillShotType.Linear);
             W = new Spell.Active(SpellSlot.W);
             E = new Spell.Active(SpellSlot.E, 300);
             R = new Spell.Skillshot(SpellSlot.R, 600, SkillShotType.Cone);

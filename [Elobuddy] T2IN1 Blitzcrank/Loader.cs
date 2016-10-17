@@ -1,7 +1,7 @@
 ﻿using System;
 using EloBuddy;
 using EloBuddy.SDK.Events;
-using T2IN1_Wukong;
+using T2IN1_Blitzcrank;
 using TextColor = System.Drawing.Color;
 
 namespace T2IN1

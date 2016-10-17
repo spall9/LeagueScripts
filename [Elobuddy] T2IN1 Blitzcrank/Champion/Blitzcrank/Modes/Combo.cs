@@ -1,11 +1,13 @@
 ﻿using System;
 using EloBuddy;
 using EloBuddy.SDK;
+using EloBuddy.SDK.Enumerations;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Wukong.Menus;
-using static T2IN1_Wukong.SpellsManager;
+using T2IN1_Lib;
+using static T2IN1_Blitzcrank.Menus;
+using static T2IN1_Blitzcrank.SpellsManager;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     internal static class Combo
     {
@@ -14,33 +16,6 @@ namespace T2IN1_Wukong
             Obj_AI_Base.OnProcessSpellCast += OnProcessSpellCast_E;
             Orbwalker.OnPostAttack += Orbwalker_OnPostAttack_E;
         }
-
-        #region Combo
-
-        public static void ExecuteCombo()
-        {
-            var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
-            var wtarget = TargetSelector.GetTarget(150, DamageType.Physical);
-            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
-
-            if (ComboMenu["aaecombo"].Cast<CheckBox>().CurrentValue)
-            {
-                if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
-                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
-                        Q.Cast(qtarget);
-
-                if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                    if (W.IsReady() && W.IsLearned && W.IsOnCooldown && wtarget.IsValidTarget(W.Range = 150))
-                        W.Cast();
-
-                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
-                    (Player.Instance.CountEnemiesInRange(315) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
-                    if (R.IsReady() && R.IsLearned && Q.IsOnCooldown && rtarget.IsValidTarget(R.Range))
-                        R.Cast();
-            }
-        }
-
-        #endregion Combo
 
         #region E AA RESET
 
@@ -66,5 +41,32 @@ namespace T2IN1_Wukong
         }
 
         #endregion E AA RESET
+
+        #region Combo
+
+        public static void ExecuteCombo()
+        {
+            var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Physical);
+            var wtarget = TargetSelector.GetTarget(150, DamageType.Physical);
+            var rtarget = TargetSelector.GetTarget(R.Range, DamageType.Physical);
+
+            if (ComboMenu["aaecombo"].Cast<CheckBox>().CurrentValue)
+            {
+                if (ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+                    if (Q.IsReady() && Q.IsLearned && qtarget.IsValidTarget(Q.Range))
+                        if (HitChance.High >= HitChance.Low)
+                        Q.TryToCast(qtarget, ComboMenu);
+
+                if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
+                    if (W.IsReady() && W.IsLearned && W.IsOnCooldown && wtarget.IsValidTarget(W.Range = 150))
+                        W.Cast();
+
+                if (ComboMenu["R"].Cast<CheckBox>().CurrentValue &&
+                    (Player.Instance.CountEnemiesInRange(600) >= ComboMenu["RCount"].Cast<Slider>().CurrentValue))
+                    if (R.IsReady() && R.IsLearned && Q.IsOnCooldown && rtarget.IsValidTarget(R.Range))
+                        R.Cast(rtarget);
+            }
+        }
+        #endregion Combo
     }
 }

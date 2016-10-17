@@ -1,9 +1,9 @@
 ﻿using EloBuddy;
 using EloBuddy.SDK;
 using T2IN1_Lib;
-using static T2IN1_Wukong.Menus;
+using static T2IN1_Blitzcrank.Menus;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     public static class AutoLevel
     {

@@ -2,10 +2,10 @@
 using EloBuddy;
 using EloBuddy.SDK.Rendering;
 using T2IN1_Lib;
-using static T2IN1_Wukong.Menus;
-using static T2IN1_Wukong.SpellsManager;
+using static T2IN1_Blitzcrank.Menus;
+using static T2IN1_Blitzcrank.SpellsManager;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     internal class DrawingsManager
     {

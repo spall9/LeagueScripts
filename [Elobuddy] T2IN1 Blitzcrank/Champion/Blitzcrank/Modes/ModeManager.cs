@@ -2,12 +2,12 @@
 using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Menu.Values;
-using static T2IN1_Wukong.Combo;
-using static T2IN1_Wukong.Extensions;
-using static T2IN1_Wukong.Menus;
-using static T2IN1_Wukong.Potions;
+using static T2IN1_Blitzcrank.Combo;
+using static T2IN1_Blitzcrank.Extensions;
+using static T2IN1_Blitzcrank.Menus;
+using static T2IN1_Blitzcrank.Potions;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     internal class ModeManager
     {

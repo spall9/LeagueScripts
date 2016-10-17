@@ -7,7 +7,7 @@ using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
 using T2IN1_Lib.DataBases;
 
-namespace T2IN1_Wukong
+namespace T2IN1_Blitzcrank
 {
     internal class Menus
     {
@@ -36,20 +36,21 @@ namespace T2IN1_Wukong
 
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
+            ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
             ComboMenu.AddSeparator();
             ComboMenu.AddLabel("Experimental");
-            ComboMenu.Add("aaecombo", new CheckBox("- Use Q for AA Reset", false));
+            ComboMenu.Add("aaecombo", new CheckBox("- Use E for AA Reset", false));
             //ComboMenu.AddGroupLabel("Summoner Settings");
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
 
-            JungleClearMenu.AddGroupLabel("Auto Smite / Steal Settings");
-            JungleClearMenu.Add("AutoSmite", new CheckBox("- Smite/Steal (Dragon, Baron, Herald)"));
-            JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite/Steal Red & Blue Buff"));
+            JungleClearMenu.AddGroupLabel("Steal Settings");
+            JungleClearMenu.Add("AutoSmite", new CheckBox("- Steal (Dragon, Baron, Herald)"));
+            JungleClearMenu.Add("JRed&Blue", new CheckBox("- Steal Red & Blue Buff"));
             JungleClearMenu.AddSeparator();
             JungleClearMenu.AddGroupLabel("Consumables Settings");
             JungleClearMenu.Add("usePotions", new CheckBox("- Use Potions"));
