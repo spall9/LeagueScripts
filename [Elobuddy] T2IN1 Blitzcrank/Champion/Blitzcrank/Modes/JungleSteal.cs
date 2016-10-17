@@ -12,7 +12,7 @@ namespace T2IN1_Blitzcrank
     {
         public static void Execute()
         {
-            if (Smite != null)
+            if (Smite != null && JungleStealMenu["enablesteal"].Cast<CheckBox>().CurrentValue)
                 Game.OnUpdate += Game_OnTick;
         }
 

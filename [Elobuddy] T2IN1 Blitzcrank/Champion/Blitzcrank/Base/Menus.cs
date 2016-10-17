@@ -52,9 +52,10 @@ namespace T2IN1_Blitzcrank
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
 
             JungleStealMenu.AddGroupLabel("Steal Settings");
+            JungleStealMenu.Add("enablesteal", new CheckBox("- Enable Smite Steal (can cause Low FPS!)"));
+            JungleStealMenu.AddSeparator();
             JungleStealMenu.Add("AutoSmite", new CheckBox("- Steal (Dragon, Baron, Herald)"));
             JungleStealMenu.Add("JRed&Blue", new CheckBox("- Steal Red & Blue Buff"));
-            JungleStealMenu.AddSeparator();
 
             ConsumablesMenu.AddGroupLabel("Consumables Settings");
             ConsumablesMenu.Add("usePotions", new CheckBox("- Use Potions"));
