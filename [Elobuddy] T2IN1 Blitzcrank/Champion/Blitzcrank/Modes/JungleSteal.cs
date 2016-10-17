@@ -19,6 +19,7 @@ namespace T2IN1_Blitzcrank
         public static void Game_OnTick(EventArgs agrs)
         {
             var Important = JungleStealMenu["AutoSmite"].Cast<CheckBox>().CurrentValue;
+
             var IMinionC =
                 ObjectManager.Get<Obj_AI_Minion>()
                     .FirstOrDefault(
