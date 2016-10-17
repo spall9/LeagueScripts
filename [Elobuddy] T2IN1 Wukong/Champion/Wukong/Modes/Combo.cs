@@ -94,9 +94,7 @@ namespace T2IN1_Wukong
 
                 if (RIsActive())
                     return;
-                if ((ComboMenu["wGapCloser"].Cast<CheckBox>().CurrentValue == false) &&
-                    ComboMenu["W"].Cast<CheckBox>().CurrentValue)
-                    if (HarassMenu["W"].Cast<CheckBox>().CurrentValue)
+                if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
                         if (W.IsReady() && W.IsLearned && wtarget.IsValidTarget(W.Range = 150))
                             W.TryToCast(wtarget, ComboMenu);
 

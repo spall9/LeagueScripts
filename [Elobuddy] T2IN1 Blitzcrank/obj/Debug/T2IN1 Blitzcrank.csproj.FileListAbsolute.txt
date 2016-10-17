@@ -1,0 +1,11 @@
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\T2IN1_Blitzcrank.exe.config
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\T2IN1_Blitzcrank.exe
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\T2IN1_Blitzcrank.pdb
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\EloBuddy.dll
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\EloBuddy.SDK.dll
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\SharpDX.Direct3D9.dll
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\SharpDX.dll
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\T2IN1 Lib.dll
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\bin\Debug\Newtonsoft.Json.dll
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\obj\Debug\T2IN1_Blitzcrank.exe
+F:\RaIN Repos New\LeagueScripts\[Elobuddy] T2IN1 Blitzcrank\obj\Debug\T2IN1_Blitzcrank.pdb

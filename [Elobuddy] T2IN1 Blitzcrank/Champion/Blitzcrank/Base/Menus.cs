@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net.Sockets;
 using EloBuddy;
-using EloBuddy.SDK;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 using T2IN1_Lib;
@@ -18,9 +16,7 @@ namespace T2IN1_Wukong
         public static Menu FirstMenu;
         public static Menu DrawingsMenu;
         public static Menu ComboMenu;
-        public static Menu LaneClearMenu;
         public static Menu JungleClearMenu;
-        public static Menu HarassMenu;
         public static Menu MiscMenu;
 
         public static ColorSlide QColorSlide;
@@ -34,51 +30,24 @@ namespace T2IN1_Wukong
             FirstMenu = MainMenu.AddMenu("T2IN1 " + Player.Instance.ChampionName,
                 Player.Instance.ChampionName.ToLower() + "Wukong");
             ComboMenu = FirstMenu.AddSubMenu("• Combo ");
-            LaneClearMenu = FirstMenu.AddSubMenu("• Lane Clear");
-            JungleClearMenu = FirstMenu.AddSubMenu("• Jungle Clear");
-            HarassMenu = FirstMenu.AddSubMenu("• Harass");
+            JungleClearMenu = FirstMenu.AddSubMenu("• Jungle Steal");
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);
 
-            HarassMenu.AddGroupLabel("Harass Settings");
-            HarassMenu.Add("Q", new CheckBox("- Use Q"));
-            HarassMenu.Add("W", new CheckBox("- Use W"));
-            HarassMenu.Add("E", new CheckBox("- Use E"));
-            HarassMenu.CreateSlider("Mana must be higher than {0}% to use Harass", "manaSlider", 50);
-            HarassMenu.AddSeparator();
-            HarassMenu.AddLabel("Experimental");
-            HarassMenu.Add("wGapCloser", new CheckBox("- Use W as Gap Closer", false));
-            HarassMenu.Add("aaqcombo", new CheckBox("- Use Q for AA Reset", false));
-            HarassMenu.CreateSlider("Mana must be higher than {0}% to use W as Gap Closer", "GapCloserManaSlider", 50);
-
             ComboMenu.AddGroupLabel("Combo Settings");
             ComboMenu.Add("Q", new CheckBox("- Use Q"));
-            ComboMenu.Add("W", new CheckBox("- Use W"));
             ComboMenu.Add("E", new CheckBox("- Use E"));
             ComboMenu.AddSeparator();
             ComboMenu.Add("R", new CheckBox("- Use R"));
             ComboMenu.Add("RCount", new Slider("Use R if  {0}  Player(s) in Range", 1, 1, 5));
             ComboMenu.AddSeparator();
             ComboMenu.AddLabel("Experimental");
-            ComboMenu.Add("wGapCloser", new CheckBox("- Use W as Gap Closer", false));
-            ComboMenu.Add("aaqcombo", new CheckBox("- Use Q for AA Reset", false));
-            ComboMenu.CreateSlider("Mana must be higher than {0}% to use W as Gap Closer", "manaSlider", 50);
+            ComboMenu.Add("aaecombo", new CheckBox("- Use Q for AA Reset", false));
             //ComboMenu.AddGroupLabel("Summoner Settings");
             //ComboMenu.Add("Smite", new CheckBox("- Use Smite"));
             //ComboMenu.Add("Ignite", new CheckBox("- Use Ignite"));
 
-            LaneClearMenu.AddGroupLabel("Lane Clear Settings");
-            LaneClearMenu.Add("Q", new CheckBox("- Use Q"));
-            LaneClearMenu.Add("W", new CheckBox("- Use W"));
-            LaneClearMenu.Add("E", new CheckBox("- Use E"));
-            LaneClearMenu.CreateSlider("Mana must be higher than {0}% to use Lane Clear Spells", "manaSlider", 50);
-
-            JungleClearMenu.AddGroupLabel("Jungle Clear Settings");
-            JungleClearMenu.Add("Q", new CheckBox("- Use Q"));
-            JungleClearMenu.Add("W", new CheckBox("- Use W"));
-            JungleClearMenu.Add("E", new CheckBox("- Use E"));
-            JungleClearMenu.AddSeparator();
-            JungleClearMenu.AddLabel("Auto Smite / Steal Settings");
+            JungleClearMenu.AddGroupLabel("Auto Smite / Steal Settings");
             JungleClearMenu.Add("AutoSmite", new CheckBox("- Smite/Steal (Dragon, Baron, Herald)"));
             JungleClearMenu.Add("JRed&Blue", new CheckBox("- Smite/Steal Red & Blue Buff"));
             JungleClearMenu.AddSeparator();
