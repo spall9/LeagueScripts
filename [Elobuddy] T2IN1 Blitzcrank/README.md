@@ -28,3 +28,5 @@ ___
 **-Support Mode**
 
 **-Harass Mode**
+
+**-Add Damage Calculation for remaining Spells**
