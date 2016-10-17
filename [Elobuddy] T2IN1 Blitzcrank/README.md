@@ -10,3 +10,21 @@ ___
 # Features
 ___
 **-AA Reset with E**
+
+**-Combo**
+
+**-Smite Jungle Steal**
+
+**-Skinchanger**
+
+**-Damage Indicator**
+
+**-Q Prediction Drawing**
+
+# To Do
+___
+**-Smart Combo**
+
+**-Support Mode**
+
+**-Harass Mode**
