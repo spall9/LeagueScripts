@@ -30,3 +30,5 @@ ___
 **-Harass Mode**
 
 **-Add Damage Calculation for remaining Spells**
+
+**-Support Items usage**
